@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<Fragment>
+  <div
+    className="curtains left open"
+    key="left"
+    onClick={[Function]}
+  />
+  <div
+    className="curtains right open"
+    key="right"
+    onClick={[Function]}
+  />
+</Fragment>
+`;
+
+exports[`renders correctly 2`] = `
+<Fragment>
+  <div
+    className="curtains left"
+    key="left"
+    onClick={[Function]}
+  />
+  <div
+    className="curtains right"
+    key="right"
+    onClick={[Function]}
+  />
+</Fragment>
+`;

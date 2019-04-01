@@ -1,0 +1,28 @@
+.layer {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    height: 100%;
+    transform: translate3d(0, 0, 0);
+    transition: transform 300ms ease-in-out;
+    background-color: $color-layer;
+
+    @media (max-width: $max-width-phone) {
+        width: 100%;
+    }
+
+    .headline {
+        padding: 0 $header-icon-width 0 15px;
+        font-size: $header-font-size;
+        line-height: $header-height;
+        box-shadow: $app-shadow;
+    }
+
+    .content-wrapper {
+        @extend %scroll-container;
+
+        width: 100%;
+        height: calc(100% - #{$header-icon-width});
+        box-shadow: $app-shadow;
+    }
+}

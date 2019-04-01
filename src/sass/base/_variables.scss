@@ -1,0 +1,73 @@
+$color-tangerine: rgba(255, 170, 0, 1);
+$color-tangerine-semi: rgba(255, 170, 0, .75);
+$color-desert: rgb(255, 244, 225);
+$color-desert-semi: rgba(255, 244, 225, .75);
+$color-bordeaux: rgba(92, 1, 32, 1);
+$color-aliceblue-light: rgba(240, 248, 255, .95);
+$color-grey-dark: rgba(80, 80, 80, 1);
+$color-black: rgba(0, 0, 0, 1);
+$color-white: rgba(255, 255, 255, 1);
+$color-transparent: transparent;
+
+$color-background: $color-desert;
+$color-background-off: $color-bordeaux;
+$color-background-gradient-inner: $color-desert-semi;
+$color-background-gradient-outer: $color-white;
+$color-box-shadow: $color-bordeaux;
+$color-image-border: $color-bordeaux;
+$color-text: $color-bordeaux;
+$color-layer: $color-aliceblue-light;
+$color-input: $color-white;
+$color-input-border: $color-bordeaux;
+$color-record: $color-black;
+$color-record-background: $color-aliceblue-light;
+$color-curtains: $color-bordeaux;
+$color-curtains-border: $color-desert;
+$color-player-outer: $color-grey-dark;
+$color-player-inner: $color-desert;
+$color-secret: $color-tangerine-semi;
+
+$font-size-base: 18px;
+$line-height-base: 24px;
+
+$max-width-phone: 414px;
+$min-width-tablet: 768px;
+$max-width-tablet: 1024px;
+$min-width-large-desktop: 1280px;
+$max-height-phone-landscape: 414px;
+
+$header-height: 50px;
+$header-font-size: $font-size-base + 12px;
+$header-icon-width: 60px;
+
+$app-shadow: 0 2px 2px 0 $color-box-shadow;
+
+$screensaver-fade-in-time: 1s;
+$screensaver-fade-out-time: 10s;
+
+%scroll-container {
+    overflow: auto;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch; // sass-lint:disable-line no-misspelled-properties, no-vendor-prefixes
+}
+
+%screensaver-background {
+    transition: background-color $screensaver-fade-in-time;
+    background-color: $color-transparent;
+
+    &.screensaver {
+        transition: background-color $screensaver-fade-out-time;
+        background-color: $color-background-off;
+    }
+}
+
+%screensaver-foreground {
+    transition: opacity $screensaver-fade-in-time;
+    opacity: 1;
+
+    .screensaver & {
+        transition: opacity $screensaver-fade-out-time;
+        opacity: 0;
+        pointer-events: none;
+    }
+}

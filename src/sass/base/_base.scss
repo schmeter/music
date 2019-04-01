@@ -1,0 +1,85 @@
+* {
+    box-sizing: border-box;
+    text-size-adjust: none;
+    -webkit-text-size-adjust: 100%; // sass-lint:disable-line no-misspelled-properties, no-vendor-prefixes
+}
+
+body,
+html {
+    width: 100%;
+    height: 100%;
+}
+
+a {
+    color: inherit;
+    text-decoration: underline;
+
+    &.active {
+        text-decoration: none;
+    }
+}
+
+button {
+    outline: none;
+    background-color: $color-transparent;
+    color: inherit;
+}
+
+audio {
+    width: 100%;
+    height: 30px;
+}
+
+// ::selection {
+//     background: $color-transparent;
+//     color: inherit;
+// }
+
+::-webkit-scrollbar { // sass-lint:disable-line no-vendor-prefixes
+    display: none;
+}
+
+.hidden {
+    display: none;
+}
+
+.invisible {
+    visibility: hidden;
+}
+
+.spacer {
+    visibility: hidden;
+}
+
+.table {
+    display: table;
+}
+
+.table-row {
+    display: table-row;
+}
+
+.table-cell {
+    display: table-cell;
+    vertical-align: top;
+}
+
+.center {
+    text-align: center;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.mono {
+    font-family: monospace;
+}

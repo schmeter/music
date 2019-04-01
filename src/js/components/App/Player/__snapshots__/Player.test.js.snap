@@ -1,0 +1,355 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<Player
+  activeIndex={0}
+  initAudio={
+    [MockFunction] {
+      "calls": Array [
+        Array [],
+      ],
+      "results": Array [
+        Object {
+          "type": "return",
+          "value": undefined,
+        },
+      ],
+    }
+  }
+  isLoggedIn={false}
+  isPlaying={false}
+  playToggle={false}
+  setActiveIndex={[MockFunction]}
+  setActiveTrack={
+    [MockFunction] {
+      "calls": Array [
+        Array [
+          Object {
+            "path": "test1",
+            "tag": Object {
+              "title": "test1",
+            },
+          },
+        ],
+      ],
+      "results": Array [
+        Object {
+          "type": "return",
+          "value": undefined,
+        },
+      ],
+    }
+  }
+  setIsPlaying={[MockFunction]}
+  tracks={
+    Array [
+      Object {
+        "path": "test1",
+        "tag": Object {
+          "title": "test1",
+        },
+      },
+      Object {
+        "path": "test2",
+        "tag": Object {
+          "title": "test2",
+        },
+      },
+    ]
+  }
+>
+  <div
+    className="player"
+  >
+    <audio
+      className="audio"
+      controls={true}
+      onEnded={[Function]}
+      onError={[Function]}
+      onPause={[Function]}
+      onPlay={[Function]}
+      preload="none"
+    />
+  </div>
+</Player>
+`;
+
+exports[`renders correctly 2`] = `
+<Player
+  activeIndex={1}
+  initAudio={
+    [MockFunction] {
+      "calls": Array [
+        Array [],
+      ],
+      "results": Array [
+        Object {
+          "type": "return",
+          "value": undefined,
+        },
+      ],
+    }
+  }
+  isLoggedIn={false}
+  isPlaying={false}
+  playToggle={true}
+  setActiveIndex={[MockFunction]}
+  setActiveTrack={
+    [MockFunction] {
+      "calls": Array [
+        Array [
+          Object {
+            "path": "test1",
+            "tag": Object {
+              "title": "test1",
+            },
+          },
+        ],
+        Array [
+          Object {
+            "path": "test2",
+            "tag": Object {
+              "title": "test2",
+            },
+          },
+        ],
+      ],
+      "results": Array [
+        Object {
+          "type": "return",
+          "value": undefined,
+        },
+        Object {
+          "type": "return",
+          "value": undefined,
+        },
+      ],
+    }
+  }
+  setIsPlaying={[MockFunction]}
+  tracks={
+    Array [
+      Object {
+        "path": "test1",
+        "tag": Object {
+          "title": "test1",
+        },
+      },
+      Object {
+        "path": "test2",
+        "tag": Object {
+          "title": "test2",
+        },
+      },
+    ]
+  }
+>
+  <div
+    className="player"
+  >
+    <Analyser
+      audio={
+        <audio
+          class="audio"
+          controls=""
+          preload="none"
+          src="test2"
+          title="undefined - test2"
+        />
+      }
+      isPlaying={false}
+    >
+      <canvas />
+    </Analyser>
+    <audio
+      className="audio"
+      controls={true}
+      onEnded={[Function]}
+      onError={[Function]}
+      onPause={[Function]}
+      onPlay={[Function]}
+      preload="none"
+    />
+  </div>
+</Player>
+`;
+
+exports[`renders correctly 3`] = `
+<Player
+  activeIndex={2}
+  initAudio={
+    [MockFunction] {
+      "calls": Array [
+        Array [],
+        Array [],
+      ],
+      "results": Array [
+        Object {
+          "type": "return",
+          "value": undefined,
+        },
+        Object {
+          "type": "return",
+          "value": undefined,
+        },
+      ],
+    }
+  }
+  isLoggedIn={true}
+  isPlaying={true}
+  playToggle={true}
+  setActiveIndex={[MockFunction]}
+  setActiveTrack={
+    [MockFunction] {
+      "calls": Array [
+        Array [
+          Object {
+            "path": "test1",
+            "tag": Object {
+              "title": "test1",
+            },
+          },
+        ],
+        Array [
+          Object {
+            "path": "test2",
+            "tag": Object {
+              "title": "test2",
+            },
+          },
+        ],
+      ],
+      "results": Array [
+        Object {
+          "type": "return",
+          "value": undefined,
+        },
+        Object {
+          "type": "return",
+          "value": undefined,
+        },
+      ],
+    }
+  }
+  setIsPlaying={[MockFunction]}
+  tracks={Array []}
+>
+  <div
+    className="player"
+  >
+    <Analyser
+      audio={
+        <audio
+          class="audio"
+          controls=""
+          preload="none"
+          src="test2"
+          title="undefined - test2"
+        />
+      }
+      isPlaying={true}
+    >
+      <canvas />
+    </Analyser>
+    <audio
+      className="audio"
+      controls={true}
+      onEnded={[Function]}
+      onError={[Function]}
+      onPause={[Function]}
+      onPlay={[Function]}
+      preload="none"
+    />
+  </div>
+</Player>
+`;
+
+exports[`renders correctly 4`] = `
+<Player
+  activeIndex={2}
+  initAudio={
+    [MockFunction] {
+      "calls": Array [
+        Array [],
+        Array [],
+      ],
+      "results": Array [
+        Object {
+          "type": "return",
+          "value": undefined,
+        },
+        Object {
+          "type": "return",
+          "value": undefined,
+        },
+      ],
+    }
+  }
+  isLoggedIn={true}
+  isPlaying={false}
+  playToggle={true}
+  setActiveIndex={[MockFunction]}
+  setActiveTrack={
+    [MockFunction] {
+      "calls": Array [
+        Array [
+          Object {
+            "path": "test1",
+            "tag": Object {
+              "title": "test1",
+            },
+          },
+        ],
+        Array [
+          Object {
+            "path": "test2",
+            "tag": Object {
+              "title": "test2",
+            },
+          },
+        ],
+      ],
+      "results": Array [
+        Object {
+          "type": "return",
+          "value": undefined,
+        },
+        Object {
+          "type": "return",
+          "value": undefined,
+        },
+      ],
+    }
+  }
+  setIsPlaying={[MockFunction]}
+  tracks={Array []}
+>
+  <div
+    className="player"
+  >
+    <Analyser
+      audio={
+        <audio
+          class="audio"
+          controls=""
+          preload="none"
+          src="test2"
+          title="undefined - test2"
+        />
+      }
+      isPlaying={false}
+    >
+      <canvas />
+    </Analyser>
+    <audio
+      className="audio"
+      controls={true}
+      onEnded={[Function]}
+      onError={[Function]}
+      onPause={[Function]}
+      onPlay={[Function]}
+      preload="none"
+    />
+  </div>
+</Player>
+`;

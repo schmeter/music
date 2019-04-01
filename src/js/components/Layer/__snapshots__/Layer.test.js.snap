@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  className="layer layer-test closed"
+>
+  <h2
+    className="headline"
+  >
+    {{de:layer_test_headline}}
+  </h2>
+  <Link
+    className="button header-button close-button"
+    onClick={[MockFunction]}
+  >
+    <Icon
+      id="close"
+    />
+  </Link>
+  test
+</div>
+`;

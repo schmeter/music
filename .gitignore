@@ -1,0 +1,14 @@
+.tmp
+.DS_Store
+public
+node_modules
+coverage
+!src/assets/mp3
+src/assets/mp3/*
+!src/assets/mp3/demoartist
+!src/assets/img
+src/assets/img/*
+!src/assets/img/fallback.png
+src/assets/fonts
+src/assets/js
+src/sass/lib

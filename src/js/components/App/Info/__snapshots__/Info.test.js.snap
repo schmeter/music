@@ -1,0 +1,141 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `""`;
+
+exports[`renders correctly 2`] = `
+<div
+  className="content-wrapper content-wrapper-info"
+>
+  <ul
+    className="table"
+  >
+    <li
+      className="table-row"
+      key="title"
+    >
+      <span
+        className="table-cell text-left bold"
+      >
+        Titel
+        :
+      </span>
+      <span
+        className="table-cell text-left"
+      >
+        test
+      </span>
+    </li>
+  </ul>
+  <div
+    className="cover"
+  >
+    <Link
+      onClick={[MockFunction]}
+      to="/audio/test/test"
+    >
+      <Image
+        alt="test"
+        src="test"
+      />
+    </Link>
+  </div>
+  <audio
+    className="spacer"
+    controls={true}
+  />
+</div>
+`;
+
+exports[`renders correctly 3`] = `
+<div
+  className="content-wrapper content-wrapper-info"
+>
+  <div
+    className="lyrics"
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": "test",
+      }
+    }
+  />
+  <ul
+    className="table"
+  >
+    <li
+      className="table-row"
+      key="title"
+    >
+      <span
+        className="table-cell text-left bold"
+      >
+        Titel
+        :
+      </span>
+      <span
+        className="table-cell text-left"
+      >
+        test
+      </span>
+    </li>
+    <li
+      className="table-row"
+      key="artist"
+    >
+      <span
+        className="table-cell text-left bold"
+      >
+        Künstler
+        :
+      </span>
+      <span
+        className="table-cell text-left"
+      >
+        <Link
+          onClick={[MockFunction]}
+          to="/audio/test"
+        >
+          test
+        </Link>
+      </span>
+    </li>
+    <li
+      className="table-row"
+      key="album"
+    >
+      <span
+        className="table-cell text-left bold"
+      >
+        Album
+        :
+      </span>
+      <span
+        className="table-cell text-left"
+      >
+        <Link
+          onClick={[MockFunction]}
+          to="/audio/test/test"
+        >
+          test
+        </Link>
+      </span>
+    </li>
+  </ul>
+  <div
+    className="cover"
+  >
+    <Link
+      onClick={[MockFunction]}
+      to="/audio/test/test"
+    >
+      <Image
+        alt="test"
+        src="test"
+      />
+    </Link>
+  </div>
+  <audio
+    className="spacer"
+    controls={true}
+  />
+</div>
+`;

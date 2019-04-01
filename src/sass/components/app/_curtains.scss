@@ -1,0 +1,31 @@
+.curtains {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 50%;
+    height: 100%;
+    transition-delay: 0s, 0s;
+    transition-duration: 2s, 300ms;
+    transition-property: width, opacity;
+    transition-timing-function: cubic-bezier(.99, .05);
+    background-color: $color-curtains;
+    cursor: pointer;
+    opacity: 1;
+
+    &.left {
+        left: 0;
+        border-right: 2px solid $color-curtains-border;
+    }
+
+    &.right {
+        right: 0;
+        border-left: 2px solid $color-curtains-border;
+    }
+
+    &.open {
+        width: 0%;
+        transition-delay: 0s, 2s;
+        opacity: 0;
+    }
+}
+

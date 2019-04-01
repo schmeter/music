@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<Analyser
+  audio={Object {}}
+  isPlaying={false}
+>
+  <canvas />
+</Analyser>
+`;
+
+exports[`renders correctly 2`] = `
+<Analyser
+  audio={Object {}}
+  isPlaying={true}
+>
+  <canvas />
+</Analyser>
+`;
+
+exports[`renders correctly 3`] = `
+<Analyser
+  audio={Object {}}
+  isPlaying={false}
+>
+  <canvas />
+</Analyser>
+`;
+
+exports[`renders correctly 4`] = `
+<Analyser
+  audio={Object {}}
+  isPlaying={true}
+  mode="waveform"
+>
+  <canvas />
+</Analyser>
+`;

@@ -1,0 +1,54 @@
+.player {
+    .audio {
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        // styles for all browsers to prevent round boxes
+        background: radial-gradient($color-player-inner, $color-player-outer);
+        opacity: .95;
+
+        // sass-lint:disable no-vendor-prefixes
+        &::-webkit-media-controls {
+            border-top: 1px solid $color-box-shadow;
+            background-color: $color-player-inner;
+        }
+
+        &::-webkit-media-controls-panel,
+        &::-webkit-media-controls-enclosure,
+        &::-webkit-media-controls-overlay-enclosure {
+            background-color: $color-player-inner;
+            // visibility: hidden;
+        }
+
+        &::-webkit-media-controls-overflow-button,
+        &::-webkit-media-controls-mute-button,
+        &::-webkit-media-controls-play-button,
+        &::-webkit-media-controls-timeline-container,
+        &::-webkit-media-controls-current-time-display,
+        &::-webkit-media-controls-time-remaining-display,
+        &::-webkit-media-controls-timeline,
+        &::-webkit-media-controls-volume-slider-container,
+        &::-webkit-media-controls-volume-slider,
+        &::-webkit-media-controls-seek-back-button,
+        &::-webkit-media-controls-seek-forward-button,
+        &::-webkit-media-controls-fullscreen-button,
+        &::-webkit-media-controls-rewind-button,
+        &::-webkit-media-controls-return-to-realtime-button,
+        &::-webkit-media-controls-toggle-closed-captions-button {
+            visibility: initial;
+        }
+        // sass-lint:enable no-vendor-prefixes
+    }
+
+    canvas {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+    }
+}

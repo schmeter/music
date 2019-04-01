@@ -1,0 +1,64 @@
+{
+    "extends": [
+        "semistandard",
+        "standard-react"
+    ],
+    "plugins": [
+        "import",
+        "jest"
+    ],
+    "env": {
+        "jest/globals": true
+    },
+    "parser": "babel-eslint",
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true,
+            "modules": true
+        }
+    },
+    "rules": {
+        "import/extensions": [
+            "warn",
+            {
+                "js": "never",
+                "json": "always"
+            }
+        ],
+        "indent": [
+            "warn",
+            4,
+            {
+                "SwitchCase": 1
+            }
+        ],
+        "no-multiple-empty-lines": [
+            "error",
+            {
+                "max": 2,
+                "maxEOF": 1
+            }
+        ],
+        "operator-linebreak": "off",
+        "space-before-function-paren": "off",
+        "jsx-quotes": [
+            "error",
+            "prefer-double"
+        ],
+        "react/jsx-indent": [
+            "error",
+            4
+        ],
+        "react/jsx-indent-props": [
+            "error",
+            4
+        ]
+    },
+    "globals": {
+        "document": true,
+        "window": true,
+        "fetch": true,
+        "Headers": true,
+        "app": true
+    }
+}

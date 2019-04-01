@@ -1,0 +1,131 @@
+body {
+    @extend %screensaver-background;
+
+    background: linear-gradient(to bottom, $color-background-gradient-outer 0%, $color-background-gradient-inner 50px, $color-background-gradient-outer 100%);
+    color: $color-text;
+    font-family: 'Kanit', arial, sans-serif;
+    font-size: $font-size-base;
+    line-height: $line-height-base;
+    overflow: hidden;
+    background-blend-mode: multiply;
+}
+
+header {
+    @extend %screensaver-foreground;
+
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    background-color: $color-background;
+    box-shadow: $app-shadow;
+    opacity: .95;
+
+    h1 {
+        padding: 0 $header-icon-width;
+        font-family: 'Russo One';
+        font-size: $header-font-size;
+        line-height: $header-height;
+        text-align: center;
+    }
+}
+
+main {
+    @extend %scroll-container;
+    @extend %screensaver-foreground;
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: ($header-height + 20px) 15px 15px;
+}
+
+form {
+    display: block;
+    margin: 10px;
+    text-align: center;
+}
+
+input,
+button,
+select {
+    display: inline-block;
+    height: 50px;
+    margin: 5px;
+    padding: 10px;
+    border: 1px solid $color-input-border;
+    border-radius: 0;
+    background: $color-input;
+    color: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    text-align: center;
+    white-space: normal;
+    -webkit-appearance: none; // sass-lint:disable-line no-misspelled-properties, no-vendor-prefixes
+    appearance: none;
+}
+
+input {
+    width: 150px;
+}
+
+button {
+    width: 100px;
+}
+
+img {
+    max-width: 100%;
+    transform: scale3d(1, 1, 1);
+    transition: transform 100ms;
+
+    &.invisible {
+        transform: scale3d(.1, .1, 1);
+    }
+}
+
+a {
+    img {
+        border: inset 1px $color-image-border;
+        border-radius: 4px;
+    }
+}
+
+.header-button {
+    position: absolute;
+    top: 0;
+    width: $header-icon-width;
+    height: $header-height;
+    font-size: $header-font-size;
+    line-height: $header-height;
+    text-align: center;
+    cursor: pointer;
+}
+
+.info-button,
+.close-button {
+    right: 0;
+}
+
+.home-button {
+    left: 0;
+
+    &.active {
+        display: none;
+    }
+}
+
+.font-smaller {
+    font-size: $font-size-base - 4px;
+}
+
+.secret {
+    a {
+        display: block;
+        color: $color-secret;
+        text-decoration: none;
+        cursor: default;
+    }
+}

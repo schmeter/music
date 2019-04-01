@@ -1,0 +1,165 @@
+.page-audio {
+    h3,
+    h4 {
+        font-size: $font-size-base - 2px;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+
+        @media (max-width: $max-width-phone), (max-height: $max-height-phone-landscape) {
+            display: none;
+        }
+    }
+
+    h4 {
+        opacity: .75;
+    }
+
+    .albums {
+        margin: -10px;
+
+        @media (max-height: $max-height-phone-landscape) {
+            margin: -5px;
+        }
+
+        @media (max-width: $max-width-phone) {
+            margin: -5px;
+        }
+    }
+
+    .album {
+        display: inline-block;
+        width: calc(100% / 3);
+        padding: 10px;
+        vertical-align: top;
+
+        @media (min-width: $min-width-tablet) {
+            width: calc(100% / 4);
+        }
+
+        @media (min-width: $max-width-tablet + 1) {
+            width: calc(100% / 5);
+        }
+
+        @media (max-height: $max-height-phone-landscape) {
+            width: calc(100% / 5);
+            padding: 5px;
+        }
+
+        @media (max-width: $max-width-phone) {
+            padding: 5px;
+        }
+
+        @media (min-width: $min-width-large-desktop + 1) {
+            max-width: 100%;
+        }
+    }
+
+    .album-content {
+        margin: 0 5px;
+    }
+
+    .tracks {
+        margin-bottom: 10px;
+    }
+
+    .track {
+        .table-cell {
+            padding-bottom: 10px;
+        }
+
+        .index {
+            width: 25px;
+            padding-right: 10px;
+        }
+    }
+
+    .album-cover {
+        display: block;
+        position: relative;
+        max-width: 512px;
+        max-height: 512px;
+
+        .record {
+            position: absolute;
+            top: 1%;
+            left: 1%;
+            width: 98%;
+            transform: translateX(0) rotate3d(0, 0, 1, -180deg);
+            transition-duration: 300ms;
+            transition-property: margin-left, transform;
+            transition-timing-function: ease-in-out;
+            border: 150px solid $color-record;
+            border-radius: 100%;
+            box-shadow: 0 0 4px 0 $color-record;
+            z-index: -1;
+
+            &.show {
+                transform: translateX(320px) rotate3d(0, 0, 1, 15deg);
+            }
+
+            @media (max-width: $min-width-tablet), (max-height: $max-height-phone-landscape) {
+                display: none;
+            }
+        }
+    }
+
+    .album-playing h3,
+    .album-playing h4,
+    .track-playing span {
+        font-weight: bold;
+    }
+
+    .album-selected {
+        h3,
+        h4 {
+            width: auto;
+            margin-bottom: 10px;
+            white-space: normal;
+            overflow: visible;
+
+            @media (max-width: $max-width-phone), (max-height: $max-height-phone-landscape) {
+                display: inherit;
+            }
+        }
+
+        h3 {
+            font-size: $font-size-base + 3px;
+        }
+
+        h4 {
+            font-size: $font-size-base;
+        }
+
+        .album {
+            display: flex;
+            width: 100%;
+            max-width: 100%;
+
+            @media (min-width: $min-width-tablet) {
+                flex-direction: row;
+
+                .album-cover {
+                    order: 0;
+                }
+
+                .album-content {
+                    order: 1;
+                    margin-left: 20px;
+                }
+            }
+
+            @media (max-width: $min-width-tablet - 1), (max-height: $max-height-phone-landscape) {
+                flex-direction: column;
+
+                .album-cover {
+                    order: 1;
+                }
+
+                .album-content {
+                    order: 0;
+                }
+            }
+        }
+    }
+}

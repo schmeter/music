@@ -1,0 +1,6 @@
+{
+    "baseUrl": "https://example.com",
+    "fallbackImage": "/img/fallback.png",
+    "useScreensaver": true,
+    "useAnalyser": true
+}

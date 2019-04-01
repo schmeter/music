@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title><%= pkg.name %></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" href="/favicon.ico" />
+    <!--
+        <link rel="apple-touch-startup-image" href="/favicon.ico" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+    -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Russo+One|Kanit:400,600">
+    <link rel="stylesheet" type="text/css" href="/css/<%= pkg.name %>.css?<%= time %>" />
+</head>
+
+<body>
+    <div id="app"></div>
+    <script>
+        var app = { rev: '<%= rev %>', time: '<%= time %>' };
+    </script>
+    <script type="text/javascript" src="/js/<%= pkg.name %>.js?<%= time %>"></script>
+</body>
+
+</html>
