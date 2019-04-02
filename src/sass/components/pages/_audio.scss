@@ -80,6 +80,10 @@
         max-width: 512px;
         max-height: 512px;
 
+        .cover {
+            background-color: $color-record-background;
+        }
+
         .record {
             position: absolute;
             top: 1%;
