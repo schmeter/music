@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 
 import Header from './Header';
 
-import { openLayerAction } from '../../../actions/layer';
+import { openLayerAction } from '../../../state/actions/layer';
 
 
 export const mapDispatchToProps = (dispatch) => ({

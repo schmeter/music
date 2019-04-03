@@ -7,7 +7,7 @@ import {
     setActiveIndexAction,
     saveActiveTrackAction,
     setIsPlayingAction
-} from '../../../actions/audio';
+} from '../../../state/actions/audio';
 
 
 export const mapDispatchToProps = (dispatch) => ({

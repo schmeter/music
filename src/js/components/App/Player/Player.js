@@ -6,7 +6,7 @@ import Analyser from './Analyser';
 
 import { getNextIndex } from '../../../services/audio';
 
-import { isTouch } from '../../../util/browser';
+import { isTouch } from '../../../util/screen';
 
 import configApp from '../../../../data/app.json';
 

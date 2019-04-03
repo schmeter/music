@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import autobind from 'autobind-decorator';
 
-import { isTouch } from '../../../util/browser';
+import { isTouch } from '../../../util/screen';
 
 import configApp from '../../../../data/app.json';
 

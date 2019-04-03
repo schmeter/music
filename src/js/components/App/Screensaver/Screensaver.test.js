@@ -5,7 +5,7 @@ import toJson from 'enzyme-to-json';
 import Screensaver from './Screensaver';
 
 
-jest.mock('../../../util/browser', () => ({
+jest.mock('../../../util/screen', () => ({
     isTouch: () => false
 }));
 
