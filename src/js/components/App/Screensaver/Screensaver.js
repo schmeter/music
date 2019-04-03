@@ -4,7 +4,7 @@ import autobind from 'autobind-decorator';
 
 import { isTouch } from '../../../util/screen';
 
-import configApp from '../../../../data/app.json';
+import configApp from '../../../../config/app.json';
 
 
 class Screensaver extends React.Component {

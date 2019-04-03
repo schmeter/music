@@ -1,6 +1,6 @@
 import { flatten, pick, propOr } from 'ramda';
 
-import configApp from '../../data/app.json';
+import configApp from '../../config/app.json';
 
 
 export const getArtists = (audioData, showAll) => {

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import autobind from 'autobind-decorator';
 
-import configApp from '../../../data/app.json';
+import configApp from '../../../config/app.json';
 
 
 class Image extends React.Component {
