@@ -63,7 +63,10 @@ class Analyser extends React.Component {
 
     render() {
         return (
-            <canvas ref={this.canvas} />
+            <canvas
+                className="canvas"
+                ref={this.canvas}
+            />
         );
     }
 }

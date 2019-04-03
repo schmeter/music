@@ -18,24 +18,24 @@ class Header extends React.Component {
 
     render() {
         return (
-            <header>
+            <header className="header">
                 <h1>
                     <Link to={getUrl('index')}>
                         {i18n(`app_title`)}
                     </Link>
                 </h1>
                 <Link
-                    className="button header-button home-button"
+                    className="header-button home-button"
                     to={getUrl('index')}
                 >
                     <Icon id="chevron-circle-left" />
                 </Link>
-                <Link
-                    className="button header-button info-button"
+                <button
+                    className="header-button info-button"
                     onClick={this.handleClickLink}
                 >
                     <Icon id="info-circle" />
-                </Link>
+                </button>
             </header>
         );
     }

@@ -10,7 +10,7 @@ body {
     background-blend-mode: multiply;
 }
 
-header {
+.header {
     @extend %screensaver-foreground;
 
     position: fixed;
@@ -30,7 +30,7 @@ header {
     }
 }
 
-main {
+.main {
     @extend %scroll-container;
     @extend %screensaver-foreground;
 
@@ -42,15 +42,15 @@ main {
     padding: ($header-height + 20px) 15px 15px;
 }
 
-form {
+.form {
     display: block;
     margin: 10px;
     text-align: center;
 }
 
-input,
-button,
-select {
+.input,
+.button,
+.select {
     display: inline-block;
     height: 50px;
     margin: 5px;
@@ -68,15 +68,15 @@ select {
     appearance: none;
 }
 
-input {
+.input {
     width: 150px;
 }
 
-button {
+.button {
     width: 100px;
 }
 
-img {
+.image {
     max-width: 100%;
     transform: scale3d(1, 1, 1);
     transition: transform 100ms;
@@ -87,7 +87,7 @@ img {
 }
 
 a {
-    img {
+    .image {
         border: inset 1px $color-image-border;
         border-radius: 4px;
     }

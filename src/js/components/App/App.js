@@ -44,7 +44,7 @@ class App extends React.Component {
     render() {
         return (
             <>
-                <main>
+                <main className="main">
                     <Switch>
                         <Route
                             exact

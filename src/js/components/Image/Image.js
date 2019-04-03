@@ -38,6 +38,7 @@ class Image extends React.Component {
         return (
             <img
                 className={classNames(
+                    'image',
                     className,
                     { invisible: !loaded }
                 )}
