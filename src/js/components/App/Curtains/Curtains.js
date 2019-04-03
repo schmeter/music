@@ -16,7 +16,7 @@ class Curtains extends React.Component {
 
     render() {
         return (
-            <React.Fragment>
+            <>
                 {['left', 'right'].map(direction => (
                     <div
                         key={direction}
@@ -28,7 +28,7 @@ class Curtains extends React.Component {
                         onClick={this.handleClickCurtains}
                     />
                 ))}
-            </React.Fragment>
+            </>
         );
     }
 }

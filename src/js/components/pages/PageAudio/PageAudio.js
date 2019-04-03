@@ -7,20 +7,12 @@ import { Page404 } from '../';
 import AlbumList from './AlbumList';
 
 import { getUrl } from '../../../services/navigation';
-import { setTitle, joinTitleParts } from '../../../services/meta';
+import { joinTitleParts, getTitle } from '../../../services/meta';
 import { getAlbum, getArtist } from '../../../services/audio';
 
 
 class PageAudio extends React.Component {
-    componentDidMount() {
-        this.setTitle();
-    }
-
-    componentDidUpdate() {
-        this.setTitle();
-    }
-
-    setTitle() {
+    getTitle() {
         const titleParts = [];
         const { library, match } = this.props;
         if (library) {
@@ -34,7 +26,7 @@ class PageAudio extends React.Component {
                 titleParts.push(selectedAlbum.title);
             }
         }
-        setTitle(joinTitleParts(titleParts));
+        return getTitle(joinTitleParts(titleParts));
     }
 
     render() {
@@ -50,7 +42,7 @@ class PageAudio extends React.Component {
         return !validParams ? <Page404 /> : (
             <Page
                 id="audio"
-                hasDynamicTitle
+                title={this.getTitle()}
                 useBaseClass={false}
             >
                 <AlbumList

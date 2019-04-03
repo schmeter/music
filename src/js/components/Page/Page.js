@@ -1,38 +1,36 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
+import { Helmet } from 'react-helmet';
 
-import i18n from '../../services/i18n';
-import { setTitle } from '../../services/meta';
+import { getTitle } from '../../services/meta';
 
 
 class Page extends React.Component {
-    componentDidMount() {
-        const { id, hasDynamicTitle } = this.props;
-        if (!hasDynamicTitle) {
-            setTitle(i18n(`page_${id}_title`));
-        }
-    }
-
     render() {
-        const { className, id, children, useBaseClass } = this.props;
+        const { className, id, title, children, useBaseClass } = this.props;
         return (
-            <div className={classNames(
-                'page',
-                { 'page-base': useBaseClass !== false },
-                `page-${className || id}`
-            )}>
-                {children}
-            </div>
+            <>
+                <Helmet>
+                    <title>{title || getTitle(id)}</title>
+                </Helmet>
+                <div className={classNames(
+                    'page',
+                    { 'page-base': useBaseClass !== false },
+                    `page-${className || id}`
+                )}>
+                    {children}
+                </div>
+            </>
         );
     }
 }
 
 Page.propTypes = {
     id: PropTypes.string.isRequired,
+    title: PropTypes.string,
     className: PropTypes.string,
     children: PropTypes.node,
-    hasDynamicTitle: PropTypes.bool,
     useBaseClass: PropTypes.bool
 };
 

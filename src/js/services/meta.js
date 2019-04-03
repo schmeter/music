@@ -3,9 +3,9 @@ import i18n from './i18n';
 
 export const joinTitleParts = (parts) => parts.join(' | ');
 
-export const setTitle = (string) => {
+export const getTitle = (string) => {
     const title = i18n(`app_title`);
-    document.title = string
+    return string
         ? joinTitleParts([title, string])
         : title;
 };
