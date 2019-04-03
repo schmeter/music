@@ -1,4 +1,4 @@
-import { getLibrary, getActiveIndex } from '../services/audio';
+import { getLibrary, getActiveIndex, saveActiveTrackPath } from '../services/audio';
 
 
 export const initAudioAction = () => (dispatch) => {
@@ -22,6 +22,11 @@ export const setActiveIndexAction = (activeIndex) => ({
     type: 'AUDIO_SET_ACTIVE_INDEX',
     payload: activeIndex
 });
+
+export const saveActiveTrackAction = (activeTrack) => (dispatch) => {
+    dispatch(setActiveTrackAction(activeTrack));
+    saveActiveTrackPath(activeTrack.path);
+};
 
 export const setActiveTrackAction = (activeTrack) => ({
     type: 'AUDIO_SET_ACTIVE_TRACK',

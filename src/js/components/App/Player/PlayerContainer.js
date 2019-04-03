@@ -5,7 +5,7 @@ import Player from './Player';
 import {
     initAudioAction,
     setActiveIndexAction,
-    setActiveTrackAction,
+    saveActiveTrackAction,
     setIsPlayingAction
 } from '../../../actions/audio';
 
@@ -13,7 +13,7 @@ import {
 export const mapDispatchToProps = (dispatch) => ({
     initAudio: () => dispatch(initAudioAction()),
     setIsPlaying: (isPlaying) => dispatch(setIsPlayingAction(isPlaying)),
-    setActiveTrack: (activeTrack) => dispatch(setActiveTrackAction(activeTrack)),
+    setActiveTrack: (activeTrack) => dispatch(saveActiveTrackAction(activeTrack)),
     setActiveIndex: (activeIndex) => dispatch(setActiveIndexAction(activeIndex))
 });
 
