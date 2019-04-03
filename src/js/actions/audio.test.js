@@ -4,6 +4,7 @@ import {
     setTracksAction,
     setActiveIndexAction,
     setActiveTrackAction,
+    saveActiveTrackAction,
     setIsPlayingAction,
     togglePlayAction
 } from './audio';
@@ -31,6 +32,10 @@ test('expects setActiveIndexAction to return object', () => {
         type: 'AUDIO_SET_ACTIVE_INDEX',
         payload: 0
     });
+});
+
+test('expects saveActiveTrackAction to return object', () => {
+    expect(saveActiveTrackAction({ path: '' })(() => {})).toBe(undefined);
 });
 
 test('expects setActiveTrackAction to return object', () => {

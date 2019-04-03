@@ -5,13 +5,11 @@ import {
 
 window.fetch = (url) => {
     return new Promise((resolve, reject) => {
-        resolve({ json: () => ({}) });
+        resolve({ ok: true, json: () => ({}) });
     });
 };
 
-window.Headers = class Headers {};
-
-window.console.log = () => {};
+window.console.error = () => {};
 
 test('expects fetchJSON to return object', () => {
     expect(typeof fetchJSON()).toBe('object');
@@ -22,7 +20,13 @@ test('expects fetchJSON to return object', () => {
         });
     };
 
-    expect(typeof fetchJSON()).toBe('object');
+    expect(typeof fetchJSON('test', true)).toBe('object');
 
-    expect(typeof fetchJSON('', () => {}, () => {})).toBe('object');
+    window.fetch = (url) => {
+        return new Promise((resolve, reject) => {
+            resolve({ ok: false, json: () => ({}) });
+        });
+    };
+
+    expect(typeof fetchJSON('', true).then(data => data, (e) => e)).toBe('object');
 });
