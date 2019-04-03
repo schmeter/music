@@ -9,6 +9,8 @@ import { getUrl } from '../../../services/navigation';
 
 
 class PageSettings extends React.Component {
+    password = React.createRef();
+
     componentDidUpdate(lastProps) {
         const { isLoggedIn, history } = this.props;
         if (lastProps.isLoggedIn !== isLoggedIn) {
@@ -20,11 +22,12 @@ class PageSettings extends React.Component {
     handleSubmitFormAuth(e) {
         e.preventDefault();
         const { isLoggedIn, login, logout } = this.props;
+        const password = this.password.current;
         if (isLoggedIn) {
             logout();
         } else {
             login({
-                password: this.password.value
+                password: password.value
             }, 60 * 60 * 24 * 30);
         }
     }
@@ -76,9 +79,7 @@ class PageSettings extends React.Component {
                     {isLoggedIn ? null : (
                         <input
                             type="password"
-                            ref={(ref) => {
-                                this.password = ref;
-                            }}
+                            ref={this.password}
                         />
                     )}
                     <button type="submit">
