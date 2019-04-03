@@ -9,7 +9,7 @@ exports[`renders correctly 1`] = `
 >
   <img
     alt="test"
-    className="test invisible"
+    className="image test invisible"
     onError={[Function]}
     onLoad={[Function]}
     src="test"

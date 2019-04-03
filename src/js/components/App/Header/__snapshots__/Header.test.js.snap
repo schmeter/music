@@ -1,7 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders correctly 1`] = `
-<header>
+<header
+  className="header"
+>
   <h1>
     <Link
       to="/"
@@ -10,20 +12,20 @@ exports[`renders correctly 1`] = `
     </Link>
   </h1>
   <Link
-    className="button header-button home-button"
+    className="header-button home-button"
     to="/"
   >
     <Icon
       id="chevron-circle-left"
     />
   </Link>
-  <Link
-    className="button header-button info-button"
+  <button
+    className="header-button info-button"
     onClick={[Function]}
   >
     <Icon
       id="info-circle"
     />
-  </Link>
+  </button>
 </header>
 `;

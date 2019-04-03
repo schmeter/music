@@ -1,32 +1,22 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders correctly with external url 1`] = `
-<NavLink
-  activeClassName=""
-  exact={true}
-  onClick={[Function]}
-  to="http://test"
+<a
+  href="http://test"
+  onClick={[MockFunction]}
+  target="_blank"
 >
   test
-</NavLink>
+</a>
 `;
 
 exports[`renders correctly with internal url 1`] = `
 <NavLink
   activeClassName="active"
   exact={true}
-  onClick={[Function]}
+  onClick={[MockFunction]}
   to="test"
 >
   test
 </NavLink>
-`;
-
-exports[`renders correctly without url 1`] = `
-<NavLink
-  activeClassName=""
-  exact={true}
-  onClick={[Function]}
-  to=""
-/>
 `;

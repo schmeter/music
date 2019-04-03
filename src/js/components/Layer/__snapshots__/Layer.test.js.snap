@@ -9,14 +9,14 @@ exports[`renders correctly 1`] = `
   >
     {{de:layer_test_headline}}
   </h2>
-  <Link
-    className="button header-button close-button"
+  <button
+    className="header-button close-button"
     onClick={[MockFunction]}
   >
     <Icon
       id="close"
     />
-  </Link>
+  </button>
   test
 </div>
 `;

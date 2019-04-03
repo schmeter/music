@@ -20,6 +20,6 @@ it('renders correctly', () => {
     const component = shallow(<Layer {...props} >test</Layer>);
     expect(toJson(component)).toMatchSnapshot();
 
-    component.find(Link).simulate('click', mockedEvent);
+    component.find('button').simulate('click', mockedEvent);
     expect(props.closeLayers).toHaveBeenCalled();
 });

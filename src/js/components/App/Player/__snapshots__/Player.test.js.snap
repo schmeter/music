@@ -159,7 +159,9 @@ exports[`renders correctly 2`] = `
       }
       isPlaying={false}
     >
-      <canvas />
+      <canvas
+        className="canvas"
+      />
     </Analyser>
     <audio
       className="audio"
@@ -249,7 +251,9 @@ exports[`renders correctly 3`] = `
       }
       isPlaying={true}
     >
-      <canvas />
+      <canvas
+        className="canvas"
+      />
     </Analyser>
     <audio
       className="audio"
@@ -339,7 +343,9 @@ exports[`renders correctly 4`] = `
       }
       isPlaying={false}
     >
-      <canvas />
+      <canvas
+        className="canvas"
+      />
     </Analyser>
     <audio
       className="audio"
