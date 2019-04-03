@@ -11,12 +11,12 @@ module.exports = function (grunt) {
         const coverFolder = 'folder';
         const mdFolder = 'md';
 
-        const audioData = readJSON(`${grunt.config('datFolder')}/audio.json`);
+        const configAudio = readJSON(`${grunt.config('cfgFolder')}/audio.json`);
         const mp3Data = readJSON(`${grunt.config('tmpFolder')}/mp3.json`);
         const imgData = readJSON(`${grunt.config('tmpFolder')}/cover.json`);
         const mdData = readJSON(`${grunt.config('tmpFolder')}/md.json`);
 
-        pathOr([], ['artists'], audioData).forEach(artist => {
+        pathOr([], ['artists'], configAudio).forEach(artist => {
             // add artist image
             if (path([artist.id, coverImage], imgData)) {
                 artist.imgPath = `/${mp3Folder}/${artist.id}/${coverImage}`;
@@ -65,6 +65,6 @@ module.exports = function (grunt) {
             });
         });
 
-        write(`${grunt.config('tmpFolder')}/audio.json`, JSON.stringify(audioData, null, 4));
+        write(`${grunt.config('tmpFolder')}/audio.json`, JSON.stringify(configAudio, null, 4));
     });
 };
