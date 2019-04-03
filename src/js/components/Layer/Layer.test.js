@@ -3,7 +3,6 @@ import { shallow } from 'enzyme';
 import toJson from 'enzyme-to-json';
 
 import Layer from './Layer';
-import Link from '../Link';
 
 
 const mockedEvent = {
