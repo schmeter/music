@@ -95,6 +95,7 @@
             transition-timing-function: ease-in-out;
             border: 150px solid $color-record;
             border-radius: 100%;
+            background-color: $color-record-background;
             box-shadow: 0 0 4px 0 $color-record;
             z-index: -1;
 
