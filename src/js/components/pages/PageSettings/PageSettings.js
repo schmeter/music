@@ -48,7 +48,7 @@ class PageSettings extends React.Component {
         const { isLoggedIn } = this.props;
         return (
             <Page id="settings">
-                <h2>{i18n('page_settings_headline')}</h2>
+                <h2 className="headline">{i18n('page_settings_headline')}</h2>
                 <form
                     className="form"
                     onSubmit={this.handleSubmitFormQuit}
@@ -60,7 +60,7 @@ class PageSettings extends React.Component {
                         {i18n(`page_settings_button_quit`)}
                     </button>
                 </form>
-                <h2>{i18n('page_settings_lang_headline')}</h2>
+                <h2 className="headline">{i18n('page_settings_lang_headline')}</h2>
                 <form className="form">
                     <select
                         className="select"
@@ -77,7 +77,7 @@ class PageSettings extends React.Component {
                         ))}
                     </select>
                 </form>
-                <h2>{i18n('page_settings_auth_headline')}</h2>
+                <h2 className="headline">{i18n('page_settings_auth_headline')}</h2>
                 <form
                     className="form"
                     onSubmit={this.handleSubmitFormAuth}

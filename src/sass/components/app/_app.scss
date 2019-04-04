@@ -10,7 +10,7 @@ body {
     background-blend-mode: multiply;
 }
 
-.header {
+.main-header {
     @extend %screensaver-foreground;
 
     position: fixed;
@@ -20,14 +20,15 @@ body {
     background-color: $color-background;
     box-shadow: $app-shadow;
     opacity: .95;
+    z-index: $z-index-header;
+}
 
-    h1 {
-        padding: 0 $header-icon-width;
-        font-family: 'Russo One';
-        font-size: $header-font-size;
-        line-height: $header-height;
-        text-align: center;
-    }
+.main-headline {
+    padding: 0 $header-icon-width;
+    font-family: 'Russo One';
+    font-size: $header-font-size;
+    line-height: $header-height;
+    text-align: center;
 }
 
 .main {
@@ -40,6 +41,7 @@ body {
     bottom: 0;
     left: 0;
     padding: ($header-height + 20px) 15px 15px;
+    z-index: $z-index-main;
 }
 
 .form {

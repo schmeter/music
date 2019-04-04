@@ -3,11 +3,10 @@ import PropTypes from 'prop-types';
 
 import Image from '../../Image';
 import Link from '../../Link';
+import ScrollTop from '../../ScrollTop';
 
 import i18n from '../../../services/i18n';
 import { getUrl } from '../../../services/navigation';
-
-import { scrollTop } from '../../../util/screen';
 
 
 const infos = [
@@ -16,15 +15,10 @@ const infos = [
     { id: 'album', link: 'audio:artistId:albumId' }
 ];
 
-class Info extends React.Component {
-    componentDidUpdate() {
-        scrollTop('.content-wrapper-info');
-    }
-
-    render() {
-        const { activeTrack, closeLayers } = this.props;
-        return !activeTrack ? null : (
-            <div className="content-wrapper content-wrapper-info">
+const Info = ({ activeTrack, closeLayers }) => {
+    return !activeTrack ? null : (
+        <ScrollTop target=".layer-content-info" onReRender>
+            <div className="layer-content layer-content-info">
                 {activeTrack.lyrics ? (
                     <div
                         className="lyrics"
@@ -70,14 +64,10 @@ class Info extends React.Component {
                         />
                     </Link>
                 </div>
-                <audio
-                    className="spacer"
-                    controls
-                />
             </div>
-        );
-    }
-}
+        </ScrollTop>
+    );
+};
 
 Info.propTypes = {
     activeTrack: PropTypes.object,

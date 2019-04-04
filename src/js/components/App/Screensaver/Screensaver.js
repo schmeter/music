@@ -50,7 +50,9 @@ class Screensaver extends React.Component {
     }
 
     render() {
-        return <div className="screensaver" />;
+        return (
+            <div className="screensaver" />
+        );
     }
 }
 

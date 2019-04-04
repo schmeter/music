@@ -11,7 +11,7 @@ class Page404 extends React.Component {
         const { activeTrack } = this.props;
         return (
             <Page id="404">
-                <h2>{i18n(`page_404_title`)}</h2>
+                <h2 className="headline">{i18n(`page_404_title`)}</h2>
                 <div
                     className="album-cover"
                     style={activeTrack && activeTrack.imgPath ? {

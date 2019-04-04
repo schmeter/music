@@ -61,6 +61,10 @@ exports[`renders correctly 1`] = `
   <div
     className="player"
   >
+    <Analyser
+      audio={null}
+      isPlaying={false}
+    />
     <audio
       className="audio"
       controls={true}

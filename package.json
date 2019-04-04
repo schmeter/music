@@ -93,7 +93,6 @@
     "grunt-sass-lint": "^0.2.4",
     "grunt-tree": "^1.1.1",
     "id3-parser": "^2.0.0",
-    "isomorphic-fetch": "^2.2.1",
     "jest": "^24.5.0",
     "load-grunt-tasks": "^4.0.0",
     "markdown": "^0.5.0",
@@ -118,17 +117,19 @@
     "sass-lint": "^1.12.1",
     "shelljs": "^0.8.3",
     "standard": "^12.0.1",
-    "time-grunt": "^2.0.0"
+    "time-grunt": "^2.0.0",
+    "whatwg-fetch": "^3.0.0"
   },
   "scripts": {
     "watch": "grunt default",
     "start": "grunt default",
+    "pretest": "grunt scanConfig",
     "test": "jest",
-    "test:watch": "jest --watch",
-    "test:cover": "jest --coverage",
-    "build": "jest && grunt build:release",
-    "build:prod": "jest && grunt build:prod",
-    "preview": "jest && grunt build:prod && grunt browserSync watch",
+    "test:watch": "npm test -- --watch",
+    "test:cover": "npm test -- --coverage",
+    "build": "npm test && grunt build:release",
+    "build:prod": "npm test && grunt build:prod",
+    "preview": "npm test && grunt build:prod && grunt browserSync watch",
     "update": "npm-update-all"
   }
 }
