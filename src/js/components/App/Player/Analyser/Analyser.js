@@ -1,6 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import { isTouch } from '../../../../util/screen';
+
+import configApp from '../../../../../config/app.json';
+
 
 class Analyser extends React.Component {
     canvas = React.createRef();
@@ -13,11 +17,19 @@ class Analyser extends React.Component {
         this.analyse();
     }
 
+    isAnalyserAllowed() {
+        const { audio } = this.props;
+        return audio && !isTouch() && configApp.useAnalyser;
+    }
+
     analyse() {
-        const { audio, isPlaying, mode } = this.props;
+        const { audio, isPlaying } = this.props;
+        const canvas = this.canvas.current;
         const AudioContext = window.AudioContext;
         if (
-            AudioContext
+            canvas
+            && audio
+            && AudioContext
             && !this.audioContext
             && isPlaying
         ) {
@@ -26,12 +38,12 @@ class Analyser extends React.Component {
             const source = this.audioContext.createMediaElementSource(audio);
             source.connect(analyser);
             analyser.connect(this.audioContext.destination);
-            this.drawAnalyser(analyser, mode);
+            this.drawAnalyser(canvas, analyser);
         }
     }
 
-    drawAnalyser(analyser, mode = 'frequency') {
-        const canvas = this.canvas.current;
+    drawAnalyser(canvas, analyser) {
+        const { mode = 'frequency' } = this.props;
         const bufferLength = analyser.frequencyBinCount;
         const dataArray = new Uint8Array(bufferLength);
         canvas.width = bufferLength;
@@ -62,7 +74,7 @@ class Analyser extends React.Component {
     }
 
     render() {
-        return (
+        return !this.isAnalyserAllowed() ? null : (
             <canvas
                 className="canvas"
                 ref={this.canvas}
@@ -72,9 +84,9 @@ class Analyser extends React.Component {
 }
 
 Analyser.propTypes = {
-    audio: PropTypes.object.isRequired,
     isPlaying: PropTypes.bool.isRequired,
-    mode: PropTypes.string
+    audio: PropTypes.object,
+    mode: PropTypes.oneOf(['frequency', 'waveform'])
 };
 
 export default Analyser;

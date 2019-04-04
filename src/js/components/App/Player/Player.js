@@ -6,10 +6,6 @@ import Analyser from './Analyser';
 
 import { getNextIndex } from '../../../services/audio';
 
-import { isTouch } from '../../../util/screen';
-
-import configApp from '../../../../config/app.json';
-
 
 class Player extends React.Component {
     audio = React.createRef();
@@ -125,23 +121,16 @@ class Player extends React.Component {
         setActiveIndex(getNextIndex(activeIndex, tracks));
     }
 
-    isAnalyserAllowed() {
-        return !isTouch() && configApp.useAnalyser;
-    }
-
     render() {
         const { isPlaying } = this.props;
         const audio = this.audio.current;
-        const showAnalyser = this.isAnalyserAllowed() && audio;
 
         return (
             <div className="player">
-                {!showAnalyser ? null : (
-                    <Analyser
-                        audio={audio}
-                        isPlaying={isPlaying}
-                    />
-                )}
+                <Analyser
+                    audio={audio}
+                    isPlaying={isPlaying}
+                />
                 <audio
                     className="audio"
                     preload="none"
