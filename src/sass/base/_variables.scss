@@ -42,6 +42,13 @@ $header-icon-width: 60px;
 
 $app-shadow: 0 2px 2px 0 $color-box-shadow;
 
+$z-index-main: 100;
+$z-index-header: 200;
+$z-index-layer: 300;
+$z-index-player: 1000;
+$z-index-curtains: 10000;
+
+
 $screensaver-fade-in-time: 1s;
 $screensaver-fade-out-time: 10s;
 

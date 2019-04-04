@@ -70,10 +70,6 @@ class Info extends React.Component {
                         />
                     </Link>
                 </div>
-                <audio
-                    className="spacer"
-                    controls
-                />
             </div>
         );
     }

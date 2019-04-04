@@ -39,10 +39,6 @@ exports[`renders correctly 2`] = `
       />
     </Link>
   </div>
-  <audio
-    className="spacer"
-    controls={true}
-  />
 </div>
 `;
 
@@ -133,9 +129,5 @@ exports[`renders correctly 3`] = `
       />
     </Link>
   </div>
-  <audio
-    className="spacer"
-    controls={true}
-  />
 </div>
 `;
