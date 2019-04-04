@@ -1,5 +1,5 @@
 import '@babel/polyfill';
-import 'isomorphic-fetch';
+import 'whatwg-fetch';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router } from 'react-router-dom';
