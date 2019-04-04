@@ -36,6 +36,7 @@ class App extends React.Component {
     render() {
         return (
             <ScrollTop target="main">
+                <Header />
                 <main className="main">
                     <Switch>
                         <Route
@@ -68,11 +69,14 @@ class App extends React.Component {
                         controls
                     />
                 </main>
-                <Screensaver />
-                <Header />
                 <Layer id="info">
                     <Info />
+                    <audio
+                        className="spacer"
+                        controls
+                    />
                 </Layer>
+                <Screensaver />
                 <Player />
                 <Curtains />
             </ScrollTop>

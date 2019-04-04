@@ -1,4 +1,6 @@
 .layer {
+    @extend %screensaver-foreground;
+
     position: fixed;
     top: 0;
     bottom: 0;
@@ -6,6 +8,8 @@
     transform: translate3d(0, 0, 0);
     transition: transform 300ms ease-in-out;
     background-color: $color-layer;
+    box-shadow: $app-shadow;
+    z-index: $z-index-layer;
 
     @media (max-width: $max-width-phone) {
         width: 100%;
@@ -17,7 +21,6 @@
 
     width: 100%;
     height: calc(100% - #{$header-icon-width});
-    box-shadow: $app-shadow;
 }
 
 .layer-headline {

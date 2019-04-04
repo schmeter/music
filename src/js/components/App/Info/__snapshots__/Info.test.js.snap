@@ -43,10 +43,6 @@ exports[`renders correctly 2`] = `
         />
       </Link>
     </div>
-    <audio
-      className="spacer"
-      controls={true}
-    />
   </div>
 </withRouter(ScrollTop)>
 `;
@@ -142,10 +138,6 @@ exports[`renders correctly 3`] = `
         />
       </Link>
     </div>
-    <audio
-      className="spacer"
-      controls={true}
-    />
   </div>
 </withRouter(ScrollTop)>
 `;

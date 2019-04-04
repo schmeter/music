@@ -123,12 +123,13 @@
   "scripts": {
     "watch": "grunt default",
     "start": "grunt default",
+    "pretest": "grunt scanConfig",
     "test": "jest",
-    "test:watch": "jest --watch",
-    "test:cover": "jest --coverage",
-    "build": "jest && grunt build:release",
-    "build:prod": "jest && grunt build:prod",
-    "preview": "jest && grunt build:prod && grunt browserSync watch",
+    "test:watch": "npm test -- --watch",
+    "test:cover": "npm test -- --coverage",
+    "build": "npm test && grunt build:release",
+    "build:prod": "npm test && grunt build:prod",
+    "preview": "npm test && grunt build:prod && grunt browserSync watch",
     "update": "npm-update-all"
   }
 }

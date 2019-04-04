@@ -64,10 +64,6 @@ const Info = ({ activeTrack, closeLayers }) => {
                         />
                     </Link>
                 </div>
-                <audio
-                    className="spacer"
-                    controls
-                />
             </div>
         </ScrollTop>
     );
