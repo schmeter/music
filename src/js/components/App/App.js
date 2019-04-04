@@ -36,47 +36,45 @@ class App extends React.Component {
     render() {
         return (
             <ScrollTop target="main">
-                <>
-                    <main className="main">
-                        <Switch>
-                            <Route
-                                exact
-                                path={getUrl('index')}
-                                component={PageAudio}
-                            />
-                            <Route
-                                exact
-                                path={getUrl('audio:artistId')}
-                                component={PageAudio}
-                            />
-                            <Route
-                                exact
-                                path={getUrl('audio:artistId:albumId')}
-                                component={PageAudio}
-                            />
-                            <Route
-                                exact
-                                path={getUrl('settings')}
-                                component={PageSettings}
-                            />
-                            <Route
-                                path={getUrl('404')}
-                                component={Page404}
-                            />
-                        </Switch>
-                        <audio
-                            className="spacer"
-                            controls
+                <main className="main">
+                    <Switch>
+                        <Route
+                            exact
+                            path={getUrl('index')}
+                            component={PageAudio}
                         />
-                    </main>
-                    <Screensaver />
-                    <Header />
-                    <Layer id="info">
-                        <Info />
-                    </Layer>
-                    <Player />
-                    <Curtains />
-                </>
+                        <Route
+                            exact
+                            path={getUrl('audio:artistId')}
+                            component={PageAudio}
+                        />
+                        <Route
+                            exact
+                            path={getUrl('audio:artistId:albumId')}
+                            component={PageAudio}
+                        />
+                        <Route
+                            exact
+                            path={getUrl('settings')}
+                            component={PageSettings}
+                        />
+                        <Route
+                            path={getUrl('404')}
+                            component={Page404}
+                        />
+                    </Switch>
+                    <audio
+                        className="spacer"
+                        controls
+                    />
+                </main>
+                <Screensaver />
+                <Header />
+                <Layer id="info">
+                    <Info />
+                </Layer>
+                <Player />
+                <Curtains />
             </ScrollTop>
         );
     }

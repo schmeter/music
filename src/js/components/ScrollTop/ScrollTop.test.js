@@ -29,7 +29,7 @@ describe('ScrollTop', () => {
         const component = mount(
             <MemoryRouter initialEntries={['/']}>
                 <ScrollTop target={target}>
-                    <p>test</p>
+                    test
                 </ScrollTop>
             </MemoryRouter>
         );
@@ -47,7 +47,7 @@ describe('ScrollTop', () => {
         const component = mount(
             <MemoryRouter>
                 <ScrollTop target={target} location={location} onReRender>
-                    <p>test</p>
+                    test
                 </ScrollTop>
             </MemoryRouter>
         );

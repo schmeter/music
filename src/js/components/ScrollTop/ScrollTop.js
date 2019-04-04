@@ -19,7 +19,7 @@ class ScrollTop extends React.Component {
     render() {
         const { children } = this.props;
 
-        return React.Children.only(children);
+        return children;
     }
 }
 
@@ -27,7 +27,10 @@ ScrollTop.propTypes = {
     location: PropTypes.shape({
         pathname: PropTypes.string.isRequired
     }).isRequired,
-    children: PropTypes.node.isRequired,
+    children: PropTypes.oneOfType([
+        PropTypes.arrayOf(PropTypes.node),
+        PropTypes.node
+    ]).isRequired,
     target: PropTypes.string.isRequired,
     onReRender: PropTypes.bool
 };
