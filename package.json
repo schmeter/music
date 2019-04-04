@@ -93,7 +93,6 @@
     "grunt-sass-lint": "^0.2.4",
     "grunt-tree": "^1.1.1",
     "id3-parser": "^2.0.0",
-    "isomorphic-fetch": "^2.2.1",
     "jest": "^24.5.0",
     "load-grunt-tasks": "^4.0.0",
     "markdown": "^0.5.0",
@@ -118,7 +117,8 @@
     "sass-lint": "^1.12.1",
     "shelljs": "^0.8.3",
     "standard": "^12.0.1",
-    "time-grunt": "^2.0.0"
+    "time-grunt": "^2.0.0",
+    "whatwg-fetch": "^3.0.0"
   },
   "scripts": {
     "watch": "grunt default",
