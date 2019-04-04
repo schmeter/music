@@ -2,9 +2,11 @@
 
 exports[`renders correctly 1`] = `
 <header
-  className="header"
+  className="main-header"
 >
-  <h1>
+  <h1
+    className="main-headline"
+  >
     <Link
       to="/"
     >
