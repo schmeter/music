@@ -1,2 +1,3 @@
 ## Dependencies
-- node ^11.0.0
+
+node 11
