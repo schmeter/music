@@ -1,6 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import { withRouter, Switch, Route } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 
 import {
     PageAudio,
@@ -13,11 +12,11 @@ import Header from './Header';
 import Info from './Info';
 import Player from './Player';
 import Curtains from './Curtains';
+import ScrollTop from '../ScrollTop';
 
 import i18n from '../../services/i18n';
 import { getUrl } from '../../services/navigation';
 
-import { scrollTop } from '../../util/screen';
 import { fetchJSON } from '../../util/fetch';
 
 
@@ -34,16 +33,9 @@ class App extends React.Component {
             });
     }
 
-    componentDidUpdate(lastProps) {
-        const { location } = this.props;
-        if (lastProps.location.pathname !== location.pathname) {
-            scrollTop('main');
-        }
-    }
-
     render() {
         return (
-            <>
+            <ScrollTop target="main">
                 <Header />
                 <main className="main">
                     <Switch>
@@ -87,15 +79,9 @@ class App extends React.Component {
                 <Screensaver />
                 <Player />
                 <Curtains />
-            </>
+            </ScrollTop>
         );
     }
 }
 
-App.propTypes = {
-    location: PropTypes.shape({
-        pathname: PropTypes.string
-    })
-};
-
-export default withRouter(App);
+export default App;
