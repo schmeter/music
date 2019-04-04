@@ -25,13 +25,13 @@ class Header extends React.Component {
                     </Link>
                 </h1>
                 <Link
-                    className="header-button home-button"
+                    className="button header-button home-button"
                     to={getUrl('index')}
                 >
                     <Icon id="chevron-circle-left" />
                 </Link>
                 <button
-                    className="header-button info-button"
+                    className="button header-button info-button"
                     onClick={this.handleClickLink}
                 >
                     <Icon id="info-circle" />

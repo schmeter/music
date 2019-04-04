@@ -48,18 +48,23 @@ body {
     display: block;
     margin: 10px;
     text-align: center;
+
+    .input,
+    .button,
+    .select {
+        height: 50px;
+        margin: 5px;
+        padding: 10px;
+        border: 1px solid $color-input-border;
+        background: $color-input;
+    }
 }
 
 .input,
 .button,
 .select {
     display: inline-block;
-    height: 50px;
-    margin: 5px;
-    padding: 10px;
-    border: 1px solid $color-input-border;
     border-radius: 0;
-    background: $color-input;
     color: inherit;
     font-family: inherit;
     font-size: inherit;
@@ -100,9 +105,9 @@ a {
     top: 0;
     width: $header-icon-width;
     height: $header-height;
+    padding: 0 10px;
     font-size: $header-font-size;
     line-height: $header-height;
-    text-align: center;
     cursor: pointer;
 }
 
