@@ -1,5 +1,5 @@
 export const scrollTop = (querySelector) => {
-    const container = document.querySelectorAll(querySelector)[0];
+    const container = document.querySelector(querySelector);
     if (container) {
         container.scrollTop = 0;
     }

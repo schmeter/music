@@ -1,6 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import { withRouter, Switch, Route } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 
 import {
     PageAudio,
@@ -13,11 +12,11 @@ import Header from './Header';
 import Info from './Info';
 import Player from './Player';
 import Curtains from './Curtains';
+import ScrollTop from '../ScrollTop';
 
 import i18n from '../../services/i18n';
 import { getUrl } from '../../services/navigation';
 
-import { scrollTop } from '../../util/screen';
 import { fetchJSON } from '../../util/fetch';
 
 
@@ -34,64 +33,53 @@ class App extends React.Component {
             });
     }
 
-    componentDidUpdate(lastProps) {
-        const { location } = this.props;
-        if (lastProps.location.pathname !== location.pathname) {
-            scrollTop('main');
-        }
-    }
-
     render() {
         return (
-            <>
-                <main className="main">
-                    <Switch>
-                        <Route
-                            exact
-                            path={getUrl('index')}
-                            component={PageAudio}
+            <ScrollTop target="main">
+                <>
+                    <main className="main">
+                        <Switch>
+                            <Route
+                                exact
+                                path={getUrl('index')}
+                                component={PageAudio}
+                            />
+                            <Route
+                                exact
+                                path={getUrl('audio:artistId')}
+                                component={PageAudio}
+                            />
+                            <Route
+                                exact
+                                path={getUrl('audio:artistId:albumId')}
+                                component={PageAudio}
+                            />
+                            <Route
+                                exact
+                                path={getUrl('settings')}
+                                component={PageSettings}
+                            />
+                            <Route
+                                path={getUrl('404')}
+                                component={Page404}
+                            />
+                        </Switch>
+                        <audio
+                            className="spacer"
+                            controls
                         />
-                        <Route
-                            exact
-                            path={getUrl('audio:artistId')}
-                            component={PageAudio}
-                        />
-                        <Route
-                            exact
-                            path={getUrl('audio:artistId:albumId')}
-                            component={PageAudio}
-                        />
-                        <Route
-                            exact
-                            path={getUrl('settings')}
-                            component={PageSettings}
-                        />
-                        <Route
-                            path={getUrl('404')}
-                            component={Page404}
-                        />
-                    </Switch>
-                    <audio
-                        className="spacer"
-                        controls
-                    />
-                </main>
-                <Screensaver />
-                <Header {...this.props} />
-                <Layer id="info">
-                    <Info {...this.props} />
-                </Layer>
-                <Player />
-                <Curtains />
-            </>
+                    </main>
+                    <Screensaver />
+                    <Header />
+                    <Layer id="info">
+                        <Info />
+                    </Layer>
+                    <Player />
+                    <Curtains />
+                </>
+            </ScrollTop>
         );
     }
 }
 
-App.propTypes = {
-    location: PropTypes.shape({
-        pathname: PropTypes.string
-    })
-};
-
-export default withRouter(App);
+export default App;
