@@ -7,6 +7,7 @@
         // styles for all browsers to prevent round boxes
         background: radial-gradient($color-player-inner, $color-player-outer);
         opacity: .95;
+        z-index: $z-index-player;
 
         // sass-lint:disable no-vendor-prefixes
         &::-webkit-media-controls {

@@ -44,6 +44,7 @@ class App extends React.Component {
     render() {
         return (
             <>
+                <Header />
                 <main className="main">
                     <Switch>
                         <Route
@@ -76,11 +77,14 @@ class App extends React.Component {
                         controls
                     />
                 </main>
-                <Screensaver />
-                <Header {...this.props} />
                 <Layer id="info">
-                    <Info {...this.props} />
+                    <Info />
+                    <audio
+                        className="spacer"
+                        controls
+                    />
                 </Layer>
+                <Screensaver />
                 <Player />
                 <Curtains />
             </>
