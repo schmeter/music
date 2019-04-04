@@ -123,7 +123,7 @@
   "scripts": {
     "watch": "grunt default",
     "start": "grunt default",
-    "scanConfig": "grunt scanConfig",
+    "pretest": "grunt scanConfig",
     "test": "jest",
     "test:watch": "jest --watch",
     "test:cover": "jest --coverage",
