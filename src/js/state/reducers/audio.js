@@ -1,6 +1,3 @@
-import { saveActiveTrackPath } from '../services/audio';
-
-
 export default (state = {}, action) => {
     switch (action.type) {
         case 'AUDIO_SET_LIBRARY':
@@ -19,7 +16,6 @@ export default (state = {}, action) => {
                 activeIndex: action.payload
             };
         case 'AUDIO_SET_ACTIVE_TRACK':
-            saveActiveTrackPath(action.payload.path);
             return {
                 ...state,
                 activeTrack: action.payload

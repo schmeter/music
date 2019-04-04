@@ -55,11 +55,15 @@ Data collection:
     - Configure order and display mode.  
     - Store data in audio model (runtime).  
 
+USER SETTINGS PERSISTANCE...
+
 Audio tag:  
     - Use mp3 only  
     - Positioning: Continuous availability in mobile browsers  
     - Style that ugly thing in Chrome: Shadow DOM  
     - API and React state  
+    - CHROME ISSUES
+    - SAFARI ISSUES
 
 Audio context:
     - When to start? Chrome wants it on user interaction.  
@@ -72,4 +76,25 @@ Audio context:
 Display data:  
     - Canvas redraw  
     - Screensaver mode  
-    
+
+Handling:
+    - Cursor navigation
+
+
+Conclusion:
+    - barriers and how to fix
+    - autoplay (next file) on mobile
+    - display in mobile devices
+    - styling only in Chrome
+    - not simply an audio context
+    - everything works
+    - contributions welcome
+
+Next steps / possibilities:
+    - Progressive webapp
+    - (React) native app / webframe
+    - Electron app
+    - Heroku / Netlify continuous deployment
+    - zip download
+    - SEO optimization
+    - Content sharing / server side rendering

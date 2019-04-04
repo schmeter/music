@@ -1,10 +1,15 @@
-export const fetchJSON = (url, resolve, reject) => {
-    return fetch(url, {
-        headers: new Headers({
+export const fetchJSON = (url, ignoreError = false) => new Promise((resolve, reject) => {
+    fetch(url, {
+        headers: {
             'Content-Type': 'application/json; charset=UTF-8'
-        })
+        }
     })
-        .then(res => res.json())
+        .then(res => {
+            if (res.ok) {
+                return res.json();
+            }
+            throw new Error(`${res.status} ${res.statusText}`);
+        })
         .then(resolve)
-        .catch(e => reject ? reject() : console.log(e));
-};
+        .catch(ignoreError ? console.error : reject);
+});

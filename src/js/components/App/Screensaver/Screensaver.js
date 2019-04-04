@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
-import { isTouch } from '../../../util/browser';
-
-import configApp from '../../../../data/app.json';
 import autobind from 'autobind-decorator';
+
+import { isTouch } from '../../../util/screen';
+
+import configApp from '../../../../config/app.json';
 
 
 class Screensaver extends React.Component {
@@ -50,8 +50,7 @@ class Screensaver extends React.Component {
     }
 
     render() {
-        const { isPlaying } = this.props;
-        return <div className={isPlaying ? 'pause' : 'play'} />;
+        return <div className="screensaver" />;
     }
 }
 

@@ -9,6 +9,8 @@ import { getUrl } from '../../../services/navigation';
 
 
 class PageSettings extends React.Component {
+    password = React.createRef();
+
     componentDidUpdate(lastProps) {
         const { isLoggedIn, history } = this.props;
         if (lastProps.isLoggedIn !== isLoggedIn) {
@@ -20,11 +22,12 @@ class PageSettings extends React.Component {
     handleSubmitFormAuth(e) {
         e.preventDefault();
         const { isLoggedIn, login, logout } = this.props;
+        const password = this.password.current;
         if (isLoggedIn) {
             logout();
         } else {
             login({
-                password: this.password.value
+                password: password.value
             }, 60 * 60 * 24 * 30);
         }
     }
@@ -47,15 +50,20 @@ class PageSettings extends React.Component {
             <Page id="settings">
                 <h2>{i18n('page_settings_headline')}</h2>
                 <form
+                    className="form"
                     onSubmit={this.handleSubmitFormQuit}
                 >
-                    <button type="submit">
+                    <button
+                        className="button"
+                        type="submit"
+                    >
                         {i18n(`page_settings_button_quit`)}
                     </button>
                 </form>
                 <h2>{i18n('page_settings_lang_headline')}</h2>
-                <form>
+                <form className="form">
                     <select
+                        className="select"
                         defaultValue={getAppLanguage()}
                         onChange={this.handleChange}
                     >
@@ -71,17 +79,20 @@ class PageSettings extends React.Component {
                 </form>
                 <h2>{i18n('page_settings_auth_headline')}</h2>
                 <form
+                    className="form"
                     onSubmit={this.handleSubmitFormAuth}
                 >
                     {isLoggedIn ? null : (
                         <input
+                            className="input"
                             type="password"
-                            ref={(ref) => {
-                                this.password = ref;
-                            }}
+                            ref={this.password}
                         />
                     )}
-                    <button type="submit">
+                    <button
+                        className="button"
+                        type="submit"
+                    >
                         {i18n(`page_settings_auth_button_${isLoggedIn ? 'logout' : 'login'}`)}
                     </button>
                 </form>

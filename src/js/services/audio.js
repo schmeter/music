@@ -19,11 +19,8 @@ export const getRandomIndex = (tracks) => {
 };
 
 export const getActiveIndex = (tracks) => {
-    let activeIndex = tracks.findIndex(track => track.path === loadActiveTrackPath());
-    if (!tracks[activeIndex]) {
-        activeIndex = getRandomIndex(tracks);
-    }
-    return activeIndex;
+    const activeIndex = tracks.findIndex(track => track.path === loadActiveTrackPath());
+    return activeIndex !== -1 ? activeIndex : getRandomIndex(tracks);
 };
 
 export const getNextIndex = (activeIndex, tracks) => {

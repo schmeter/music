@@ -6,12 +6,10 @@ import Analyser from './Analyser';
 
 import { getNextIndex } from '../../../services/audio';
 
-import { isTouch } from '../../../util/browser';
-
-import configApp from '../../../../data/app.json';
-
 
 class Player extends React.Component {
+    audio = React.createRef();
+
     componentDidMount() {
         const { initAudio } = this.props;
         initAudio();
@@ -54,27 +52,30 @@ class Player extends React.Component {
 
     loadAudio(play = false) {
         const { tracks, activeIndex, setActiveTrack } = this.props;
+        const audio = this.audio.current;
         const file = tracks[activeIndex];
         if (file) {
             setActiveTrack(file);
             this.pause();
-            this.audio.loop = !!file.loop;
-            this.audio.src = file.path;
-            this.audio.title = `${file.tag.artist} - ${file.tag.title}`;
+            audio.loop = !!file.loop;
+            audio.src = file.path;
+            audio.title = `${file.tag.artist} - ${file.tag.title}`;
             if (play) {
                 this.play();
             } else {
-                this.audio.load();
+                audio.load();
             }
         }
     }
 
     play() {
-        this.audio.play();
+        const audio = this.audio.current;
+        audio.play();
     }
 
     pause() {
-        this.audio.pause();
+        const audio = this.audio.current;
+        audio.pause();
     }
 
     togglePlay() {
@@ -87,11 +88,13 @@ class Player extends React.Component {
     }
 
     increaseTimeFrame() {
-        this.audio.currentTime += 5;
+        const audio = this.audio.current;
+        audio.currentTime += 5;
     }
 
     decreaseTimeFrame() {
-        this.audio.currentTime -= 5;
+        const audio = this.audio.current;
+        audio.currentTime -= 5;
     }
 
     @autobind
@@ -118,29 +121,21 @@ class Player extends React.Component {
         setActiveIndex(getNextIndex(activeIndex, tracks));
     }
 
-    isAnalyserAllowed() {
-        return !isTouch() && configApp.useAnalyser;
-    }
-
     render() {
         const { isPlaying } = this.props;
-        const showAnalyser = this.isAnalyserAllowed() && this.audio;
+        const audio = this.audio.current;
 
         return (
             <div className="player">
-                {!showAnalyser ? null : (
-                    <Analyser
-                        audio={this.audio}
-                        isPlaying={isPlaying}
-                    />
-                )}
+                <Analyser
+                    audio={audio}
+                    isPlaying={isPlaying}
+                />
                 <audio
                     className="audio"
                     preload="none"
                     controls
-                    ref={(ref) => {
-                        this.audio = ref;
-                    }}
+                    ref={this.audio}
                     onPlay={this.handlePlay}
                     onPause={this.handlePause}
                     onEnded={this.handleEnded}

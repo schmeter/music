@@ -1,7 +1,7 @@
 import {
     scrollTop,
     isTouch
-} from './browser';
+} from './screen';
 
 
 test('expects scrollTop to return undefined', () => {

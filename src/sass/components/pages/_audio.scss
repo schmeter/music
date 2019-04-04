@@ -1,6 +1,6 @@
 .page-audio {
-    h3,
-    h4 {
+    .artist-title,
+    .album-title {
         font-size: $font-size-base - 2px;
         text-overflow: ellipsis;
         white-space: nowrap;
@@ -11,7 +11,7 @@
         }
     }
 
-    h4 {
+    .album-title {
         opacity: .75;
     }
 
@@ -80,6 +80,10 @@
         max-width: 512px;
         max-height: 512px;
 
+        .cover {
+            background-color: $color-record-background;
+        }
+
         .record {
             position: absolute;
             top: 1%;
@@ -91,6 +95,7 @@
             transition-timing-function: ease-in-out;
             border: 150px solid $color-record;
             border-radius: 100%;
+            background-color: $color-record-background;
             box-shadow: 0 0 4px 0 $color-record;
             z-index: -1;
 
@@ -104,15 +109,15 @@
         }
     }
 
-    .album-playing h3,
-    .album-playing h4,
+    .album-playing .artist-title,
+    .album-playing .album-title,
     .track-playing span {
         font-weight: bold;
     }
 
     .album-selected {
-        h3,
-        h4 {
+        .artist-title,
+        .album-title {
             width: auto;
             margin-bottom: 10px;
             white-space: normal;
@@ -123,11 +128,11 @@
             }
         }
 
-        h3 {
+        .artist-title {
             font-size: $font-size-base + 3px;
         }
 
-        h4 {
+        .album-title {
             font-size: $font-size-base;
         }
 

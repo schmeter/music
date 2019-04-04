@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 
 import PageSettings from './PageSettings';
 
-import { loginAction, logoutAction } from '../../../actions/auth';
+import { loginAction, logoutAction } from '../../../state/actions/auth';
 
 
 const mapDispatchToProps = (dispatch) => ({

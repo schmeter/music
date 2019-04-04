@@ -2,18 +2,18 @@
 
 exports[`renders correctly 1`] = `
 <div
-  className="play"
+  className="screensaver"
 />
 `;
 
 exports[`renders correctly 2`] = `
 <div
-  className="pause"
+  className="screensaver"
 />
 `;
 
 exports[`renders correctly 3`] = `
 <div
-  className="play"
+  className="screensaver"
 />
 `;

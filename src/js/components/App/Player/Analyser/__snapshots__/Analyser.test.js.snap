@@ -5,7 +5,9 @@ exports[`renders correctly 1`] = `
   audio={Object {}}
   isPlaying={false}
 >
-  <canvas />
+  <canvas
+    className="canvas"
+  />
 </Analyser>
 `;
 
@@ -14,7 +16,9 @@ exports[`renders correctly 2`] = `
   audio={Object {}}
   isPlaying={true}
 >
-  <canvas />
+  <canvas
+    className="canvas"
+  />
 </Analyser>
 `;
 
@@ -23,7 +27,9 @@ exports[`renders correctly 3`] = `
   audio={Object {}}
   isPlaying={false}
 >
-  <canvas />
+  <canvas
+    className="canvas"
+  />
 </Analyser>
 `;
 
@@ -33,6 +39,8 @@ exports[`renders correctly 4`] = `
   isPlaying={true}
   mode="waveform"
 >
-  <canvas />
+  <canvas
+    className="canvas"
+  />
 </Analyser>
 `;

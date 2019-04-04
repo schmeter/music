@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
 import Icon from '../Icon';
-import Link from '../Link';
 
 import i18n from '../../services/i18n';
 
@@ -20,12 +19,12 @@ class Layer extends React.Component {
                 )}
             >
                 <h2 className="headline">{i18n(`layer_${id}_headline`)}</h2>
-                <Link
-                    className="button header-button close-button"
+                <button
+                    className="header-button close-button"
                     onClick={closeLayers}
                 >
                     <Icon id="close" />
-                </Link>
+                </button>
                 {children}
             </div>
         );

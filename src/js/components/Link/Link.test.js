@@ -37,15 +37,3 @@ it('renders correctly with internal url', () => {
     component.simulate('click', mockedEvent);
     expect(props.onClick).toHaveBeenCalled();
 });
-
-it('renders correctly without url', () => {
-    const props = {
-        onClick: jest.fn()
-    };
-
-    const component = shallow(<Link {...props} />);
-    expect(toJson(component)).toMatchSnapshot();
-
-    component.simulate('click', mockedEvent);
-    expect(props.onClick).toHaveBeenCalled();
-});

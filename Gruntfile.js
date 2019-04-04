@@ -16,7 +16,6 @@ module.exports = function (grunt) {
         modFolder: 'node_modules',
         srcFolder: 'src',
         cfgFolder: 'src/config',
-        datFolder: 'src/data',
         outFolder: 'public',
         tmpFolder: '.tmp',
 
@@ -218,11 +217,11 @@ module.exports = function (grunt) {
         watch: {
             assets: {
                 files: ['<%= srcFolder %>/assets/**/*.*'],
-                tasks: ['copy:assets', 'scanData']
+                tasks: ['copy:assets', 'scanConfig']
             },
             md: {
                 files: ['<%= srcFolder %>/md/**/*.md'],
-                tasks: ['scanData']
+                tasks: ['scanConfig']
             },
             js: {
                 files: ['<%= srcFolder %>/js/**/*.js'],
@@ -240,14 +239,14 @@ module.exports = function (grunt) {
                 ],
                 tasks: ['copy:html']
             },
-            data: {
-                files: ['<%= datFolder %>/**/*.*'],
-                tasks: ['scanData']
+            config: {
+                files: ['<%= cfgFolder %>/**/*.*'],
+                tasks: ['scanConfig']
             }
         }
     });
 
-    grunt.registerTask('scanData', [
+    grunt.registerTask('scanConfig', [
         'tree',
         'audio',
         'sitemap',
@@ -262,7 +261,7 @@ module.exports = function (grunt) {
         'clean',
         'setenv',
         'copy',
-        'scanData',
+        'scanConfig',
         'sass',
         'lint'
     ]);

@@ -7,7 +7,7 @@ import Link from '../../Link';
 import i18n from '../../../services/i18n';
 import { getUrl } from '../../../services/navigation';
 
-import { scrollTop } from '../../../util/browser';
+import { scrollTop } from '../../../util/screen';
 
 
 const infos = [

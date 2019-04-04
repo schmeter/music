@@ -1,6 +1,6 @@
 import { flatten, pick, propOr } from 'ramda';
 
-import configApp from '../../data/app.json';
+import configApp from '../../config/app.json';
 
 
 export const getArtists = (audioData, showAll) => {
@@ -9,8 +9,6 @@ export const getArtists = (audioData, showAll) => {
             hidden: showAll
                 ? false
                 : artist.hidden,
-            loop: artist.loop,
-            skip: artist.skip,
             imgPath: artist.imgPath || configApp.fallbackImage
         });
         artist.albums = getAlbums(artist, showAll);
@@ -27,7 +25,6 @@ export const getAlbums = (artist, showAll) => {
             loop: (artist.loop || album.loop),
             skip: (artist.skip || album.skip),
             imgPath: album.imgPath || configApp.fallbackImage,
-            imgFolder: album.imgFolder,
             artist: pick(['id', 'title'], artist)
         });
         album.tracks = getTracks(album, showAll);
@@ -43,7 +40,6 @@ export const getTracks = (album, showAll) => {
                 : album.hidden,
             loop: album.loop,
             skip: album.skip,
-            path: track.path,
             imgPath: album.imgPath,
             artist: album.artist,
             album: pick(['id', 'title'], album)

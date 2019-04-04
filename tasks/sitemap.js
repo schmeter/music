@@ -3,9 +3,9 @@ module.exports = function (grunt) {
         const { readJSON, write } = grunt.file;
         const { identity, flatten, uniq } = require('ramda');
 
-        const configApp = readJSON(`${grunt.config('datFolder')}/app.json`);
-        const configRoutes = readJSON(`${grunt.config('datFolder')}/routes.json`);
-        const configAudio = readJSON(`${grunt.config('datFolder')}/audio.json`);
+        const configApp = readJSON(`${grunt.config('cfgFolder')}/app.json`);
+        const configRoutes = readJSON(`${grunt.config('cfgFolder')}/routes.json`);
+        const configAudio = readJSON(`${grunt.config('cfgFolder')}/audio.json`);
         const artistId = ':artistId';
         const albumId = ':albumId';
 

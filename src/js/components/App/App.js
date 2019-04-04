@@ -17,23 +17,21 @@ import Curtains from './Curtains';
 import i18n from '../../services/i18n';
 import { getUrl } from '../../services/navigation';
 
-import { scrollTop } from '../../util/browser';
+import { scrollTop } from '../../util/screen';
 import { fetchJSON } from '../../util/fetch';
 
 
 class App extends React.Component {
     componentDidMount() {
-        fetchJSON(
-            `/version.json?${new Date().getTime()}`,
-            data => {
+        fetchJSON(`/version.json?${new Date().getTime()}`, true)
+            .then(data => {
                 const searchTime = window.location.search.substr(1);
                 if (searchTime !== String(data.time) && app.time < data.time) {
                     if (window.confirm(i18n(`app_update_available`))) {
                         window.location.href = `/?${data.time}`;
                     }
                 }
-            }
-        );
+            });
     }
 
     componentDidUpdate(lastProps) {
@@ -45,23 +43,23 @@ class App extends React.Component {
 
     render() {
         return (
-            <div className="main-container">
-                <main>
+            <>
+                <main className="main">
                     <Switch>
                         <Route
                             exact
                             path={getUrl('index')}
-                            render={(props) => <PageAudio {...props} />}
+                            component={PageAudio}
                         />
                         <Route
                             exact
                             path={getUrl('audio:artistId')}
-                            render={(props) => <PageAudio {...props} />}
+                            component={PageAudio}
                         />
                         <Route
                             exact
                             path={getUrl('audio:artistId:albumId')}
-                            render={(props) => <PageAudio {...props} />}
+                            component={PageAudio}
                         />
                         <Route
                             exact
@@ -85,7 +83,7 @@ class App extends React.Component {
                 </Layer>
                 <Player />
                 <Curtains />
-            </div>
+            </>
         );
     }
 }
