@@ -5,40 +5,40 @@
         transform: translate3d(110%, 0, 0);
     }
 
-    .content-wrapper {
+    .layer-content {
         padding: 20px 0 10px;
+    }
 
-        .lyrics {
-            margin: 0 20px 20px;
+    .lyrics {
+        margin: 0 20px 20px;
 
-            @media (max-width: $max-width-phone) {
-                font-size: $font-size-base - 4px;
-            }
-
-            h2 {
-                font-size: $font-size-base + 6px;
-            }
-
-            p {
-                margin-top: 10px;
-            }
+        @media (max-width: $max-width-phone) {
+            font-size: $font-size-base - 4px;
         }
 
-        .table {
-            margin: 0 15px 20px;
-
-            .table-cell {
-                padding: 0 5px 10px;
-            }
+        h2 {
+            font-size: $font-size-base + 6px;
         }
 
-        .cover {
-            margin: 0 15px;
+        p {
+            margin-top: 10px;
+        }
+    }
 
-            .image {
-                width: $max-width-phone;
-                max-width: 100%;
-            }
+    .table {
+        margin: 0 15px 20px;
+
+        .table-cell {
+            padding: 0 5px 10px;
+        }
+    }
+
+    .cover {
+        margin: 0 15px;
+
+        .image {
+            width: $max-width-phone;
+            max-width: 100%;
         }
     }
 }

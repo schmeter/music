@@ -4,7 +4,7 @@ exports[`renders correctly 1`] = `""`;
 
 exports[`renders correctly 2`] = `
 <div
-  className="content-wrapper content-wrapper-info"
+  className="layer-content layer-content-info"
 >
   <ul
     className="table"
@@ -48,7 +48,7 @@ exports[`renders correctly 2`] = `
 
 exports[`renders correctly 3`] = `
 <div
-  className="content-wrapper content-wrapper-info"
+  className="layer-content layer-content-info"
 >
   <div
     className="lyrics"

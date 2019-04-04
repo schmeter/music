@@ -18,13 +18,13 @@ const infos = [
 
 class Info extends React.Component {
     componentDidUpdate() {
-        scrollTop('.content-wrapper-info');
+        scrollTop('.layer-content-info');
     }
 
     render() {
         const { activeTrack, closeLayers } = this.props;
         return !activeTrack ? null : (
-            <div className="content-wrapper content-wrapper-info">
+            <div className="layer-content layer-content-info">
                 {activeTrack.lyrics ? (
                     <div
                         className="lyrics"
