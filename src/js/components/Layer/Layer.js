@@ -3,9 +3,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
 import Icon from '../Icon';
-
 import i18n from '../../services/i18n';
-
 
 class Layer extends React.Component {
     render() {
@@ -26,6 +24,10 @@ class Layer extends React.Component {
                     <Icon id="close" />
                 </button>
                 {children}
+                <audio
+                    className="spacer"
+                    controls
+                />
             </div>
         );
     }

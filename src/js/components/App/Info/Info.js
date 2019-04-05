@@ -4,10 +4,8 @@ import PropTypes from 'prop-types';
 import Image from '../../Image';
 import Link from '../../Link';
 import ScrollTop from '../../ScrollTop';
-
 import i18n from '../../../services/i18n';
 import { getUrl } from '../../../services/navigation';
-
 
 const infos = [
     { id: 'title' },
@@ -17,8 +15,8 @@ const infos = [
 
 const Info = ({ activeTrack, closeLayers }) => {
     return !activeTrack ? null : (
-        <ScrollTop target=".layer-content-info" onReRender>
-            <div className="layer-content layer-content-info">
+        <ScrollTop target="#content-info">
+            <div id="content-info">
                 {activeTrack.lyrics ? (
                     <div
                         className="lyrics"

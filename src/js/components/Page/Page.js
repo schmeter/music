@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { Helmet } from 'react-helmet';
 
+import ScrollTop from '../ScrollTop';
 import { getTitle } from '../../services/meta';
-
 
 class Page extends React.Component {
     render() {
@@ -14,13 +14,21 @@ class Page extends React.Component {
                 <Helmet>
                     <title>{title || getTitle(id)}</title>
                 </Helmet>
-                <div className={classNames(
-                    'page',
-                    { 'page-base': useBaseClass !== false },
-                    `page-${className || id}`
-                )}>
-                    {children}
-                </div>
+                <ScrollTop target="main">
+                    <main className="main">
+                        <div className={classNames(
+                            'page',
+                            { 'page-base': useBaseClass !== false },
+                            `page-${className || id}`
+                        )}>
+                            {children}
+                        </div>
+                        <audio
+                            className="spacer"
+                            controls
+                        />
+                    </main>
+                </ScrollTop>
             </>
         );
     }
