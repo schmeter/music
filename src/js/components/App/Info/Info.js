@@ -15,8 +15,8 @@ const infos = [
 
 const Info = ({ activeTrack, closeLayers }) => {
     return !activeTrack ? null : (
-        <ScrollTop target="#content-info">
-            <div id="content-info">
+        <ScrollTop target=".layer-content">
+            <div className="layer-content">
                 {activeTrack.lyrics ? (
                     <div
                         className="lyrics"
@@ -62,6 +62,10 @@ const Info = ({ activeTrack, closeLayers }) => {
                         />
                     </Link>
                 </div>
+                <audio
+                    className="spacer"
+                    controls
+                />
             </div>
         </ScrollTop>
     );
