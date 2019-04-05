@@ -44,22 +44,6 @@ body {
     z-index: $z-index-main;
 }
 
-.form {
-    display: block;
-    margin: 10px;
-    text-align: center;
-
-    .input,
-    .button,
-    .select {
-        height: 50px;
-        margin: 5px;
-        padding: 10px;
-        border: 1px solid $color-input-border;
-        background: $color-input;
-    }
-}
-
 .input,
 .button,
 .select {
@@ -75,11 +59,27 @@ body {
     appearance: none;
 }
 
-.input {
+.form {
+    display: block;
+    margin: 10px;
+    text-align: center;
+}
+
+.form-input,
+.form-button,
+.form-select {
+    height: 50px;
+    margin: 5px;
+    padding: 10px;
+    border: 1px solid $color-input-border;
+    background: $color-input;
+}
+
+.form-input {
     width: 150px;
 }
 
-.button {
+.form-button {
     width: 100px;
 }
 
