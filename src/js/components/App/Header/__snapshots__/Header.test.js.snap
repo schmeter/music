@@ -14,7 +14,7 @@ exports[`renders correctly 1`] = `
     </Link>
   </h1>
   <Link
-    className="header-button home-button"
+    className="button header-button home-button"
     to="/"
   >
     <Icon
@@ -22,7 +22,7 @@ exports[`renders correctly 1`] = `
     />
   </Link>
   <button
-    className="header-button info-button"
+    className="button header-button info-button"
     onClick={[Function]}
   >
     <Icon
