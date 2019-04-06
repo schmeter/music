@@ -27,9 +27,7 @@ Use tests:
     - Jest
 
 
-### The app
-
-#### Questions
+### Questions
 
 Build own audio interface?  
 Nope. Use native elements.  
@@ -53,7 +51,7 @@ Use sitemap.
 Have update cycles.  
 
 
-#### Solution
+### Solution
 
 Data collection:  
     - Scan folders with mp3 files, cover images, lyrics files (build process):  
@@ -69,48 +67,50 @@ Audio tag:
         - Fix screen to prevent scrolling issues.  
         - Native scroll feeling in iOS.  
     - Style that ugly thing in Chrome:  
-        - Activate Shadow DOM.
-        - Apply styles to shadow DOM elements.    
+        - Activate Shadow DOM.  
+        - Apply styles to shadow DOM elements.  
     - Web Audio API and React state:  
         - Connect audio events to app behaviour.  
         - Trigger audio from mp3 links.  
-    - Safari issues:
+    - Safari issues: ...  
 
-Audio context:
+Audio context:  
     - When to start? Chrome wants it on user interaction.  
     - Safari: AudioContext or WebkitAudioContext?  
     - CORS: No sound available. Where to host the files?  
     - Analyse data: What's the content?  
     - Waveform analysis example.  
     - Frequency analysis example.  
-    - Playing with Audio context: More possibilities.    
+    - Playing with Audio context: More possibilities.  
 
 Display data:  
     - Canvas redraw: Device support?  
     - Screensaver mode: Device support?  
 
-Handling:
+Handling:  
     - Cursor navigation: Navigate through audio file.  
 
-User settings persistance:
+User settings persistance:  
     - Login state: Show hidden data.  
     - Current audio file: Store user selection.  
 
 
-## Conclusion:
-    - Autoplay (next file) on mobile
-    - Display in mobile devices
-    - Styling possibilities in Chrome
-    - Not simply an audio context
-    - Everything works
-    - Contributions welcome
+### Next steps / possibilities
+
+Zip download
+SEO optimization
+Content sharing / server side rendering
+Progressive webapp
+(React) native app / webframe
+Electron app
+Heroku / Netlify continuous deployment
 
 
-## Next steps / possibilities:
-    - Zip download
-    - SEO optimization
-    - Content sharing / server side rendering
-    - Progressive webapp
-    - (React) native app / webframe
-    - Electron app
-    - Heroku / Netlify continuous deployment
+## Conclusion
+
+Autoplay (next file) on mobile  
+Display on mobile devices  
+Styling possibilities in Chrome  
+Not simply an audio context  
+Everything works  
+Contributions welcome  
