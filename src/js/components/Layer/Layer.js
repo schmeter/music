@@ -3,13 +3,18 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
 import Icon from '../Icon';
-
 import i18n from '../../services/i18n';
-
 
 class Layer extends React.Component {
     render() {
-        const { className, id, activeId, closeLayers, children } = this.props;
+        const {
+            className,
+            id,
+            activeId,
+            closeLayers,
+            children
+        } = this.props;
+
         return (
             <div
                 className={classNames(
@@ -18,7 +23,9 @@ class Layer extends React.Component {
                     { closed: activeId !== id }
                 )}
             >
-                <h2 className="layer-headline">{i18n(`layer_${id}_headline`)}</h2>
+                <h2 className="layer-headline">
+                    {i18n(`layer_${id}_headline`)}
+                </h2>
                 <button
                     className="header-button close-button"
                     onClick={closeLayers}

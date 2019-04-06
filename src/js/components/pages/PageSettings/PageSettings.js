@@ -54,7 +54,7 @@ class PageSettings extends React.Component {
                     onSubmit={this.handleSubmitFormQuit}
                 >
                     <button
-                        className="button"
+                        className="button form-button"
                         type="submit"
                     >
                         {i18n(`page_settings_button_quit`)}
@@ -63,7 +63,7 @@ class PageSettings extends React.Component {
                 <h2 className="headline">{i18n('page_settings_lang_headline')}</h2>
                 <form className="form">
                     <select
-                        className="select"
+                        className="select form-select"
                         defaultValue={getAppLanguage()}
                         onChange={this.handleChange}
                     >
@@ -84,13 +84,13 @@ class PageSettings extends React.Component {
                 >
                     {isLoggedIn ? null : (
                         <input
-                            className="input"
+                            className="input form-input"
                             type="password"
                             ref={this.password}
                         />
                     )}
                     <button
-                        className="button"
+                        className="button form-button"
                         type="submit"
                     >
                         {i18n(`page_settings_auth_button_${isLoggedIn ? 'logout' : 'login'}`)}

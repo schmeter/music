@@ -16,14 +16,14 @@
     }
 
     .albums {
-        margin: -10px;
+        margin: 0 -10px;
 
         @media (max-height: $max-height-phone-landscape) {
-            margin: -5px;
+            margin: 0 -5px;
         }
 
         @media (max-width: $max-width-phone) {
-            margin: -5px;
+            margin: 0 -5px;
         }
     }
 

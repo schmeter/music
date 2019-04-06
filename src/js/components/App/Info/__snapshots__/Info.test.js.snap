@@ -3,12 +3,11 @@
 exports[`renders correctly 1`] = `""`;
 
 exports[`renders correctly 2`] = `
-<withRouter(ScrollTop)
-  onReRender={true}
-  target=".layer-content-info"
+<ScrollTop
+  target=".layer-content"
 >
   <div
-    className="layer-content layer-content-info"
+    className="layer-content"
   >
     <ul
       className="table"
@@ -43,17 +42,20 @@ exports[`renders correctly 2`] = `
         />
       </Link>
     </div>
+    <audio
+      className="spacer"
+      controls={true}
+    />
   </div>
-</withRouter(ScrollTop)>
+</ScrollTop>
 `;
 
 exports[`renders correctly 3`] = `
-<withRouter(ScrollTop)
-  onReRender={true}
-  target=".layer-content-info"
+<ScrollTop
+  target=".layer-content"
 >
   <div
-    className="layer-content layer-content-info"
+    className="layer-content"
   >
     <div
       className="lyrics"
@@ -138,6 +140,10 @@ exports[`renders correctly 3`] = `
         />
       </Link>
     </div>
+    <audio
+      className="spacer"
+      controls={true}
+    />
   </div>
-</withRouter(ScrollTop)>
+</ScrollTop>
 `;
