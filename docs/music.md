@@ -2,11 +2,11 @@
 
 ## Goals
 
-- Create a web-based music player in the browser.  
-- Display albums or playlists to chose from.  
-- Connect audio to analyser and display analysed data.  
-- Display lyrics or information regarding current audio.  
-- Create an open source project on Github, use MIT license.  
+Create a web-based music player in the browser.  
+Display albums or playlists to chose from.  
+Connect audio to analyser and display analysed data.  
+Display lyrics or information regarding current audio.  
+Create an open source project on Github, use MIT license.  
 
 
 ## Work
@@ -97,13 +97,13 @@ User settings persistance:
 
 ### Next steps / possibilities
 
-Zip download
-SEO optimization
-Content sharing / server side rendering
-Progressive webapp
-(React) native app / webframe
-Electron app
-Heroku / Netlify continuous deployment
+Zip download  
+SEO optimization  
+Content sharing / server side rendering  
+Progressive webapp  
+(React) native app / webframe  
+Electron app  
+Heroku / Netlify continuous deployment  
 
 
 ## Conclusion
