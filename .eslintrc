@@ -38,6 +38,8 @@
                 "code": 120
             }
         ],
+        "newline-after-var": 1,
+        "no-console": 2,
         "no-multiple-empty-lines": [
             "warn",
             {

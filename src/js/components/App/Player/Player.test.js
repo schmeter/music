@@ -36,6 +36,7 @@ it('renders correctly', () => {
     };
 
     let component = mount(<Player {...props} />);
+
     expect(toJson(component)).toMatchSnapshot();
 
     props = {

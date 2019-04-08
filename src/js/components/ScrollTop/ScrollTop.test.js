@@ -20,6 +20,7 @@ describe('ScrollTop', () => {
                 test
             </ScrollTop>
         );
+
         expect(toJson(component)).toMatchSnapshot();
     });
 

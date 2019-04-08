@@ -15,6 +15,7 @@ it('renders correctly', () => {
     };
 
     let component = shallow(<PlayerContainer />);
+
     expect(toJson(component)).toMatchSnapshot();
 
     const props = {

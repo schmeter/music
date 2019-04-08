@@ -6,6 +6,7 @@ import Icon from '../../../Icon';
 class IconPlay extends React.Component {
     render() {
         const { isPlaying } = this.props;
+
         return <Icon id={isPlaying ? 'pause' : 'play'} />;
     }
 }

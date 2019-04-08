@@ -14,6 +14,7 @@ it('renders correctly', () => {
     };
 
     const component = shallow(<Header {...props} />);
+
     expect(toJson(component)).toMatchSnapshot();
 
     component.find('.info-button').simulate('click', mockedEvent);

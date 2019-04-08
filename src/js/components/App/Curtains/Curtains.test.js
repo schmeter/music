@@ -15,6 +15,7 @@ it('renders correctly', () => {
     };
 
     const component = shallow(<Curtains {...props} />);
+
     expect(toJson(component)).toMatchSnapshot();
 
     component.find('div').first().simulate('click', mockedEvent);

@@ -18,6 +18,7 @@ it('renders correctly with external url', () => {
     };
 
     const component = shallow(<Link {...props} >test</Link>);
+
     expect(toJson(component)).toMatchSnapshot();
 
     component.simulate('click', mockedEvent);
@@ -31,6 +32,7 @@ it('renders correctly with internal url', () => {
     };
 
     const component = shallow(<Link {...props} />);
+
     expect(toJson(component)).toMatchSnapshot();
 
     component.simulate('click', mockedEvent);

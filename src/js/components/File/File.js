@@ -8,12 +8,14 @@ class File extends React.Component {
     @autobind
     handleClickLink(e) {
         const { onClickFile } = this.props;
+
         e.preventDefault();
         onClickFile();
     }
 
     render() {
         const { path, children } = this.props;
+
         return (
             <span className="file">
                 <Link

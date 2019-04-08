@@ -21,6 +21,7 @@ class App extends React.Component {
         fetchJSON(`/version.json?${new Date().getTime()}`, true)
             .then(data => {
                 const searchTime = window.location.search.substr(1);
+
                 if (searchTime !== String(data.time) && app.time < data.time) {
                     if (window.confirm(i18n(`app_update_available`))) {
                         window.location.href = `/?${data.time}`;

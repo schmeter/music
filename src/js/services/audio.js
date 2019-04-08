@@ -14,11 +14,13 @@ export const getLibrary = (showAll = isAuthenticated()) => new AudioLibraryModel
 
 export const getRandomIndex = (tracks) => {
     const filterList = tracks.filter((item) => !item.hidden);
+
     return tracks.indexOf(filterList[getRandom(0, filterList.length - 1)]);
 };
 
 export const getActiveIndex = (tracks) => {
     const activeIndex = tracks.findIndex(track => track.path === loadActiveTrackPath());
+
     return activeIndex !== -1 ? activeIndex : getRandomIndex(tracks);
 };
 
@@ -27,6 +29,7 @@ export const getNextIndex = (activeIndex, tracks) => {
         activeIndex = 0;
     }
     let nextIndex = activeIndex + 1;
+
     if (!tracks[nextIndex]) {
         nextIndex = 0;
     }

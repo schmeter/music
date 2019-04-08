@@ -10,6 +10,7 @@ it('renders correctly', () => {
     const dispatch = jest.fn();
 
     let component = shallow(<HeaderContainer />);
+
     expect(toJson(component)).toMatchSnapshot();
 
     const props = {

@@ -12,6 +12,7 @@ class PageSettings extends React.Component {
 
     componentDidUpdate(lastProps) {
         const { isLoggedIn, history } = this.props;
+
         if (lastProps.isLoggedIn !== isLoggedIn) {
             history.push(getUrl('index'));
         }
@@ -22,6 +23,7 @@ class PageSettings extends React.Component {
         e.preventDefault();
         const { isLoggedIn, login, logout } = this.props;
         const password = this.password.current;
+
         if (isLoggedIn) {
             logout();
         } else {
@@ -45,6 +47,7 @@ class PageSettings extends React.Component {
 
     render() {
         const { isLoggedIn } = this.props;
+
         return (
             <Page id="settings">
                 <h2 className="headline">{i18n('page_settings_headline')}</h2>

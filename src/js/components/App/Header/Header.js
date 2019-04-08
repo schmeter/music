@@ -12,6 +12,7 @@ class Header extends React.Component {
     @autobind
     handleClickLink() {
         const { openLayer } = this.props;
+
         openLayer('info');
     }
 

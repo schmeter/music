@@ -6,6 +6,7 @@ import Track from '../Track';
 class TrackList extends React.Component {
     render() {
         const { trackList } = this.props;
+
         return (
             <div className="table tracks">
                 {trackList.map((track) => (

@@ -23,6 +23,7 @@ class AlbumList extends React.Component {
             &&
             (!selectedArtistId || selectedArtistId === album.artist.id)
         );
+
         return (
             <div
                 className={classNames(
@@ -45,6 +46,7 @@ class AlbumList extends React.Component {
                     const artistLink = getUrl('audio:artistId', {
                         artistId: album.artist.id
                     });
+
                     return !visible ? null : (
                         <div
                             key={album.id}

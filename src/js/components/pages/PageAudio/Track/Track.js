@@ -9,6 +9,7 @@ class Track extends React.Component {
     render() {
         const { file, className, activeTrack } = this.props;
         const playing = activeTrack ? file.path === activeTrack.path : false;
+
         return (
             <div
                 className={classNames(

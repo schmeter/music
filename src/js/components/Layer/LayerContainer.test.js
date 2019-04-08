@@ -14,6 +14,7 @@ it('renders correctly', () => {
     };
 
     let component = shallow(<LayerContainer />);
+
     expect(toJson(component)).toMatchSnapshot();
 
     const props = {

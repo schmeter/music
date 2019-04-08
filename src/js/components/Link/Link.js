@@ -12,6 +12,7 @@ class Link extends React.Component {
             onClick
         };
         const content = children || to;
+
         return isExternal(to) ? (
             <a
                 target="_blank"

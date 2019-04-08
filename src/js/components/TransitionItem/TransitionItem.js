@@ -19,6 +19,7 @@ class TransitionItem extends React.Component {
                 </div>
             </CSSTransition>
         ));
+
         return <TransitionGroup>{items}</TransitionGroup>;
     }
 }

@@ -31,6 +31,7 @@ class Screensaver extends React.Component {
 
     screenSaverAllowed() {
         const { isPlaying } = this.props;
+
         return !isTouch() && configApp.useScreensaver && isPlaying;
     }
 

@@ -28,6 +28,7 @@ it('renders correctly', () => {
     };
 
     let component = mount(<Analyser {...props} />);
+
     expect(toJson(component)).toMatchSnapshot();
 
     props = {

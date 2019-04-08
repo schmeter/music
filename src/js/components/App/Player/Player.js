@@ -11,6 +11,7 @@ class Player extends React.Component {
 
     componentDidMount() {
         const { initAudio } = this.props;
+
         initAudio();
         this.loadAudio();
         document.addEventListener('keydown', this.captureKeys);
@@ -18,6 +19,7 @@ class Player extends React.Component {
 
     componentDidUpdate(lastProps) {
         const { activeIndex, initAudio, isLoggedIn, playToggle } = this.props;
+
         if (lastProps.isLoggedIn !== isLoggedIn) {
             initAudio();
         }
@@ -53,6 +55,7 @@ class Player extends React.Component {
         const { tracks, activeIndex, setActiveTrack } = this.props;
         const audio = this.audio.current;
         const file = tracks[activeIndex];
+
         if (file) {
             setActiveTrack(file);
             this.pause();
@@ -69,16 +72,19 @@ class Player extends React.Component {
 
     play() {
         const audio = this.audio.current;
+
         audio.play();
     }
 
     pause() {
         const audio = this.audio.current;
+
         audio.pause();
     }
 
     togglePlay() {
         const { isPlaying } = this.props;
+
         if (!isPlaying) {
             this.play();
         } else {
@@ -88,35 +94,41 @@ class Player extends React.Component {
 
     increaseTimeFrame() {
         const audio = this.audio.current;
+
         audio.currentTime += 5;
     }
 
     decreaseTimeFrame() {
         const audio = this.audio.current;
+
         audio.currentTime -= 5;
     }
 
     @autobind
     handlePlay() {
         const { setIsPlaying } = this.props;
+
         setIsPlaying(true);
     }
 
     @autobind
     handlePause() {
         const { setIsPlaying } = this.props;
+
         setIsPlaying(false);
     }
 
     @autobind
     handleError() {
         const { setIsPlaying } = this.props;
+
         setIsPlaying(false);
     }
 
     @autobind
     handleEnded() {
         const { activeIndex, tracks, setActiveIndex } = this.props;
+
         setActiveIndex(getNextIndex(activeIndex, tracks));
     }
 

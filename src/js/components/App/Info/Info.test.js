@@ -32,6 +32,7 @@ it('renders correctly', () => {
     };
 
     let component = shallow(<Info {...props} />);
+
     expect(toJson(component)).toMatchSnapshot();
 
     props = {

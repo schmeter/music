@@ -13,6 +13,7 @@ it('renders correctly', () => {
     };
 
     const component = mount(<Image {...props} >test</Image>);
+
     expect(toJson(component)).toMatchSnapshot();
 
     component.simulate('error');

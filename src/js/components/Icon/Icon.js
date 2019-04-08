@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 class Icon extends React.Component {
     render() {
         const { id } = this.props;
+
         return <i className={`fa-${id} fa`} />;
     }
 }

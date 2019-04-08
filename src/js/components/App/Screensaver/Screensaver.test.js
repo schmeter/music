@@ -19,6 +19,7 @@ it('renders correctly', () => {
     };
 
     let component = shallow(<Screensaver {...props} />);
+
     expect(toJson(component)).toMatchSnapshot();
 
     props = {

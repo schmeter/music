@@ -6,6 +6,7 @@ import storage from './storage';
 
 export default (id) => {
     const language = getAppLanguage();
+
     return path([language, id], configI18n)
         || path(['generic', id], configI18n)
         || `{{${language}:${id}}}`;

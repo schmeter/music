@@ -130,7 +130,7 @@
     "build": "npm test && grunt build:release",
     "build:prod": "npm test && grunt build:prod",
     "preview": "npm test && grunt build:prod && grunt browserSync watch",
-    "lint:fix": "eslint src/**/*.js --fix",
+    "lint:fix": "eslint --ext .js --fix .",
     "update": "npm-update-all"
   }
 }

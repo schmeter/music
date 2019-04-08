@@ -14,6 +14,7 @@ it('renders correctly', () => {
     };
 
     let component = shallow(<Mp3FileContainer />);
+
     expect(toJson(component)).toMatchSnapshot();
 
     const props = {

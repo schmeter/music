@@ -16,6 +16,7 @@ it('renders correctly', () => {
     };
 
     const component = shallow(<File {...props} >test</File>);
+
     expect(toJson(component)).toMatchSnapshot();
 
     component.find(Link).simulate('click', mockedEvent);

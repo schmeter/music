@@ -24,6 +24,7 @@ it('renders correctly', () => {
         }
     };
     const tracks = [file1, file2];
+
     let activeIndex = tracks.indexOf(file1);
 
     let props = {
@@ -39,6 +40,7 @@ it('renders correctly', () => {
             <Mp3File {...props} />
         </BrowserRouter>
     );
+
     expect(toJson(component)).toMatchSnapshot();
 
     component.find(Link).simulate('click', mockedEvent);

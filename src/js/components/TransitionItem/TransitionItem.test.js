@@ -6,5 +6,6 @@ import TransitionItem from './TransitionItem';
 
 it('renders correctly', () => {
     const component = shallow(<TransitionItem>test</TransitionItem>);
+
     expect(toJson(component)).toMatchSnapshot();
 });
