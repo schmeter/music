@@ -5,7 +5,6 @@ import { isTouch } from '../../../../util/screen';
 
 import configApp from '../../../../../config/app.json';
 
-
 class Analyser extends React.Component {
     canvas = React.createRef();
 

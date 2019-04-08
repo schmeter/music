@@ -4,7 +4,6 @@ import toJson from 'enzyme-to-json';
 
 import Curtains from './Curtains';
 
-
 const mockedEvent = {
     preventDefault: jest.fn()
 };

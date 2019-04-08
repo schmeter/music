@@ -4,7 +4,6 @@ import {
     setLoggedInAction
 } from './auth';
 
-
 test('expects loginAction to return undefined', () => {
     expect(loginAction({ password: '' })(() => {})).toBe(undefined);
 });

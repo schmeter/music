@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 
 import Track from '../Track';
 
-
 class TrackList extends React.Component {
     render() {
         const { trackList } = this.props;

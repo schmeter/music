@@ -8,7 +8,6 @@ import Icon from '../../Icon';
 import i18n from '../../../services/i18n';
 import { getUrl } from '../../../services/navigation';
 
-
 class Header extends React.Component {
     @autobind
     handleClickLink() {

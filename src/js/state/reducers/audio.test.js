@@ -1,6 +1,5 @@
 import reduceAudio from './audio';
 
-
 test('expects reduceAudio to return default state', () => {
     expect(reduceAudio(undefined, {})).toEqual({});
 });

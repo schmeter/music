@@ -7,7 +7,6 @@ import LayerContainer, {
     mapStateToProps
 } from './LayerContainer';
 
-
 it('renders correctly', () => {
     const dispatch = jest.fn();
     const state = {

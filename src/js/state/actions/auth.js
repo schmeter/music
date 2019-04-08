@@ -1,6 +1,5 @@
 import { authenticate, unauthenticate, isAuthenticated } from '../../services/auth';
 
-
 export const loginAction = (credentials, expiration) => (dispatch) => {
     authenticate(credentials, expiration);
     dispatch(setLoggedInAction(isAuthenticated()));

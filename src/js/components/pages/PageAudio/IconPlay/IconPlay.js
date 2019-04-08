@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 
 import Icon from '../../../Icon';
 
-
 class IconPlay extends React.Component {
     render() {
         const { isPlaying } = this.props;

@@ -7,7 +7,6 @@ import PlayerContainer, {
     mapDispatchToProps
 } from './PlayerContainer';
 
-
 it('renders correctly', () => {
     const dispatch = jest.fn();
     const state = {

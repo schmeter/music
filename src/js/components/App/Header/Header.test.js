@@ -4,7 +4,6 @@ import toJson from 'enzyme-to-json';
 
 import Header from './Header';
 
-
 const mockedEvent = {
     preventDefault: jest.fn()
 };

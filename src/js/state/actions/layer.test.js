@@ -3,7 +3,6 @@ import {
     closeLayersAction
 } from './layer';
 
-
 test('expects openLayerAction to return object', () => {
     expect(openLayerAction('layer')).toEqual({
         type: 'LAYER_OPEN',

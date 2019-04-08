@@ -1,6 +1,5 @@
 import configRoutes from '../../config/routes.json';
 
-
 export const getUrl = (id, params = {}) => {
     let url = null;
     if (configRoutes[id]) {

@@ -5,7 +5,6 @@ import classNames from 'classnames';
 import Mp3File from '../../../Mp3File';
 import IconPlay from '../IconPlay';
 
-
 class Track extends React.Component {
     render() {
         const { file, className, activeTrack } = this.props;

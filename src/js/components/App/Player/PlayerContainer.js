@@ -9,7 +9,6 @@ import {
     setIsPlayingAction
 } from '../../../state/actions/audio';
 
-
 export const mapDispatchToProps = (dispatch) => ({
     initAudio: () => dispatch(initAudioAction()),
     setIsPlaying: (isPlaying) => dispatch(setIsPlayingAction(isPlaying)),

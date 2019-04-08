@@ -4,7 +4,6 @@ import autobind from 'autobind-decorator';
 
 import Link from '../Link';
 
-
 class File extends React.Component {
     @autobind
     handleClickLink(e) {

@@ -1,6 +1,5 @@
 import i18n from './i18n';
 
-
 export const joinTitleParts = (parts) => parts.join(' | ');
 
 export const getTitle = (string) => {

@@ -5,7 +5,6 @@ import toJson from 'enzyme-to-json';
 import File from './File';
 import Link from '../Link';
 
-
 const mockedEvent = {
     preventDefault: jest.fn()
 };

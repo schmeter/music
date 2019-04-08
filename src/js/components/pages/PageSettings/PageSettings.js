@@ -7,7 +7,6 @@ import Page from '../../Page';
 import i18n, { getAppLanguage, getLanguages, setAppLanguage } from '../../../services/i18n';
 import { getUrl } from '../../../services/navigation';
 
-
 class PageSettings extends React.Component {
     password = React.createRef();
 

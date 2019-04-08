@@ -4,7 +4,6 @@ import Info from './Info';
 
 import { closeLayersAction } from '../../../state/actions/layer';
 
-
 export const mapDispatchToProps = (dispatch) => ({
     closeLayers: () => dispatch(closeLayersAction())
 });

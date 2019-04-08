@@ -1,6 +1,5 @@
 import reduceLayer from './layer';
 
-
 test('expects reduceLayer to return default state', () => {
     expect(reduceLayer(undefined, {})).toEqual({});
 });

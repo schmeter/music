@@ -10,7 +10,6 @@ import { getUrl } from '../../../services/navigation';
 import { joinTitleParts, getTitle } from '../../../services/meta';
 import { getAlbum, getArtist } from '../../../services/audio';
 
-
 class PageAudio extends React.Component {
     getTitle() {
         const titleParts = [];

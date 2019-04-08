@@ -6,7 +6,6 @@ import ScreensaverContainer, {
     mapStateToProps
 } from './ScreensaverContainer';
 
-
 it('renders correctly', () => {
     const state = {
         audio: {}

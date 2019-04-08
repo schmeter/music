@@ -4,7 +4,6 @@ import toJson from 'enzyme-to-json';
 
 import Link from './Link';
 
-
 window.open = jest.fn();
 
 const mockedEvent = {

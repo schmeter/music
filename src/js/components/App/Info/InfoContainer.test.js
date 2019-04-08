@@ -7,7 +7,6 @@ import InfoContainer, {
     mapDispatchToProps
 } from './InfoContainer';
 
-
 it('renders correctly', () => {
     const dispatch = jest.fn();
     const state = {

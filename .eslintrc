@@ -32,25 +32,35 @@
                 "SwitchCase": 1
             }
         ],
-        "no-multiple-empty-lines": [
-            "error",
+        "max-len": [
+            "warn",
             {
-                "max": 2,
+                "code": 120
+            }
+        ],
+        "no-multiple-empty-lines": [
+            "warn",
+            {
+                "max": 1,
                 "maxEOF": 1
             }
         ],
         "operator-linebreak": "off",
+        "object-curly-spacing": [
+            "warn",
+            "always"
+        ],
         "space-before-function-paren": "off",
         "jsx-quotes": [
-            "error",
+            "warn",
             "prefer-double"
         ],
         "react/jsx-indent": [
-            "error",
+            "warn",
             4
         ],
         "react/jsx-indent-props": [
-            "error",
+            "warn",
             4
         ]
     },

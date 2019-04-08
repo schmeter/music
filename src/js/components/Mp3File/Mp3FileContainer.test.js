@@ -7,7 +7,6 @@ import Mp3FileContainer, {
     mapStateToProps
 } from './Mp3FileContainer';
 
-
 it('renders correctly', () => {
     const dispatch = jest.fn();
     const state = {

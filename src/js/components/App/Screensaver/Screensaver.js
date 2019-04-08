@@ -6,7 +6,6 @@ import { isTouch } from '../../../util/screen';
 
 import configApp from '../../../../config/app.json';
 
-
 class Screensaver extends React.Component {
     timer = null;
 

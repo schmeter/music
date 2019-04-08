@@ -4,7 +4,6 @@ import toJson from 'enzyme-to-json';
 
 import Layer from './Layer';
 
-
 const mockedEvent = {
     preventDefault: jest.fn()
 };

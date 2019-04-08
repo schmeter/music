@@ -1,6 +1,5 @@
 import reduceAuth from './auth';
 
-
 test('expects reduceAuth to return default state', () => {
     expect(reduceAuth(undefined, {})).toEqual({});
 });

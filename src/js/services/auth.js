@@ -2,7 +2,6 @@ import md5 from 'md5';
 
 import storage from './storage';
 
-
 export const isAuthenticated = () => {
     return !!storage.get('auth:isLoggedIn');
 };

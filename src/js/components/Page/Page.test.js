@@ -4,7 +4,6 @@ import toJson from 'enzyme-to-json';
 
 import Page from './Page';
 
-
 it('renders correctly with all parameters', () => {
     const props = {
         id: 'test',

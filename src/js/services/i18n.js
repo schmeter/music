@@ -4,7 +4,6 @@ import configI18n from '../../config/i18n.json';
 
 import storage from './storage';
 
-
 export default (id) => {
     const language = getAppLanguage();
     return path([language, id], configI18n)

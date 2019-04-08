@@ -6,7 +6,6 @@ import toJson from 'enzyme-to-json';
 import Mp3File from './Mp3File';
 import Link from '../Link';
 
-
 const mockedEvent = {
     preventDefault: jest.fn()
 };

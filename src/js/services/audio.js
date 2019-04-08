@@ -10,7 +10,6 @@ import storage from './storage';
 import { getRandom } from '../util/math';
 import { isPropTrueAtIndex } from '../util/array';
 
-
 export const getLibrary = (showAll = isAuthenticated()) => new AudioLibraryModel(audioData, showAll);
 
 export const getRandomIndex = (tracks) => {

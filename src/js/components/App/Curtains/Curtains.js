@@ -2,7 +2,6 @@ import React from 'react';
 import classNames from 'classnames';
 import autobind from 'autobind-decorator';
 
-
 class Curtains extends React.Component {
     state = {
         curtainsOpen: true

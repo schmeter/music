@@ -4,7 +4,6 @@ import autobind from 'autobind-decorator';
 
 import File from '../File';
 
-
 class Mp3File extends React.Component {
     @autobind
     handleClickFile() {

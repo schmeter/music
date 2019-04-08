@@ -14,7 +14,6 @@ import middlewares from './state/middlewares';
 
 import { isAuthenticated } from './services/auth';
 
-
 const store = createStore(
     rootReducer,
     {

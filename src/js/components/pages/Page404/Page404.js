@@ -5,7 +5,6 @@ import Page from '../../Page';
 
 import i18n from '../../../services/i18n';
 
-
 class Page404 extends React.Component {
     render() {
         const { activeTrack } = this.props;

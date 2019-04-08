@@ -6,7 +6,6 @@ import Analyser from './Analyser';
 
 import { getNextIndex } from '../../../services/audio';
 
-
 class Player extends React.Component {
     audio = React.createRef();
 

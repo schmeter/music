@@ -8,7 +8,6 @@ import AlbumCover from '../AlbumCover';
 
 import { getUrl } from '../../../../services/navigation';
 
-
 class AlbumList extends React.Component {
     render() {
         const {

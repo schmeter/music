@@ -6,7 +6,6 @@ import HeaderContainer, {
     mapDispatchToProps
 } from './HeaderContainer';
 
-
 it('renders correctly', () => {
     const dispatch = jest.fn();
 

@@ -8,7 +8,6 @@ import {
 
 } from './audio';
 
-
 const audioLibrary = getLibrary(true);
 const tracks = audioLibrary.tracks;
 const activeIndex = getActiveIndex(tracks);

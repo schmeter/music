@@ -4,7 +4,6 @@ import toJson from 'enzyme-to-json';
 
 import Analyser from './Analyser';
 
-
 window.AudioContext = class AudioContext {
     createAnalyser = () => ({
         connect: jest.fn(),

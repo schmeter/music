@@ -6,7 +6,6 @@ import autobind from 'autobind-decorator';
 import Link from '../../../Link';
 import Image from '../../../Image';
 
-
 class AlbumCover extends React.Component {
     state = {
         showRecord: false,

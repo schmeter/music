@@ -4,7 +4,6 @@ import {
     getTracks
 } from './AudioLibrary';
 
-
 const audioData = {
     artists: [
         {

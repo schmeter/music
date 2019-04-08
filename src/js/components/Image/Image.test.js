@@ -4,7 +4,6 @@ import toJson from 'enzyme-to-json';
 
 import Image from './Image';
 
-
 it('renders correctly', () => {
     const props = {
         src: 'test',
