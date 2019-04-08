@@ -3,7 +3,6 @@ import { shallow } from 'enzyme';
 import toJson from 'enzyme-to-json';
 
 import ScrollTop from './ScrollTop';
-
 import { scrollTop } from '../../util/screen';
 
 jest.mock('../../util/screen.js', () => ({ scrollTop: jest.fn() }));

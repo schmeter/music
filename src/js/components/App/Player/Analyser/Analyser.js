@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import { isTouch } from '../../../../util/screen';
-
 import configApp from '../../../../../config/app.json';
 
 class Analyser extends React.Component {

@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import autobind from 'autobind-decorator';
 
 import Analyser from './Analyser';
-
 import { getNextIndex } from '../../../services/audio';
 
 class Player extends React.Component {

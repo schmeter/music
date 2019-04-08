@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import autobind from 'autobind-decorator';
 
 import Page from '../../Page';
-
 import i18n, { getAppLanguage, getLanguages, setAppLanguage } from '../../../services/i18n';
 import { getUrl } from '../../../services/navigation';
 

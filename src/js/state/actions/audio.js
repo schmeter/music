@@ -1,4 +1,8 @@
-import { getLibrary, getActiveIndex, saveActiveTrackPath } from '../../services/audio';
+import {
+    getLibrary,
+    getActiveIndex,
+    saveActiveTrackPath
+} from '../../services/audio';
 
 export const initAudioAction = () => (dispatch) => {
     const library = getLibrary();

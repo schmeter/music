@@ -1,12 +1,9 @@
 import { propOr } from 'ramda';
 
 import AudioLibraryModel from '../models/AudioLibrary';
-
 import audioData from '../../../.tmp/audio.json';
-
 import { isAuthenticated } from './auth';
 import storage from './storage';
-
 import { getRandom } from '../util/math';
 import { isPropTrueAtIndex } from '../util/array';
 

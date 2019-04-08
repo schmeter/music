@@ -1,7 +1,6 @@
 import { connect } from 'react-redux';
 
 import Mp3File from './Mp3File';
-
 import { setActiveIndexAction, togglePlayAction } from '../../state/actions/audio';
 
 export const mapDispatchToProps = (dispatch) => ({

@@ -5,7 +5,6 @@ import Link from '../../Link';
 import Page from '../../Page';
 import { Page404 } from '../';
 import AlbumList from './AlbumList';
-
 import { getUrl } from '../../../services/navigation';
 import { joinTitleParts, getTitle } from '../../../services/meta';
 import { getAlbum, getArtist } from '../../../services/audio';
