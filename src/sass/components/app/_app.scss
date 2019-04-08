@@ -1,7 +1,12 @@
 body {
     @extend %screensaver-background;
 
-    background: linear-gradient(to bottom, $color-background-gradient-outer 0%, $color-background-gradient-inner 50px, $color-background-gradient-outer 100%);
+    background: linear-gradient(
+        to bottom,
+        $color-background-gradient-outer 0%,
+        $color-background-gradient-inner 50px,
+        $color-background-gradient-outer 100%
+    );
     color: $color-text;
     font-family: 'Kanit', arial, sans-serif;
     font-size: $font-size-base;
