@@ -25,7 +25,7 @@ To start the local environment, run `npm start`.
 ## Configuration
 Go to `src/config`.  
 
-With `app.json` is possible to edit the base url for your project, the path to a fallback image, the availability of the screensaver and the analyser.  
+With `app.json` it is possible to edit the base url for your project, the path to a fallback image, the availability of the screensaver and the analyser.  
 
 With `audio.json` it is possible to define the order of artists and albums.  
 Only artists and albums configured in this file will be displayed within the app.  
