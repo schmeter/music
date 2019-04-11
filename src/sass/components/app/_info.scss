@@ -6,7 +6,15 @@
     }
 
     .layer-content {
-        padding: 20px 0 10px;
+        padding: 30px 0 10px;
+
+        @media (max-height: $max-height-phone-landscape) {
+            padding: 25px 0 10px;
+        }
+
+        @media (max-width: $max-width-phone) {
+            padding: 25px 0 10px;
+        }
     }
 
     .lyrics {
