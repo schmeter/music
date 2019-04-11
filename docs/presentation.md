@@ -1,7 +1,7 @@
 # Music
 
 Today's topic is about music.  
-It's about how to put your own music into an app that's running in the browser, so that it can be provided to the rest of the world in a nice and accessible way without you worrying about legal stuff related to platforms where would normally upload your files.  
+It's about how to put your own music into an app that's running in the browser, so that it can be provided to the rest of the world in a nice and accessible way without you worrying about legal issues related to platforms where would normally upload your files.  
 
 
 ## Past
@@ -9,7 +9,7 @@ It's about how to put your own music into an app that's running in the browser, 
 To provide music to visitors of your website was already possible with an early version of Internet Explorer, where you could put a file as a background noise into your HTML code, like to be seen here:  
 https://developer.mozilla.org/en-US/docs/Web/HTML/Element/bgsound  
 
-This was quite annoying and uncomfortably to use, so that visitors mainly would not return to that site.  
+This was quite annoying and uncomfortably to use, so that visitors mainly would not return to that site again.  
 
 
 ## Present
@@ -48,7 +48,8 @@ How to display the analysis?
 - Use canvas: https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API  
 
 How to handle app state?  
-- Use React.js component state and Redux only when needed.  - Local storage for user settings.  
+- Use React.js component state and Redux only when needed.  
+- Local storage for user settings.  
 
 Device support?  
 - Default Android and iOS browsers.  
@@ -99,25 +100,26 @@ Tools:
 
 #### Task: Player interface
 
-To have a player for the files in the browser, I need to provide an interface.  
+To have a player for the files in the browser, I need to provide an interface.   
 
-Audio tag:  
+Audio tag:
 - Use 1 audio element.  
 - Provide native controls.  
 - Use mp3 support only, since there's only mp3 files.  
 - Switch sources by user interaction.  
 - Handle events.  
 
-        <audio
-            className="audio"
-            controls
-            ref={this.audio}
-            onPlay={this.handlePlay}
-            onPause={this.handlePause}
-            onEnded={this.handleEnded}
-            onError={this.handleError}
-        />
-
+```
+    <audio
+        className="audio"
+        controls
+        ref={this.audio}
+        onPlay={this.handlePlay}
+        onPause={this.handlePause}
+        onEnded={this.handleEnded}
+        onError={this.handleError}
+    />
+```
 ---
 
 
@@ -130,37 +132,43 @@ I want continuous availability in mobile browsers in the same place at all times
 - Fix screen to prevent scrolling issues.  
 - Restrict body size.  
 
-        body {
-            width: 100%;
-            height: 100%;
-            margin: 0;
-            padding: 0;
-            border: 0;
-            overflow: hidden;
-        }
+```
+    body {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        border: 0;
+        overflow: hidden;
+    }
+```
 
 - Use scroll container.  
 - Add native scroll feeling in iOS.  
 
-        main {
-            position: absolute;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            left: 0;
-            overflow: auto;
-            overflow-y: auto;
-            -webkit-overflow-scrolling: touch;
-        }
+```
+    main {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        overflow: auto;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+```
 
-- Place the interface
+- Position the interface.  
 
-        audio {
-            position: fixed;
-            right: 0;
-            bottom: 0;
-            left: 0;
-        }
+```
+    audio {
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        left: 0;
+    }
+```
 
 ---
 
@@ -172,58 +180,65 @@ Only minor styling available on DOM.
 
 - Apply basic styles
 
-        audio {
-            width: 100%;
-            height: 30px;
-            background: radial-gradient(#fff4e1, #505050);
-            outline: none;
-        }
+```
+    audio {
+        width: 100%;
+        height: 30px;
+        background: radial-gradient(#fff4e1, #505050);
+        outline: none;
+    }
+```
 
 Then there's that ugly thing in Chrome.  
 
 - Activate Shadow DOM.  
 - Apply styles to shadow DOM elements (first approach).  
 
-        &::-webkit-media-controls,
-        &::-webkit-media-controls-panel,
-        &::-webkit-media-controls-enclosure,
-        &::-webkit-media-controls-overlay-enclosure {
-            visibility: hidden;
-        }
+```
+    &::-webkit-media-controls,
+    &::-webkit-media-controls-panel,
+    &::-webkit-media-controls-enclosure,
+    &::-webkit-media-controls-overlay-enclosure {
+        visibility: hidden;
+    }
 
-        &::-webkit-media-controls-overflow-button,
-        &::-webkit-media-controls-mute-button,
-        &::-webkit-media-controls-play-button,
-        &::-webkit-media-controls-timeline-container,
-        &::-webkit-media-controls-current-time-display,
-        &::-webkit-media-controls-time-remaining-display,
-        &::-webkit-media-controls-timeline,
-        &::-webkit-media-controls-volume-slider-container,
-        &::-webkit-media-controls-volume-slider,
-        &::-webkit-media-controls-seek-back-button,
-        &::-webkit-media-controls-seek-forward-button,
-        &::-webkit-media-controls-fullscreen-button,
-        &::-webkit-media-controls-rewind-button,
-        &::-webkit-media-controls-return-to-realtime-button,
-        &::-webkit-media-controls-toggle-closed-captions-button {
-            visibility: initial;
-        }
+    &::-webkit-media-controls-overflow-button,
+    &::-webkit-media-controls-mute-button,
+    &::-webkit-media-controls-play-button,
+    &::-webkit-media-controls-timeline-container,
+    &::-webkit-media-controls-current-time-display,
+    &::-webkit-media-controls-time-remaining-display,
+    &::-webkit-media-controls-timeline,
+    &::-webkit-media-controls-volume-slider-container,
+    &::-webkit-media-controls-volume-slider,
+    &::-webkit-media-controls-seek-back-button,
+    &::-webkit-media-controls-seek-forward-button,
+    &::-webkit-media-controls-fullscreen-button,
+    &::-webkit-media-controls-rewind-button,
+    &::-webkit-media-controls-return-to-realtime-button,
+    &::-webkit-media-controls-toggle-closed-captions-button {
+        visibility: initial;
+    }
+```
 
 Advantage: Styles applied.  
 Disadvantage: Some controls are lost.  
 
 But: Suddenly Chrome changes things about HTML5 Audio again.  
+
 - Apply styles to shadow DOM elements (second approach).  
 
-        &::-webkit-media-controls,
-        &::-webkit-media-controls-panel,
-        &::-webkit-media-controls-enclosure,
-        &::-webkit-media-controls-overlay-enclosure {
-            background-color: #fff4e1;
-        }
+```
+    &::-webkit-media-controls,
+    &::-webkit-media-controls-panel,
+    &::-webkit-media-controls-enclosure,
+    &::-webkit-media-controls-overlay-enclosure {
+        background-color: #fff4e1;
+    }
+```
 
 Advantage: Controls are visible.  
-Disadvantage: Still rely on Chrome's native output.  
+Disadvantage: Still have to rely on Chrome's native output.  
 
 ---
 
@@ -234,90 +249,101 @@ I use React.js components to display the data collected and provide links to aud
 
 - Display the item and handle the click event.  
 
-        <File
-            path={file.path}
-            onClickFile={this.handleClickFile}
-        >
-            {file.tag.title}
-        </File>
+```
+    <File
+        path={file.path}
+        onClickFile={this.handleClickFile}
+    >
+        {file.tag.title}
+    </File>
+```
 
 - Hold the state.  
 
-        audio: {
-            activeIndex: -1,
-            activeTrack: null,
-            isPlaying: false
-        }
-
+```
+    audio: {
+        activeIndex: -1,
+        activeTrack: null,
+        isPlaying: false
+    }
+```
 
 - Tell the app about change.  
 
-        const mapDispatchToProps = (dispatch) => ({
-            setActiveIndex: (activeIndex) => dispatch(setActiveIndexAction(activeIndex)),
-            togglePlay: () => dispatch(togglePlayAction())
-        });
+```
+    const mapDispatchToProps = (dispatch) => ({
+        setActiveIndex: (activeIndex) => dispatch(setActiveIndexAction(activeIndex)),
+        togglePlay: () => dispatch(togglePlayAction())
+    });
+```
 
 - Display audio information from store.  
 
-        <Image
-            src={activeTrack.imgPath}
-            alt={activeTrack.album.title}
-        />
-        <div
-            className="lyrics"
-            dangerouslySetInnerHTML={{ __html: activeTrack.lyrics }}
-        />
+```
+    <Image
+        src={activeTrack.imgPath}
+        alt={activeTrack.album.title}
+    />
+    <div
+        className="lyrics"
+        dangerouslySetInnerHTML={{ __html: activeTrack.lyrics }}
+    />
+```
 
 - Connect audio events.  
 
-        @autobind
-        handlePlay() {
-            const { setIsPlaying } = this.props;
+```
+    @autobind
+    handlePlay() {
+        const { setIsPlaying } = this.props;
 
-            setIsPlaying(true);
-        }
+        setIsPlaying(true);
+    }
 
-        @autobind
-        handlePause() {
-            const { setIsPlaying } = this.props;
+    @autobind
+    handlePause() {
+        const { setIsPlaying } = this.props;
 
-            setIsPlaying(false);
-        }
+        setIsPlaying(false);
+    }
 
-        @autobind
-        handleError() {
-            const { setIsPlaying } = this.props;
+    @autobind
+    handleError() {
+        const { setIsPlaying } = this.props;
 
-            setIsPlaying(false);
-        }
+        setIsPlaying(false);
+    }
 
-        @autobind
-        handleEnded() {
-            const { activeIndex, tracks, setActiveIndex } = this.props;
+    @autobind
+    handleEnded() {
+        const { activeIndex, tracks, setActiveIndex } = this.props;
 
-            setActiveIndex(getNextIndex(activeIndex, tracks));
-        }
+        setActiveIndex(getNextIndex(activeIndex, tracks));
+    }
+```
 
 - Add handling convenience with cursor navigation.  
 
-        @autobind
-        captureKeys(e) {
-            switch (e.keyCode) {
-                case 32:
-                    e.preventDefault();
-                    this.togglePlay();
-                    break;
-                case 37:
-                    e.preventDefault();
-                    this.decreaseTimeFrame();
-                    break;
-                case 39:
-                    e.preventDefault();
-                    this.increaseTimeFrame();
-                    break;
-                default:
-            }
+```
+    @autobind
+    captureKeys(e) {
+        switch (e.keyCode) {
+            case 32:
+                e.preventDefault();
+                this.togglePlay();
+                break;
+            case 37:
+                e.preventDefault();
+                this.decreaseTimeFrame();
+                break;
+            case 39:
+                e.preventDefault();
+                this.increaseTimeFrame();
+                break;
+            default:
         }
+    }
+```
 
 ---
 
@@ -328,36 +354,40 @@ I need to use the Audio Context for grabbing the data from the audio file.
 
 - Create Audio Context.  
 
-        analyse() {
-            const { audio, isPlaying } = this.props;
-            const canvas = this.canvas.current;
-            const AudioContext = window.AudioContext;
+```
+    analyse() {
+        const { audio, isPlaying } = this.props;
+        const canvas = this.canvas.current;
+        const AudioContext = window.AudioContext;
 
-            if (
-                canvas
-                && audio
-                && AudioContext
-                && !this.audioContext
-                && isPlaying
-            ) {
-                this.audioContext = new AudioContext();
-                const analyser = this.audioContext.createAnalyser();
-                const source = this.audioContext.createMediaElementSource(audio);
+        if (
+            canvas
+            && audio
+            && AudioContext
+            && !this.audioContext
+            && isPlaying
+        ) {
+            this.audioContext = new AudioContext();
+            const analyser = this.audioContext.createAnalyser();
+            const source = this.audioContext.createMediaElementSource(audio);
 
-                source.connect(analyser);
-                analyser.connect(this.audioContext.destination);
-                this.drawAnalyser(canvas, analyser);
-            }
+            source.connect(analyser);
+            analyser.connect(this.audioContext.destination);
+            this.drawAnalyser(canvas, analyser);
         }
+    }
+```
 
 In Safari: AudioContext or WebkitAudioContext?  
-Not working for mobile Safari, but Desktop.  
+Not working for mobile Safari, but desktop.  
 So: No analyser for iOS.  
 
-But when to start the Audio Context? Chrome wants it on user interaction.  
+But when to start the Audio Context?  
+Chrome wants it on user interaction.  
 
 - Check for user interaction.  
 
+```
         componentDidMount() {
             this.analyse();
         }
@@ -365,82 +395,93 @@ But when to start the Audio Context? Chrome wants it on user interaction.
         componentDidUpdate() {
             this.analyse();
         }
+```
 
 If you host your files "somewhere", you might not have access because of CORS: https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS.  
 This will result in silence.  
 
 - So activate headers on server side.  
 
-        Header add Access-Control-Allow-Origin "*"
+```
+    Header add Access-Control-Allow-Origin "*"
+```
 
-Now I want to display the analysed data.
+Now I want to display the analysed data.  
 
 - Set up a canvas.  
 
-        <canvas
-            className="canvas"
-            ref={this.canvas}
-        />
+```
+    <canvas
+        className="canvas"
+        ref={this.canvas}
+    />
+```
 
 - Style the canvas.  
 
-        canvas {
-            position: fixed;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            left: 0;
-        }
+```
+    canvas {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+    }
+```
 
-- Analyse data: What's the content?  
+- Analyse the data: What's the content?  
 - Provide waveform or frequency analysis.  
 - Draw the data to the canvas.  
 
-        drawAnalyser(canvas, analyser) {
-            const { mode = 'frequency' } = this.props;
-            const bufferLength = analyser.frequencyBinCount;
-            const dataArray = new Uint8Array(bufferLength);
+```
+    drawAnalyser(canvas, analyser) {
+        const { mode = 'frequency' } = this.props;
+        const bufferLength = analyser.frequencyBinCount;
+        const dataArray = new Uint8Array(bufferLength);
 
-            canvas.width = bufferLength;
-            canvas.height = 256;
-            const ctx = canvas.getContext('2d');
-            const barWidth = 1;
-            const barDistance = 1.375;
-            const paintCanvas = () => {
+        canvas.width = bufferLength;
+        canvas.height = 256;
+        const ctx = canvas.getContext('2d');
+        const barWidth = 1;
+        const barDistance = 1.375;
+        const paintCanvas = () => {
+            if (mode === 'waveform') {
+                analyser.getByteTimeDomainData(dataArray);
+            } else {
+                analyser.getByteFrequencyData(dataArray);
+            }
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            dataArray.forEach((item, index) => {
+                const barHeight = item * 3 / 4;
+
                 if (mode === 'waveform') {
-                    analyser.getByteTimeDomainData(dataArray);
+                    ctx.fillStyle = `rgba(255, 170, 0, 1)`;
+                    ctx.fillRect(index, canvas.height - barHeight, barWidth, 1);
                 } else {
-                    analyser.getByteFrequencyData(dataArray);
+                    ctx.fillStyle = `rgba(255, ${255 - item}, 0, ${1 - (item / canvas.height)})`;
+                    ctx.fillRect(index * barDistance, canvas.height, barWidth, 0 - barHeight);
                 }
-                ctx.clearRect(0, 0, canvas.width, canvas.height);
-                dataArray.forEach((item, index) => {
-                    const barHeight = item * 3 / 4;
+            });
+            window.requestAnimationFrame(paintCanvas);
+        };
 
-                    if (mode === 'waveform') {
-                        ctx.fillStyle = `rgba(255, 170, 0, 1)`;
-                        ctx.fillRect(index, canvas.height - barHeight, barWidth, 1);
-                    } else {
-                        ctx.fillStyle = `rgba(255, ${255 - item}, 0, ${1 - (item / canvas.height)})`;
-                        ctx.fillRect(index * barDistance, canvas.height, barWidth, 0 - barHeight);
-                    }
-                });
-                window.requestAnimationFrame(paintCanvas);
-            };
-
-            paintCanvas();
-        }
-
-There's lots more possibilities with Audio context, like adding equalizers, filters and so on.  
+        paintCanvas();
+    }
+```
 
 But: Some devices are simply too slow.  
 
 - Make things configurable.  
 
-        isAnalyserAllowed() {
-            const { audio } = this.props;
+```
+    isAnalyserAllowed() {
+        const { audio } = this.props;
 
-            return audio && !isTouch() && configApp.useAnalyser;
-        }
+        return audio && !isTouch() && configApp.useAnalyser;
+    }
+```
+
+There's lots more possibilities with Audio context, like adding equalizers, filters and so on.  
 
 ---
 
@@ -451,39 +492,51 @@ I want to provide a sitemap.txt.
 
 - Add the routes AND the audio configuration.  
 
-        https://example.com/
-        https://example.com/audio/demoartist
-        https://example.com/audio/demoartist/thealbum
-        https://example.com/settings
+```
+    https://example.com/
+    https://example.com/audio/demoartist
+    https://example.com/audio/demoartist/thealbum
+    https://example.com/settings
+```
 
 I want to have update cycles.  
 
-- Provide app data in index.html.
+- Provide version data in index.html.  
 
-        <script>
-            var app = { rev: '45b3baa', time: '1554968510870' };
-        </script>
+```
+    <script>
+        var app = { 
+            rev: '45b3baa', 
+            time: '1554968510870' 
+        };
+    </script>
+```
 
-- Set up a version.json.  
+- Generate a version.json containing the same data.  
 
         {
             "rev": "45b3baa",
             "time": 1554968510870
         }
 
-- Read fresh JSON file on app start and check for updates.  
-- Provide simple interface.  
+- Read fresh JSON file on app start and check for updates, if page was cached.  
+- Provide a simple interface.  
 
-        fetchJSON(`/version.json?${new Date().getTime()}`, true)
-            .then(data => {
-                const searchTime = window.location.search.substr(1);
+```
+    fetchJSON(`/version.json?${new Date().getTime()}`, true)
+        .then(data => {
+            const searchTime = window.location.search.substr(1);
 
-                if (searchTime !== String(data.time) && app.time < data.time) {
-                    if (window.confirm(i18n(`app_update_available`))) {
-                        window.location.href = `/?${data.time}`;
-                    }
+            if (
+                searchTime !== String(data.time) 
+                && app.time < data.time
+            ) {
+                if (window.confirm(i18n(`app_update_available`))) {
+                    window.location.href = `/?${data.time}`;
                 }
-            });
+            }
+        });
+```
 
 I want to persist user settings.  
 
@@ -492,11 +545,16 @@ I want to persist user settings.
 - Current audio file: Store user selection.  
 
 
+## Demo
+
+https://antipeter.de/
+
+
 ## Issues
 
-Autoplay (next file) on mobile.  
-Audio image display on mobile devices.  
-Lockscreen navigation.  
+Autoplay next file on mobile is not possible, if browser tab is inactive. Also on desktop, if Javascript is not allowed in inactive tabs.  
+Audio image display on lockscreen is not possible.  
+Only partial lockscreen navigation.  
 
 
 ## Next steps / possibilities
@@ -513,7 +571,9 @@ Integrate with Heroku / Netlify for continuous deployment.
 
 ## Conclusion
 
-Everything works.  
-There's styling possibilities in Chrome.  
-It's not simply an audio context.  
-Contributions are welcome: https://github.com/schmeter/music  
+Everything works (with constraints).  
+There's styling possibilities (in Chrome).  
+Audio context handling is not simple.  
+
+Contributions are welcome:  
+https://github.com/schmeter/music  
