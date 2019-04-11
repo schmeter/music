@@ -80,7 +80,7 @@ Use tests:
 
 #### Task: Data collection
 
-To display a music library, we need to read the data available on disk and make it available inside the app.  
+To display a music library, I need to read the data available on disk and make it available inside the app.  
 
 - Scan folders with mp3 files, images, lyrics files.  
 - Read ID3 tags, add cover images, parse markdown files.  
@@ -99,7 +99,7 @@ Tools:
 
 #### Task: Player interface
 
-To have a player for the files in the browser, we need to provide an interface.  
+To have a player for the files in the browser, I need to provide an interface.  
 
 Audio tag:  
 - Use 1 audio element.  
@@ -230,7 +230,7 @@ Disadvantage: Still rely on Chrome's native output.
 
 #### Task: Make the app accessible and play the audio
 
-We now use React.js components to display the data collected and provide links to audio files which should then be loaded into the audio player.  
+I use React.js components to display the data collected and provide links to audio files which should then be loaded into the audio player.  
 
 - Display the item and handle the click event.  
 
@@ -324,7 +324,7 @@ We now use React.js components to display the data collected and provide links t
 
 #### Task: Analyse the audio
 
-We need to use the Audio Context for grabbing the data from the audio file.  
+I need to use the Audio Context for grabbing the data from the audio file.  
 
 - Create Audio Context.  
 
@@ -373,7 +373,7 @@ This will result in silence.
 
         Header add Access-Control-Allow-Origin "*"
 
-Now we want to display the analysed data.
+Now I want to display the analysed data.
 
 - Set up a canvas.  
 
