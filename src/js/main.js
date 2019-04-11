@@ -8,12 +8,9 @@ import { Provider } from 'react-redux';
 import { composeWithDevTools } from 'redux-devtools-extension/developmentOnly';
 
 import App from './components/App';
-
 import rootReducer from './state/reducers';
 import middlewares from './state/middlewares';
-
 import { isAuthenticated } from './services/auth';
-
 
 const store = createStore(
     rootReducer,

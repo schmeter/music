@@ -6,7 +6,6 @@ import autobind from 'autobind-decorator';
 import Link from '../../../Link';
 import Image from '../../../Image';
 
-
 class AlbumCover extends React.Component {
     state = {
         showRecord: false,
@@ -15,7 +14,9 @@ class AlbumCover extends React.Component {
 
     getImgIndex() {
         const { album } = this.props;
+
         let { imgIndex } = this.state;
+
         imgIndex++;
         if (!album.imgItems || (imgIndex > album.imgItems.length - 1)) {
             return 0;
@@ -26,6 +27,7 @@ class AlbumCover extends React.Component {
     getImgPath() {
         const { album } = this.props;
         const { imgIndex } = this.state;
+
         return album.imgItems && album.imgFolder
             ? `${album.imgFolder}/${album.imgItems[imgIndex]}`
             : album.imgPath;
@@ -35,6 +37,7 @@ class AlbumCover extends React.Component {
     handleClickCover(e) {
         e.preventDefault();
         const { imgIndex, showRecord } = this.state;
+
         this.setState({
             showRecord: !showRecord,
             imgIndex: !showRecord ? this.getImgIndex() : imgIndex
@@ -44,6 +47,7 @@ class AlbumCover extends React.Component {
     render() {
         const { showRecord } = this.state;
         const { link, album } = this.props;
+
         return (
             <Link
                 className="album-cover"

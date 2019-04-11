@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
 
-
 const isExternal = (path) => /^https?:\/\/.+/.test(path);
 
 class Link extends React.Component {
@@ -13,6 +12,7 @@ class Link extends React.Component {
             onClick
         };
         const content = children || to;
+
         return isExternal(to) ? (
             <a
                 target="_blank"

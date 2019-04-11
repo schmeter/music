@@ -48,14 +48,13 @@ $z-index-layer: 300;
 $z-index-player: 1000;
 $z-index-curtains: 10000;
 
-
 $screensaver-fade-in-time: 1s;
 $screensaver-fade-out-time: 10s;
 
 %scroll-container {
     overflow: auto;
     overflow-y: auto;
-    -webkit-overflow-scrolling: touch; // sass-lint:disable-line no-misspelled-properties, no-vendor-prefixes
+    -webkit-overflow-scrolling: touch; // sass-lint:disable-line no-vendor-prefixes
 }
 
 %screensaver-background {

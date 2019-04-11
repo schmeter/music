@@ -6,7 +6,6 @@ import toJson from 'enzyme-to-json';
 import Mp3File from './Mp3File';
 import Link from '../Link';
 
-
 const mockedEvent = {
     preventDefault: jest.fn()
 };
@@ -25,6 +24,7 @@ it('renders correctly', () => {
         }
     };
     const tracks = [file1, file2];
+
     let activeIndex = tracks.indexOf(file1);
 
     let props = {
@@ -40,6 +40,7 @@ it('renders correctly', () => {
             <Mp3File {...props} />
         </BrowserRouter>
     );
+
     expect(toJson(component)).toMatchSnapshot();
 
     component.find(Link).simulate('click', mockedEvent);

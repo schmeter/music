@@ -2,9 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import { isTouch } from '../../../../util/screen';
-
 import configApp from '../../../../../config/app.json';
-
 
 class Analyser extends React.Component {
     canvas = React.createRef();
@@ -19,6 +17,7 @@ class Analyser extends React.Component {
 
     isAnalyserAllowed() {
         const { audio } = this.props;
+
         return audio && !isTouch() && configApp.useAnalyser;
     }
 
@@ -26,6 +25,7 @@ class Analyser extends React.Component {
         const { audio, isPlaying } = this.props;
         const canvas = this.canvas.current;
         const AudioContext = window.AudioContext;
+
         if (
             canvas
             && audio
@@ -36,6 +36,7 @@ class Analyser extends React.Component {
             this.audioContext = new AudioContext();
             const analyser = this.audioContext.createAnalyser();
             const source = this.audioContext.createMediaElementSource(audio);
+
             source.connect(analyser);
             analyser.connect(this.audioContext.destination);
             this.drawAnalyser(canvas, analyser);
@@ -46,6 +47,7 @@ class Analyser extends React.Component {
         const { mode = 'frequency' } = this.props;
         const bufferLength = analyser.frequencyBinCount;
         const dataArray = new Uint8Array(bufferLength);
+
         canvas.width = bufferLength;
         canvas.height = 256;
         const ctx = canvas.getContext('2d');
@@ -60,6 +62,7 @@ class Analyser extends React.Component {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
             dataArray.forEach((item, index) => {
                 const barHeight = item * 3 / 4;
+
                 if (mode === 'waveform') {
                     ctx.fillStyle = `rgba(255, 170, 0, 1)`;
                     ctx.fillRect(index, canvas.height - barHeight, barWidth, 1);
@@ -70,6 +73,7 @@ class Analyser extends React.Component {
             });
             window.requestAnimationFrame(paintCanvas);
         };
+
         paintCanvas();
     }
 

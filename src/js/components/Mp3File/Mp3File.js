@@ -4,12 +4,12 @@ import autobind from 'autobind-decorator';
 
 import File from '../File';
 
-
 class Mp3File extends React.Component {
     @autobind
     handleClickFile() {
         const { file, setActiveIndex, activeIndex, tracks, togglePlay } = this.props;
         const index = tracks.indexOf(file);
+
         if (index === activeIndex) {
             togglePlay();
         } else {
@@ -19,6 +19,7 @@ class Mp3File extends React.Component {
 
     render() {
         const { file } = this.props;
+
         return (
             <File
                 path={file.path}

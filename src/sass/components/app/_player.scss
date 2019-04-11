@@ -5,7 +5,10 @@
         bottom: 0;
         left: 0;
         // styles for all browsers to prevent round boxes
-        background: radial-gradient($color-player-inner, $color-player-outer);
+        background: radial-gradient(
+            $color-player-inner,
+            $color-player-outer
+        );
         opacity: .95;
         z-index: $z-index-player;
 

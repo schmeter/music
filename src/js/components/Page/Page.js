@@ -9,6 +9,7 @@ import { getTitle } from '../../services/meta';
 class Page extends React.Component {
     render() {
         const { className, id, title, children, useBaseClass } = this.props;
+
         return (
             <>
                 <Helmet>

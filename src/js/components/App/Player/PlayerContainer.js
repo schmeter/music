@@ -1,14 +1,12 @@
 import { connect } from 'react-redux';
 
 import Player from './Player';
-
 import {
     initAudioAction,
     setActiveIndexAction,
     saveActiveTrackAction,
     setIsPlayingAction
 } from '../../../state/actions/audio';
-
 
 export const mapDispatchToProps = (dispatch) => ({
     initAudio: () => dispatch(initAudioAction()),

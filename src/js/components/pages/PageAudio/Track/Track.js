@@ -5,11 +5,11 @@ import classNames from 'classnames';
 import Mp3File from '../../../Mp3File';
 import IconPlay from '../IconPlay';
 
-
 class Track extends React.Component {
     render() {
         const { file, className, activeTrack } = this.props;
         const playing = activeTrack ? file.path === activeTrack.path : false;
+
         return (
             <div
                 className={classNames(

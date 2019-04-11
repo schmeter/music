@@ -2,6 +2,7 @@ const now = () => Math.round(new Date().getTime() / 1000);
 
 const get = (id) => {
     const item = JSON.parse(window.localStorage.getItem(id)) || {};
+
     if (item.expiration && item.expiration <= now()) {
         return unset(id);
     }

@@ -5,7 +5,6 @@ import autobind from 'autobind-decorator';
 
 import configApp from '../../../config/app.json';
 
-
 class Image extends React.Component {
     image = React.createRef();
 
@@ -17,6 +16,7 @@ class Image extends React.Component {
     @autobind
     handleLoad() {
         const { handleLoad } = this.props;
+
         this.setState({ loaded: true });
         handleLoad && handleLoad();
     }
@@ -25,6 +25,7 @@ class Image extends React.Component {
     handleError() {
         const { error } = this.state;
         const image = this.image.current;
+
         this.setState({ error: true }, () => {
             if (!error) {
                 image.src = configApp.fallbackImage;
@@ -35,6 +36,7 @@ class Image extends React.Component {
     render() {
         const { loaded } = this.state;
         const { className, src, alt } = this.props;
+
         return (
             <img
                 className={classNames(

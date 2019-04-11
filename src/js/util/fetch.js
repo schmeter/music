@@ -11,5 +11,5 @@ export const fetchJSON = (url, ignoreError = false) => new Promise((resolve, rej
             throw new Error(`${res.status} ${res.statusText}`);
         })
         .then(resolve)
-        .catch(ignoreError ? console.error : reject);
+        .catch(ignoreError ? console.error : reject); // eslint-disable-line no-console
 });

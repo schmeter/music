@@ -4,7 +4,6 @@ import {
     getTitle
 } from './meta';
 
-
 test('expects joinTitleParts to return "t | e | s | t"', () => {
     expect(joinTitleParts('test'.split(''))).toBe('t | e | s | t');
 });

@@ -5,7 +5,6 @@ import toJson from 'enzyme-to-json';
 import Info from './Info';
 import Link from '../../Link';
 
-
 const mockedEvent = {
     preventDefault: jest.fn()
 };
@@ -33,6 +32,7 @@ it('renders correctly', () => {
     };
 
     let component = shallow(<Info {...props} />);
+
     expect(toJson(component)).toMatchSnapshot();
 
     props = {

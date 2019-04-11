@@ -2,7 +2,6 @@ import {
     getUrl
 } from './navigation';
 
-
 test('expects getUrl to return null', () => {
     expect(getUrl('')).toBe(null);
 });

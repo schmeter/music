@@ -2,7 +2,6 @@ import { connect } from 'react-redux';
 
 import IconPlay from './IconPlay';
 
-
 const mapStateToProps = (state) => ({
     isPlaying: state.audio.isPlaying
 });

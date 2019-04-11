@@ -4,15 +4,14 @@ import autobind from 'autobind-decorator';
 
 import Link from '../../Link';
 import Icon from '../../Icon';
-
 import i18n from '../../../services/i18n';
 import { getUrl } from '../../../services/navigation';
-
 
 class Header extends React.Component {
     @autobind
     handleClickLink() {
         const { openLayer } = this.props;
+
         openLayer('info');
     }
 

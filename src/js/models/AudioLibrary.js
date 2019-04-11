@@ -2,7 +2,6 @@ import { flatten, pick, propOr } from 'ramda';
 
 import configApp from '../../config/app.json';
 
-
 export const getArtists = (audioData, showAll) => {
     return propOr([], 'artists', audioData).map((artist) => {
         artist = Object.assign({}, artist, {

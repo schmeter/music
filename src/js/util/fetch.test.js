@@ -2,7 +2,6 @@ import {
     fetchJSON
 } from './fetch';
 
-
 window.fetch = (url) => {
     return new Promise((resolve, reject) => {
         resolve({ ok: true, json: () => ({}) });

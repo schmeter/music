@@ -2,7 +2,6 @@ import {
     getRandom
 } from './math';
 
-
 test('expects getRandom to return 3', () => {
     expect(getRandom(3, 3)).toBe(3);
 });

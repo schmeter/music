@@ -4,7 +4,6 @@ import toJson from 'enzyme-to-json';
 
 import Page from './Page';
 
-
 it('renders correctly with all parameters', () => {
     const props = {
         id: 'test',
@@ -14,6 +13,7 @@ it('renders correctly with all parameters', () => {
     };
 
     const component = shallow(<Page {...props} >test</Page>);
+
     expect(toJson(component)).toMatchSnapshot();
 });
 
@@ -23,5 +23,6 @@ it('renders correctly with id only', () => {
     };
 
     const component = shallow(<Page {...props} >test</Page>);
+
     expect(toJson(component)).toMatchSnapshot();
 });

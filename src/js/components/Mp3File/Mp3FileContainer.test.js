@@ -7,7 +7,6 @@ import Mp3FileContainer, {
     mapStateToProps
 } from './Mp3FileContainer';
 
-
 it('renders correctly', () => {
     const dispatch = jest.fn();
     const state = {
@@ -15,6 +14,7 @@ it('renders correctly', () => {
     };
 
     let component = shallow(<Mp3FileContainer />);
+
     expect(toJson(component)).toMatchSnapshot();
 
     const props = {

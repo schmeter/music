@@ -3,16 +3,15 @@ import PropTypes from 'prop-types';
 import autobind from 'autobind-decorator';
 
 import Page from '../../Page';
-
 import i18n, { getAppLanguage, getLanguages, setAppLanguage } from '../../../services/i18n';
 import { getUrl } from '../../../services/navigation';
-
 
 class PageSettings extends React.Component {
     password = React.createRef();
 
     componentDidUpdate(lastProps) {
         const { isLoggedIn, history } = this.props;
+
         if (lastProps.isLoggedIn !== isLoggedIn) {
             history.push(getUrl('index'));
         }
@@ -23,6 +22,7 @@ class PageSettings extends React.Component {
         e.preventDefault();
         const { isLoggedIn, login, logout } = this.props;
         const password = this.password.current;
+
         if (isLoggedIn) {
             logout();
         } else {
@@ -46,6 +46,7 @@ class PageSettings extends React.Component {
 
     render() {
         const { isLoggedIn } = this.props;
+
         return (
             <Page id="settings">
                 <h2 className="headline">{i18n('page_settings_headline')}</h2>

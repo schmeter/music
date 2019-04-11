@@ -4,7 +4,6 @@ import toJson from 'enzyme-to-json';
 
 import Image from './Image';
 
-
 it('renders correctly', () => {
     const props = {
         src: 'test',
@@ -14,6 +13,7 @@ it('renders correctly', () => {
     };
 
     const component = mount(<Image {...props} >test</Image>);
+
     expect(toJson(component)).toMatchSnapshot();
 
     component.simulate('error');

@@ -5,20 +5,20 @@ import Link from '../../Link';
 import Page from '../../Page';
 import { Page404 } from '../';
 import AlbumList from './AlbumList';
-
 import { getUrl } from '../../../services/navigation';
 import { joinTitleParts, getTitle } from '../../../services/meta';
 import { getAlbum, getArtist } from '../../../services/audio';
-
 
 class PageAudio extends React.Component {
     getTitle() {
         const titleParts = [];
         const { library, match } = this.props;
+
         if (library) {
             const { artistId, albumId } = match.params;
             const selectedArtist = getArtist(library, artistId);
             const selectedAlbum = getAlbum(library, artistId, albumId);
+
             if (selectedArtist) {
                 titleParts.push(selectedArtist.title);
             }
@@ -31,6 +31,7 @@ class PageAudio extends React.Component {
 
     render() {
         const { library, match } = this.props;
+
         if (!library) {
             return null;
         }
@@ -39,6 +40,7 @@ class PageAudio extends React.Component {
         const selectedAlbum = getAlbum(library, artistId, albumId);
         const validParams = (artistId ? selectedArtist : true)
             && (albumId ? selectedAlbum : true);
+
         return !validParams ? <Page404 /> : (
             <Page
                 id="audio"

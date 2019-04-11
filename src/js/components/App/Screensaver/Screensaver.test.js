@@ -4,7 +4,6 @@ import toJson from 'enzyme-to-json';
 
 import Screensaver from './Screensaver';
 
-
 jest.mock('../../../util/screen', () => ({
     isTouch: () => false
 }));
@@ -20,6 +19,7 @@ it('renders correctly', () => {
     };
 
     let component = shallow(<Screensaver {...props} />);
+
     expect(toJson(component)).toMatchSnapshot();
 
     props = {

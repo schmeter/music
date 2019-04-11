@@ -4,7 +4,6 @@ import toJson from 'enzyme-to-json';
 
 import Player from './Player';
 
-
 window.HTMLMediaElement.prototype.load = jest.fn();
 window.HTMLMediaElement.prototype.play = jest.fn();
 window.HTMLMediaElement.prototype.pause = jest.fn();
@@ -37,6 +36,7 @@ it('renders correctly', () => {
     };
 
     let component = mount(<Player {...props} />);
+
     expect(toJson(component)).toMatchSnapshot();
 
     props = {

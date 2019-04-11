@@ -4,7 +4,6 @@ import toJson from 'enzyme-to-json';
 
 import Analyser from './Analyser';
 
-
 window.AudioContext = class AudioContext {
     createAnalyser = () => ({
         connect: jest.fn(),
@@ -29,6 +28,7 @@ it('renders correctly', () => {
     };
 
     let component = mount(<Analyser {...props} />);
+
     expect(toJson(component)).toMatchSnapshot();
 
     props = {

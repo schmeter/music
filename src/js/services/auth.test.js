@@ -4,7 +4,6 @@ import {
     unauthenticate
 } from './auth';
 
-
 test('expects isAuthenticated to return false', () => {
     expect(isAuthenticated()).toBe(false);
 });

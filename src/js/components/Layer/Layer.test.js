@@ -4,7 +4,6 @@ import toJson from 'enzyme-to-json';
 
 import Layer from './Layer';
 
-
 const mockedEvent = {
     preventDefault: jest.fn()
 };
@@ -17,6 +16,7 @@ it('renders correctly', () => {
     };
 
     const component = shallow(<Layer {...props} >test</Layer>);
+
     expect(toJson(component)).toMatchSnapshot();
 
     component.find('button').simulate('click', mockedEvent);

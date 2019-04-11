@@ -7,7 +7,6 @@ import PlayerContainer, {
     mapDispatchToProps
 } from './PlayerContainer';
 
-
 it('renders correctly', () => {
     const dispatch = jest.fn();
     const state = {
@@ -16,6 +15,7 @@ it('renders correctly', () => {
     };
 
     let component = shallow(<PlayerContainer />);
+
     expect(toJson(component)).toMatchSnapshot();
 
     const props = {
