@@ -85,13 +85,13 @@ To display a music library, I need to read the data available on disk and make i
 
 - Scan folders with mp3 files, images, lyrics files.  
 - Read ID3 tags, add cover images, parse markdown files.  
-- Configure order and display mode of artists and albums  
-- Provide visible and hidden content for different users  
-- Store data in audio model  
+- Configure order and display mode of artists and albums.  
+- Provide visible and hidden content for different users.  
+- Store data in audio model.  
 
 Tools:  
 - grunt: run the tasks  
-- grunt-tree: buld file trees  
+- grunt-tree: build file trees  
 - id3-parser: read ID3 tags  
 - markdown: parse markdown content  
 
