@@ -33,10 +33,15 @@ class Player extends React.Component {
 
     @autobind
     captureKeys(e) {
+        const audio = this.audio.current;
+
         switch (e.keyCode) {
             case 32:
                 e.preventDefault();
-                this.togglePlay();
+                // prevent double space event on focused audio element
+                if (document.activeElement !== audio) {
+                    this.togglePlay();
+                }
                 break;
             case 37:
                 e.preventDefault();
