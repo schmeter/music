@@ -76,9 +76,9 @@ Use tests:
 - Jest
 
 
-### Solution
+## Solution
 
-#### Task: Data collection
+### Task: Data collection
 
 To display a music library, I need to read the data available on disk and make it available inside the app.  
 
@@ -97,7 +97,7 @@ Tools:
 ---
 
 
-#### Task: Player interface
+### Task: Player interface
 
 To have a player for the files in the browser, I need to provide an interface.   
 
@@ -122,7 +122,7 @@ Audio tag:
 ---
 
 
-#### Task: Positioning
+### Task: Positioning
 
 To have the player available at all times, it has to be present. 
 There's a dynamic browser interface in mobile browsers which makes the player element move up and down.  
@@ -172,7 +172,7 @@ I want continuous availability in mobile browsers in the same place at all times
 ---
 
 
-#### Task: Styling
+### Task: Styling
 
 Safari and Firefox look fine, there's no need to change except removal of rounded corners.  
 Only minor styling available on DOM.  
@@ -242,7 +242,7 @@ Disadvantage: Still have to rely on Chrome's native output.
 ---
 
 
-#### Task: Make the app accessible and play the audio
+### Task: Make the app accessible and play the audio
 
 I use React.js components to display the data collected and provide links to audio files which should then be loaded into the audio player.  
 
@@ -347,7 +347,7 @@ I use React.js components to display the data collected and provide links to aud
 ---
 
 
-#### Task: Analyse the audio
+### Task: Analyse the audio
 
 I need to use the Audio Context for grabbing the data from the audio file.  
 
@@ -485,7 +485,7 @@ There's lots more possibilities with Audio context, like adding equalizers, filt
 ---
 
 
-#### More features
+### More features
 
 I want to provide a sitemap.txt.  
 
