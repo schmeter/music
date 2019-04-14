@@ -1,7 +1,6 @@
 # Music
 
-Today's topic is about music.  
-It's about how to put your own music into an app that's running in the browser, so that it can be provided to the rest of the world in a nice and accessible way without you worrying about legal issues related to platforms where would normally upload your files.  
+This is about how to put your own music into an app that's running in the browser, so that it can be provided to the rest of the world in a nice and accessible way without you worrying about legal issues related to platforms where would normally upload your files.  
 
 
 ## Past
