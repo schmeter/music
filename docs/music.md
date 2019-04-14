@@ -5,17 +5,17 @@ This is about how to put your own music into an app that's running in the browse
 
 ## Past
 
-To provide music to visitors of your website was already possible with an early version of Internet Explorer, where you could put a file as a background noise into your HTML code, like to be seen here:  
-https://developer.mozilla.org/en-US/docs/Web/HTML/Element/bgsound  
+To provide music to visitors of your website was already possible with an early version of Internet Explorer, where you could put a file as a background noise into your HTML code, like to be seen here: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/bgsound.  
 
 This was quite annoying and uncomfortably to use, so that visitors mainly would not return to that site again.  
 
 
 ## Present
 
-Today there' an easy to use and comfortable to handle way to provide audio files with HTML5 Audio.  
-Example at https://developer.mozilla.org/en-US/docs/Web/HTML/Element/audio.  
+Today there' an easy to use and comfortable to handle way to provide audio files with HTML5 Audio: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/audio.  
+
 At least you only have to define a source file and the existence of controls to have a working audio player in the browser.  
+
 So why would you need more than that?  
 
 
@@ -61,8 +61,7 @@ What else?
 
 ### Toolchain setup
 
-Technologies to be used:  
-React, Redux, Sass.  
+Technologies to be used: React, Redux, Sass.  
 
 Create base configuration:  
 - .node-version  
@@ -489,7 +488,7 @@ There's lots more possibilities with Audio context, like adding equalizers, filt
 
 I want to provide a sitemap.txt.  
 
-- Add the routes AND the audio configuration.  
+- Add the static routes AND the dynamic audio configuration.  
 
 ```
     https://example.com/
@@ -513,13 +512,16 @@ I want to have update cycles.
 
 - Generate a version.json containing the same data.  
 
-        {
-            "rev": "45b3baa",
-            "time": 1554968510870
-        }
+```
+    {
+        "rev": "45b3baa",
+        "time": 1554968510870
+    }
+```
 
-- Read fresh JSON file on app start and check for updates, if page was cached.  
+- Read fresh JSON file on app start and check for updates, if page was cached.
 - Provide a simple interface.  
+
 
 ```
     fetchJSON(`/version.json?${new Date().getTime()}`, true)
@@ -551,21 +553,22 @@ https://antipeter.de/
 
 ## Issues
 
-Autoplay next file on mobile is not possible, if browser tab is inactive. Also on desktop, if Javascript is not allowed in inactive tabs.  
-Audio image display on lockscreen is not possible.  
-Only partial lockscreen navigation.  
+- Autoplay next file on mobile is not possible, if browser tab is inactive.  
+- Also on desktop, if JavaScript is not allowed in inactive tabs.  
+- Audio image display on lockscreen is not possible.  
+- Only partial lockscreen navigation.  
 
 
 ## Next steps / possibilities
 
-Add zip download.  
-Have server side rendering.  
-Work on SEO optimization.  
-Provide content sharing.  
-Build a progressive webapp.  
-Add a (React) native app with webframe.  
-Build an Electron app.  
-Integrate with Heroku / Netlify for continuous deployment.  
+- Add zip download.  
+- Have server side rendering.  
+- Work on SEO optimization.  
+- Provide content sharing.  
+- Build a progressive webapp.  
+- Add a (React) native app with webframe.  
+- Build an Electron app.  
+- Integrate with Heroku / Netlify for continuous deployment.  
 
 
 ## Conclusion
