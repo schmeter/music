@@ -12,6 +12,7 @@ exports[`renders correctly 1`] = `
   <button
     className="header-button close-button"
     onClick={[MockFunction]}
+    tabIndex="-1"
   >
     <Icon
       id="close"

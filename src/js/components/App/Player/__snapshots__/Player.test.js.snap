@@ -73,6 +73,7 @@ exports[`renders correctly 1`] = `
       onPause={[Function]}
       onPlay={[Function]}
       preload="none"
+      tabIndex="-1"
     />
   </div>
 </Player>
@@ -158,6 +159,7 @@ exports[`renders correctly 2`] = `
           controls=""
           preload="none"
           src="test2"
+          tabindex="-1"
           title="undefined - test2"
         />
       }
@@ -175,6 +177,7 @@ exports[`renders correctly 2`] = `
       onPause={[Function]}
       onPlay={[Function]}
       preload="none"
+      tabIndex="-1"
     />
   </div>
 </Player>
@@ -250,6 +253,7 @@ exports[`renders correctly 3`] = `
           controls=""
           preload="none"
           src="test2"
+          tabindex="-1"
           title="undefined - test2"
         />
       }
@@ -267,6 +271,7 @@ exports[`renders correctly 3`] = `
       onPause={[Function]}
       onPlay={[Function]}
       preload="none"
+      tabIndex="-1"
     />
   </div>
 </Player>
@@ -342,6 +347,7 @@ exports[`renders correctly 4`] = `
           controls=""
           preload="none"
           src="test2"
+          tabindex="-1"
           title="undefined - test2"
         />
       }
@@ -359,6 +365,7 @@ exports[`renders correctly 4`] = `
       onPause={[Function]}
       onPlay={[Function]}
       preload="none"
+      tabIndex="-1"
     />
   </div>
 </Player>
