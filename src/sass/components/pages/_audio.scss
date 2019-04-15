@@ -80,6 +80,10 @@
         max-width: 512px;
         max-height: 512px;
 
+        .image {
+            display: block;
+        }
+
         .cover {
             background-color: $color-record-background;
         }
