@@ -32,6 +32,7 @@ class Header extends React.Component {
                 <button
                     className="button header-button info-button"
                     onClick={this.handleClickLink}
+                    tabIndex="-1"
                 >
                     <Icon id="info-circle" />
                 </button>

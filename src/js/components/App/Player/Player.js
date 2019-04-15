@@ -155,6 +155,7 @@ class Player extends React.Component {
                     onPause={this.handlePause}
                     onEnded={this.handleEnded}
                     onError={this.handleError}
+                    tabIndex="-1"
                 />
             </div>
         );

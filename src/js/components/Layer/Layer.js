@@ -29,6 +29,7 @@ class Layer extends React.Component {
                 <button
                     className="header-button close-button"
                     onClick={closeLayers}
+                    tabIndex="-1"
                 >
                     <Icon id="close" />
                 </button>

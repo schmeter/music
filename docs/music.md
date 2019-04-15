@@ -183,7 +183,6 @@ Only minor styling available on DOM.
         width: 100%;
         height: 30px;
         background: radial-gradient(#fff4e1, #505050);
-        outline: none;
     }
 ```
 
