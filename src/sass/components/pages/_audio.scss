@@ -43,11 +43,11 @@
 
         @media (max-height: $max-height-phone-landscape) {
             width: calc(100% / 5);
-            padding: 5px;
+            padding: 5px 5px 0;
         }
 
         @media (max-width: $max-width-phone) {
-            padding: 5px;
+            padding: 5px 5px 0;
         }
 
         @media (min-width: $min-width-large-desktop + 1) {
