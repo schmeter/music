@@ -86,27 +86,6 @@ exports[`renders correctly 3`] = `
       </li>
       <li
         className="table-row"
-        key="artist"
-      >
-        <span
-          className="table-cell text-left bold"
-        >
-          Künstler
-          :
-        </span>
-        <span
-          className="table-cell text-left"
-        >
-          <Link
-            onClick={[MockFunction]}
-            to="/audio/test"
-          >
-            test
-          </Link>
-        </span>
-      </li>
-      <li
-        className="table-row"
         key="album"
       >
         <span
@@ -121,6 +100,27 @@ exports[`renders correctly 3`] = `
           <Link
             onClick={[MockFunction]}
             to="/audio/test/test"
+          >
+            test
+          </Link>
+        </span>
+      </li>
+      <li
+        className="table-row"
+        key="artist"
+      >
+        <span
+          className="table-cell text-left bold"
+        >
+          Künstler
+          :
+        </span>
+        <span
+          className="table-cell text-left"
+        >
+          <Link
+            onClick={[MockFunction]}
+            to="/audio/test"
           >
             test
           </Link>
