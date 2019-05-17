@@ -9,8 +9,8 @@ import { getUrl } from '../../../services/navigation';
 
 const infos = [
     { id: 'title' },
-    { id: 'artist', link: 'audio:artistId' },
-    { id: 'album', link: 'audio:artistId:albumId' }
+    { id: 'album', link: 'audio:artistId:albumId' },
+    { id: 'artist', link: 'audio:artistId' }
 ];
 
 const Info = ({ activeTrack, closeLayers }) => {

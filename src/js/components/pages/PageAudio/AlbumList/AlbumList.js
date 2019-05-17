@@ -59,16 +59,16 @@ class AlbumList extends React.Component {
                                 album={album}
                             />
                             <div className="album-content">
+                                <h3 className="album-title">
+                                    <Link to={albumLink}>
+                                        {album.title}
+                                    </Link>
+                                </h3>
                                 <h3 className="artist-title">
                                     <Link to={artistLink}>
                                         {album.artist.title}
                                     </Link>
                                 </h3>
-                                <h4 className="album-title">
-                                    <Link to={albumLink}>
-                                        {album.title}
-                                    </Link>
-                                </h4>
                                 {!selectedAlbumId ? null : (
                                     <TrackList trackList={album.tracks} />
                                 )}
