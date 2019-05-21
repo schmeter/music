@@ -5,14 +5,16 @@ This is about how to put your own music into an app that's running in the browse
 
 ## Past
 
-To provide music to visitors of your website was already possible with an early version of Internet Explorer, where you could put a file as a background noise into your HTML code, like to be seen here: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/bgsound.  
+To provide music to visitors of your website was already possible with an early version of Internet Explorer, where you could put a file as a background noise into your HTML code, like to be seen here:  
+https://developer.mozilla.org/en-US/docs/Web/HTML/Element/bgsound  
 
 This was quite annoying and uncomfortably to use, so that visitors mainly would not return to that site again.  
 
 
 ## Present
 
-Today there' an easy to use and comfortable to handle way to provide audio files with HTML5 Audio: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/audio.  
+Today there' an easy to use and comfortable to handle way to provide audio files with HTML5 Audio:  
+https://developer.mozilla.org/en-US/docs/Web/HTML/Element/audio  
 
 At least you only have to define a source file and the existence of controls to have a working audio player in the browser.  
 
@@ -52,7 +54,7 @@ How to handle app state?
 
 Device support?  
 - Default Android and iOS browsers.  
-- Chrome, Firefox and Safari on Desktop.
+- Chrome, Firefox and Safari on Desktop.  
 
 What else?  
 - Use a sitemap.  
@@ -72,7 +74,7 @@ Prepare linting:
 - Sass Lint  
 
 Use tests:  
-- Jest
+- Jest  
 
 
 ## Solution
