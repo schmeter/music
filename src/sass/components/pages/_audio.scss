@@ -79,6 +79,11 @@
         position: relative;
         max-width: 512px;
         max-height: 512px;
+        margin-bottom: 5px;
+
+        @media (max-width: $max-width-phone), (max-height: $max-height-phone-landscape) {
+            margin-bottom: 0;
+        }
 
         .image {
             display: block;
@@ -144,6 +149,10 @@
             display: flex;
             width: 100%;
             max-width: 100%;
+
+            .album-cover {
+                margin-bottom: 0;
+            }
 
             @media (min-width: $min-width-tablet) {
                 flex-direction: row;
