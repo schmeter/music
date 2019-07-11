@@ -1,14 +1,12 @@
 import {
-    getLibrary,
-    getActiveIndex,
-    saveActiveTrackPath
+    requestLibrary,
+    getActiveIndex
 } from '../../services/audio';
 
-export const initAudioAction = () => (dispatch) => {
-    const library = getLibrary();
+export const requestAudioDataAction = () => (dispatch) => {
+    const library = requestLibrary();
 
     dispatch(setLibraryAction(library));
-    dispatch(setTracksAction(library.tracks));
     dispatch(setActiveIndexAction(getActiveIndex(library.tracks)));
 };
 
@@ -17,24 +15,9 @@ export const setLibraryAction = (library) => ({
     payload: library
 });
 
-export const setTracksAction = (tracks) => ({
-    type: 'AUDIO_SET_TRACKS',
-    payload: tracks
-});
-
 export const setActiveIndexAction = (activeIndex) => ({
     type: 'AUDIO_SET_ACTIVE_INDEX',
     payload: activeIndex
-});
-
-export const saveActiveTrackAction = (activeTrack) => (dispatch) => {
-    dispatch(setActiveTrackAction(activeTrack));
-    saveActiveTrackPath(activeTrack.path);
-};
-
-export const setActiveTrackAction = (activeTrack) => ({
-    type: 'AUDIO_SET_ACTIVE_TRACK',
-    payload: activeTrack
 });
 
 export const setIsPlayingAction = (isPlaying) => ({

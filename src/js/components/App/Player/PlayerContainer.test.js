@@ -24,7 +24,7 @@ it('renders correctly', () => {
     };
 
     expect(Object.keys(props)).toEqual([
-        'initAudio',
+        'requestAudioData',
         'setIsPlaying',
         'setActiveTrack',
         'setActiveIndex',
@@ -35,7 +35,7 @@ it('renders correctly', () => {
         'isPlaying'
     ]);
 
-    props.initAudio();
+    props.requestAudioData();
     props.setIsPlaying();
     props.setActiveTrack();
     props.setActiveIndex();

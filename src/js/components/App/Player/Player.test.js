@@ -24,7 +24,7 @@ it('renders correctly', () => {
     const tracks = [file1, file2];
 
     let props = {
-        initAudio: jest.fn(),
+        requestAudioData: jest.fn(),
         setActiveTrack: jest.fn(),
         setActiveIndex: jest.fn(),
         setIsPlaying: jest.fn(),

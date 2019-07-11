@@ -3,7 +3,7 @@
 exports[`renders correctly 1`] = `
 <Player
   activeIndex={0}
-  initAudio={
+  requestAudioData={
     [MockFunction] {
       "calls": Array [
         Array [],
@@ -82,7 +82,7 @@ exports[`renders correctly 1`] = `
 exports[`renders correctly 2`] = `
 <Player
   activeIndex={1}
-  initAudio={
+  requestAudioData={
     [MockFunction] {
       "calls": Array [
         Array [],
@@ -186,7 +186,7 @@ exports[`renders correctly 2`] = `
 exports[`renders correctly 3`] = `
 <Player
   activeIndex={2}
-  initAudio={
+  requestAudioData={
     [MockFunction] {
       "calls": Array [
         Array [],
@@ -280,7 +280,7 @@ exports[`renders correctly 3`] = `
 exports[`renders correctly 4`] = `
 <Player
   activeIndex={2}
-  initAudio={
+  requestAudioData={
     [MockFunction] {
       "calls": Array [
         Array [],

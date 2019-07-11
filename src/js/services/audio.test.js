@@ -1,5 +1,5 @@
 import {
-    getLibrary,
+    requestLibrary,
     getActiveIndex,
     getNextIndex,
     isSameAlbum,
@@ -8,7 +8,7 @@ import {
 
 } from './audio';
 
-const audioLibrary = getLibrary(true);
+const audioLibrary = requestLibrary(true);
 const tracks = audioLibrary.tracks;
 const activeIndex = getActiveIndex(tracks);
 const nextIndex = getNextIndex(activeIndex, tracks);

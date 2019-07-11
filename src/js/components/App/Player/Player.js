@@ -9,18 +9,18 @@ class Player extends React.Component {
     audio = React.createRef();
 
     componentDidMount() {
-        const { initAudio } = this.props;
+        const { requestAudioData } = this.props;
 
-        initAudio();
+        requestAudioData();
         this.loadAudio();
         document.addEventListener('keydown', this.captureKeys);
     }
 
     componentDidUpdate(lastProps) {
-        const { activeIndex, initAudio, isLoggedIn, playToggle } = this.props;
+        const { activeIndex, requestAudioData, isLoggedIn, playToggle } = this.props;
 
         if (lastProps.isLoggedIn !== isLoggedIn) {
-            initAudio();
+            requestAudioData();
         }
         if (lastProps.activeIndex !== activeIndex) {
             // accept values greater than -1, because -1 is initial index
@@ -163,7 +163,7 @@ class Player extends React.Component {
 }
 
 Player.propTypes = {
-    initAudio: PropTypes.func.isRequired,
+    requestAudioData: PropTypes.func.isRequired,
     setActiveTrack: PropTypes.func.isRequired,
     setActiveIndex: PropTypes.func.isRequired,
     setIsPlaying: PropTypes.func.isRequired,

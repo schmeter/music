@@ -7,7 +7,7 @@ import storage from './storage';
 import { getRandom } from '../util/math';
 import { isPropTrueAtIndex } from '../util/array';
 
-export const getLibrary = (showAll = isAuthenticated()) => new AudioLibraryModel(audioData, showAll);
+export const requestLibrary = (showAll = isAuthenticated()) => new AudioLibraryModel(audioData, showAll);
 
 export const getRandomIndex = (tracks) => {
     const filterList = tracks.filter((item) => !item.hidden);
@@ -58,7 +58,7 @@ export const isSameAlbum = (track, nextTrack) =>
     (track.artist && nextTrack.artist && track.album && nextTrack.album) &&
     (track.artist.id === nextTrack.artist.id) && (track.album.id === nextTrack.album.id);
 
-export const getArtist = (library, artistId) => library.artists.find((artist) => artist.id === artistId);
+export const getArtist = (library, artistId) => propOr([], 'artists', library).find((artist) => artist.id === artistId);
 
 export const getAlbum = (library, artistId, albumId) =>
     propOr([], 'albums', getArtist(library, artistId)).find((album) => album.id === albumId);

@@ -19,12 +19,12 @@ const store = createStore(
             isLoggedIn: isAuthenticated()
         },
         audio: {
-            library: null,
-            tracks: [],
+            library: {
+                tracks: []
+            },
             activeIndex: -1,
-            activeTrack: null,
             isPlaying: false,
-            playToggle: false
+            isPlayRequested: false
         },
         layer: {
             activeId: ''
