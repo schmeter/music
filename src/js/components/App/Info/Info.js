@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 
 import Image from '../../Image';
 import Link from '../../Link';
-import ScrollTop from '../../ScrollTop';
 import i18n from '../../../services/i18n';
 import { getUrl } from '../../../services/navigation';
+import { scrollTop } from '../../../util/screen';
 
 const infos = [
     { id: 'title' },
@@ -13,9 +13,15 @@ const infos = [
     { id: 'artist', link: 'audio:artistId' }
 ];
 
-const Info = ({ activeTrack, closeLayers }) => {
-    return !activeTrack ? null : (
-        <ScrollTop target=".layer-content">
+class Info extends React.Component {
+    componentDidUpdate() {
+        scrollTop('.layer-content-info');
+    }
+
+    render() {
+        const { activeTrack, closeLayers } = this.props;
+
+        return !activeTrack ? null : (
             <div className="layer-content">
                 {activeTrack.lyrics ? (
                     <div
@@ -67,9 +73,9 @@ const Info = ({ activeTrack, closeLayers }) => {
                     controls
                 />
             </div>
-        </ScrollTop>
-    );
-};
+        );
+    }
+}
 
 Info.propTypes = {
     activeTrack: PropTypes.object,

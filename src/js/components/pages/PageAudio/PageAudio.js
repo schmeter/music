@@ -6,10 +6,18 @@ import Page from '../../Page';
 import { Page404 } from '../';
 import AlbumList from './AlbumList';
 import { getUrl } from '../../../services/navigation';
-import { joinTitleParts, getTitle } from '../../../services/meta';
+import { joinTitleParts, setTitle } from '../../../services/meta';
 
 class PageAudio extends React.Component {
-    getTitle() {
+    componentDidMount() {
+        this.setTitle();
+    }
+
+    componentDidUpdate() {
+        this.setTitle();
+    }
+
+    setTitle() {
         const titleParts = [];
         const { match, getArtist, getAlbum } = this.props;
 
@@ -25,7 +33,7 @@ class PageAudio extends React.Component {
             titleParts.push(selectedAlbum.title);
         }
 
-        return getTitle(joinTitleParts(titleParts));
+        return setTitle(joinTitleParts(titleParts));
     }
 
     render() {
@@ -40,7 +48,6 @@ class PageAudio extends React.Component {
         return !validParams ? <Page404 /> : (
             <Page
                 id="audio"
-                title={this.getTitle()}
                 useBaseClass={false}
             >
                 <AlbumList

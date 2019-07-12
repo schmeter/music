@@ -1,36 +1,40 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import { Helmet } from 'react-helmet';
 
-import ScrollTop from '../ScrollTop';
-import { getTitle } from '../../services/meta';
+import i18n from '../../services/i18n';
+import { setTitle } from '../../services/meta';
+import { scrollTop } from '../../util/screen';
 
 class Page extends React.Component {
+    componentDidUpdate(lastProps) {
+        const { location } = this.props;
+
+        if (lastProps.location.pathname !== location.pathname) {
+            scrollTop('main');
+        }
+    }
+
+    componentDidMount() {
+        const { id, title } = this.props;
+
+        setTitle(title || i18n(`page_${id}_title`));
+    }
+
     render() {
-        const { className, id, title, children, useBaseClass } = this.props;
+        const { className, id, children, useBaseClass } = this.props;
 
         return (
-            <>
-                <Helmet>
-                    <title>{title || getTitle(id)}</title>
-                </Helmet>
-                <ScrollTop target="main">
-                    <main className="main">
-                        <div className={classNames(
-                            'page',
-                            { 'page-base': useBaseClass !== false },
-                            `page-${className || id}`
-                        )}>
-                            {children}
-                        </div>
-                        <audio
-                            className="spacer"
-                            controls
-                        />
-                    </main>
-                </ScrollTop>
-            </>
+            <main className="main">
+                <div className={classNames(
+                    'page',
+                    { 'page-base': useBaseClass !== false },
+                    `page-${className || id}`
+                )}>
+                    {children}
+                </div>
+            </main>
         );
     }
 }
@@ -40,7 +44,10 @@ Page.propTypes = {
     title: PropTypes.string,
     className: PropTypes.string,
     children: PropTypes.node,
-    useBaseClass: PropTypes.bool
+    useBaseClass: PropTypes.bool,
+    location: PropTypes.shape({
+        pathname: PropTypes.string
+    })
 };
 
-export default Page;
+export default withRouter(Page);
