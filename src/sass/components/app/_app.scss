@@ -8,7 +8,7 @@ body {
         $color-background-gradient-outer 100%
     );
     color: $color-text;
-    font-family: 'Kanit', arial, sans-serif;
+    font-family: arial, sans-serif;
     font-size: $font-size-base;
     line-height: $line-height-base;
     overflow: hidden;
@@ -30,8 +30,8 @@ body {
 
 .main-headline {
     padding: 0 $header-icon-width;
-    font-family: 'Russo One';
     font-size: $header-font-size;
+    font-weight: bold;
     line-height: $header-height;
     text-align: center;
 }
