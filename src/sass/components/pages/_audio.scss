@@ -138,11 +138,11 @@
         }
 
         .artist-title {
-            font-size: $font-size-base;
+            font-size: $font-size-base + 3px;
         }
 
         .album-title {
-            font-size: $font-size-base + 3px;
+            font-size: $font-size-base + 6px;
         }
 
         .album {
