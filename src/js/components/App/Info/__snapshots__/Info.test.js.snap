@@ -3,147 +3,139 @@
 exports[`renders correctly 1`] = `""`;
 
 exports[`renders correctly 2`] = `
-<ScrollTop
-  target=".layer-content"
+<div
+  className="layer-content"
 >
-  <div
-    className="layer-content"
+  <ul
+    className="table"
   >
-    <ul
-      className="table"
+    <li
+      className="table-row"
+      key="title"
     >
-      <li
-        className="table-row"
-        key="title"
+      <span
+        className="table-cell text-left bold"
       >
-        <span
-          className="table-cell text-left bold"
-        >
-          Titel
-          :
-        </span>
-        <span
-          className="table-cell text-left"
-        >
-          test
-        </span>
-      </li>
-    </ul>
-    <div
-      className="cover"
+        Titel
+        :
+      </span>
+      <span
+        className="table-cell text-left"
+      >
+        test
+      </span>
+    </li>
+  </ul>
+  <div
+    className="cover"
+  >
+    <Link
+      onClick={[MockFunction]}
+      to="/audio/test/test"
     >
-      <Link
-        onClick={[MockFunction]}
-        to="/audio/test/test"
-      >
-        <Image
-          alt="test"
-          src="test"
-        />
-      </Link>
-    </div>
-    <audio
-      className="spacer"
-      controls={true}
-    />
+      <Image
+        alt="test"
+        src="test"
+      />
+    </Link>
   </div>
-</ScrollTop>
+  <audio
+    className="spacer"
+    controls={true}
+  />
+</div>
 `;
 
 exports[`renders correctly 3`] = `
-<ScrollTop
-  target=".layer-content"
+<div
+  className="layer-content"
 >
   <div
-    className="layer-content"
-  >
-    <div
-      className="lyrics"
-      dangerouslySetInnerHTML={
-        Object {
-          "__html": "test",
-        }
+    className="lyrics"
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": "test",
       }
-    />
-    <ul
-      className="table"
+    }
+  />
+  <ul
+    className="table"
+  >
+    <li
+      className="table-row"
+      key="title"
     >
-      <li
-        className="table-row"
-        key="title"
+      <span
+        className="table-cell text-left bold"
       >
-        <span
-          className="table-cell text-left bold"
-        >
-          Titel
-          :
-        </span>
-        <span
-          className="table-cell text-left"
+        Titel
+        :
+      </span>
+      <span
+        className="table-cell text-left"
+      >
+        test
+      </span>
+    </li>
+    <li
+      className="table-row"
+      key="album"
+    >
+      <span
+        className="table-cell text-left bold"
+      >
+        Album
+        :
+      </span>
+      <span
+        className="table-cell text-left"
+      >
+        <Link
+          onClick={[MockFunction]}
+          to="/audio/test/test"
         >
           test
-        </span>
-      </li>
-      <li
-        className="table-row"
-        key="album"
-      >
-        <span
-          className="table-cell text-left bold"
-        >
-          Album
-          :
-        </span>
-        <span
-          className="table-cell text-left"
-        >
-          <Link
-            onClick={[MockFunction]}
-            to="/audio/test/test"
-          >
-            test
-          </Link>
-        </span>
-      </li>
-      <li
-        className="table-row"
-        key="artist"
-      >
-        <span
-          className="table-cell text-left bold"
-        >
-          Künstler
-          :
-        </span>
-        <span
-          className="table-cell text-left"
-        >
-          <Link
-            onClick={[MockFunction]}
-            to="/audio/test"
-          >
-            test
-          </Link>
-        </span>
-      </li>
-    </ul>
-    <div
-      className="cover"
+        </Link>
+      </span>
+    </li>
+    <li
+      className="table-row"
+      key="artist"
     >
-      <Link
-        onClick={[MockFunction]}
-        to="/audio/test/test"
+      <span
+        className="table-cell text-left bold"
       >
-        <Image
-          alt="test"
-          src="test"
-        />
-      </Link>
-    </div>
-    <audio
-      className="spacer"
-      controls={true}
-    />
+        Künstler
+        :
+      </span>
+      <span
+        className="table-cell text-left"
+      >
+        <Link
+          onClick={[MockFunction]}
+          to="/audio/test"
+        >
+          test
+        </Link>
+      </span>
+    </li>
+  </ul>
+  <div
+    className="cover"
+  >
+    <Link
+      onClick={[MockFunction]}
+      to="/audio/test/test"
+    >
+      <Image
+        alt="test"
+        src="test"
+      />
+    </Link>
   </div>
-</ScrollTop>
+  <audio
+    className="spacer"
+    controls={true}
+  />
+</div>
 `;
