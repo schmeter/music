@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Switch, Route } from 'react-router-dom';
 
 import {
@@ -18,6 +19,10 @@ import { fetchJSON } from '../../util/fetch';
 
 class App extends React.Component {
     componentDidMount() {
+        const { requestAudioData } = this.props;
+
+        requestAudioData();
+
         fetchJSON(`/version.json?${new Date().getTime()}`, true)
             .then(data => {
                 if (process.env.NODE_ENV === 'production') {
@@ -30,6 +35,14 @@ class App extends React.Component {
                     }
                 }
             });
+    }
+
+    componentDidUpdate(lastProps) {
+        const { requestAudioData, isLoggedIn } = this.props;
+
+        if (lastProps.isLoggedIn !== isLoggedIn) {
+            requestAudioData();
+        }
     }
 
     render() {
@@ -72,5 +85,10 @@ class App extends React.Component {
         );
     }
 }
+
+App.propTypes = {
+    requestAudioData: PropTypes.func.isRequired,
+    isLoggedIn: PropTypes.bool.isRequired
+};
 
 export default App;

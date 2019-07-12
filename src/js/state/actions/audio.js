@@ -1,6 +1,7 @@
 import {
     requestLibrary,
-    getActiveIndex
+    getActiveIndex,
+    saveActiveTrackPath
 } from '../../services/audio';
 
 export const requestAudioDataAction = () => (dispatch) => {
@@ -28,3 +29,7 @@ export const setIsPlayingAction = (isPlaying) => ({
 export const togglePlayAction = () => ({
     type: 'AUDIO_TOGGLE_PLAY'
 });
+
+export const saveActiveTrackAction = (track) => () => {
+    saveActiveTrackPath(track.path);
+};

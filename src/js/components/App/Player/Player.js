@@ -9,19 +9,13 @@ class Player extends React.Component {
     audio = React.createRef();
 
     componentDidMount() {
-        const { requestAudioData } = this.props;
-
-        requestAudioData();
         this.loadAudio();
         document.addEventListener('keydown', this.captureKeys);
     }
 
     componentDidUpdate(lastProps) {
-        const { activeIndex, requestAudioData, isLoggedIn, playToggle } = this.props;
+        const { activeIndex, playToggle } = this.props;
 
-        if (lastProps.isLoggedIn !== isLoggedIn) {
-            requestAudioData();
-        }
         if (lastProps.activeIndex !== activeIndex) {
             // accept values greater than -1, because -1 is initial index
             this.loadAudio(~lastProps.activeIndex);
@@ -56,12 +50,12 @@ class Player extends React.Component {
     }
 
     loadAudio(play = false) {
-        const { tracks, activeIndex, setActiveTrack } = this.props;
+        const { tracks, activeIndex, saveActiveTrack } = this.props;
         const audio = this.audio.current;
         const file = tracks[activeIndex];
 
         if (file) {
-            setActiveTrack(file);
+            saveActiveTrack(file);
             this.pause();
             audio.loop = !!file.loop;
             audio.src = file.path;
@@ -163,15 +157,13 @@ class Player extends React.Component {
 }
 
 Player.propTypes = {
-    requestAudioData: PropTypes.func.isRequired,
-    setActiveTrack: PropTypes.func.isRequired,
     setActiveIndex: PropTypes.func.isRequired,
     setIsPlaying: PropTypes.func.isRequired,
+    saveActiveTrack: PropTypes.func.isRequired,
     tracks: PropTypes.array.isRequired,
     activeIndex: PropTypes.number.isRequired,
     playToggle: PropTypes.bool.isRequired,
-    isPlaying: PropTypes.bool.isRequired,
-    isLoggedIn: PropTypes.bool.isRequired
+    isPlaying: PropTypes.bool.isRequired
 };
 
 export default Player;

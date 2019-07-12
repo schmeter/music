@@ -2,23 +2,25 @@ import { connect } from 'react-redux';
 
 import Player from './Player';
 import {
-    requestAudioDataAction,
     setActiveIndexAction,
-    saveActiveTrackAction,
-    setIsPlayingAction
+    setIsPlayingAction,
+    saveActiveTrackAction
 } from '../../../state/actions/audio';
-import { isLoggedIn } from '../../../state/selectors/auth';
-import { getTracks, getActiveIndex, getPlayToggle, isPlaying } from '../../../state/selectors/audio';
+
+import {
+    getTracks,
+    getActiveIndex,
+    getPlayToggle,
+    isPlaying
+} from '../../../state/selectors/audio';
 
 export const mapDispatchToProps = (dispatch) => ({
-    requestAudioData: () => dispatch(requestAudioDataAction()),
     setIsPlaying: (isPlaying) => dispatch(setIsPlayingAction(isPlaying)),
-    setActiveTrack: (activeTrack) => dispatch(saveActiveTrackAction(activeTrack)),
-    setActiveIndex: (activeIndex) => dispatch(setActiveIndexAction(activeIndex))
+    setActiveIndex: (activeIndex) => dispatch(setActiveIndexAction(activeIndex)),
+    saveActiveTrack: (track) => dispatch(saveActiveTrackAction(track))
 });
 
 export const mapStateToProps = (state) => ({
-    isLoggedIn: isLoggedIn(state),
     tracks: getTracks(state),
     activeIndex: getActiveIndex(state),
     playToggle: getPlayToggle(state),

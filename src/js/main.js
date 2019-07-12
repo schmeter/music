@@ -20,11 +20,13 @@ const store = createStore(
         },
         audio: {
             library: {
-                tracks: []
+                tracks: [],
+                albums: [],
+                artists: []
             },
             activeIndex: -1,
             isPlaying: false,
-            isPlayRequested: false
+            playToggle: false
         },
         layer: {
             activeId: ''
