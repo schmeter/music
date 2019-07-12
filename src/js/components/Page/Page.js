@@ -34,6 +34,10 @@ class Page extends React.Component {
                 )}>
                     {children}
                 </div>
+                <audio
+                    className="spacer"
+                    controls
+                />
             </main>
         );
     }
