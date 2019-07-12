@@ -3,24 +3,11 @@
 exports[`renders correctly 1`] = `
 <Player
   activeIndex={0}
-  requestAudioData={
-    [MockFunction] {
-      "calls": Array [
-        Array [],
-      ],
-      "results": Array [
-        Object {
-          "type": "return",
-          "value": undefined,
-        },
-      ],
-    }
-  }
   isLoggedIn={false}
   isPlaying={false}
   playToggle={false}
-  setActiveIndex={[MockFunction]}
-  setActiveTrack={
+  requestAudioData={[MockFunction]}
+  saveActiveTrack={
     [MockFunction] {
       "calls": Array [
         Array [
@@ -40,6 +27,7 @@ exports[`renders correctly 1`] = `
       ],
     }
   }
+  setActiveIndex={[MockFunction]}
   setIsPlaying={[MockFunction]}
   tracks={
     Array [
@@ -82,24 +70,11 @@ exports[`renders correctly 1`] = `
 exports[`renders correctly 2`] = `
 <Player
   activeIndex={1}
-  requestAudioData={
-    [MockFunction] {
-      "calls": Array [
-        Array [],
-      ],
-      "results": Array [
-        Object {
-          "type": "return",
-          "value": undefined,
-        },
-      ],
-    }
-  }
   isLoggedIn={false}
   isPlaying={false}
   playToggle={true}
-  setActiveIndex={[MockFunction]}
-  setActiveTrack={
+  requestAudioData={[MockFunction]}
+  saveActiveTrack={
     [MockFunction] {
       "calls": Array [
         Array [
@@ -131,6 +106,7 @@ exports[`renders correctly 2`] = `
       ],
     }
   }
+  setActiveIndex={[MockFunction]}
   setIsPlaying={[MockFunction]}
   tracks={
     Array [
@@ -186,29 +162,11 @@ exports[`renders correctly 2`] = `
 exports[`renders correctly 3`] = `
 <Player
   activeIndex={2}
-  requestAudioData={
-    [MockFunction] {
-      "calls": Array [
-        Array [],
-        Array [],
-      ],
-      "results": Array [
-        Object {
-          "type": "return",
-          "value": undefined,
-        },
-        Object {
-          "type": "return",
-          "value": undefined,
-        },
-      ],
-    }
-  }
   isLoggedIn={true}
   isPlaying={true}
   playToggle={true}
-  setActiveIndex={[MockFunction]}
-  setActiveTrack={
+  requestAudioData={[MockFunction]}
+  saveActiveTrack={
     [MockFunction] {
       "calls": Array [
         Array [
@@ -240,6 +198,7 @@ exports[`renders correctly 3`] = `
       ],
     }
   }
+  setActiveIndex={[MockFunction]}
   setIsPlaying={[MockFunction]}
   tracks={Array []}
 >
@@ -280,29 +239,11 @@ exports[`renders correctly 3`] = `
 exports[`renders correctly 4`] = `
 <Player
   activeIndex={2}
-  requestAudioData={
-    [MockFunction] {
-      "calls": Array [
-        Array [],
-        Array [],
-      ],
-      "results": Array [
-        Object {
-          "type": "return",
-          "value": undefined,
-        },
-        Object {
-          "type": "return",
-          "value": undefined,
-        },
-      ],
-    }
-  }
   isLoggedIn={true}
   isPlaying={false}
   playToggle={true}
-  setActiveIndex={[MockFunction]}
-  setActiveTrack={
+  requestAudioData={[MockFunction]}
+  saveActiveTrack={
     [MockFunction] {
       "calls": Array [
         Array [
@@ -334,6 +275,7 @@ exports[`renders correctly 4`] = `
       ],
     }
   }
+  setActiveIndex={[MockFunction]}
   setIsPlaying={[MockFunction]}
   tracks={Array []}
 >

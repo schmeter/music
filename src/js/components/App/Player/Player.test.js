@@ -25,7 +25,7 @@ it('renders correctly', () => {
 
     let props = {
         requestAudioData: jest.fn(),
-        setActiveTrack: jest.fn(),
+        saveActiveTrack: jest.fn(),
         setActiveIndex: jest.fn(),
         setIsPlaying: jest.fn(),
         tracks,
