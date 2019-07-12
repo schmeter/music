@@ -1,5 +1,4 @@
 import { isPropTrueAtIndex } from '../../util/array';
-import { getRandom } from '../../util/math';
 
 const isSameAlbum = (track, nextTrack) =>
     (track && nextTrack) &&
@@ -16,11 +15,13 @@ export const getNextIndex = (state) => {
     if (!tracks[activeIndex]) {
         activeIndex = 0;
     }
+
     let nextIndex = activeIndex + 1;
 
     if (!tracks[nextIndex]) {
         nextIndex = 0;
     }
+
     if (
         isPropTrueAtIndex('skip', nextIndex, tracks)
         || (
@@ -41,14 +42,8 @@ export const getNextIndex = (state) => {
             }
         }
     }
+
     return nextIndex;
-};
-
-export const getRandomIndex = (state) => {
-    const tracks = getTracks(state);
-    const filterList = tracks.filter((item) => !item.hidden);
-
-    return tracks.indexOf(filterList[getRandom(0, filterList.length - 1)]);
 };
 
 export const getArtist = (state, artistId) =>

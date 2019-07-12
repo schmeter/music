@@ -24,15 +24,14 @@ it('renders correctly', () => {
     const tracks = [file1, file2];
 
     let props = {
-        requestAudioLibrary: jest.fn(),
-        saveActiveTrack: jest.fn(),
         setActiveIndex: jest.fn(),
         setIsPlaying: jest.fn(),
+        saveActiveTrack: jest.fn(),
         tracks,
         activeIndex: 0,
+        nextIndex: 1,
         playToggle: false,
-        isPlaying: false,
-        isLoggedIn: false
+        isPlaying: false
     };
 
     const component = mount(<Player {...props} />);
@@ -53,8 +52,7 @@ it('renders correctly', () => {
         ...props,
         tracks: [],
         activeIndex: 2,
-        isPlaying: true,
-        isLoggedIn: true
+        isPlaying: true
     };
 
     component.setProps(props);

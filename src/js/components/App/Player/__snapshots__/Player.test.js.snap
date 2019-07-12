@@ -3,10 +3,9 @@
 exports[`renders correctly 1`] = `
 <Player
   activeIndex={0}
-  isLoggedIn={false}
   isPlaying={false}
+  nextIndex={1}
   playToggle={false}
-  loadAudioData={[MockFunction]}
   saveActiveTrack={
     [MockFunction] {
       "calls": Array [
@@ -70,10 +69,9 @@ exports[`renders correctly 1`] = `
 exports[`renders correctly 2`] = `
 <Player
   activeIndex={1}
-  isLoggedIn={false}
   isPlaying={false}
+  nextIndex={1}
   playToggle={true}
-  loadAudioData={[MockFunction]}
   saveActiveTrack={
     [MockFunction] {
       "calls": Array [
@@ -162,10 +160,9 @@ exports[`renders correctly 2`] = `
 exports[`renders correctly 3`] = `
 <Player
   activeIndex={2}
-  isLoggedIn={true}
   isPlaying={true}
+  nextIndex={1}
   playToggle={true}
-  loadAudioData={[MockFunction]}
   saveActiveTrack={
     [MockFunction] {
       "calls": Array [
@@ -239,10 +236,9 @@ exports[`renders correctly 3`] = `
 exports[`renders correctly 4`] = `
 <Player
   activeIndex={2}
-  isLoggedIn={true}
   isPlaying={false}
+  nextIndex={1}
   playToggle={true}
-  loadAudioData={[MockFunction]}
   saveActiveTrack={
     [MockFunction] {
       "calls": Array [
