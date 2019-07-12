@@ -13,7 +13,7 @@ it('renders correctly', () => {
         audio: {}
     };
 
-    let component = shallow(<Mp3FileContainer />);
+    const component = shallow(<Mp3FileContainer />);
 
     expect(toJson(component)).toMatchSnapshot();
 

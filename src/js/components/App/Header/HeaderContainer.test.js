@@ -9,7 +9,7 @@ import HeaderContainer, {
 it('renders correctly', () => {
     const dispatch = jest.fn();
 
-    let component = shallow(<HeaderContainer />);
+    const component = shallow(<HeaderContainer />);
 
     expect(toJson(component)).toMatchSnapshot();
 

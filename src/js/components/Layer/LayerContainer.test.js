@@ -13,7 +13,7 @@ it('renders correctly', () => {
         layer: {}
     };
 
-    let component = shallow(<LayerContainer />);
+    const component = shallow(<LayerContainer />);
 
     expect(toJson(component)).toMatchSnapshot();
 

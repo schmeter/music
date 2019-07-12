@@ -14,7 +14,7 @@ it('renders correctly', () => {
         auth: {}
     };
 
-    let component = shallow(<PlayerContainer />);
+    const component = shallow(<PlayerContainer />);
 
     expect(toJson(component)).toMatchSnapshot();
 

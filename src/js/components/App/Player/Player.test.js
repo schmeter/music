@@ -35,7 +35,7 @@ it('renders correctly', () => {
         isLoggedIn: false
     };
 
-    let component = mount(<Player {...props} />);
+    const component = mount(<Player {...props} />);
 
     expect(toJson(component)).toMatchSnapshot();
 
