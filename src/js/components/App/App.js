@@ -19,9 +19,9 @@ import { fetchJSON } from '../../util/fetch';
 
 class App extends React.Component {
     componentDidMount() {
-        const { requestAudioData } = this.props;
+        const { requestAudioLibrary } = this.props;
 
-        requestAudioData();
+        requestAudioLibrary();
 
         fetchJSON(`/version.json?${new Date().getTime()}`, true)
             .then(data => {
@@ -38,10 +38,10 @@ class App extends React.Component {
     }
 
     componentDidUpdate(lastProps) {
-        const { requestAudioData, isLoggedIn } = this.props;
+        const { requestAudioLibrary, isLoggedIn } = this.props;
 
         if (lastProps.isLoggedIn !== isLoggedIn) {
-            requestAudioData();
+            requestAudioLibrary();
         }
     }
 
@@ -87,7 +87,7 @@ class App extends React.Component {
 }
 
 App.propTypes = {
-    requestAudioData: PropTypes.func.isRequired,
+    requestAudioLibrary: PropTypes.func.isRequired,
     isLoggedIn: PropTypes.bool.isRequired
 };
 

@@ -1,14 +1,16 @@
 import {
-    requestLibrary,
-    getActiveIndex,
-    saveActiveTrackPath
+    loadLibrary,
+    saveActiveTrackPath,
+    loadActiveTrackPath,
+    getRandomIndex
 } from '../../services/audio';
 
-export const requestAudioDataAction = () => (dispatch) => {
-    const library = requestLibrary();
+export const requestAudioLibraryAction = () => (dispatch) => {
+    const library = loadLibrary();
+    const activeIndex = library.tracks.findIndex(track => track.path === loadActiveTrackPath());
 
     dispatch(setLibraryAction(library));
-    dispatch(setActiveIndexAction(getActiveIndex(library.tracks)));
+    dispatch(setActiveIndexAction(activeIndex > -1 ? activeIndex : getRandomIndex(library.tracks)));
 };
 
 export const setLibraryAction = (library) => ({

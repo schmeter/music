@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import autobind from 'autobind-decorator';
 
 import Analyser from './Analyser';
-import { getNextIndex } from '../../../services/audio';
 
 class Player extends React.Component {
     audio = React.createRef();
@@ -125,9 +124,9 @@ class Player extends React.Component {
 
     @autobind
     handleEnded() {
-        const { activeIndex, tracks, setActiveIndex } = this.props;
+        const { nextIndex, setActiveIndex } = this.props;
 
-        setActiveIndex(getNextIndex(activeIndex, tracks));
+        setActiveIndex(nextIndex);
     }
 
     render() {
@@ -162,6 +161,7 @@ Player.propTypes = {
     saveActiveTrack: PropTypes.func.isRequired,
     tracks: PropTypes.array.isRequired,
     activeIndex: PropTypes.number.isRequired,
+    nextIndex: PropTypes.number.isRequired,
     playToggle: PropTypes.bool.isRequired,
     isPlaying: PropTypes.bool.isRequired
 };

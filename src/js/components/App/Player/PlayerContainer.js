@@ -11,7 +11,8 @@ import {
     getTracks,
     getActiveIndex,
     getPlayToggle,
-    isPlaying
+    isPlaying,
+    getNextIndex
 } from '../../../state/selectors/audio';
 
 export const mapDispatchToProps = (dispatch) => ({
@@ -23,6 +24,7 @@ export const mapDispatchToProps = (dispatch) => ({
 export const mapStateToProps = (state) => ({
     tracks: getTracks(state),
     activeIndex: getActiveIndex(state),
+    nextIndex: getNextIndex(state),
     playToggle: getPlayToggle(state),
     isPlaying: isPlaying(state)
 });

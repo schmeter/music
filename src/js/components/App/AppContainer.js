@@ -2,12 +2,12 @@ import { connect } from 'react-redux';
 
 import App from './App';
 import {
-    requestAudioDataAction
+    requestAudioLibraryAction
 } from '../../state/actions/audio';
 import { isLoggedIn } from '../../state/selectors/auth';
 
 export const mapDispatchToProps = (dispatch) => ({
-    requestAudioData: () => dispatch(requestAudioDataAction())
+    requestAudioLibrary: () => dispatch(requestAudioLibraryAction())
 });
 
 export const mapStateToProps = (state) => ({

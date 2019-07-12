@@ -2,7 +2,7 @@ import { flatten, pick, propOr } from 'ramda';
 
 import configApp from '../../config/app.json';
 
-export const getArtists = (audioData, showAll) => {
+const getArtists = (audioData, showAll) => {
     return propOr([], 'artists', audioData).map((artist) => {
         artist = Object.assign({}, artist, {
             hidden: showAll
@@ -15,7 +15,7 @@ export const getArtists = (audioData, showAll) => {
     });
 };
 
-export const getAlbums = (artist, showAll) => {
+const getAlbums = (artist, showAll) => {
     return propOr([], 'albums', artist).map((album) => {
         album = Object.assign({}, album, {
             hidden: showAll
@@ -31,7 +31,7 @@ export const getAlbums = (artist, showAll) => {
     });
 };
 
-export const getTracks = (album, showAll) => {
+const getTracks = (album, showAll) => {
     return Object.values(propOr({}, 'tracks', album)).map((track) => {
         track = Object.assign({}, track, {
             hidden: showAll

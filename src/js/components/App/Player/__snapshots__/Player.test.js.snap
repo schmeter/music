@@ -6,7 +6,7 @@ exports[`renders correctly 1`] = `
   isLoggedIn={false}
   isPlaying={false}
   playToggle={false}
-  requestAudioData={[MockFunction]}
+  loadAudioData={[MockFunction]}
   saveActiveTrack={
     [MockFunction] {
       "calls": Array [
@@ -73,7 +73,7 @@ exports[`renders correctly 2`] = `
   isLoggedIn={false}
   isPlaying={false}
   playToggle={true}
-  requestAudioData={[MockFunction]}
+  loadAudioData={[MockFunction]}
   saveActiveTrack={
     [MockFunction] {
       "calls": Array [
@@ -165,7 +165,7 @@ exports[`renders correctly 3`] = `
   isLoggedIn={true}
   isPlaying={true}
   playToggle={true}
-  requestAudioData={[MockFunction]}
+  loadAudioData={[MockFunction]}
   saveActiveTrack={
     [MockFunction] {
       "calls": Array [
@@ -242,7 +242,7 @@ exports[`renders correctly 4`] = `
   isLoggedIn={true}
   isPlaying={false}
   playToggle={true}
-  requestAudioData={[MockFunction]}
+  loadAudioData={[MockFunction]}
   saveActiveTrack={
     [MockFunction] {
       "calls": Array [
