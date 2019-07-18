@@ -1,7 +1,7 @@
 .page-audio {
     .artist-title,
     .album-title {
-        font-size: $font-size-base - 2px;
+        font-size: $font-size-base - 3px;
         text-overflow: ellipsis;
         white-space: nowrap;
         overflow: hidden;
@@ -136,20 +136,13 @@
         .album-title {
             width: auto;
             margin-bottom: 10px;
+            font-size: $font-size-base + 2px;
             white-space: normal;
             overflow: visible;
 
             @media (max-width: $max-width-phone), (max-height: $max-height-phone-landscape) {
                 display: inherit;
             }
-        }
-
-        .artist-title {
-            font-size: $font-size-base + 3px;
-        }
-
-        .album-title {
-            font-size: $font-size-base + 6px;
         }
 
         .album {
