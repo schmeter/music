@@ -70,24 +70,19 @@ exports[`renders correctly 1`] = `
               onClick={[Function]}
               to="test1"
             >
-              <Route
-                exact={true}
-                path="test1"
+              <Link
+                aria-current={null}
+                onClick={[Function]}
+                to="test1"
               >
-                <Link
+                <a
                   aria-current={null}
+                  href="/test1"
                   onClick={[Function]}
-                  to="test1"
                 >
-                  <a
-                    aria-current={null}
-                    href="/test1"
-                    onClick={[Function]}
-                  >
-                    test1
-                  </a>
-                </Link>
-              </Route>
+                  test1
+                </a>
+              </Link>
             </NavLink>
           </Link>
         </span>
@@ -167,24 +162,19 @@ exports[`renders correctly 2`] = `
               onClick={[Function]}
               to="test2"
             >
-              <Route
-                exact={true}
-                path="test2"
+              <Link
+                aria-current={null}
+                onClick={[Function]}
+                to="test2"
               >
-                <Link
+                <a
                   aria-current={null}
+                  href="/test2"
                   onClick={[Function]}
-                  to="test2"
                 >
-                  <a
-                    aria-current={null}
-                    href="/test2"
-                    onClick={[Function]}
-                  >
-                    test2
-                  </a>
-                </Link>
-              </Route>
+                  test2
+                </a>
+              </Link>
             </NavLink>
           </Link>
         </span>

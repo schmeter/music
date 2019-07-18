@@ -11,6 +11,7 @@ window.AudioContext = class AudioContext {
         getByteTimeDomainData: jest.fn(),
         frequencyBinCount: 8
     });
+
     createMediaElementSource = () => ({
         connect: jest.fn()
     });

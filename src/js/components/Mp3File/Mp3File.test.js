@@ -25,7 +25,7 @@ it('renders correctly', () => {
     };
     const tracks = [file1, file2];
 
-    let activeIndex = tracks.indexOf(file1);
+    const activeIndex = tracks.indexOf(file1);
 
     let props = {
         tracks,

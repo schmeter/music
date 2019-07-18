@@ -24,18 +24,17 @@ it('renders correctly', () => {
     const tracks = [file1, file2];
 
     let props = {
-        initAudio: jest.fn(),
-        setActiveTrack: jest.fn(),
         setActiveIndex: jest.fn(),
         setIsPlaying: jest.fn(),
+        saveActiveTrack: jest.fn(),
         tracks,
         activeIndex: 0,
+        nextIndex: 1,
         playToggle: false,
-        isPlaying: false,
-        isLoggedIn: false
+        isPlaying: false
     };
 
-    let component = mount(<Player {...props} />);
+    const component = mount(<Player {...props} />);
 
     expect(toJson(component)).toMatchSnapshot();
 
@@ -53,8 +52,7 @@ it('renders correctly', () => {
         ...props,
         tracks: [],
         activeIndex: 2,
-        isPlaying: true,
-        isLoggedIn: true
+        isPlaying: true
     };
 
     component.setProps(props);

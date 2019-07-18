@@ -31,7 +31,7 @@ it('renders correctly', () => {
         closeLayers: jest.fn()
     };
 
-    let component = shallow(<Info {...props} />);
+    const component = shallow(<Info {...props} />);
 
     expect(toJson(component)).toMatchSnapshot();
 

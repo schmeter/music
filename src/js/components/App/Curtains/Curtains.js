@@ -9,11 +9,15 @@ class Curtains extends React.Component {
 
     @autobind
     handleClickCurtains(e) {
+        const { curtainsOpen } = this.state;
+
         e.preventDefault();
-        this.setState({ curtainsOpen: !this.state.curtainsOpen });
+        this.setState({ curtainsOpen: !curtainsOpen });
     }
 
     render() {
+        const { curtainsOpen } = this.state;
+
         return (
             <>
                 {['left', 'right'].map(direction => (
@@ -22,7 +26,7 @@ class Curtains extends React.Component {
                         className={classNames(
                             'curtains',
                             direction,
-                            { open: this.state.curtainsOpen }
+                            { open: curtainsOpen }
                         )}
                         onClick={this.handleClickCurtains}
                     />

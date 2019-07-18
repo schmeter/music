@@ -5,20 +5,10 @@ export default (state = {}, action) => {
                 ...state,
                 library: action.payload
             };
-        case 'AUDIO_SET_TRACKS':
-            return {
-                ...state,
-                tracks: action.payload
-            };
         case 'AUDIO_SET_ACTIVE_INDEX':
             return {
                 ...state,
                 activeIndex: action.payload
-            };
-        case 'AUDIO_SET_ACTIVE_TRACK':
-            return {
-                ...state,
-                activeTrack: action.payload
             };
         case 'AUDIO_SET_IS_PLAYING':
             return {

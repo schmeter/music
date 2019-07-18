@@ -3,25 +3,18 @@ import PropTypes from 'prop-types';
 import autobind from 'autobind-decorator';
 
 import Analyser from './Analyser';
-import { getNextIndex } from '../../../services/audio';
 
 class Player extends React.Component {
     audio = React.createRef();
 
     componentDidMount() {
-        const { initAudio } = this.props;
-
-        initAudio();
         this.loadAudio();
         document.addEventListener('keydown', this.captureKeys);
     }
 
     componentDidUpdate(lastProps) {
-        const { activeIndex, initAudio, isLoggedIn, playToggle } = this.props;
+        const { activeIndex, playToggle } = this.props;
 
-        if (lastProps.isLoggedIn !== isLoggedIn) {
-            initAudio();
-        }
         if (lastProps.activeIndex !== activeIndex) {
             // accept values greater than -1, because -1 is initial index
             this.loadAudio(~lastProps.activeIndex);
@@ -56,12 +49,12 @@ class Player extends React.Component {
     }
 
     loadAudio(play = false) {
-        const { tracks, activeIndex, setActiveTrack } = this.props;
+        const { tracks, activeIndex, saveActiveTrack } = this.props;
         const audio = this.audio.current;
         const file = tracks[activeIndex];
 
         if (file) {
-            setActiveTrack(file);
+            saveActiveTrack(file);
             this.pause();
             audio.loop = !!file.loop;
             audio.src = file.path;
@@ -131,9 +124,9 @@ class Player extends React.Component {
 
     @autobind
     handleEnded() {
-        const { activeIndex, tracks, setActiveIndex } = this.props;
+        const { nextIndex, setActiveIndex } = this.props;
 
-        setActiveIndex(getNextIndex(activeIndex, tracks));
+        setActiveIndex(nextIndex);
     }
 
     render() {
@@ -163,15 +156,14 @@ class Player extends React.Component {
 }
 
 Player.propTypes = {
-    initAudio: PropTypes.func.isRequired,
-    setActiveTrack: PropTypes.func.isRequired,
     setActiveIndex: PropTypes.func.isRequired,
     setIsPlaying: PropTypes.func.isRequired,
+    saveActiveTrack: PropTypes.func.isRequired,
     tracks: PropTypes.array.isRequired,
     activeIndex: PropTypes.number.isRequired,
+    nextIndex: PropTypes.number.isRequired,
     playToggle: PropTypes.bool.isRequired,
-    isPlaying: PropTypes.bool.isRequired,
-    isLoggedIn: PropTypes.bool.isRequired
+    isPlaying: PropTypes.bool.isRequired
 };
 
 export default Player;

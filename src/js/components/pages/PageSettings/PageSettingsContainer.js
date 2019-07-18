@@ -2,6 +2,7 @@ import { connect } from 'react-redux';
 
 import PageSettings from './PageSettings';
 import { loginAction, logoutAction } from '../../../state/actions/auth';
+import { isLoggedIn } from '../../../state/selectors/auth';
 
 const mapDispatchToProps = (dispatch) => ({
     login: (credentials, expiration) => dispatch(loginAction(credentials, expiration)),
@@ -9,7 +10,7 @@ const mapDispatchToProps = (dispatch) => ({
 });
 
 const mapStateToProps = (state) => ({
-    isLoggedIn: state.auth.isLoggedIn
+    isLoggedIn: isLoggedIn(state)
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(PageSettings);

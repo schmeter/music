@@ -19,10 +19,12 @@ const store = createStore(
             isLoggedIn: isAuthenticated()
         },
         audio: {
-            library: null,
-            tracks: [],
+            library: {
+                tracks: [],
+                albums: [],
+                artists: []
+            },
             activeIndex: -1,
-            activeTrack: null,
             isPlaying: false,
             playToggle: false
         },

@@ -1,61 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders correctly with all parameters 1`] = `
-<Fragment>
-  <HelmetWrapper
-    defer={true}
-    encodeSpecialCharacters={true}
-  >
-    <title>
-      Musik | test
-    </title>
-  </HelmetWrapper>
-  <ScrollTop
-    target="main"
-  >
-    <main
-      className="main"
-    >
-      <div
-        className="page page-test"
-      >
-        test
-      </div>
-      <audio
-        className="spacer"
-        controls={true}
-      />
-    </main>
-  </ScrollTop>
-</Fragment>
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
 exports[`renders correctly with id only 1`] = `
-<Fragment>
-  <HelmetWrapper
-    defer={true}
-    encodeSpecialCharacters={true}
-  >
-    <title>
-      Musik | test
-    </title>
-  </HelmetWrapper>
-  <ScrollTop
-    target="main"
-  >
-    <main
-      className="main"
-    >
-      <div
-        className="page page-base page-test"
-      >
-        test
-      </div>
-      <audio
-        className="spacer"
-        controls={true}
-      />
-    </main>
-  </ScrollTop>
-</Fragment>
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;

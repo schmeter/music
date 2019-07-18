@@ -18,7 +18,7 @@ it('renders correctly', () => {
         isPlaying: false
     };
 
-    let component = shallow(<Screensaver {...props} />);
+    const component = shallow(<Screensaver {...props} />);
 
     expect(toJson(component)).toMatchSnapshot();
 

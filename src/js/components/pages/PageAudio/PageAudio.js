@@ -6,49 +6,52 @@ import Page from '../../Page';
 import { Page404 } from '../';
 import AlbumList from './AlbumList';
 import { getUrl } from '../../../services/navigation';
-import { joinTitleParts, getTitle } from '../../../services/meta';
-import { getAlbum, getArtist } from '../../../services/audio';
+import { joinTitleParts, setTitle } from '../../../services/meta';
 
 class PageAudio extends React.Component {
-    getTitle() {
+    componentDidMount() {
+        this.setTitle();
+    }
+
+    componentDidUpdate() {
+        this.setTitle();
+    }
+
+    setTitle() {
         const titleParts = [];
-        const { library, match } = this.props;
+        const { match, getArtist, getAlbum } = this.props;
 
-        if (library) {
-            const { artistId, albumId } = match.params;
-            const selectedArtist = getArtist(library, artistId);
-            const selectedAlbum = getAlbum(library, artistId, albumId);
+        const { artistId, albumId } = match.params;
+        const selectedArtist = getArtist(artistId);
 
-            if (selectedArtist) {
-                titleParts.push(selectedArtist.title);
-            }
-            if (selectedAlbum) {
-                titleParts.push(selectedAlbum.title);
-            }
+        const selectedAlbum = getAlbum(artistId, albumId);
+
+        if (selectedArtist) {
+            titleParts.push(selectedArtist.title);
         }
-        return getTitle(joinTitleParts(titleParts));
+        if (selectedAlbum) {
+            titleParts.push(selectedAlbum.title);
+        }
+
+        return setTitle(joinTitleParts(titleParts));
     }
 
     render() {
-        const { library, match } = this.props;
+        const { albums, match, getArtist, getAlbum } = this.props;
 
-        if (!library) {
-            return null;
-        }
         const { artistId, albumId } = match.params;
-        const selectedArtist = getArtist(library, artistId);
-        const selectedAlbum = getAlbum(library, artistId, albumId);
+        const selectedArtist = getArtist(artistId);
+        const selectedAlbum = getAlbum(artistId, albumId);
         const validParams = (artistId ? selectedArtist : true)
             && (albumId ? selectedAlbum : true);
 
         return !validParams ? <Page404 /> : (
             <Page
                 id="audio"
-                title={this.getTitle()}
                 useBaseClass={false}
             >
                 <AlbumList
-                    albumList={library.albums}
+                    albumList={albums}
                     selectedArtist={selectedArtist}
                     selectedAlbum={selectedAlbum}
                 />
@@ -61,8 +64,10 @@ class PageAudio extends React.Component {
 }
 
 PageAudio.propTypes = {
-    library: PropTypes.object,
-    match: PropTypes.object.isRequired
+    albums: PropTypes.array.isRequired,
+    match: PropTypes.object.isRequired,
+    getArtist: PropTypes.func.isRequired,
+    getAlbum: PropTypes.func.isRequired
 };
 
 export default PageAudio;
