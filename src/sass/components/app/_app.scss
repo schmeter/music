@@ -8,7 +8,7 @@ body {
         $color-background-gradient-outer 100%
     );
     color: $color-text;
-    font-family: arial, sans-serif;
+    font-family: Helvetica Neue, Arial, sans-serif;
     font-size: $font-size-base;
     line-height: $line-height-base;
     overflow: hidden;
@@ -53,6 +53,7 @@ body {
 .button,
 .select {
     display: inline-block;
+    border: 0;
     border-radius: 0;
     color: inherit;
     font-family: inherit;
@@ -76,8 +77,9 @@ body {
     height: 50px;
     margin: 5px;
     padding: 10px;
-    border: 1px solid $color-input-border;
+    border-radius: 4px;
     background: $color-input;
+    box-shadow: 0 0 2px 1px $color-input-border;
 }
 
 .form-input {
@@ -100,8 +102,8 @@ body {
 
 a {
     .image {
-        border: inset 1px $color-image-border;
         border-radius: 4px;
+        box-shadow: 0 0 2px 1px $color-image-border;
     }
 }
 
