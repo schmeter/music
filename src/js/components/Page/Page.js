@@ -7,12 +7,14 @@ import i18n from '../../services/i18n';
 import { setTitle } from '../../services/meta';
 import { scrollTop } from '../../util/screen';
 
+const scrollClass = 'main';
+
 class Page extends React.Component {
     componentDidUpdate(lastProps) {
         const { location } = this.props;
 
         if (lastProps.location.pathname !== location.pathname) {
-            scrollTop('main');
+            scrollTop(`.${scrollClass}`);
         }
     }
 
@@ -26,7 +28,7 @@ class Page extends React.Component {
         const { className, id, children, useBaseClass } = this.props;
 
         return (
-            <main className="main">
+            <main className={scrollClass}>
                 <div className={classNames(
                     'page',
                     { 'page-base': useBaseClass !== false },

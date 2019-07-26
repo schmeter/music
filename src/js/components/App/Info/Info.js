@@ -13,16 +13,18 @@ const infos = [
     { id: 'artist', link: 'audio:artistId' }
 ];
 
+const scrollClass = 'layer-content';
+
 class Info extends React.Component {
     componentDidUpdate() {
-        scrollTop('.layer-content-info');
+        scrollTop(`.${scrollClass}`);
     }
 
     render() {
         const { activeTrack, closeLayers } = this.props;
 
         return !activeTrack ? null : (
-            <div className="layer-content">
+            <div className={scrollClass}>
                 {activeTrack.lyrics ? (
                     <div
                         className="lyrics"
