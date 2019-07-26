@@ -2,6 +2,7 @@
     .artist-title,
     .album-title {
         font-size: $font-size-base - 3px;
+        line-height: $line-height-base - 2px;
         text-overflow: ellipsis;
         white-space: nowrap;
         overflow: hidden;
@@ -9,18 +10,6 @@
 
     .artist-title {
         opacity: .75;
-    }
-
-    .albums {
-        margin: 0 -10px;
-
-        @media (max-height: $max-height-phone-landscape) {
-            margin: 0 -5px;
-        }
-
-        @media (max-width: $max-width-phone) {
-            margin: 0 -5px;
-        }
     }
 
     .album {
@@ -39,11 +28,6 @@
 
         @media (max-height: $max-height-phone-landscape) {
             width: calc(100% / 5);
-            padding: 5px;
-        }
-
-        @media (max-width: $max-width-phone) {
-            padding: 5px;
         }
 
         @media (min-width: $min-width-desktop + 1) {
@@ -59,10 +43,6 @@
         }
     }
 
-    .album-content {
-        margin: 0 5px;
-    }
-
     .tracks {
         margin: 20px 0 10px;
     }
@@ -74,7 +54,8 @@
 
         .index {
             width: 25px;
-            padding-right: 10px;
+            padding-right: 5px;
+            text-align: center;
         }
     }
 
@@ -129,6 +110,7 @@
             width: auto;
             margin-bottom: 5px;
             font-size: $font-size-base + 2px;
+            line-height: $line-height-base;
             white-space: normal;
             overflow: visible;
         }

@@ -12,10 +12,19 @@ html {
 
 a {
     color: inherit;
-    text-decoration: underline;
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: underline;
+    }
+
+    &:active,
+    &:focus {
+        text-decoration: none;
+    }
 
     &.active {
-        text-decoration: none;
+        pointer-events: none;
     }
 }
 

@@ -16,17 +16,28 @@
     }
 }
 
-.layer-headline {
-    padding: 0 $header-icon-width 0 15px;
-    font-size: $header-font-size;
-    font-weight: bold;
-    line-height: $header-height;
+.layer-header {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    background-color: $color-layer;
     box-shadow: $app-shadow;
+    opacity: .95;
+    z-index: $z-index-header;
+
+    .layer-headline {
+        padding: 0 $header-icon-width 0 15px;
+        font-size: $header-font-size;
+        font-weight: bold;
+        line-height: $header-height;
+    }
 }
 
 .layer-content {
     @extend %scroll-container;
 
     width: 100%;
-    height: calc(100% - #{$header-icon-width});
+    height: 100%;
+    padding: ($header-height + 30px) 20px 40px;
 }

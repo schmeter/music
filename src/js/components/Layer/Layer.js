@@ -23,16 +23,18 @@ class Layer extends React.Component {
                     { closed: activeId !== id }
                 )}
             >
-                <h2 className="layer-headline">
-                    {i18n(`layer_${id}_headline`)}
-                </h2>
-                <button
-                    className="header-button close-button"
-                    onClick={closeLayers}
-                    tabIndex="-1"
-                >
-                    <Icon id="close" />
-                </button>
+                <header className="layer-header">
+                    <h2 className="layer-headline">
+                        {i18n(`layer_${id}_headline`)}
+                    </h2>
+                    <button
+                        className="header-button close-button"
+                        onClick={closeLayers}
+                        tabIndex="-1"
+                    >
+                        <Icon id="close" />
+                    </button>
+                </header>
                 {children}
             </div>
         );
