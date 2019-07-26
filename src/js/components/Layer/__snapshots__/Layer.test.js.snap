@@ -4,20 +4,24 @@ exports[`renders correctly 1`] = `
 <div
   className="layer layer-test closed"
 >
-  <h2
-    className="layer-headline"
+  <header
+    className="layer-header"
   >
-    {{de:layer_test_headline}}
-  </h2>
-  <button
-    className="header-button close-button"
-    onClick={[MockFunction]}
-    tabIndex="-1"
-  >
-    <Icon
-      id="close"
-    />
-  </button>
+    <h2
+      className="layer-headline"
+    >
+      {{de:layer_test_headline}}
+    </h2>
+    <button
+      className="header-button close-button"
+      onClick={[MockFunction]}
+      tabIndex="-1"
+    >
+      <Icon
+        id="close"
+      />
+    </button>
+  </header>
   test
 </div>
 `;

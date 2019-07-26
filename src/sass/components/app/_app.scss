@@ -77,9 +77,9 @@ body {
     height: 50px;
     margin: 5px;
     padding: 10px;
+    border: 1px solid $color-input-border;
     border-radius: 4px;
     background: $color-input;
-    box-shadow: 0 0 2px 1px $color-input-border;
 }
 
 .form-input {
@@ -102,8 +102,8 @@ body {
 
 a {
     .image {
+        border: 1px solid $color-image-border;
         border-radius: 4px;
-        box-shadow: 0 0 2px 1px $color-image-border;
     }
 }
 

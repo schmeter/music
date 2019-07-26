@@ -48,7 +48,7 @@ class AlbumList extends React.Component {
 
                     return !visible ? null : (
                         <div
-                            key={album.id}
+                            key={album.artist.id + album.id}
                             className={classNames(
                                 'album',
                                 { 'album-playing': playing }
