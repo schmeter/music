@@ -16,8 +16,12 @@
     .album {
         display: inline-block;
         width: calc(100% / 2);
-        padding: 5px 10px 10px;
+        padding: 5px 5px 10px;
         vertical-align: top;
+
+        @media (min-width: $max-width-phone + 1) {
+            width: calc(100% / 3);
+        }
 
         @media (min-width: $min-width-tablet) {
             width: calc(100% / 4);
@@ -32,11 +36,11 @@
         }
 
         @media (min-width: $min-width-desktop + 1) {
-            width: calc(100% / 6);
+            width: calc(100% / 7);
         }
 
         @media (min-width: $min-width-large-desktop + 1) {
-            width: calc(100% / 8);
+            width: calc(100% / 10);
         }
 
         @media (min-width: $min-width-very-large-desktop + 1) {
@@ -153,6 +157,7 @@
 
                 .album-content {
                     order: 0;
+                    margin-left: 0;
                 }
             }
         }

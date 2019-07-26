@@ -45,7 +45,7 @@ body {
     right: 0;
     bottom: 0;
     left: 0;
-    padding: ($header-height + 20px) 10px 40px;
+    padding: ($header-height + 20px) 10px 10px;
     z-index: $z-index-main;
 }
 
@@ -141,6 +141,7 @@ hr {
 .secret {
     a {
         display: block;
+        height: 20px;
         color: $color-secret;
         text-decoration: none;
         cursor: default;

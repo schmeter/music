@@ -1,41 +1,165 @@
-.layer-info {
-    right: 0;
-
-    &.closed {
-        transform: translate3d(110%, 0, 0);
+.page-audio {
+    .artist-title,
+    .album-title {
+        margin: 0 4px;
+        font-size: $font-size-base - 3px;
+        line-height: $line-height-base - 2px;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
     }
 
-    .lyrics {
-        margin: 0 4px 20px;
+    .artist-title {
+        opacity: .75;
+    }
 
-        @media (max-width: $max-width-phone) {
-            font-size: $font-size-base - 4px;
+    .album {
+        display: inline-block;
+        width: calc(100% / 2);
+        padding: 5px 5px 10px;
+        vertical-align: top;
+
+        @media (min-width: $max-width-phone + 1) {
+            width: calc(100% / 3);
         }
 
-        h2 {
-            margin-bottom: 15px;
-            font-size: $font-size-base + 2px;
-            font-weight: bold;
+        @media (min-width: $min-width-tablet) {
+            width: calc(100% / 4);
         }
 
-        p {
-            margin-top: 10px;
-            font-size: $font-size-base - 2px;
+        @media (min-width: $max-width-tablet + 1) {
+            width: calc(100% / 5);
+        }
+
+        @media (max-height: $max-height-phone-landscape) {
+            width: calc(100% / 5);
+        }
+
+        @media (min-width: $min-width-desktop + 1) {
+            width: calc(100% / 7);
+        }
+
+        @media (min-width: $min-width-large-desktop + 1) {
+            width: calc(100% / 10);
+        }
+
+        @media (min-width: $min-width-very-large-desktop + 1) {
+            max-width: 256px;
         }
     }
 
-    .table {
-        margin-bottom: 20px;
+    .tracks {
+        margin: 20px 0 10px;
+    }
 
+    .track {
         .table-cell {
-            padding: 0 4px 8px;
+            padding-bottom: 10px;
+        }
+
+        .index {
+            width: 25px;
+            padding-right: 5px;
+            text-align: center;
         }
     }
 
-    .cover {
+    .album-cover {
+        display: block;
+        position: relative;
+        max-width: 256px;
+        margin-bottom: 5px;
+
         .image {
-            width: $max-width-phone;
+            display: block;
+        }
+
+        .cover {
+            background-color: $color-record-background;
+        }
+
+        .record {
+            position: absolute;
+            top: 1%;
+            left: 1%;
+            width: 98%;
+            transform: translateX(0) rotate3d(0, 0, 1, -180deg);
+            transition-duration: 300ms;
+            transition-property: margin-left, transform;
+            transition-timing-function: ease-in-out;
+            border: 150px solid $color-record;
+            border-radius: 100%;
+            background-color: $color-record-background;
+            box-shadow: 0 0 4px 0 $color-record;
+            z-index: -1;
+
+            &.show {
+                transform: translateX(320px) rotate3d(0, 0, 1, 15deg);
+            }
+
+            @media (max-width: $min-width-tablet), (max-height: $max-height-phone-landscape) {
+                display: none;
+            }
+        }
+    }
+
+    .album-playing .artist-title,
+    .album-playing .album-title,
+    .track-playing span {
+        font-weight: bold;
+    }
+
+    .album-selected {
+        .artist-title,
+        .album-title {
+            width: auto;
+            margin-bottom: 5px;
+            font-size: $font-size-base + 2px;
+            line-height: $line-height-base;
+            white-space: normal;
+            overflow: visible;
+        }
+
+        .artist-title {
+            font-size: $font-size-base;
+        }
+
+        .album {
+            display: flex;
+            width: 100%;
             max-width: 100%;
+            padding-top: 0;
+
+            .album-cover {
+                max-width: 512px;
+                margin-bottom: 0;
+            }
+
+            @media (min-width: $min-width-tablet) {
+                flex-direction: row;
+
+                .album-cover {
+                    order: 0;
+                }
+
+                .album-content {
+                    order: 1;
+                    margin-left: 20px;
+                }
+            }
+
+            @media (max-width: $min-width-tablet - 1), (max-height: $max-height-phone-landscape) {
+                flex-direction: column;
+
+                .album-cover {
+                    order: 1;
+                }
+
+                .album-content {
+                    order: 0;
+                    margin-left: 0;
+                }
+            }
         }
     }
 }
