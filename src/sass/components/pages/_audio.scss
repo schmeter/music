@@ -84,10 +84,6 @@
         max-width: 256px;
         margin-bottom: 5px;
 
-        @media (max-width: $max-width-phone), (max-height: $max-height-phone-landscape) {
-            margin-bottom: 0;
-        }
-
         .image {
             display: block;
         }
@@ -135,10 +131,6 @@
             font-size: $font-size-base + 2px;
             white-space: normal;
             overflow: visible;
-
-            @media (max-width: $max-width-phone), (max-height: $max-height-phone-landscape) {
-                display: inherit;
-            }
         }
 
         .album {
