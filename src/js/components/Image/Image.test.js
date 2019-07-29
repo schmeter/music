@@ -11,14 +11,13 @@ it('renders correctly', () => {
         className: 'test',
         handleLoad: jest.fn()
     };
-
-    const component = mount(<Image {...props} >test</Image>);
-
-    expect(toJson(component)).toMatchSnapshot();
+    const component = mount(<Image {...props} />);
 
     component.simulate('error');
     component.setState({ error: true });
     component.simulate('error');
     component.simulate('load');
+
+    expect(toJson(component)).toMatchSnapshot();
     expect(props.handleLoad).toHaveBeenCalled();
 });

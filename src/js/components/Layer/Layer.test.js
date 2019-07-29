@@ -11,14 +11,15 @@ const mockedEvent = {
 it('renders correctly', () => {
     const props = {
         id: 'test',
+        className: 'test',
+        children: 'test',
         activeId: 'test2',
         closeLayers: jest.fn()
     };
-
-    const component = shallow(<Layer {...props} >test</Layer>);
-
-    expect(toJson(component)).toMatchSnapshot();
+    const component = shallow(<Layer {...props} />);
 
     component.find('button').simulate('click', mockedEvent);
+
+    expect(toJson(component)).toMatchSnapshot();
     expect(props.closeLayers).toHaveBeenCalled();
 });

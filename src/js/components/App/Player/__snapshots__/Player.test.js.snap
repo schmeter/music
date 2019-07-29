@@ -162,7 +162,7 @@ exports[`renders correctly 3`] = `
   activeIndex={2}
   isPlaying={true}
   nextIndex={1}
-  playToggle={true}
+  playToggle={false}
   saveActiveTrack={
     [MockFunction] {
       "calls": Array [
@@ -235,10 +235,10 @@ exports[`renders correctly 3`] = `
 
 exports[`renders correctly 4`] = `
 <Player
-  activeIndex={2}
+  activeIndex={0}
   isPlaying={false}
   nextIndex={1}
-  playToggle={true}
+  playToggle={false}
   saveActiveTrack={
     [MockFunction] {
       "calls": Array [
@@ -258,8 +258,20 @@ exports[`renders correctly 4`] = `
             },
           },
         ],
+        Array [
+          Object {
+            "path": "test1",
+            "tag": Object {
+              "title": "test1",
+            },
+          },
+        ],
       ],
       "results": Array [
+        Object {
+          "type": "return",
+          "value": undefined,
+        },
         Object {
           "type": "return",
           "value": undefined,
@@ -273,7 +285,22 @@ exports[`renders correctly 4`] = `
   }
   setActiveIndex={[MockFunction]}
   setIsPlaying={[MockFunction]}
-  tracks={Array []}
+  tracks={
+    Array [
+      Object {
+        "path": "test1",
+        "tag": Object {
+          "title": "test1",
+        },
+      },
+      Object {
+        "path": "test2",
+        "tag": Object {
+          "title": "test2",
+        },
+      },
+    ]
+  }
 >
   <div
     className="player"
@@ -284,9 +311,9 @@ exports[`renders correctly 4`] = `
           class="audio"
           controls=""
           preload="none"
-          src="test2"
+          src="test1"
           tabindex="-1"
-          title="undefined - test2"
+          title="undefined - test1"
         />
       }
       isPlaying={false}

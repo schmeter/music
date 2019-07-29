@@ -24,27 +24,23 @@ it('renders correctly', () => {
             title: 'test'
         }
     };
-
     const lyrics = 'test';
-
-    let props = {
+    const props = {
         closeLayers: jest.fn()
     };
-
     const component = shallow(<Info {...props} />);
 
     expect(toJson(component)).toMatchSnapshot();
 
-    props = {
+    component.setProps({
         ...props,
         activeTrack
-    };
-
-    component.setProps(props);
+    });
     component.update();
+
     expect(toJson(component)).toMatchSnapshot();
 
-    props = {
+    component.setProps({
         ...props,
         activeTrack: {
             ...activeTrack,
@@ -55,12 +51,10 @@ it('renders correctly', () => {
             },
             lyrics
         }
-    };
-
-    component.setProps(props);
+    });
     component.update();
-    expect(toJson(component)).toMatchSnapshot();
-
     component.find('.cover').find(Link).simulate('click', mockedEvent);
+
+    expect(toJson(component)).toMatchSnapshot();
     expect(props.closeLayers).toHaveBeenCalled();
 });

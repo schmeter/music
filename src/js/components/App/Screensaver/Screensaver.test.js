@@ -14,36 +14,32 @@ window.setTimeout = (callback, value) => {
 };
 
 it('renders correctly', () => {
-    let props = {
+    const props = {
         isPlaying: false
     };
-
     const component = shallow(<Screensaver {...props} />);
 
     expect(toJson(component)).toMatchSnapshot();
 
-    props = {
+    component.setProps({
         ...props,
         isPlaying: true
-    };
-
-    component.setProps(props);
+    });
     component.update();
+
     expect(toJson(component)).toMatchSnapshot();
 
     document.dispatchEvent(new window.KeyboardEvent('keydown', { keyCode: 0 }));
     document.dispatchEvent(new window.KeyboardEvent('keydown', { keyCode: 37 }));
     document.dispatchEvent(new window.KeyboardEvent('keydown', { keyCode: 39 }));
-
     document.dispatchEvent(new window.KeyboardEvent('mousemove', {}));
 
-    props = {
+    component.setProps({
         ...props,
         isPlaying: false
-    };
-
-    component.setProps(props);
+    });
     component.update();
+
     expect(toJson(component)).toMatchSnapshot();
 
     document.dispatchEvent(new window.KeyboardEvent('mousemove', {}));

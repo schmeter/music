@@ -10,31 +10,32 @@ const mockedEvent = {
     defaultPrevented: false,
     preventDefault: jest.fn()
 };
+const onClick = jest.fn();
 
 it('renders correctly with external url', () => {
     const props = {
         to: 'http://test',
-        onClick: jest.fn()
+        children: 'test',
+        className: 'test',
+        onClick
     };
-
-    const component = shallow(<Link {...props} >test</Link>);
-
-    expect(toJson(component)).toMatchSnapshot();
+    const component = shallow(<Link {...props} />);
 
     component.simulate('click', mockedEvent);
+
+    expect(toJson(component)).toMatchSnapshot();
     expect(props.onClick).toHaveBeenCalled();
 });
 
 it('renders correctly with internal url', () => {
     const props = {
         to: 'test',
-        onClick: jest.fn()
+        onClick
     };
-
     const component = shallow(<Link {...props} />);
 
-    expect(toJson(component)).toMatchSnapshot();
-
     component.simulate('click', mockedEvent);
+
+    expect(toJson(component)).toMatchSnapshot();
     expect(props.onClick).toHaveBeenCalled();
 });

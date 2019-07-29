@@ -14,7 +14,23 @@ exports[`renders correctly 1`] = `
     </h2>
     <button
       className="header-button close-button"
-      onClick={[MockFunction]}
+      onClick={
+        [MockFunction] {
+          "calls": Array [
+            Array [
+              Object {
+                "preventDefault": [MockFunction],
+              },
+            ],
+          ],
+          "results": Array [
+            Object {
+              "type": "return",
+              "value": undefined,
+            },
+          ],
+        }
+      }
       tabIndex="-1"
     >
       <Icon

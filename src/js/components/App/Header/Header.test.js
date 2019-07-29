@@ -12,11 +12,10 @@ it('renders correctly', () => {
     const props = {
         openLayer: jest.fn()
     };
-
     const component = shallow(<Header {...props} />);
 
-    expect(toJson(component)).toMatchSnapshot();
-
     component.find('.info-button').simulate('click', mockedEvent);
+
+    expect(toJson(component)).toMatchSnapshot();
     expect(props.openLayer).toHaveBeenCalled();
 });

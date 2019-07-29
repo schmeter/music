@@ -9,21 +9,18 @@ window.HTMLMediaElement.prototype.play = jest.fn();
 window.HTMLMediaElement.prototype.pause = jest.fn();
 
 it('renders correctly', () => {
-    const file1 = {
+    const tracks = [{
         path: 'test1',
         tag: {
             title: 'test1'
         }
-    };
-    const file2 = {
+    }, {
         path: 'test2',
         tag: {
             title: 'test2'
         }
-    };
-    const tracks = [file1, file2];
-
-    let props = {
+    }];
+    const props = {
         setActiveIndex: jest.fn(),
         setIsPlaying: jest.fn(),
         saveActiveTrack: jest.fn(),
@@ -33,52 +30,45 @@ it('renders correctly', () => {
         playToggle: false,
         isPlaying: false
     };
-
     const component = mount(<Player {...props} />);
 
     expect(toJson(component)).toMatchSnapshot();
 
-    props = {
+    component.setProps({
         ...props,
         activeIndex: 1,
         playToggle: true
-    };
-
-    component.setProps(props);
+    });
     component.update();
+
     expect(toJson(component)).toMatchSnapshot();
 
-    props = {
+    component.setProps({
         ...props,
         tracks: [],
         activeIndex: 2,
         isPlaying: true
-    };
-
-    component.setProps(props);
+    });
     component.update();
+
     expect(toJson(component)).toMatchSnapshot();
 
     document.dispatchEvent(new window.KeyboardEvent('keydown', { keyCode: 0 }));
-
     document.dispatchEvent(new window.KeyboardEvent('keydown', { keyCode: 32 }));
 
-    props = {
+    component.setProps({
         ...props,
         isPlaying: false
-    };
-
-    component.setProps(props);
+    });
     component.update();
+
     expect(toJson(component)).toMatchSnapshot();
 
     document.dispatchEvent(new window.KeyboardEvent('keydown', { keyCode: 32 }));
-
     component.find('audio').simulate('play');
     component.find('audio').simulate('pause');
     component.find('audio').simulate('ended');
     component.find('audio').simulate('error');
-
     document.dispatchEvent(new window.KeyboardEvent('keydown', { keyCode: 37 }));
     document.dispatchEvent(new window.KeyboardEvent('keydown', { keyCode: 39 }));
 });

@@ -44,7 +44,7 @@ it('uses scrollTop helper on location change', () => {
             pathname: 'test'
         }
     };
-    const component = shallow(<Page {...props} >test</Page>);
+    const component = shallow(<Page {...props} />);
 
     component.setProps({
         location: {

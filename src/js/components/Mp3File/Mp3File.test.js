@@ -9,33 +9,29 @@ import Link from '../Link';
 const mockedEvent = {
     preventDefault: jest.fn()
 };
+const setActiveIndex = jest.fn();
+const togglePlay = jest.fn();
+const tracks = [{
+    path: 'test1',
+    tag: {
+        title: 'test1'
+    }
+}, {
+    path: 'test2',
+    tag: {
+        title: 'test2'
+    }
+}];
 
-it('renders correctly', () => {
-    const file1 = {
-        path: 'test1',
-        tag: {
-            title: 'test1'
-        }
-    };
-    const file2 = {
-        path: 'test2',
-        tag: {
-            title: 'test2'
-        }
-    };
-    const tracks = [file1, file2];
-
-    const activeIndex = tracks.indexOf(file1);
-
-    let props = {
+it('renders correctly and uses togglePlay on click', () => {
+    const props = {
         tracks,
-        file: file1,
-        activeIndex,
-        setActiveIndex: jest.fn(),
-        togglePlay: jest.fn()
+        file: tracks[0],
+        activeIndex: 0,
+        setActiveIndex,
+        togglePlay
     };
-
-    let component = mount(
+    const component = mount(
         <BrowserRouter>
             <Mp3File {...props} />
         </BrowserRouter>
@@ -44,23 +40,27 @@ it('renders correctly', () => {
     expect(toJson(component)).toMatchSnapshot();
 
     component.find(Link).simulate('click', mockedEvent);
-    expect(props.togglePlay).toHaveBeenCalled();
 
-    props = {
+    expect(togglePlay).toHaveBeenCalled();
+});
+
+it('renders correctly and uses setActiveIndex on click', () => {
+    const props = {
         tracks,
-        file: file2,
-        activeIndex,
-        setActiveIndex: jest.fn(),
-        togglePlay: jest.fn()
+        file: tracks[1],
+        activeIndex: 0,
+        setActiveIndex,
+        togglePlay
     };
-
-    component = mount(
+    const component = mount(
         <BrowserRouter>
             <Mp3File {...props} />
         </BrowserRouter>
     );
+
     expect(toJson(component)).toMatchSnapshot();
 
     component.find(Link).simulate('click', mockedEvent);
-    expect(props.setActiveIndex).toHaveBeenCalled();
+
+    expect(setActiveIndex).toHaveBeenCalled();
 });

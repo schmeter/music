@@ -4,12 +4,24 @@ exports[`renders correctly 1`] = `
 <Image
   alt="test"
   className="test"
-  handleLoad={[MockFunction]}
+  handleLoad={
+    [MockFunction] {
+      "calls": Array [
+        Array [],
+      ],
+      "results": Array [
+        Object {
+          "type": "return",
+          "value": undefined,
+        },
+      ],
+    }
+  }
   src="test"
 >
   <img
     alt="test"
-    className="image test invisible"
+    className="image test"
     onError={[Function]}
     onLoad={[Function]}
     src="test"

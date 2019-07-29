@@ -91,7 +91,23 @@ exports[`renders correctly 3`] = `
         className="table-cell text-left"
       >
         <Link
-          onClick={[MockFunction]}
+          onClick={
+            [MockFunction] {
+              "calls": Array [
+                Array [
+                  Object {
+                    "preventDefault": [MockFunction],
+                  },
+                ],
+              ],
+              "results": Array [
+                Object {
+                  "type": "return",
+                  "value": undefined,
+                },
+              ],
+            }
+          }
           to="/audio/test/test"
         >
           test
@@ -112,7 +128,23 @@ exports[`renders correctly 3`] = `
         className="table-cell text-left"
       >
         <Link
-          onClick={[MockFunction]}
+          onClick={
+            [MockFunction] {
+              "calls": Array [
+                Array [
+                  Object {
+                    "preventDefault": [MockFunction],
+                  },
+                ],
+              ],
+              "results": Array [
+                Object {
+                  "type": "return",
+                  "value": undefined,
+                },
+              ],
+            }
+          }
           to="/audio/test"
         >
           test
@@ -124,7 +156,23 @@ exports[`renders correctly 3`] = `
     className="cover"
   >
     <Link
-      onClick={[MockFunction]}
+      onClick={
+        [MockFunction] {
+          "calls": Array [
+            Array [
+              Object {
+                "preventDefault": [MockFunction],
+              },
+            ],
+          ],
+          "results": Array [
+            Object {
+              "type": "return",
+              "value": undefined,
+            },
+          ],
+        }
+      }
       to="/audio/test/test"
     >
       <Image
