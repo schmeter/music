@@ -1,6 +1,7 @@
-import { isPropTrueAtIndex } from '../../util/array';
+export const isPropTrueAtIndex = (prop, index, array) =>
+    array && array[index] && array[index][prop];
 
-const isSameAlbum = (track, nextTrack) =>
+export const isSameAlbum = (track, nextTrack) =>
     (track && nextTrack) &&
     (track.artist && nextTrack.artist && track.album && nextTrack.album) &&
     (track.artist.id === nextTrack.artist.id) && (track.album.id === nextTrack.album.id);
