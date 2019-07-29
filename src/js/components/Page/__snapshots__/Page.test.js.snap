@@ -1,13 +1,31 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders correctly with all parameters 1`] = `
-<ContextConsumer>
-  <Component />
-</ContextConsumer>
+<main
+  className="main"
+>
+  <div
+    className="page page-test"
+  >
+    test
+  </div>
+  <audio
+    className="spacer"
+    controls={true}
+  />
+</main>
 `;
 
 exports[`renders correctly with id only 1`] = `
-<ContextConsumer>
-  <Component />
-</ContextConsumer>
+<main
+  className="main"
+>
+  <div
+    className="page page-base page-test"
+  />
+  <audio
+    className="spacer"
+    controls={true}
+  />
+</main>
 `;
