@@ -32,9 +32,8 @@ class Player extends React.Component {
             case 32:
                 e.preventDefault();
                 // prevent double space event on focused audio element
-                if (document.activeElement !== audio) {
-                    this.togglePlay();
-                }
+                audio.blur();
+                this.togglePlay();
                 break;
             case 37:
                 e.preventDefault();

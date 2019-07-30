@@ -80,6 +80,4 @@ it('renders correctly', () => {
     component.find('audio').simulate('error');
     document.dispatchEvent(new window.KeyboardEvent('keydown', { keyCode: 37 }));
     document.dispatchEvent(new window.KeyboardEvent('keydown', { keyCode: 39 }));
-    component.find('audio').simulate('focus');
-    document.dispatchEvent(new window.KeyboardEvent('keydown', { keyCode: 32 }));
 });

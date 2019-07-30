@@ -23,3 +23,14 @@ it('renders correctly', () => {
     expect(toJson(component)).toMatchSnapshot();
     expect(props.closeLayers).toHaveBeenCalled();
 });
+
+it('renders correctly with id only', () => {
+    const props = {
+        id: 'test',
+        activeId: 'test2',
+        closeLayers: jest.fn()
+    };
+    const component = shallow(<Layer {...props} />);
+
+    expect(toJson(component)).toMatchSnapshot();
+});

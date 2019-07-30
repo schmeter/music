@@ -41,3 +41,28 @@ exports[`renders correctly 1`] = `
   test
 </div>
 `;
+
+exports[`renders correctly with id only 1`] = `
+<div
+  className="layer layer-test closed"
+>
+  <header
+    className="layer-header"
+  >
+    <h2
+      className="layer-headline"
+    >
+      {{de:layer_test_headline}}
+    </h2>
+    <button
+      className="header-button close-button"
+      onClick={[MockFunction]}
+      tabIndex="-1"
+    >
+      <Icon
+        id="close"
+      />
+    </button>
+  </header>
+</div>
+`;
