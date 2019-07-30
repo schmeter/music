@@ -71,7 +71,7 @@ exports[`renders correctly 2`] = `
   activeIndex={1}
   isPlaying={false}
   nextIndex={1}
-  playToggle={true}
+  playToggle={false}
   saveActiveTrack={
     [MockFunction] {
       "calls": Array [
@@ -159,6 +159,97 @@ exports[`renders correctly 2`] = `
 
 exports[`renders correctly 3`] = `
 <Player
+  activeIndex={1}
+  isPlaying={false}
+  nextIndex={1}
+  playToggle={true}
+  saveActiveTrack={
+    [MockFunction] {
+      "calls": Array [
+        Array [
+          Object {
+            "path": "test1",
+            "tag": Object {
+              "title": "test1",
+            },
+          },
+        ],
+        Array [
+          Object {
+            "path": "test2",
+            "tag": Object {
+              "title": "test2",
+            },
+          },
+        ],
+      ],
+      "results": Array [
+        Object {
+          "type": "return",
+          "value": undefined,
+        },
+        Object {
+          "type": "return",
+          "value": undefined,
+        },
+      ],
+    }
+  }
+  setActiveIndex={[MockFunction]}
+  setIsPlaying={[MockFunction]}
+  tracks={
+    Array [
+      Object {
+        "path": "test1",
+        "tag": Object {
+          "title": "test1",
+        },
+      },
+      Object {
+        "path": "test2",
+        "tag": Object {
+          "title": "test2",
+        },
+      },
+    ]
+  }
+>
+  <div
+    className="player"
+  >
+    <Analyser
+      audio={
+        <audio
+          class="audio"
+          controls=""
+          preload="none"
+          src="test2"
+          tabindex="-1"
+          title="undefined - test2"
+        />
+      }
+      isPlaying={false}
+    >
+      <canvas
+        className="canvas"
+      />
+    </Analyser>
+    <audio
+      className="audio"
+      controls={true}
+      onEnded={[Function]}
+      onError={[Function]}
+      onPause={[Function]}
+      onPlay={[Function]}
+      preload="none"
+      tabIndex="-1"
+    />
+  </div>
+</Player>
+`;
+
+exports[`renders correctly 4`] = `
+<Player
   activeIndex={2}
   isPlaying={true}
   nextIndex={1}
@@ -233,7 +324,7 @@ exports[`renders correctly 3`] = `
 </Player>
 `;
 
-exports[`renders correctly 4`] = `
+exports[`renders correctly 5`] = `
 <Player
   activeIndex={0}
   isPlaying={false}

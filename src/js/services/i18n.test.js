@@ -12,10 +12,12 @@ test('expects getAppLanguage to return "de"', () => {
     expect(getAppLanguage()).toBe('de');
 });
 
-test('expects getLanguages to return ["de", "en"]', () => {
-    expect(getLanguages()).toEqual(['de', 'en']);
+test('expects getAppLanguage to return "en" after setAppLanguage', () => {
+    setAppLanguage('en');
+
+    expect(getAppLanguage()).toBe('en');
 });
 
-test('expects setAppLanguage to return undefined', () => {
-    expect(setAppLanguage()).toEqual(undefined);
+test('expects getLanguages to return ["de", "en"]', () => {
+    expect(getLanguages()).toEqual(['de', 'en']);
 });

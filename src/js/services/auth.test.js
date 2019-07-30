@@ -8,12 +8,32 @@ test('expects isAuthenticated to return false', () => {
     expect(isAuthenticated()).toBe(false);
 });
 
-test('expects authenticate to return undefined', () => {
-    expect(authenticate({
+test('expects isAuthenticated to return true after forced authentication', () => {
+    authenticate({
         force: true
-    })).toBe(undefined);
+    });
+
+    expect(isAuthenticated()).toBe(true);
 });
 
-test('expects unauthenticate to return undefined', () => {
-    expect(unauthenticate()).toBe(undefined);
+test('expects isAuthenticated to return true after right authentication', () => {
+    authenticate({
+        password: '...'
+    });
+
+    expect(isAuthenticated()).toBe(true);
+});
+
+test('expects isAuthenticated to return false after wrong authentication', () => {
+    authenticate({
+        password: '..'
+    });
+
+    expect(isAuthenticated()).toBe(true);
+});
+
+test('expects isAuthenticated to return false after unauthentication', () => {
+    unauthenticate();
+
+    expect(isAuthenticated()).toBe(false);
 });

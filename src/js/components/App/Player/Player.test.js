@@ -37,6 +37,15 @@ it('renders correctly', () => {
     component.setProps({
         ...props,
         activeIndex: 1,
+        playToggle: false
+    });
+    component.update();
+
+    expect(toJson(component)).toMatchSnapshot();
+
+    component.setProps({
+        ...props,
+        activeIndex: 1,
         playToggle: true
     });
     component.update();
@@ -71,4 +80,6 @@ it('renders correctly', () => {
     component.find('audio').simulate('error');
     document.dispatchEvent(new window.KeyboardEvent('keydown', { keyCode: 37 }));
     document.dispatchEvent(new window.KeyboardEvent('keydown', { keyCode: 39 }));
+    component.find('audio').simulate('focus');
+    document.dispatchEvent(new window.KeyboardEvent('keydown', { keyCode: 32 }));
 });
