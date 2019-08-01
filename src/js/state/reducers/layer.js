@@ -1,3 +1,7 @@
+export const initialState = {
+    activeId: ''
+};
+
 export default (state = {}, action) => {
     switch (action.type) {
         case 'LAYER_OPEN':
@@ -8,7 +12,7 @@ export default (state = {}, action) => {
         case 'LAYERS_CLOSE':
             return {
                 ...state,
-                activeId: ''
+                ...initialState
             };
         default:
             return state;

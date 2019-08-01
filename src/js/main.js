@@ -7,30 +7,19 @@ import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import { composeWithDevTools } from 'redux-devtools-extension/developmentOnly';
 
+import { initialState as audio } from './state/reducers/audio';
+import { initialState as auth } from './state/reducers/auth';
+import { initialState as layer } from './state/reducers/layer';
 import App from './components/App';
 import rootReducer from './state/reducers';
 import middlewares from './state/middlewares';
-import { isAuthenticated } from './services/auth';
 
 const store = createStore(
     rootReducer,
     {
-        auth: {
-            isLoggedIn: isAuthenticated()
-        },
-        audio: {
-            library: {
-                tracks: [],
-                albums: [],
-                artists: []
-            },
-            activeIndex: -1,
-            isPlaying: false,
-            playToggle: false
-        },
-        layer: {
-            activeId: ''
-        }
+        audio,
+        auth,
+        layer
     },
     composeWithDevTools(applyMiddleware(...middlewares()))
 );

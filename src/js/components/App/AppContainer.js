@@ -5,9 +5,11 @@ import {
     requestAudioLibraryAction
 } from '../../state/actions/audio';
 import { isLoggedIn } from '../../state/selectors/auth';
+import { setLoggedInAction } from '../../state/actions/auth';
 
 export const mapDispatchToProps = (dispatch) => ({
-    requestAudioLibrary: () => dispatch(requestAudioLibraryAction())
+    requestAudioLibrary: () => dispatch(requestAudioLibraryAction()),
+    setLoggedIn: () => dispatch(setLoggedInAction())
 });
 
 export const mapStateToProps = (state) => ({

@@ -1,3 +1,14 @@
+export const initialState = {
+    library: {
+        tracks: [],
+        albums: [],
+        artists: []
+    },
+    activeIndex: -1,
+    isPlaying: false,
+    playToggle: false
+};
+
 export default (state = {}, action) => {
     switch (action.type) {
         case 'AUDIO_SET_LIBRARY':
