@@ -17,7 +17,6 @@
         display: inline-block;
         width: calc(100% / 2);
         padding: 5px 5px 10px;
-        background: radial-gradient($color-background, $color-transparent);
         vertical-align: top;
 
         @media (min-width: $max-width-phone + 1) {
