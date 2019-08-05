@@ -66,7 +66,6 @@ module.exports = function (grunt) {
                         lyrics
                     };
                 });
-                album.tracks = album.reverse ? album.tracks.reverse() : album.tracks;
             });
         });
 

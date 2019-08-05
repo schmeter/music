@@ -51,6 +51,6 @@ export default class AudioLibraryModel {
     constructor(audioData, showAll) {
         this.artists = getArtists(Object.assign({}, audioData), showAll);
         this.albums = flatten(this.artists.map((artist) => artist.albums));
-        this.tracks = flatten(this.albums.map((album) => album.tracks));
+        this.tracks = flatten(this.albums.map((album) => album.reverse ? album.tracks.reverse() : album.tracks));
     }
 }
