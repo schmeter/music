@@ -40,7 +40,7 @@ module.exports = function (grunt) {
                     const fileBuffer = read(mp3SrcPath, { encoding: null });
                     const fileTag = ID3.parse(fileBuffer);
 
-                    let tag = pickAll([
+                    const tag = pickAll([
                         'title',
                         'artist',
                         'album',

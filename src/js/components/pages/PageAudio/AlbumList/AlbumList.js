@@ -70,7 +70,7 @@ class AlbumList extends React.Component {
                                     </Link>
                                 </h3>
                                 {!selectedAlbumId ? null : (
-                                    <TrackList trackList={album.tracks} />
+                                    <TrackList trackList={album.reverse ? album.tracks.reverse() : album.tracks} />
                                 )}
                             </div>
                         </div>
