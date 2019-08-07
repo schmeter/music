@@ -5,7 +5,7 @@ import toJson from 'enzyme-to-json';
 import Screensaver from './Screensaver';
 
 jest.mock('../../../util/screen', () => ({
-    isTouch: () => false
+    isTouch: () => false,
 }));
 
 window.setTimeout = (callback, value) => {
@@ -15,7 +15,7 @@ window.setTimeout = (callback, value) => {
 
 it('renders correctly', () => {
     const props = {
-        isPlaying: false
+        isPlaying: false,
     };
     const component = shallow(<Screensaver {...props} />);
 
@@ -23,20 +23,24 @@ it('renders correctly', () => {
 
     component.setProps({
         ...props,
-        isPlaying: true
+        isPlaying: true,
     });
     component.update();
 
     expect(toJson(component)).toMatchSnapshot();
 
     document.dispatchEvent(new window.KeyboardEvent('keydown', { keyCode: 0 }));
-    document.dispatchEvent(new window.KeyboardEvent('keydown', { keyCode: 37 }));
-    document.dispatchEvent(new window.KeyboardEvent('keydown', { keyCode: 39 }));
+    document.dispatchEvent(
+        new window.KeyboardEvent('keydown', { keyCode: 37 })
+    );
+    document.dispatchEvent(
+        new window.KeyboardEvent('keydown', { keyCode: 39 })
+    );
     document.dispatchEvent(new window.KeyboardEvent('mousemove', {}));
 
     component.setProps({
         ...props,
-        isPlaying: false
+        isPlaying: false,
     });
     component.update();
 

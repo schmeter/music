@@ -10,7 +10,7 @@ import { scrollTop } from '../../../util/screen';
 const infos = [
     { id: 'title' },
     { id: 'album', link: 'audio:artistId:albumId' },
-    { id: 'artist', link: 'audio:artistId' }
+    { id: 'artist', link: 'audio:artistId' },
 ];
 
 const scrollClass = 'layer-content';
@@ -32,36 +32,40 @@ class Info extends React.Component {
                     />
                 ) : null}
                 <ul className="table">
-                    {infos.map((item) => !activeTrack.tag[item.id] ? null : (
-                        <li
-                            key={item.id}
-                            className="table-row"
-                        >
-                            <span className="table-cell text-left bold">
-                                {i18n(`layer_info_${item.id}`)}:
-                            </span>
-                            <span className="table-cell text-left">
-                                {item.link ? (
-                                    <Link
-                                        to={getUrl(item.link, {
-                                            artistId: activeTrack.artist.id,
-                                            albumId: activeTrack.album.id
-                                        })}
-                                        onClick={closeLayers}
-                                    >
-                                        {activeTrack.tag[item.id]}
-                                    </Link>
-                                ) : activeTrack.tag[item.id]}
-                            </span>
-                        </li>
-                    ))}
+                    {infos.map(item =>
+                        !activeTrack.tag[item.id] ? null : (
+                            <li key={item.id} className="table-row">
+                                <span className="table-cell text-left bold">
+                                    {i18n(`layer_info_${item.id}`)}:
+                                </span>
+                                <span className="table-cell text-left">
+                                    {item.link ? (
+                                        <Link
+                                            to={getUrl(item.link, {
+                                                artistId: activeTrack.artist.id,
+                                                albumId: activeTrack.album.id,
+                                            })}
+                                            onClick={closeLayers}
+                                        >
+                                            {activeTrack.tag[item.id]}
+                                        </Link>
+                                    ) : (
+                                        activeTrack.tag[item.id]
+                                    )}
+                                </span>
+                            </li>
+                        )
+                    )}
                 </ul>
                 <div className="cover">
                     <Link
-                        to={getUrl(infos.find((item) => item.id === 'album').link, {
-                            artistId: activeTrack.artist.id,
-                            albumId: activeTrack.album.id
-                        })}
+                        to={getUrl(
+                            infos.find(item => item.id === 'album').link,
+                            {
+                                artistId: activeTrack.artist.id,
+                                albumId: activeTrack.album.id,
+                            }
+                        )}
                         onClick={closeLayers}
                     >
                         <Image
@@ -70,10 +74,7 @@ class Info extends React.Component {
                         />
                     </Link>
                 </div>
-                <audio
-                    className="spacer"
-                    controls
-                />
+                <audio className="spacer" controls />
             </div>
         );
     }
@@ -81,7 +82,7 @@ class Info extends React.Component {
 
 Info.propTypes = {
     activeTrack: PropTypes.object,
-    closeLayers: PropTypes.func.isRequired
+    closeLayers: PropTypes.func.isRequired,
 };
 
 export default Info;

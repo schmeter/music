@@ -13,9 +13,13 @@ class Page404 extends React.Component {
                 <h2 className="headline">{i18n(`page_404_title`)}</h2>
                 <div
                     className="album-cover"
-                    style={activeTrack && activeTrack.imgPath ? {
-                        backgroundImage: `url("${activeTrack.imgPath}")`
-                    } : null}
+                    style={
+                        activeTrack && activeTrack.imgPath
+                            ? {
+                                  backgroundImage: `url("${activeTrack.imgPath}")`,
+                              }
+                            : null
+                    }
                 />
             </Page>
         );
@@ -23,7 +27,7 @@ class Page404 extends React.Component {
 }
 
 Page404.propTypes = {
-    activeTrack: PropTypes.object
+    activeTrack: PropTypes.object,
 };
 
 export default Page404;

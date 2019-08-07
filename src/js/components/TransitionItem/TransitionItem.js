@@ -14,9 +14,7 @@ class TransitionItem extends React.Component {
                 classNames="fade"
                 timeout={timeout}
             >
-                <div className="transition-wrapper">
-                    {item}
-                </div>
+                <div className="transition-wrapper">{item}</div>
             </CSSTransition>
         ));
 
@@ -25,7 +23,7 @@ class TransitionItem extends React.Component {
 }
 
 TransitionItem.propTypes = {
-    children: PropTypes.node.isRequired
+    children: PropTypes.node.isRequired,
 };
 
 export default TransitionItem;

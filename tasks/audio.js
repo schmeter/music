@@ -1,5 +1,5 @@
-module.exports = function (grunt) {
-    grunt.registerTask('audio', function () {
+module.exports = function(grunt) {
+    grunt.registerTask('audio', function() {
         const { readJSON, read, write } = grunt.file;
         const { path, pathOr, pickAll } = require('ramda');
         const ID3 = require('id3-parser');
@@ -29,24 +29,25 @@ module.exports = function (grunt) {
                 // add album image folder
                 if (path([artist.id, album.id, coverFolder], imgData)) {
                     album.imgFolder = `/${mp3Folder}/${artist.id}/${album.id}/${coverFolder}`;
-                    album.imgItems = Object.keys(imgData[artist.id][album.id][coverFolder]);
+                    album.imgItems = Object.keys(
+                        imgData[artist.id][album.id][coverFolder]
+                    );
                 }
                 // add album tracks
                 album.tracks = pathOr({}, [artist.id, album.id], mp3Data);
                 Object.keys(album.tracks).forEach(fileName => {
                     // set file id3
                     const mp3FilePath = `${mp3Folder}/${artist.id}/${album.id}/${fileName}`;
-                    const mp3SrcPath = `${grunt.config('srcFolder')}/${assetFolder}/${mp3FilePath}`;
+                    const mp3SrcPath = `${grunt.config(
+                        'srcFolder'
+                    )}/${assetFolder}/${mp3FilePath}`;
                     const fileBuffer = read(mp3SrcPath, { encoding: null });
                     const fileTag = ID3.parse(fileBuffer);
 
-                    const tag = pickAll([
-                        'title',
-                        'artist',
-                        'album',
-                        'year',
-                        'track'
-                    ], fileTag);
+                    const tag = pickAll(
+                        ['title', 'artist', 'album', 'year', 'track'],
+                        fileTag
+                    );
                     // set file lyrics
                     const mdFileName = fileName.replace(/\.mp3/g, '.md');
 
@@ -54,7 +55,9 @@ module.exports = function (grunt) {
 
                     if (path([artist.id, album.id, mdFileName], mdData)) {
                         const mdFilePath = `${mdFolder}/${artist.id}/${album.id}/${mdFileName}`;
-                        const mdSrcPath = `${grunt.config('srcFolder')}/${mdFilePath}`;
+                        const mdSrcPath = `${grunt.config(
+                            'srcFolder'
+                        )}/${mdFilePath}`;
                         const md = read(mdSrcPath, 'utf8');
 
                         lyrics = markdown.parse(md);
@@ -63,12 +66,15 @@ module.exports = function (grunt) {
                     album.tracks[fileName] = {
                         path: `/${mp3FilePath}`,
                         tag,
-                        lyrics
+                        lyrics,
                     };
                 });
             });
         });
 
-        write(`${grunt.config('tmpFolder')}/audio.json`, JSON.stringify(configAudio, null, 4));
+        write(
+            `${grunt.config('tmpFolder')}/audio.json`,
+            JSON.stringify(configAudio, null, 4)
+        );
     });
 };

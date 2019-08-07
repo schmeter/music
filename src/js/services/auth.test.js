@@ -1,8 +1,4 @@
-import {
-    isAuthenticated,
-    authenticate,
-    unauthenticate
-} from './auth';
+import { isAuthenticated, authenticate, unauthenticate } from './auth';
 
 test('expects isAuthenticated to return false', () => {
     expect(isAuthenticated()).toBe(false);
@@ -10,7 +6,7 @@ test('expects isAuthenticated to return false', () => {
 
 test('expects isAuthenticated to return true after forced authentication', () => {
     authenticate({
-        force: true
+        force: true,
     });
 
     expect(isAuthenticated()).toBe(true);
@@ -18,7 +14,7 @@ test('expects isAuthenticated to return true after forced authentication', () =>
 
 test('expects isAuthenticated to return true after right authentication', () => {
     authenticate({
-        password: '...'
+        password: '...',
     });
 
     expect(isAuthenticated()).toBe(true);
@@ -26,7 +22,7 @@ test('expects isAuthenticated to return true after right authentication', () => 
 
 test('expects isAuthenticated to return false after wrong authentication', () => {
     authenticate({
-        password: '..'
+        password: '..',
     });
 
     expect(isAuthenticated()).toBe(true);

@@ -3,7 +3,11 @@ import PropTypes from 'prop-types';
 import autobind from 'autobind-decorator';
 
 import Page from '../../Page';
-import i18n, { getAppLanguage, getLanguages, setAppLanguage } from '../../../services/i18n';
+import i18n, {
+    getAppLanguage,
+    getLanguages,
+    setAppLanguage,
+} from '../../../services/i18n';
 import { getUrl } from '../../../services/navigation';
 
 class PageSettings extends React.Component {
@@ -26,9 +30,12 @@ class PageSettings extends React.Component {
         if (isLoggedIn) {
             logout();
         } else {
-            login({
-                password: password.value
-            }, 60 * 60 * 24 * 30);
+            login(
+                {
+                    password: password.value,
+                },
+                60 * 60 * 24 * 30
+            );
         }
     }
 
@@ -50,39 +57,31 @@ class PageSettings extends React.Component {
         return (
             <Page id="settings">
                 <h2 className="headline">{i18n('page_settings_headline')}</h2>
-                <form
-                    className="form"
-                    onSubmit={this.handleSubmitFormQuit}
-                >
-                    <button
-                        className="button form-button"
-                        type="submit"
-                    >
+                <form className="form" onSubmit={this.handleSubmitFormQuit}>
+                    <button className="button form-button" type="submit">
                         {i18n(`page_settings_button_quit`)}
                     </button>
                 </form>
-                <h2 className="headline">{i18n('page_settings_lang_headline')}</h2>
+                <h2 className="headline">
+                    {i18n('page_settings_lang_headline')}
+                </h2>
                 <form className="form">
                     <select
                         className="select form-select"
                         defaultValue={getAppLanguage()}
                         onChange={this.handleChange}
                     >
-                        {getLanguages().map((language) => (
-                            <option
-                                key={language}
-                                value={language}
-                            >
+                        {getLanguages().map(language => (
+                            <option key={language} value={language}>
                                 {i18n(`lang_${language}`)}
                             </option>
                         ))}
                     </select>
                 </form>
-                <h2 className="headline">{i18n('page_settings_auth_headline')}</h2>
-                <form
-                    className="form"
-                    onSubmit={this.handleSubmitFormAuth}
-                >
+                <h2 className="headline">
+                    {i18n('page_settings_auth_headline')}
+                </h2>
+                <form className="form" onSubmit={this.handleSubmitFormAuth}>
                     {isLoggedIn ? null : (
                         <input
                             className="input form-input"
@@ -90,11 +89,12 @@ class PageSettings extends React.Component {
                             ref={this.password}
                         />
                     )}
-                    <button
-                        className="button form-button"
-                        type="submit"
-                    >
-                        {i18n(`page_settings_auth_button_${isLoggedIn ? 'logout' : 'login'}`)}
+                    <button className="button form-button" type="submit">
+                        {i18n(
+                            `page_settings_auth_button_${
+                                isLoggedIn ? 'logout' : 'login'
+                            }`
+                        )}
                     </button>
                 </form>
             </Page>
@@ -106,7 +106,7 @@ PageSettings.propTypes = {
     history: PropTypes.object.isRequired,
     isLoggedIn: PropTypes.bool.isRequired,
     login: PropTypes.func.isRequired,
-    logout: PropTypes.func.isRequired
+    logout: PropTypes.func.isRequired,
 };
 
 export default PageSettings;

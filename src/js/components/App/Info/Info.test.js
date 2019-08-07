@@ -6,7 +6,7 @@ import Info from './Info';
 import Link from '../../Link';
 
 const mockedEvent = {
-    preventDefault: jest.fn()
+    preventDefault: jest.fn(),
 };
 
 it('renders correctly', () => {
@@ -14,19 +14,19 @@ it('renders correctly', () => {
         path: 'test',
         imgPath: 'test',
         tag: {
-            title: 'test'
+            title: 'test',
         },
         artist: {
-            id: 'test'
+            id: 'test',
         },
         album: {
             id: 'test',
-            title: 'test'
-        }
+            title: 'test',
+        },
     };
     const lyrics = 'test';
     const props = {
-        closeLayers: jest.fn()
+        closeLayers: jest.fn(),
     };
     const component = shallow(<Info {...props} />);
 
@@ -34,7 +34,7 @@ it('renders correctly', () => {
 
     component.setProps({
         ...props,
-        activeTrack
+        activeTrack,
     });
     component.update();
 
@@ -47,13 +47,16 @@ it('renders correctly', () => {
             tag: {
                 title: 'test',
                 artist: 'test',
-                album: 'test'
+                album: 'test',
             },
-            lyrics
-        }
+            lyrics,
+        },
     });
     component.update();
-    component.find('.cover').find(Link).simulate('click', mockedEvent);
+    component
+        .find('.cover')
+        .find(Link)
+        .simulate('click', mockedEvent);
 
     expect(toJson(component)).toMatchSnapshot();
     expect(props.closeLayers).toHaveBeenCalled();

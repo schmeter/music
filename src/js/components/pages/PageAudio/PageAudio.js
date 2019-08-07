@@ -42,14 +42,14 @@ class PageAudio extends React.Component {
         const { artistId, albumId } = match.params;
         const selectedArtist = getArtist(artistId);
         const selectedAlbum = getAlbum(artistId, albumId);
-        const validParams = (artistId ? selectedArtist : true)
-            && (albumId ? selectedAlbum : true);
+        const validParams =
+            (artistId ? selectedArtist : true) &&
+            (albumId ? selectedAlbum : true);
 
-        return !validParams ? <Page404 /> : (
-            <Page
-                id="audio"
-                useBaseClass={false}
-            >
+        return !validParams ? (
+            <Page404 />
+        ) : (
+            <Page id="audio" useBaseClass={false}>
                 <AlbumList
                     albumList={albums}
                     selectedArtist={selectedArtist}
@@ -67,7 +67,7 @@ PageAudio.propTypes = {
     albums: PropTypes.array.isRequired,
     match: PropTypes.object.isRequired,
     getArtist: PropTypes.func.isRequired,
-    getAlbum: PropTypes.func.isRequired
+    getAlbum: PropTypes.func.isRequired,
 };
 
 export default PageAudio;

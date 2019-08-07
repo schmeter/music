@@ -12,11 +12,9 @@ class Track extends React.Component {
 
         return (
             <div
-                className={classNames(
-                    className,
-                    'track',
-                    { 'track-playing': playing }
-                )}
+                className={classNames(className, 'track', {
+                    'track-playing': playing,
+                })}
             >
                 <span className="table-cell index">
                     {playing ? <IconPlay /> : file.tag.track}
@@ -32,7 +30,7 @@ class Track extends React.Component {
 Track.propTypes = {
     className: PropTypes.string,
     file: PropTypes.object.isRequired,
-    activeTrack: PropTypes.object
+    activeTrack: PropTypes.object,
 };
 
 export default Track;

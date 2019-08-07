@@ -2,11 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Switch, Route } from 'react-router-dom';
 
-import {
-    PageAudio,
-    PageSettings,
-    Page404
-} from '../pages';
+import { PageAudio, PageSettings, Page404 } from '../pages';
 import Layer from '../Layer';
 import Screensaver from './Screensaver';
 import Header from './Header';
@@ -24,18 +20,17 @@ class App extends React.Component {
         setLoggedIn();
         requestAudioLibrary();
 
-        fetchJSON(`/version.json?${new Date().getTime()}`, true)
-            .then(data => {
-                if (process.env.NODE_ENV === 'production') {
-                    const searchTime = window.location.search.substr(1);
+        fetchJSON(`/version.json?${new Date().getTime()}`, true).then(data => {
+            if (process.env.NODE_ENV === 'production') {
+                const searchTime = window.location.search.substr(1);
 
-                    if (searchTime !== String(data.time) && app.time < data.time) {
-                        if (window.confirm(i18n(`app_update_available`))) {
-                            window.location.href = `/?${data.time}`;
-                        }
+                if (searchTime !== String(data.time) && app.time < data.time) {
+                    if (window.confirm(i18n(`app_update_available`))) {
+                        window.location.href = `/?${data.time}`;
                     }
                 }
-            });
+            }
+        });
     }
 
     componentDidUpdate(lastProps) {
@@ -51,11 +46,7 @@ class App extends React.Component {
             <>
                 <Header />
                 <Switch>
-                    <Route
-                        exact
-                        path={getUrl('index')}
-                        component={PageAudio}
-                    />
+                    <Route exact path={getUrl('index')} component={PageAudio} />
                     <Route
                         exact
                         path={getUrl('audio:artistId')}
@@ -71,10 +62,7 @@ class App extends React.Component {
                         path={getUrl('settings')}
                         component={PageSettings}
                     />
-                    <Route
-                        path={getUrl('404')}
-                        component={Page404}
-                    />
+                    <Route path={getUrl('404')} component={Page404} />
                 </Switch>
                 <Layer id="info">
                     <Info />
@@ -90,7 +78,7 @@ class App extends React.Component {
 App.propTypes = {
     setLoggedIn: PropTypes.func.isRequired,
     requestAudioLibrary: PropTypes.func.isRequired,
-    isLoggedIn: PropTypes.bool.isRequired
+    isLoggedIn: PropTypes.bool.isRequired,
 };
 
 export default App;

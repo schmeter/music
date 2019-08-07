@@ -29,17 +29,16 @@ class Page extends React.Component {
 
         return (
             <main className={scrollClass}>
-                <div className={classNames(
-                    'page',
-                    { 'page-base': useBaseClass !== false },
-                    `page-${className || id}`
-                )}>
+                <div
+                    className={classNames(
+                        'page',
+                        { 'page-base': useBaseClass !== false },
+                        `page-${className || id}`
+                    )}
+                >
                     {children}
                 </div>
-                <audio
-                    className="spacer"
-                    controls
-                />
+                <audio className="spacer" controls />
             </main>
         );
     }
@@ -52,8 +51,8 @@ Page.propTypes = {
     children: PropTypes.node,
     useBaseClass: PropTypes.bool,
     location: PropTypes.shape({
-        pathname: PropTypes.string
-    })
+        pathname: PropTypes.string,
+    }),
 };
 
 export default withRouter(Page);

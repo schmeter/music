@@ -7,21 +7,13 @@ import i18n from '../../services/i18n';
 
 class Layer extends React.Component {
     render() {
-        const {
-            className,
-            id,
-            activeId,
-            closeLayers,
-            children
-        } = this.props;
+        const { className, id, activeId, closeLayers, children } = this.props;
 
         return (
             <div
-                className={classNames(
-                    'layer',
-                    `layer-${className || id}`,
-                    { closed: activeId !== id }
-                )}
+                className={classNames('layer', `layer-${className || id}`, {
+                    closed: activeId !== id,
+                })}
             >
                 <header className="layer-header">
                     <h2 className="layer-headline">
@@ -46,7 +38,7 @@ Layer.propTypes = {
     className: PropTypes.string,
     children: PropTypes.node,
     activeId: PropTypes.string.isRequired,
-    closeLayers: PropTypes.func.isRequired
+    closeLayers: PropTypes.func.isRequired,
 };
 
 export default Layer;

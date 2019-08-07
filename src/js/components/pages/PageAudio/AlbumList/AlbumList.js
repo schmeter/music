@@ -13,14 +13,14 @@ class AlbumList extends React.Component {
             albumList,
             selectedAlbum,
             selectedArtist,
-            activeTrack
+            activeTrack,
         } = this.props;
         const selectedArtistId = selectedArtist && selectedArtist.id;
         const selectedAlbumId = selectedAlbum && selectedAlbum.id;
-        const albums = albumList.filter(album =>
-            (!selectedAlbumId || selectedAlbumId === album.id)
-            &&
-            (!selectedArtistId || selectedArtistId === album.artist.id)
+        const albums = albumList.filter(
+            album =>
+                (!selectedAlbumId || selectedAlbumId === album.id) &&
+                (!selectedArtistId || selectedArtistId === album.artist.id)
         );
 
         return (
@@ -31,28 +31,28 @@ class AlbumList extends React.Component {
                     { 'artist-selected': !!selectedArtistId }
                 )}
             >
-                {albums.map((album) => {
+                {albums.map(album => {
                     const playing = activeTrack
                         ? album.id === activeTrack.album.id
                         : false;
-                    const visible = playing
-                        || !album.hidden
-                        || album.id === selectedAlbumId;
+                    const visible =
+                        playing ||
+                        !album.hidden ||
+                        album.id === selectedAlbumId;
                     const albumLink = getUrl('audio:artistId:albumId', {
                         artistId: album.artist.id,
-                        albumId: album.id
+                        albumId: album.id,
                     });
                     const artistLink = getUrl('audio:artistId', {
-                        artistId: album.artist.id
+                        artistId: album.artist.id,
                     });
 
                     return !visible ? null : (
                         <div
                             key={album.artist.id + album.id}
-                            className={classNames(
-                                'album',
-                                { 'album-playing': playing }
-                            )}
+                            className={classNames('album', {
+                                'album-playing': playing,
+                            })}
                         >
                             <AlbumCover
                                 link={selectedAlbumId ? '' : albumLink}
@@ -60,9 +60,7 @@ class AlbumList extends React.Component {
                             />
                             <div className="album-content">
                                 <h3 className="album-title">
-                                    <Link to={albumLink}>
-                                        {album.title}
-                                    </Link>
+                                    <Link to={albumLink}>{album.title}</Link>
                                 </h3>
                                 <h3 className="artist-title">
                                     <Link to={artistLink}>
@@ -85,7 +83,7 @@ AlbumList.propTypes = {
     albumList: PropTypes.array.isRequired,
     selectedAlbum: PropTypes.object,
     selectedArtist: PropTypes.object,
-    activeTrack: PropTypes.object
+    activeTrack: PropTypes.object,
 };
 
 export default AlbumList;

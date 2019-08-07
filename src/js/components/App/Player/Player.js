@@ -134,10 +134,7 @@ class Player extends React.Component {
 
         return (
             <div className="player">
-                <Analyser
-                    audio={audio}
-                    isPlaying={isPlaying}
-                />
+                <Analyser audio={audio} isPlaying={isPlaying} />
                 <audio
                     className="audio"
                     preload="none"
@@ -162,7 +159,7 @@ Player.propTypes = {
     activeIndex: PropTypes.number.isRequired,
     nextIndex: PropTypes.number.isRequired,
     playToggle: PropTypes.bool.isRequired,
-    isPlaying: PropTypes.bool.isRequired
+    isPlaying: PropTypes.bool.isRequired,
 };
 
 export default Player;

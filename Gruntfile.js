@@ -3,7 +3,7 @@ const sass = require('node-sass');
 const nodeSassGlobbing = require('node-sass-globbing');
 const historyApiFallback = require('connect-history-api-fallback');
 
-module.exports = function (grunt) {
+module.exports = function(grunt) {
     require('load-grunt-tasks')(grunt);
     require('time-grunt')(grunt);
 
@@ -20,8 +20,9 @@ module.exports = function (grunt) {
         pkg: grunt.file.readJSON('package.json'),
 
         rev: shelljs.exec(
-            'bash -c \'echo -n `git rev-parse --short HEAD || date +%s`\'', {
-                silent: true
+            "bash -c 'echo -n `git rev-parse --short HEAD || date +%s`'",
+            {
+                silent: true,
             }
         ).stdout,
 
@@ -29,14 +30,14 @@ module.exports = function (grunt) {
 
         env: {
             development: {
-                NODE_ENV: 'development'
+                NODE_ENV: 'development',
             },
             staging: {
-                NODE_ENV: 'staging'
+                NODE_ENV: 'staging',
             },
             production: {
-                NODE_ENV: 'production'
-            }
+                NODE_ENV: 'production',
+            },
         },
 
         clean: {
@@ -44,10 +45,10 @@ module.exports = function (grunt) {
                 '<%= srcFolder %>/sass/lib/reset-css/**/*',
                 '<%= srcFolder %>/sass/lib/font-awesome/**/*',
                 '<%= srcFolder %>/assets/js/**/*',
-                '<%= srcFolder %>/assets/fonts/**/*'
+                '<%= srcFolder %>/assets/fonts/**/*',
             ],
             out: ['<%= outFolder %>/**/*'],
-            tmp: ['<%= tmpFolder %>/**/*']
+            tmp: ['<%= tmpFolder %>/**/*'],
         },
 
         copy: {
@@ -55,25 +56,25 @@ module.exports = function (grunt) {
                 expand: true,
                 cwd: '<%= modFolder %>/reset-css/sass',
                 src: ['_reset.scss'],
-                dest: '<%= srcFolder %>/sass/lib/reset-css'
+                dest: '<%= srcFolder %>/sass/lib/reset-css',
             },
             'font-awesome-scss': {
                 expand: true,
                 cwd: '<%= modFolder %>/font-awesome/scss',
                 src: ['*.*'],
-                dest: '<%= srcFolder %>/sass/lib/font-awesome'
+                dest: '<%= srcFolder %>/sass/lib/font-awesome',
             },
             'font-awesome-fonts': {
                 expand: true,
                 cwd: '<%= modFolder %>/font-awesome/fonts',
                 src: ['*.*'],
-                dest: '<%= srcFolder %>/assets/fonts'
+                dest: '<%= srcFolder %>/assets/fonts',
             },
             assets: {
                 expand: true,
                 cwd: '<%= srcFolder %>/assets',
                 src: ['**/*.*'],
-                dest: '<%= outFolder %>'
+                dest: '<%= outFolder %>',
             },
             html: {
                 expand: true,
@@ -81,198 +82,187 @@ module.exports = function (grunt) {
                 src: ['*.html', '*.txt', '.htaccess'],
                 dest: '<%= outFolder %>',
                 options: {
-                    process: function (content) {
+                    process: function(content) {
                         return grunt.template.process(content);
-                    }
-                }
-            }
+                    },
+                },
+            },
         },
 
         browserify: {
             options: {
                 watch: true,
                 browserifyOptions: {
-                    debug: true
-                }
+                    debug: true,
+                },
             },
             dev: {
                 files: {
                     '<%= outFolder %>/js/<%= pkg.name %>.js': [
-                        '<%= srcFolder %>/js/main.js'
-                    ]
-                }
+                        '<%= srcFolder %>/js/main.js',
+                    ],
+                },
             },
             prod: {
                 options: {
                     watch: false,
                     browserifyOptions: {
                         debug: true,
-                        fullPaths: false
-                    }
+                        fullPaths: false,
+                    },
                 },
                 files: {
                     '<%= outFolder %>/js/<%= pkg.name %>.js': [
-                        '<%= srcFolder %>/js/main.js'
-                    ]
-                }
-            }
+                        '<%= srcFolder %>/js/main.js',
+                    ],
+                },
+            },
         },
 
         uglify: {
             dist: {
                 options: {
-                    sourceMap: true
+                    sourceMap: true,
                 },
                 files: {
                     '<%= outFolder %>/js/<%= pkg.name %>.js': [
-                        '<%= outFolder %>/js/<%= pkg.name %>.js'
-                    ]
-                }
-            }
+                        '<%= outFolder %>/js/<%= pkg.name %>.js',
+                    ],
+                },
+            },
         },
 
         exorcise: {
             dist: {
                 files: {
                     '<%= outFolder %>/js/<%= pkg.name %>.js.map': [
-                        '<%= outFolder %>/js/<%= pkg.name %>.js'
-                    ]
-                }
-            }
+                        '<%= outFolder %>/js/<%= pkg.name %>.js',
+                    ],
+                },
+            },
         },
 
         sass: {
             options: {
                 sourceMap: true,
                 implementation: sass,
-                importer: nodeSassGlobbing
+                importer: nodeSassGlobbing,
             },
             dist: {
                 files: {
                     '<%= outFolder %>/css/<%= pkg.name %>.css': [
-                        '<%= srcFolder %>/sass/main.scss'
-                    ]
-                }
-            }
+                        '<%= srcFolder %>/sass/main.scss',
+                    ],
+                },
+            },
         },
 
         tree: {
             mp3: {
                 options: {
                     prettify: true,
-                    type: ['mp3']
+                    type: ['mp3'],
                 },
-                files: [{
-                    src: ['<%= srcFolder %>/assets/mp3'],
-                    dest: '<%= tmpFolder %>/mp3.json'
-                }]
+                files: [
+                    {
+                        src: ['<%= srcFolder %>/assets/mp3'],
+                        dest: '<%= tmpFolder %>/mp3.json',
+                    },
+                ],
             },
             cover: {
                 options: {
                     prettify: true,
-                    type: ['jpg']
+                    type: ['jpg'],
                 },
-                files: [{
-                    src: ['<%= srcFolder %>/assets/mp3'],
-                    dest: '<%= tmpFolder %>/cover.json'
-                }]
+                files: [
+                    {
+                        src: ['<%= srcFolder %>/assets/mp3'],
+                        dest: '<%= tmpFolder %>/cover.json',
+                    },
+                ],
             },
             md: {
                 options: {
                     prettify: true,
-                    type: ['md']
+                    type: ['md'],
                 },
-                files: [{
-                    src: ['<%= srcFolder %>/md'],
-                    dest: '<%= tmpFolder %>/md.json'
-                }]
-            }
+                files: [
+                    {
+                        src: ['<%= srcFolder %>/md'],
+                        dest: '<%= tmpFolder %>/md.json',
+                    },
+                ],
+            },
         },
 
         browserSync: {
             bsFiles: {
-                src: '<%= outFolder %>/**/*.*'
+                src: '<%= outFolder %>/**/*.*',
             },
             options: {
                 watchTask: true,
                 server: {
                     baseDir: './<%= outFolder %>',
-                    middleware: [historyApiFallback()]
-                }
-            }
+                    middleware: [historyApiFallback()],
+                },
+            },
         },
 
         watch: {
             assets: {
                 files: ['<%= srcFolder %>/assets/**/*.*'],
-                tasks: ['copy:assets', 'scanConfig']
+                tasks: ['copy:assets', 'scanConfig'],
             },
             md: {
                 files: ['<%= srcFolder %>/md/**/*.md'],
-                tasks: ['scanConfig']
+                tasks: ['scanConfig'],
             },
             js: {
                 files: ['<%= srcFolder %>/js/**/*.js'],
-                tasks: []
+                tasks: [],
             },
             sass: {
                 files: ['<%= srcFolder %>/sass/**/*.scss'],
-                tasks: ['sass']
+                tasks: ['sass'],
             },
             html: {
                 files: [
                     '<%= srcFolder %>/*.html',
                     '<%= srcFolder %>/*.txt',
-                    '<%= srcFolder %>/.htaccess'
+                    '<%= srcFolder %>/.htaccess',
                 ],
-                tasks: ['copy:html']
+                tasks: ['copy:html'],
             },
             config: {
                 files: ['<%= cfgFolder %>/**/*.*'],
-                tasks: ['scanConfig']
-            }
-        }
+                tasks: ['scanConfig'],
+            },
+        },
     });
 
-    grunt.registerTask('scanConfig', [
-        'tree',
-        'audio',
-        'sitemap',
-        'version'
-    ]);
+    grunt.registerTask('scanConfig', ['tree', 'audio', 'sitemap', 'version']);
 
     grunt.registerTask('build', [
         'clean',
         'setenv',
         'copy',
         'scanConfig',
-        'sass'
+        'sass',
     ]);
 
-    grunt.registerTask('build:dev', [
-        'build',
-        'browserify:dev'
-    ]);
+    grunt.registerTask('build:dev', ['build', 'browserify:dev']);
 
     grunt.registerTask('build:release', [
         'build',
         'browserify:prod',
         'exorcise',
-        'uglify'
+        'uglify',
     ]);
 
-    grunt.registerTask('build:prod', [
-        'setlive',
-        'build:release'
-    ]);
+    grunt.registerTask('build:prod', ['setlive', 'build:release']);
 
-    grunt.registerTask('server', [
-        'browserSync',
-        'watch'
-    ]);
+    grunt.registerTask('server', ['browserSync', 'watch']);
 
-    grunt.registerTask('default', [
-        'build:dev',
-        'server'
-    ]);
+    grunt.registerTask('default', ['build:dev', 'server']);
 };

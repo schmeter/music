@@ -6,10 +6,7 @@ export default (env = process.env.NODE_ENV) => {
     let middlewares = [thunk];
 
     if (env !== 'production') {
-        middlewares = [
-            ...middlewares,
-            logger()
-        ];
+        middlewares = [...middlewares, logger()];
     }
     return middlewares;
 };

@@ -6,14 +6,14 @@ import File from './File';
 import Link from '../Link';
 
 const mockedEvent = {
-    preventDefault: jest.fn()
+    preventDefault: jest.fn(),
 };
 
 it('renders correctly', () => {
     const props = {
         path: 'http://test',
         children: 'test',
-        onClickFile: jest.fn()
+        onClickFile: jest.fn(),
     };
     const component = shallow(<File {...props} />);
 

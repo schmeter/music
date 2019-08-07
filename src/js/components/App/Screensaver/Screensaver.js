@@ -49,14 +49,12 @@ class Screensaver extends React.Component {
     }
 
     render() {
-        return (
-            <div className="screensaver" />
-        );
+        return <div className="screensaver" />;
     }
 }
 
 Screensaver.propTypes = {
-    isPlaying: PropTypes.bool.isRequired
+    isPlaying: PropTypes.bool.isRequired,
 };
 
 export default Screensaver;

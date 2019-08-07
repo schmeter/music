@@ -1,6 +1,6 @@
 const now = () => Math.round(new Date().getTime() / 1000);
 
-const get = (id) => {
+const get = id => {
     const item = JSON.parse(window.localStorage.getItem(id)) || {};
 
     if (item.expiration && item.expiration <= now()) {
@@ -10,14 +10,16 @@ const get = (id) => {
 };
 
 // expiration in seconds
-const set = (id, data, expiration) => window.localStorage.setItem(id, JSON.stringify({
-    data,
-    expiration: expiration
-        ? now() + expiration
-        : null
-}));
+const set = (id, data, expiration) =>
+    window.localStorage.setItem(
+        id,
+        JSON.stringify({
+            data,
+            expiration: expiration ? now() + expiration : null,
+        })
+    );
 
-const unset = (id) => window.localStorage.removeItem(id);
+const unset = id => window.localStorage.removeItem(id);
 
 const clear = () => window.localStorage.clear();
 
@@ -25,5 +27,5 @@ export default {
     get,
     set,
     unset,
-    clear
+    clear,
 };

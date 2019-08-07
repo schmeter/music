@@ -4,7 +4,7 @@ export const getRandom = (minValue, maxValue) => {
     const max = Math.max(minValue, maxValue);
 
     if (min === max) {
-        return (min);
+        return min;
     }
-    return (min + parseInt(Math.random() * (max - min + 1), 10));
+    return min + parseInt(Math.random() * (max - min + 1), 10);
 };

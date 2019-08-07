@@ -19,9 +19,7 @@ class Header extends React.Component {
         return (
             <header className="main-header">
                 <h1 className="main-headline">
-                    <Link to={getUrl('index')}>
-                        {i18n(`app_title`)}
-                    </Link>
+                    <Link to={getUrl('index')}>{i18n(`app_title`)}</Link>
                 </h1>
                 <Link
                     className="button header-button home-button"
@@ -42,7 +40,7 @@ class Header extends React.Component {
 }
 
 Header.propTypes = {
-    openLayer: PropTypes.func.isRequired
+    openLayer: PropTypes.func.isRequired,
 };
 
 export default Header;

@@ -4,7 +4,7 @@ import autobind from 'autobind-decorator';
 
 class Curtains extends React.Component {
     state = {
-        curtainsOpen: true
+        curtainsOpen: true,
     };
 
     @autobind
@@ -23,11 +23,9 @@ class Curtains extends React.Component {
                 {['left', 'right'].map(direction => (
                     <div
                         key={direction}
-                        className={classNames(
-                            'curtains',
-                            direction,
-                            { open: curtainsOpen }
-                        )}
+                        className={classNames('curtains', direction, {
+                            open: curtainsOpen,
+                        })}
                         onClick={this.handleClickCurtains}
                     />
                 ))}

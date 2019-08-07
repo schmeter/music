@@ -9,23 +9,23 @@ window.AudioContext = class AudioContext {
         connect: jest.fn(),
         getByteFrequencyData: jest.fn(),
         getByteTimeDomainData: jest.fn(),
-        frequencyBinCount: 8
+        frequencyBinCount: 8,
     });
 
     createMediaElementSource = () => ({
-        connect: jest.fn()
+        connect: jest.fn(),
     });
 };
 
 window.HTMLCanvasElement.prototype.getContext = () => ({
     clearRect: jest.fn(),
-    fillRect: jest.fn()
+    fillRect: jest.fn(),
 });
 
 it('renders correctly', () => {
     let props = {
         audio: {},
-        isPlaying: false
+        isPlaying: false,
     };
 
     let component = mount(<Analyser {...props} />);
@@ -34,7 +34,7 @@ it('renders correctly', () => {
 
     props = {
         ...props,
-        isPlaying: true
+        isPlaying: true,
     };
 
     component.setProps(props);
@@ -45,7 +45,7 @@ it('renders correctly', () => {
 
     props = {
         audio: {},
-        isPlaying: false
+        isPlaying: false,
     };
 
     component = mount(<Analyser {...props} />);
@@ -54,7 +54,7 @@ it('renders correctly', () => {
     props = {
         ...props,
         isPlaying: true,
-        mode: 'waveform'
+        mode: 'waveform',
     };
 
     component.setProps(props);

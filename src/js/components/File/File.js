@@ -18,10 +18,7 @@ class File extends React.Component {
 
         return (
             <span className="file">
-                <Link
-                    to={path}
-                    onClick={this.handleClickLink}
-                >
+                <Link to={path} onClick={this.handleClickLink}>
                     {children}
                 </Link>
             </span>
@@ -32,7 +29,7 @@ class File extends React.Component {
 File.propTypes = {
     path: PropTypes.string.isRequired,
     children: PropTypes.node.isRequired,
-    onClickFile: PropTypes.func.isRequired
+    onClickFile: PropTypes.func.isRequired,
 };
 
 export default File;

@@ -1,8 +1,4 @@
-import i18n, {
-    getAppLanguage,
-    getLanguages,
-    setAppLanguage
-} from './i18n';
+import i18n, { getAppLanguage, getLanguages, setAppLanguage } from './i18n';
 
 test('expects i18n to return "{{de:}}"', () => {
     expect(i18n('')).toBe('{{de:}}');

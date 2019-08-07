@@ -9,17 +9,20 @@ window.HTMLMediaElement.prototype.play = jest.fn();
 window.HTMLMediaElement.prototype.pause = jest.fn();
 
 it('renders correctly', () => {
-    const tracks = [{
-        path: 'test1',
-        tag: {
-            title: 'test1'
-        }
-    }, {
-        path: 'test2',
-        tag: {
-            title: 'test2'
-        }
-    }];
+    const tracks = [
+        {
+            path: 'test1',
+            tag: {
+                title: 'test1',
+            },
+        },
+        {
+            path: 'test2',
+            tag: {
+                title: 'test2',
+            },
+        },
+    ];
     const props = {
         setActiveIndex: jest.fn(),
         setIsPlaying: jest.fn(),
@@ -28,7 +31,7 @@ it('renders correctly', () => {
         activeIndex: 0,
         nextIndex: 1,
         playToggle: false,
-        isPlaying: false
+        isPlaying: false,
     };
     const component = mount(<Player {...props} />);
 
@@ -37,7 +40,7 @@ it('renders correctly', () => {
     component.setProps({
         ...props,
         activeIndex: 1,
-        playToggle: false
+        playToggle: false,
     });
     component.update();
 
@@ -46,7 +49,7 @@ it('renders correctly', () => {
     component.setProps({
         ...props,
         activeIndex: 1,
-        playToggle: true
+        playToggle: true,
     });
     component.update();
 
@@ -56,28 +59,36 @@ it('renders correctly', () => {
         ...props,
         tracks: [],
         activeIndex: 2,
-        isPlaying: true
+        isPlaying: true,
     });
     component.update();
 
     expect(toJson(component)).toMatchSnapshot();
 
     document.dispatchEvent(new window.KeyboardEvent('keydown', { keyCode: 0 }));
-    document.dispatchEvent(new window.KeyboardEvent('keydown', { keyCode: 32 }));
+    document.dispatchEvent(
+        new window.KeyboardEvent('keydown', { keyCode: 32 })
+    );
 
     component.setProps({
         ...props,
-        isPlaying: false
+        isPlaying: false,
     });
     component.update();
 
     expect(toJson(component)).toMatchSnapshot();
 
-    document.dispatchEvent(new window.KeyboardEvent('keydown', { keyCode: 32 }));
+    document.dispatchEvent(
+        new window.KeyboardEvent('keydown', { keyCode: 32 })
+    );
     component.find('audio').simulate('play');
     component.find('audio').simulate('pause');
     component.find('audio').simulate('ended');
     component.find('audio').simulate('error');
-    document.dispatchEvent(new window.KeyboardEvent('keydown', { keyCode: 37 }));
-    document.dispatchEvent(new window.KeyboardEvent('keydown', { keyCode: 39 }));
+    document.dispatchEvent(
+        new window.KeyboardEvent('keydown', { keyCode: 37 })
+    );
+    document.dispatchEvent(
+        new window.KeyboardEvent('keydown', { keyCode: 39 })
+    );
 });

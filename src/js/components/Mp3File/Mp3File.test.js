@@ -7,21 +7,24 @@ import Mp3File from './Mp3File';
 import Link from '../Link';
 
 const mockedEvent = {
-    preventDefault: jest.fn()
+    preventDefault: jest.fn(),
 };
 const setActiveIndex = jest.fn();
 const togglePlay = jest.fn();
-const tracks = [{
-    path: 'test1',
-    tag: {
-        title: 'test1'
-    }
-}, {
-    path: 'test2',
-    tag: {
-        title: 'test2'
-    }
-}];
+const tracks = [
+    {
+        path: 'test1',
+        tag: {
+            title: 'test1',
+        },
+    },
+    {
+        path: 'test2',
+        tag: {
+            title: 'test2',
+        },
+    },
+];
 
 it('renders correctly and uses togglePlay on click', () => {
     const props = {
@@ -29,7 +32,7 @@ it('renders correctly and uses togglePlay on click', () => {
         file: tracks[0],
         activeIndex: 0,
         setActiveIndex,
-        togglePlay
+        togglePlay,
     };
     const component = mount(
         <BrowserRouter>
@@ -50,7 +53,7 @@ it('renders correctly and uses setActiveIndex on click', () => {
         file: tracks[1],
         activeIndex: 0,
         setActiveIndex,
-        togglePlay
+        togglePlay,
     };
     const component = mount(
         <BrowserRouter>

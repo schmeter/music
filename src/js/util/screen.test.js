@@ -1,7 +1,4 @@
-import {
-    scrollTop,
-    isTouch
-} from './screen';
+import { scrollTop, isTouch } from './screen';
 
 test('expects scrollTop to return undefined', () => {
     document.querySelector('body').scrollTop = 2000;

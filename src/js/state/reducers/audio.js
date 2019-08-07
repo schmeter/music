@@ -2,11 +2,11 @@ export const initialState = {
     library: {
         tracks: [],
         albums: [],
-        artists: []
+        artists: [],
     },
     activeIndex: -1,
     isPlaying: false,
-    playToggle: false
+    playToggle: false,
 };
 
 export default (state = {}, action) => {
@@ -14,22 +14,22 @@ export default (state = {}, action) => {
         case 'AUDIO_SET_LIBRARY':
             return {
                 ...state,
-                library: action.payload
+                library: action.payload,
             };
         case 'AUDIO_SET_ACTIVE_INDEX':
             return {
                 ...state,
-                activeIndex: action.payload
+                activeIndex: action.payload,
             };
         case 'AUDIO_SET_IS_PLAYING':
             return {
                 ...state,
-                isPlaying: action.payload
+                isPlaying: action.payload,
             };
         case 'AUDIO_TOGGLE_PLAY':
             return {
                 ...state,
-                playToggle: !state.playToggle
+                playToggle: !state.playToggle,
             };
         default:
             return state;

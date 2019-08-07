@@ -20,8 +20,8 @@ it('renders correctly with all parameters', () => {
         children: 'test',
         useBaseClass: false,
         location: {
-            pathname: 'test'
-        }
+            pathname: 'test',
+        },
     };
     const component = shallow(<Page {...props} />);
 
@@ -30,7 +30,7 @@ it('renders correctly with all parameters', () => {
 
 it('renders correctly with id only', () => {
     const props = {
-        id: 'test'
+        id: 'test',
     };
     const component = shallow(<Page {...props} />);
 
@@ -41,15 +41,15 @@ it('uses scrollTop helper on location change', () => {
     const props = {
         id: 'test',
         location: {
-            pathname: 'test'
-        }
+            pathname: 'test',
+        },
     };
     const component = shallow(<Page {...props} />);
 
     component.setProps({
         location: {
-            pathname: 'test'
-        }
+            pathname: 'test',
+        },
     });
     component.update();
 
@@ -57,8 +57,8 @@ it('uses scrollTop helper on location change', () => {
 
     component.setProps({
         location: {
-            pathname: ''
-        }
+            pathname: '',
+        },
     });
     component.update();
 

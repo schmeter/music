@@ -27,11 +27,11 @@ class Analyser extends React.Component {
         const AudioContext = window.AudioContext;
 
         if (
-            canvas
-            && audio
-            && AudioContext
-            && !this.audioContext
-            && isPlaying
+            canvas &&
+            audio &&
+            AudioContext &&
+            !this.audioContext &&
+            isPlaying
         ) {
             this.audioContext = new AudioContext();
             const analyser = this.audioContext.createAnalyser();
@@ -61,14 +61,20 @@ class Analyser extends React.Component {
             }
             ctx.clearRect(0, 0, canvas.width, canvas.height);
             dataArray.forEach((item, index) => {
-                const barHeight = item * 3 / 4;
+                const barHeight = (item * 3) / 4;
 
                 if (mode === 'waveform') {
                     ctx.fillStyle = `rgba(255, 170, 0, 1)`;
                     ctx.fillRect(index, canvas.height - barHeight, barWidth, 1);
                 } else {
-                    ctx.fillStyle = `rgba(255, ${255 - item}, 0, ${1 - (item / canvas.height)})`;
-                    ctx.fillRect(index * barDistance, canvas.height, barWidth, 0 - barHeight);
+                    ctx.fillStyle = `rgba(255, ${255 - item}, 0, ${1 -
+                        item / canvas.height})`;
+                    ctx.fillRect(
+                        index * barDistance,
+                        canvas.height,
+                        barWidth,
+                        0 - barHeight
+                    );
                 }
             });
             window.requestAnimationFrame(paintCanvas);
@@ -79,10 +85,7 @@ class Analyser extends React.Component {
 
     render() {
         return !this.isAnalyserAllowed() ? null : (
-            <canvas
-                className="canvas"
-                ref={this.canvas}
-            />
+            <canvas className="canvas" ref={this.canvas} />
         );
     }
 }
@@ -90,7 +93,7 @@ class Analyser extends React.Component {
 Analyser.propTypes = {
     isPlaying: PropTypes.bool.isRequired,
     audio: PropTypes.object,
-    mode: PropTypes.oneOf(['frequency', 'waveform'])
+    mode: PropTypes.oneOf(['frequency', 'waveform']),
 };
 
 export default Analyser;

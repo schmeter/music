@@ -12,7 +12,7 @@ class IconPlay extends React.Component {
 }
 
 IconPlay.propTypes = {
-    isPlaying: PropTypes.bool.isRequired
+    isPlaying: PropTypes.bool.isRequired,
 };
 
 export default IconPlay;
