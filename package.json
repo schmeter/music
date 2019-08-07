@@ -24,13 +24,6 @@
       "envify"
     ]
   },
-  "jest": {
-    "verbose": true,
-    "testURL": "http://localhost/",
-    "setupFilesAfterEnv": [
-      "<rootDir>/jest.setup.js"
-    ]
-  },
   "dependencies": {
     "@babel/core": "^7.5.5",
     "@babel/plugin-proposal-class-properties": "^7.5.5",
@@ -68,14 +61,9 @@
     "enzyme-adapter-react-16": "^1.14.0",
     "enzyme-to-json": "^3.3.5",
     "eslint": "^6.1.0",
-    "eslint-config-semistandard": "^14.0.0",
-    "eslint-config-standard-react": "^8.0.0",
-    "eslint-plugin-import": "^2.18.2",
+    "eslint-config-prettier": "^6.0.0",
     "eslint-plugin-jest": "^22.14.0",
-    "eslint-plugin-node": "^9.1.0",
-    "eslint-plugin-promise": "^4.2.1",
-    "eslint-plugin-react": "^7.14.3",
-    "eslint-plugin-standard": "^4.0.0",
+    "eslint-plugin-prettier": "^3.1.0",
     "exorcist": "^1.0.1",
     "font-awesome": "^4.7.0",
     "grunt": "^1.0.4",
@@ -87,10 +75,8 @@
     "grunt-contrib-uglify": "^4.0.1",
     "grunt-contrib-watch": "^1.1.0",
     "grunt-env": "^1.0.1",
-    "grunt-eslint": "^22.0.0",
     "grunt-exorcise": "^2.1.1",
     "grunt-sass": "^3.0.2",
-    "grunt-sass-lint": "^0.2.4",
     "grunt-tree": "^1.1.1",
     "id3-parser": "^2.0.0",
     "jest": "^24.8.0",
@@ -100,6 +86,7 @@
     "node-sass": "^4.12.0",
     "node-sass-globbing": "0.0.23",
     "npm-update-all": "^1.0.1",
+    "prettier": "^1.18.2",
     "prop-types": "^15.7.2",
     "ramda": "^0.26.1",
     "react": "^16.8.6",
@@ -129,7 +116,10 @@
     "build": "npm test && grunt build:release",
     "build:prod": "npm test && grunt build:prod",
     "preview": "npm test && grunt build:prod && grunt browserSync watch",
-    "lint:fix": "eslint --ext .js --fix .",
+    "lint": "npm run lint:sass && npm run lint:js",
+    "lint:sass": "sass-lint -c .sasslintrc '**/*.scss' -v -q",
+    "lint:js": "eslint --ext .js --ignore-path .gitignore .",
+    "lint:js:fix": "eslint --ext .js --fix --ignore-path .gitignore .",
     "update": "npm-update-all"
   }
 }
