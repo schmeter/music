@@ -109,17 +109,17 @@
   "scripts": {
     "watch": "grunt default",
     "start": "grunt default",
-    "pretest": "grunt scanConfig",
-    "test": "jest",
-    "test:watch": "npm test -- --watch",
-    "test:cover": "npm test -- --coverage",
-    "build": "npm test && grunt build:release",
-    "build:prod": "npm test && grunt build:prod",
-    "preview": "npm test && grunt build:prod && grunt browserSync watch",
     "lint": "npm run lint:sass && npm run lint:js",
     "lint:sass": "sass-lint -c .sasslintrc '**/*.scss' -v -q",
     "lint:js": "eslint --ext .js --ignore-path .gitignore .",
     "lint:js:fix": "eslint --ext .js --fix --ignore-path .gitignore .",
+    "pretest": "grunt scanConfig",
+    "test": "jest",
+    "test:watch": "npm test -- --watch",
+    "test:cover": "npm test -- --coverage",
+    "build": "npm run lint && npm test && grunt build:release",
+    "build:prod": "npm run lint && npm test && grunt build:prod",
+    "preview": "npm run lint && npm test && grunt build:prod && grunt browserSync watch",
     "update": "npm-update-all"
   }
 }
