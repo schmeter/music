@@ -4,8 +4,6 @@ const nodeSassGlobbing = require('node-sass-globbing');
 const historyApiFallback = require('connect-history-api-fallback');
 
 module.exports = function (grunt) {
-    const doLinting = !process.env.NO_LINT;
-
     require('load-grunt-tasks')(grunt);
     require('time-grunt')(grunt);
 
@@ -143,10 +141,6 @@ module.exports = function (grunt) {
             }
         },
 
-        eslint: {
-            dist: ['<%= srcFolder %>/js/**/*.js']
-        },
-
         sass: {
             options: {
                 sourceMap: true,
@@ -160,12 +154,6 @@ module.exports = function (grunt) {
                     ]
                 }
             }
-        },
-
-        sasslint: {
-            dist: [
-                '<%= srcFolder %>/sass/**/*.scss'
-            ]
         },
 
         tree: {
@@ -225,11 +213,11 @@ module.exports = function (grunt) {
             },
             js: {
                 files: ['<%= srcFolder %>/js/**/*.js'],
-                tasks: doLinting ? ['eslint'] : []
+                tasks: []
             },
             sass: {
                 files: ['<%= srcFolder %>/sass/**/*.scss'],
-                tasks: doLinting ? ['sass', 'sasslint'] : ['sass']
+                tasks: ['sass']
             },
             html: {
                 files: [
@@ -253,17 +241,12 @@ module.exports = function (grunt) {
         'version'
     ]);
 
-    grunt.registerTask('lint',
-        doLinting ? ['eslint', 'sasslint'] : []
-    );
-
     grunt.registerTask('build', [
         'clean',
         'setenv',
         'copy',
         'scanConfig',
-        'sass',
-        'lint'
+        'sass'
     ]);
 
     grunt.registerTask('build:dev', [
