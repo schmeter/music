@@ -56,7 +56,7 @@ class Screensaver extends React.Component {
 }
 
 Screensaver.propTypes = {
-    isPlaying: PropTypes.bool.isRequired
+    isPlaying: PropTypes.bool.isRequired,
 };
 
 export default Screensaver;

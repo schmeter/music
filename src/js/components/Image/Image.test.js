@@ -9,7 +9,7 @@ it('renders correctly', () => {
         src: 'test',
         alt: 'test',
         className: 'test',
-        handleLoad: jest.fn()
+        handleLoad: jest.fn(),
     };
     const component = mount(<Image {...props} />);
 

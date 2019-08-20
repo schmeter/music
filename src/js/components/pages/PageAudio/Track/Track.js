@@ -32,7 +32,7 @@ class Track extends React.Component {
 Track.propTypes = {
     className: PropTypes.string,
     file: PropTypes.object.isRequired,
-    activeTrack: PropTypes.object
+    activeTrack: PropTypes.object,
 };
 
 export default Track;

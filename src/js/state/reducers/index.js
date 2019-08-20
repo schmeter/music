@@ -7,5 +7,5 @@ import layer from './layer';
 export default combineReducers({
     auth,
     audio,
-    layer
+    layer,
 });

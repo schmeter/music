@@ -10,7 +10,7 @@ class Image extends React.Component {
 
     state = {
         loaded: false,
-        error: false
+        error: false,
     };
 
     @autobind
@@ -58,7 +58,7 @@ Image.propTypes = {
     src: PropTypes.string.isRequired,
     alt: PropTypes.string.isRequired,
     className: PropTypes.string,
-    handleLoad: PropTypes.func
+    handleLoad: PropTypes.func,
 };
 
 export default Image;

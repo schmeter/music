@@ -12,13 +12,13 @@ it('renders correctly', () => {
     const tracks = [{
         path: 'test1',
         tag: {
-            title: 'test1'
-        }
+            title: 'test1',
+        },
     }, {
         path: 'test2',
         tag: {
-            title: 'test2'
-        }
+            title: 'test2',
+        },
     }];
     const props = {
         setActiveIndex: jest.fn(),
@@ -28,7 +28,7 @@ it('renders correctly', () => {
         activeIndex: 0,
         nextIndex: 1,
         playToggle: false,
-        isPlaying: false
+        isPlaying: false,
     };
     const component = mount(<Player {...props} />);
 
@@ -37,7 +37,7 @@ it('renders correctly', () => {
     component.setProps({
         ...props,
         activeIndex: 1,
-        playToggle: false
+        playToggle: false,
     });
     component.update();
 
@@ -46,7 +46,7 @@ it('renders correctly', () => {
     component.setProps({
         ...props,
         activeIndex: 1,
-        playToggle: true
+        playToggle: true,
     });
     component.update();
 
@@ -56,7 +56,7 @@ it('renders correctly', () => {
         ...props,
         tracks: [],
         activeIndex: 2,
-        isPlaying: true
+        isPlaying: true,
     });
     component.update();
 
@@ -67,7 +67,7 @@ it('renders correctly', () => {
 
     component.setProps({
         ...props,
-        isPlaying: false
+        isPlaying: false,
     });
     component.update();
 

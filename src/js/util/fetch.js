@@ -1,8 +1,8 @@
 export const fetchJSON = (url, ignoreError = false) => new Promise((resolve, reject) => {
     fetch(url, {
         headers: {
-            'Content-Type': 'application/json; charset=UTF-8'
-        }
+            'Content-Type': 'application/json; charset=UTF-8',
+        },
     })
         .then(res => {
             if (res.ok) {

@@ -36,7 +36,7 @@ Mp3File.propTypes = {
     tracks: PropTypes.array.isRequired,
     activeIndex: PropTypes.number.isRequired,
     setActiveIndex: PropTypes.func.isRequired,
-    togglePlay: PropTypes.func.isRequired
+    togglePlay: PropTypes.func.isRequired,
 };
 
 export default Mp3File;

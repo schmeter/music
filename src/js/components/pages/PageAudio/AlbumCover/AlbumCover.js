@@ -9,7 +9,7 @@ import Image from '../../../Image';
 class AlbumCover extends React.Component {
     state = {
         showRecord: false,
-        imgIndex: 0
+        imgIndex: 0,
     };
 
     getImgIndex() {
@@ -40,7 +40,7 @@ class AlbumCover extends React.Component {
 
         this.setState({
             showRecord: !showRecord,
-            imgIndex: !showRecord ? this.getImgIndex() : imgIndex
+            imgIndex: !showRecord ? this.getImgIndex() : imgIndex,
         });
     }
 
@@ -76,7 +76,7 @@ class AlbumCover extends React.Component {
 
 AlbumCover.propTypes = {
     link: PropTypes.string.isRequired,
-    album: PropTypes.object.isRequired
+    album: PropTypes.object.isRequired,
 };
 
 export default AlbumCover;

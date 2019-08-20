@@ -67,7 +67,7 @@ PageAudio.propTypes = {
     albums: PropTypes.array.isRequired,
     match: PropTypes.object.isRequired,
     getArtist: PropTypes.func.isRequired,
-    getAlbum: PropTypes.func.isRequired
+    getAlbum: PropTypes.func.isRequired,
 };
 
 export default PageAudio;

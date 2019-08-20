@@ -1,5 +1,5 @@
 import {
-    fetchJSON
+    fetchJSON,
 } from './fetch';
 
 test('expects fetchJSON to return object', () => {

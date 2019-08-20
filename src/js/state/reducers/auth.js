@@ -1,5 +1,5 @@
 export const initialState = {
-    isLoggedIn: false
+    isLoggedIn: false,
 };
 
 export default (state = {}, action) => {
@@ -7,7 +7,7 @@ export default (state = {}, action) => {
         case 'AUTH_SET_LOGGED_IN':
             return {
                 ...state,
-                isLoggedIn: action.payload
+                isLoggedIn: action.payload,
             };
         default:
             return state;

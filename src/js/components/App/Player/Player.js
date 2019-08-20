@@ -162,7 +162,7 @@ Player.propTypes = {
     activeIndex: PropTypes.number.isRequired,
     nextIndex: PropTypes.number.isRequired,
     playToggle: PropTypes.bool.isRequired,
-    isPlaying: PropTypes.bool.isRequired
+    isPlaying: PropTypes.bool.isRequired,
 };
 
 export default Player;

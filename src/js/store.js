@@ -12,7 +12,7 @@ export default createStore(
     {
         audio,
         auth,
-        layer
+        layer,
     },
     composeWithDevTools(applyMiddleware(...middlewares()))
 );

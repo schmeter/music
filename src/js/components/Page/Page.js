@@ -52,8 +52,8 @@ Page.propTypes = {
     children: PropTypes.node,
     useBaseClass: PropTypes.bool,
     location: PropTypes.shape({
-        pathname: PropTypes.string
-    })
+        pathname: PropTypes.string,
+    }),
 };
 
 export default withRouter(Page);

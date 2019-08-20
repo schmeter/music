@@ -5,7 +5,7 @@ import toJson from 'enzyme-to-json';
 import Screensaver from './Screensaver';
 
 jest.mock('../../../util/screen', () => ({
-    isTouch: () => false
+    isTouch: () => false,
 }));
 
 window.setTimeout = (callback, value) => {
@@ -15,7 +15,7 @@ window.setTimeout = (callback, value) => {
 
 it('renders correctly', () => {
     const props = {
-        isPlaying: false
+        isPlaying: false,
     };
     const component = shallow(<Screensaver {...props} />);
 
@@ -23,7 +23,7 @@ it('renders correctly', () => {
 
     component.setProps({
         ...props,
-        isPlaying: true
+        isPlaying: true,
     });
     component.update();
 
@@ -36,7 +36,7 @@ it('renders correctly', () => {
 
     component.setProps({
         ...props,
-        isPlaying: false
+        isPlaying: false,
     });
     component.update();
 

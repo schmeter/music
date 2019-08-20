@@ -14,7 +14,7 @@ const set = (id, data, expiration) => window.localStorage.setItem(id, JSON.strin
     data,
     expiration: expiration
         ? now() + expiration
-        : null
+        : null,
 }));
 
 const unset = (id) => window.localStorage.removeItem(id);
@@ -25,5 +25,5 @@ export default {
     get,
     set,
     unset,
-    clear
+    clear,
 };

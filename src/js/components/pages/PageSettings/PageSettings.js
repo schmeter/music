@@ -27,7 +27,7 @@ class PageSettings extends React.Component {
             logout();
         } else {
             login({
-                password: password.value
+                password: password.value,
             }, 60 * 60 * 24 * 30);
         }
     }
@@ -106,7 +106,7 @@ PageSettings.propTypes = {
     history: PropTypes.object.isRequired,
     isLoggedIn: PropTypes.bool.isRequired,
     login: PropTypes.func.isRequired,
-    logout: PropTypes.func.isRequired
+    logout: PropTypes.func.isRequired,
 };
 
 export default PageSettings;

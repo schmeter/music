@@ -13,7 +13,7 @@ class AlbumList extends React.Component {
             albumList,
             selectedAlbum,
             selectedArtist,
-            activeTrack
+            activeTrack,
         } = this.props;
         const selectedArtistId = selectedArtist && selectedArtist.id;
         const selectedAlbumId = selectedAlbum && selectedAlbum.id;
@@ -40,10 +40,10 @@ class AlbumList extends React.Component {
                         || album.id === selectedAlbumId;
                     const albumLink = getUrl('audio:artistId:albumId', {
                         artistId: album.artist.id,
-                        albumId: album.id
+                        albumId: album.id,
                     });
                     const artistLink = getUrl('audio:artistId', {
-                        artistId: album.artist.id
+                        artistId: album.artist.id,
                     });
 
                     return !visible ? null : (
@@ -85,7 +85,7 @@ AlbumList.propTypes = {
     albumList: PropTypes.array.isRequired,
     selectedAlbum: PropTypes.object,
     selectedArtist: PropTypes.object,
-    activeTrack: PropTypes.object
+    activeTrack: PropTypes.object,
 };
 
 export default AlbumList;

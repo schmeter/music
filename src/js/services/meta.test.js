@@ -1,6 +1,6 @@
 import {
     joinTitleParts,
-    setTitle
+    setTitle,
 } from './meta';
 
 test('expects joinTitleParts to return "t | e | s | t"', () => {

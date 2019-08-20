@@ -10,7 +10,7 @@ import { scrollTop } from '../../../util/screen';
 const infos = [
     { id: 'title' },
     { id: 'album', link: 'audio:artistId:albumId' },
-    { id: 'artist', link: 'audio:artistId' }
+    { id: 'artist', link: 'audio:artistId' },
 ];
 
 const scrollClass = 'layer-content';
@@ -45,7 +45,7 @@ class Info extends React.Component {
                                     <Link
                                         to={getUrl(item.link, {
                                             artistId: activeTrack.artist.id,
-                                            albumId: activeTrack.album.id
+                                            albumId: activeTrack.album.id,
                                         })}
                                         onClick={closeLayers}
                                     >
@@ -60,7 +60,7 @@ class Info extends React.Component {
                     <Link
                         to={getUrl(infos.find((item) => item.id === 'album').link, {
                             artistId: activeTrack.artist.id,
-                            albumId: activeTrack.album.id
+                            albumId: activeTrack.album.id,
                         })}
                         onClick={closeLayers}
                     >
@@ -81,7 +81,7 @@ class Info extends React.Component {
 
 Info.propTypes = {
     activeTrack: PropTypes.object,
-    closeLayers: PropTypes.func.isRequired
+    closeLayers: PropTypes.func.isRequired,
 };
 
 export default Info;

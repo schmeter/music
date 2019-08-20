@@ -8,7 +8,7 @@ const getArtists = (audioData, showAll) => {
             hidden: showAll
                 ? false
                 : artist.hidden,
-            imgPath: artist.imgPath || configApp.fallbackImage
+            imgPath: artist.imgPath || configApp.fallbackImage,
         });
         artist.albums = getAlbums(artist, showAll);
         return artist;
@@ -24,7 +24,7 @@ const getAlbums = (artist, showAll) => {
             loop: (artist.loop || album.loop),
             skip: (artist.skip || album.skip),
             imgPath: album.imgPath || configApp.fallbackImage,
-            artist: pick(['id', 'title'], artist)
+            artist: pick(['id', 'title'], artist),
         });
         album.tracks = getTracks(album, showAll);
         return album;
@@ -41,7 +41,7 @@ const getTracks = (album, showAll) => {
             skip: album.skip,
             imgPath: album.imgPath,
             artist: album.artist,
-            album: pick(['id', 'title'], album)
+            album: pick(['id', 'title'], album),
         });
         return track;
     });

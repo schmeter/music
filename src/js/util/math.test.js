@@ -1,5 +1,5 @@
 import {
-    getRandom
+    getRandom,
 } from './math';
 
 test('expects getRandom to return 3', () => {

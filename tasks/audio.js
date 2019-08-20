@@ -1,5 +1,5 @@
-module.exports = function (grunt) {
-    grunt.registerTask('audio', function () {
+module.exports = function(grunt) {
+    grunt.registerTask('audio', function() {
         const { readJSON, read, write } = grunt.file;
         const { path, pathOr, pickAll } = require('ramda');
         const ID3 = require('id3-parser');
@@ -45,7 +45,7 @@ module.exports = function (grunt) {
                         'artist',
                         'album',
                         'year',
-                        'track'
+                        'track',
                     ], fileTag);
                     // set file lyrics
                     const mdFileName = fileName.replace(/\.mp3/g, '.md');
@@ -63,7 +63,7 @@ module.exports = function (grunt) {
                     album.tracks[fileName] = {
                         path: `/${mp3FilePath}`,
                         tag,
-                        lyrics
+                        lyrics,
                     };
                 });
             });

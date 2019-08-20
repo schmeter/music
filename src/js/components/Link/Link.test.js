@@ -8,7 +8,7 @@ window.open = jest.fn();
 
 const mockedEvent = {
     defaultPrevented: false,
-    preventDefault: jest.fn()
+    preventDefault: jest.fn(),
 };
 const onClick = jest.fn();
 
@@ -17,7 +17,7 @@ it('renders correctly with external url', () => {
         to: 'http://test',
         children: 'test',
         className: 'test',
-        onClick
+        onClick,
     };
     const component = shallow(<Link {...props} />);
 
@@ -30,7 +30,7 @@ it('renders correctly with external url', () => {
 it('renders correctly with internal url', () => {
     const props = {
         to: 'test',
-        onClick
+        onClick,
     };
     const component = shallow(<Link {...props} />);
 

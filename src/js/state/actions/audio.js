@@ -2,7 +2,7 @@ import {
     loadLibrary,
     saveActiveTrackPath,
     loadActiveTrackPath,
-    getRandomIndex
+    getRandomIndex,
 } from '../../services/audio';
 
 export const requestAudioLibraryAction = () => (dispatch) => {
@@ -15,21 +15,21 @@ export const requestAudioLibraryAction = () => (dispatch) => {
 
 export const setLibraryAction = (library) => ({
     type: 'AUDIO_SET_LIBRARY',
-    payload: library
+    payload: library,
 });
 
 export const setActiveIndexAction = (activeIndex) => ({
     type: 'AUDIO_SET_ACTIVE_INDEX',
-    payload: activeIndex
+    payload: activeIndex,
 });
 
 export const setIsPlayingAction = (isPlaying) => ({
     type: 'AUDIO_SET_IS_PLAYING',
-    payload: isPlaying
+    payload: isPlaying,
 });
 
 export const togglePlayAction = () => ({
-    type: 'AUDIO_TOGGLE_PLAY'
+    type: 'AUDIO_TOGGLE_PLAY',
 });
 
 export const saveActiveTrackAction = (track) => () => {
