@@ -1,4 +1,4 @@
-{
+module.exports = {
     "extends": [
         "semistandard",
         "standard-react"
@@ -18,6 +18,7 @@
         }
     },
     "rules": {
+        "comma-dangle": ["error", "always-multiline"],
         "import/extensions": [
             "warn",
             {
@@ -52,7 +53,7 @@
             "warn",
             "always"
         ],
-        "space-before-function-paren": "off",
+        "space-before-function-paren": ["error", "never"],
         "jsx-quotes": [
             "warn",
             "prefer-double"
@@ -70,7 +71,6 @@
         "document": true,
         "window": true,
         "fetch": true,
-        "Headers": true,
         "app": true
     }
-}
+};
