@@ -25,7 +25,7 @@ class TransitionItem extends React.Component {
 }
 
 TransitionItem.propTypes = {
-    children: PropTypes.node.isRequired
+    children: PropTypes.node.isRequired,
 };
 
 export default TransitionItem;

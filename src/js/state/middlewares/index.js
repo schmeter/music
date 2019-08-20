@@ -8,7 +8,7 @@ export default (env = process.env.NODE_ENV) => {
     if (env !== 'production') {
         middlewares = [
             ...middlewares,
-            logger()
+            logger(),
         ];
     }
     return middlewares;

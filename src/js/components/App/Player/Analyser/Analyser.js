@@ -90,7 +90,7 @@ class Analyser extends React.Component {
 Analyser.propTypes = {
     isPlaying: PropTypes.bool.isRequired,
     audio: PropTypes.object,
-    mode: PropTypes.oneOf(['frequency', 'waveform'])
+    mode: PropTypes.oneOf(['frequency', 'waveform']),
 };
 
 export default Analyser;

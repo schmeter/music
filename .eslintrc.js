@@ -1,76 +1,76 @@
 module.exports = {
-    "extends": [
-        "semistandard",
-        "standard-react"
+    extends: [
+        'semistandard',
+        'standard-react',
     ],
-    "plugins": [
-        "import",
-        "jest"
+    plugins: [
+        'import',
+        'jest',
     ],
-    "env": {
-        "jest/globals": true
+    env: {
+        'jest/globals': true,
     },
-    "parser": "babel-eslint",
-    "parserOptions": {
-        "ecmaFeatures": {
-            "jsx": true,
-            "modules": true
-        }
+    parser: 'babel-eslint',
+    parserOptions: {
+        ecmaFeatures: {
+            jsx: true,
+            modules: true,
+        },
     },
-    "rules": {
-        "comma-dangle": ["error", "always-multiline"],
-        "import/extensions": [
-            "warn",
+    rules: {
+        'comma-dangle': ['error', 'always-multiline'],
+        'import/extensions': [
+            'warn',
             {
-                "js": "never",
-                "json": "always"
-            }
+                js: 'never',
+                json: 'always',
+            },
         ],
-        "indent": [
-            "warn",
+        indent: [
+            'warn',
             4,
             {
-                "SwitchCase": 1
-            }
+                SwitchCase: 1,
+            },
         ],
-        "max-len": [
-            "warn",
+        'max-len': [
+            'warn',
             {
-                "code": 120
-            }
+                code: 120,
+            },
         ],
-        "newline-after-var": 1,
-        "no-console": 2,
-        "no-multiple-empty-lines": [
-            "warn",
+        'newline-after-var': 1,
+        'no-console': 2,
+        'no-multiple-empty-lines': [
+            'warn',
             {
-                "max": 1,
-                "maxEOF": 1
-            }
+                max: 1,
+                maxEOF: 1,
+            },
         ],
-        "operator-linebreak": "off",
-        "object-curly-spacing": [
-            "warn",
-            "always"
+        'operator-linebreak': 'off',
+        'object-curly-spacing': [
+            'warn',
+            'always',
         ],
-        "space-before-function-paren": ["error", "never"],
-        "jsx-quotes": [
-            "warn",
-            "prefer-double"
+        'space-before-function-paren': ['error', 'never'],
+        'jsx-quotes': [
+            'warn',
+            'prefer-double',
         ],
-        "react/jsx-indent": [
-            "warn",
-            4
+        'react/jsx-indent': [
+            'warn',
+            4,
         ],
-        "react/jsx-indent-props": [
-            "warn",
-            4
-        ]
+        'react/jsx-indent-props': [
+            'warn',
+            4,
+        ],
     },
-    "globals": {
-        "document": true,
-        "window": true,
-        "fetch": true,
-        "app": true
-    }
+    globals: {
+        document: true,
+        window: true,
+        fetch: true,
+        app: true,
+    },
 };

@@ -4,7 +4,7 @@ import autobind from 'autobind-decorator';
 
 class Curtains extends React.Component {
     state = {
-        curtainsOpen: true
+        curtainsOpen: true,
     };
 
     @autobind

@@ -9,7 +9,7 @@ class Link extends React.Component {
         const { className, to, onClick, children } = this.props;
         const props = {
             className,
-            onClick
+            onClick,
         };
         const content = children || to;
 
@@ -38,7 +38,7 @@ Link.propTypes = {
     to: PropTypes.string.isRequired,
     children: PropTypes.node,
     onClick: PropTypes.func,
-    className: PropTypes.string
+    className: PropTypes.string,
 };
 
 export default Link;

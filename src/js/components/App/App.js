@@ -5,7 +5,7 @@ import { Switch, Route } from 'react-router-dom';
 import {
     PageAudio,
     PageSettings,
-    Page404
+    Page404,
 } from '../pages';
 import Layer from '../Layer';
 import Screensaver from './Screensaver';
@@ -90,7 +90,7 @@ class App extends React.Component {
 App.propTypes = {
     setLoggedIn: PropTypes.func.isRequired,
     requestAudioLibrary: PropTypes.func.isRequired,
-    isLoggedIn: PropTypes.bool.isRequired
+    isLoggedIn: PropTypes.bool.isRequired,
 };
 
 export default App;

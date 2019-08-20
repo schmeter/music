@@ -1,5 +1,5 @@
-module.exports = function (grunt) {
-    grunt.registerTask('sitemap', function () {
+module.exports = function(grunt) {
+    grunt.registerTask('sitemap', function() {
         const { readJSON, write } = grunt.file;
         const { identity, flatten, uniq } = require('ramda');
 

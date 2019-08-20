@@ -2,7 +2,7 @@ import {
     getRandomIndex,
     loadLibrary,
     loadActiveTrackPath,
-    saveActiveTrackPath
+    saveActiveTrackPath,
 } from './audio';
 
 const library = loadLibrary();

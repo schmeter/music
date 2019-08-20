@@ -5,12 +5,12 @@ import toJson from 'enzyme-to-json';
 import Header from './Header';
 
 const mockedEvent = {
-    preventDefault: jest.fn()
+    preventDefault: jest.fn(),
 };
 
 it('renders correctly', () => {
     const props = {
-        openLayer: jest.fn()
+        openLayer: jest.fn(),
     };
     const component = shallow(<Header {...props} />);
 

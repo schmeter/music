@@ -1,7 +1,7 @@
 import i18n, {
     getAppLanguage,
     getLanguages,
-    setAppLanguage
+    setAppLanguage,
 } from './i18n';
 
 test('expects i18n to return "{{de:}}"', () => {

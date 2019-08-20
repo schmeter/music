@@ -12,7 +12,7 @@ class Layer extends React.Component {
             id,
             activeId,
             closeLayers,
-            children
+            children,
         } = this.props;
 
         return (
@@ -46,7 +46,7 @@ Layer.propTypes = {
     className: PropTypes.string,
     children: PropTypes.node,
     activeId: PropTypes.string.isRequired,
-    closeLayers: PropTypes.func.isRequired
+    closeLayers: PropTypes.func.isRequired,
 };
 
 export default Layer;

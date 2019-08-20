@@ -42,7 +42,7 @@ class Header extends React.Component {
 }
 
 Header.propTypes = {
-    openLayer: PropTypes.func.isRequired
+    openLayer: PropTypes.func.isRequired,
 };
 
 export default Header;

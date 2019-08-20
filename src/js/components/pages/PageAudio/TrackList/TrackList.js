@@ -22,7 +22,7 @@ class TrackList extends React.Component {
 }
 
 TrackList.propTypes = {
-    trackList: PropTypes.array.isRequired
+    trackList: PropTypes.array.isRequired,
 };
 
 export default TrackList;

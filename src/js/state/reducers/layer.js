@@ -1,5 +1,5 @@
 export const initialState = {
-    activeId: ''
+    activeId: '',
 };
 
 export default (state = {}, action) => {
@@ -7,12 +7,12 @@ export default (state = {}, action) => {
         case 'LAYER_OPEN':
             return {
                 ...state,
-                activeId: action.payload
+                activeId: action.payload,
             };
         case 'LAYERS_CLOSE':
             return {
                 ...state,
-                ...initialState
+                ...initialState,
             };
         default:
             return state;

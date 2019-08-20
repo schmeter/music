@@ -5,7 +5,7 @@ import toJson from 'enzyme-to-json';
 import Layer from './Layer';
 
 const mockedEvent = {
-    preventDefault: jest.fn()
+    preventDefault: jest.fn(),
 };
 
 it('renders correctly', () => {
@@ -14,7 +14,7 @@ it('renders correctly', () => {
         className: 'test',
         children: 'test',
         activeId: 'test2',
-        closeLayers: jest.fn()
+        closeLayers: jest.fn(),
     };
     const component = shallow(<Layer {...props} />);
 
@@ -28,7 +28,7 @@ it('renders correctly with id only', () => {
     const props = {
         id: 'test',
         activeId: 'test2',
-        closeLayers: jest.fn()
+        closeLayers: jest.fn(),
     };
     const component = shallow(<Layer {...props} />);
 
