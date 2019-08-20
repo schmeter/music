@@ -109,20 +109,21 @@
     "whatwg-fetch": "^3.0.0"
   },
   "scripts": {
-    "watch": "grunt default",
     "start": "grunt default",
+    "watch": "npm run start",
+    "lint:sass": "sass-lint -v -q",
+    "lint:js": "eslint --ignore-path .gitignore .",
     "lint": "npm run lint:sass && npm run lint:js",
-    "lint:sass": "sass-lint -c .sasslintrc '**/*.scss' -v -q",
     "lint:sass:fix": "sass-lint-auto-fix -c .sass-lint.yml",
-    "lint:js": "eslint --ext .js --ignore-path .gitignore .",
-    "lint:js:fix": "lint:js -- --fix",
+    "lint:js:fix": "npm run lint:js -- --fix",
     "pretest": "grunt scanConfig",
     "test": "jest",
     "test:watch": "npm test -- --watch",
     "test:cover": "npm test -- --coverage",
-    "build": "npm run lint && npm test && grunt build:release",
-    "build:prod": "npm run lint && npm test && grunt build:prod",
-    "preview": "npm run lint && npm test && grunt build:prod && grunt browserSync watch",
+    "check": "npm run lint && npm test",
+    "build": "npm run check && grunt build:release",
+    "build:prod": "npm run check && grunt build:prod",
+    "preview": "npm run build:prod && grunt browserSync watch",
     "update": "npm-update-all"
   }
 }
