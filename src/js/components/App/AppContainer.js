@@ -7,12 +7,12 @@ import {
 import { isLoggedIn } from '../../state/selectors/auth';
 import { setLoggedInAction } from '../../state/actions/auth';
 
-export const mapDispatchToProps = (dispatch) => ({
+export const mapDispatchToProps = dispatch => ({
     requestAudioLibrary: () => dispatch(requestAudioLibraryAction()),
     setLoggedIn: () => dispatch(setLoggedInAction()),
 });
 
-export const mapStateToProps = (state) => ({
+export const mapStateToProps = state => ({
     isLoggedIn: isLoggedIn(state),
 });
 

@@ -31,7 +31,7 @@ class AlbumList extends React.Component {
                     { 'artist-selected': !!selectedArtistId }
                 )}
             >
-                {albums.map((album) => {
+                {albums.map(album => {
                     const playing = activeTrack
                         ? album.id === activeTrack.album.id
                         : false;

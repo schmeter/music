@@ -4,7 +4,7 @@ import {
 
 test('expects fetchJSON to return object', () => {
     window.console.error = () => {};
-    window.fetch = (url) => {
+    window.fetch = url => {
         return new Promise((resolve, reject) => {
             reject(new Error());
         });
@@ -12,7 +12,7 @@ test('expects fetchJSON to return object', () => {
 
     expect(typeof fetchJSON('test', true)).toBe('object');
 
-    window.fetch = (url) => {
+    window.fetch = url => {
         return new Promise((resolve, reject) => {
             resolve({ ok: true, json: () => ({}) });
         });
@@ -20,11 +20,11 @@ test('expects fetchJSON to return object', () => {
 
     expect(typeof fetchJSON()).toBe('object');
 
-    window.fetch = (url) => {
+    window.fetch = url => {
         return new Promise((resolve, reject) => {
             resolve({ ok: false });
         });
     };
 
-    expect(typeof fetchJSON('', true).then(data => data, (e) => e)).toBe('object');
+    expect(typeof fetchJSON('', true).then(data => data, e => e)).toBe('object');
 });

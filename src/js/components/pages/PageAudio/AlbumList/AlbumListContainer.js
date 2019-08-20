@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import AlbumList from './AlbumList';
 import { getActiveTrack } from '../../../../state/selectors/audio';
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = state => ({
     activeTrack: getActiveTrack(state),
 });
 

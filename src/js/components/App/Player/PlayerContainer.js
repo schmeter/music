@@ -15,13 +15,13 @@ import {
     getNextIndex,
 } from '../../../state/selectors/audio';
 
-export const mapDispatchToProps = (dispatch) => ({
-    setIsPlaying: (isPlaying) => dispatch(setIsPlayingAction(isPlaying)),
-    setActiveIndex: (activeIndex) => dispatch(setActiveIndexAction(activeIndex)),
-    saveActiveTrack: (track) => dispatch(saveActiveTrackAction(track)),
+export const mapDispatchToProps = dispatch => ({
+    setIsPlaying: isPlaying => dispatch(setIsPlayingAction(isPlaying)),
+    setActiveIndex: activeIndex => dispatch(setActiveIndexAction(activeIndex)),
+    saveActiveTrack: track => dispatch(saveActiveTrackAction(track)),
 });
 
-export const mapStateToProps = (state) => ({
+export const mapStateToProps = state => ({
     tracks: getTracks(state),
     activeIndex: getActiveIndex(state),
     nextIndex: getNextIndex(state),

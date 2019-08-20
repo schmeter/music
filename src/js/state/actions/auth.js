@@ -4,12 +4,12 @@ import {
     isAuthenticated,
 } from '../../services/auth';
 
-export const loginAction = (credentials, expiration) => (dispatch) => {
+export const loginAction = (credentials, expiration) => dispatch => {
     authenticate(credentials, expiration);
     dispatch(setLoggedInAction());
 };
 
-export const logoutAction = () => (dispatch) => {
+export const logoutAction = () => dispatch => {
     unauthenticate();
     dispatch(setLoggedInAction());
 };
