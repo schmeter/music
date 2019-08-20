@@ -4,8 +4,8 @@ import { isAuthenticated } from './auth';
 import storage from './storage';
 import { getRandom } from '../util/math';
 
-export const getRandomIndex = (tracks) => {
-    const filterList = tracks.filter((item) => !item.hidden);
+export const getRandomIndex = tracks => {
+    const filterList = tracks.filter(item => !item.hidden);
 
     return tracks.indexOf(filterList[getRandom(0, filterList.length - 1)]);
 };
@@ -14,6 +14,6 @@ export const loadLibrary = (showAll = isAuthenticated()) => new AudioLibraryMode
 
 export const loadActiveTrackPath = () => storage.get('audio:activeTrackPath');
 
-export const saveActiveTrackPath = (activeTrackPath) => {
+export const saveActiveTrackPath = activeTrackPath => {
     storage.set('audio:activeTrackPath', activeTrackPath);
 };

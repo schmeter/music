@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import Screensaver from './Screensaver';
 import { isPlaying } from '../../../state/selectors/audio';
 
-export const mapStateToProps = (state) => ({
+export const mapStateToProps = state => ({
     isPlaying: isPlaying(state),
 });
 

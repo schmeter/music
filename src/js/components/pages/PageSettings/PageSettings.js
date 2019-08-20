@@ -68,7 +68,7 @@ class PageSettings extends React.Component {
                         defaultValue={getAppLanguage()}
                         onChange={this.handleChange}
                     >
-                        {getLanguages().map((language) => (
+                        {getLanguages().map(language => (
                             <option
                                 key={language}
                                 value={language}

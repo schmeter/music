@@ -9,7 +9,7 @@ class TrackList extends React.Component {
 
         return (
             <div className="table tracks">
-                {trackList.map((track) => (
+                {trackList.map(track => (
                     <Track
                         key={track.path}
                         className="table-row"

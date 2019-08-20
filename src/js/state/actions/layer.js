@@ -1,4 +1,4 @@
-export const openLayerAction = (activeId) => ({
+export const openLayerAction = activeId => ({
     type: 'LAYER_OPEN',
     payload: activeId,
 });

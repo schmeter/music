@@ -1,6 +1,6 @@
 const now = () => Math.round(new Date().getTime() / 1000);
 
-const get = (id) => {
+const get = id => {
     const item = JSON.parse(window.localStorage.getItem(id)) || {};
 
     if (item.expiration && item.expiration <= now()) {
@@ -17,7 +17,7 @@ const set = (id, data, expiration) => window.localStorage.setItem(id, JSON.strin
         : null,
 }));
 
-const unset = (id) => window.localStorage.removeItem(id);
+const unset = id => window.localStorage.removeItem(id);
 
 const clear = () => window.localStorage.clear();
 

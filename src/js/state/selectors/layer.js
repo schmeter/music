@@ -1,1 +1,1 @@
-export const getActiveId = (state) => state.layer.activeId;
+export const getActiveId = state => state.layer.activeId;

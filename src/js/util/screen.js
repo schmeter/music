@@ -1,4 +1,4 @@
-export const scrollTop = (querySelector) => {
+export const scrollTop = querySelector => {
     const container = document.querySelector(querySelector);
 
     if (container) {

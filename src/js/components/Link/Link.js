@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
 
-const isExternal = (path) => /^https?:\/\/.+/.test(path);
+const isExternal = path => /^https?:\/\/.+/.test(path);
 
 class Link extends React.Component {
     render() {

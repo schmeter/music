@@ -32,7 +32,7 @@ class Info extends React.Component {
                     />
                 ) : null}
                 <ul className="table">
-                    {infos.map((item) => !activeTrack.tag[item.id] ? null : (
+                    {infos.map(item => !activeTrack.tag[item.id] ? null : (
                         <li
                             key={item.id}
                             className="table-row"
@@ -58,7 +58,7 @@ class Info extends React.Component {
                 </ul>
                 <div className="cover">
                     <Link
-                        to={getUrl(infos.find((item) => item.id === 'album').link, {
+                        to={getUrl(infos.find(item => item.id === 'album').link, {
                             artistId: activeTrack.artist.id,
                             albumId: activeTrack.album.id,
                         })}

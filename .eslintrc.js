@@ -18,7 +18,8 @@ module.exports = {
         },
     },
     rules: {
-        'comma-dangle': ['error', 'always-multiline'],
+        'arrow-parens': ['warn', 'as-needed'],
+        'comma-dangle': ['warn', 'always-multiline'],
         'import/extensions': [
             'warn',
             {
@@ -53,7 +54,7 @@ module.exports = {
             'warn',
             'always',
         ],
-        'space-before-function-paren': ['error', 'never'],
+        'space-before-function-paren': ['warn', 'never'],
         'jsx-quotes': [
             'warn',
             'prefer-double',
