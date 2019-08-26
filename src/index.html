@@ -19,7 +19,7 @@
     <script>
         var app = {
             rev: '<%= rev %>',
-            time: '<%= time %>'
+            time: parseInt('<%= time %>', 10)
         };
     </script>
     <script type="text/javascript" src="/js/<%= pkg.name %>.js?<%= time %>"></script>
