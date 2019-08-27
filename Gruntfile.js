@@ -211,10 +211,6 @@ module.exports = function(grunt) {
                 files: ['<%= srcFolder %>/md/**/*.md'],
                 tasks: ['scanConfig'],
             },
-            js: {
-                files: ['<%= srcFolder %>/js/**/*.js'],
-                tasks: [],
-            },
             sass: {
                 files: ['<%= srcFolder %>/sass/**/*.scss'],
                 tasks: ['sass'],
