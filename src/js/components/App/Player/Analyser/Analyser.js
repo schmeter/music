@@ -64,7 +64,7 @@ class Analyser extends React.Component {
                 const barHeight = item * 3 / 4;
 
                 if (mode === 'waveform') {
-                    ctx.fillStyle = `rgba(255, 170, 0, 1)`;
+                    ctx.fillStyle = 'rgba(255, 170, 0, 1)';
                     ctx.fillRect(index, canvas.height - barHeight, barWidth, 1);
                 } else {
                     ctx.fillStyle = `rgba(255, ${255 - item}, 0, ${1 - (item / canvas.height)})`;

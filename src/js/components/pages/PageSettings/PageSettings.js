@@ -58,7 +58,7 @@ class PageSettings extends React.Component {
                         className="button form-button"
                         type="submit"
                     >
-                        {i18n(`page_settings_button_quit`)}
+                        {i18n('page_settings_button_quit')}
                     </button>
                 </form>
                 <h2 className="headline">{i18n('page_settings_lang_headline')}</h2>

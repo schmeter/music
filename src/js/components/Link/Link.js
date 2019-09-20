@@ -16,6 +16,7 @@ class Link extends React.Component {
         return isExternal(to) ? (
             <a
                 target="_blank"
+                rel="noopener noreferrer"
                 href={to}
                 {...props}
             >

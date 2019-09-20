@@ -20,7 +20,7 @@ class Header extends React.Component {
             <header className="main-header">
                 <h1 className="main-headline">
                     <Link to={getUrl('index')}>
-                        {i18n(`app_title`)}
+                        {i18n('app_title')}
                     </Link>
                 </h1>
                 <Link

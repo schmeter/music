@@ -33,7 +33,8 @@ class Page extends React.Component {
                     'page',
                     { 'page-base': useBaseClass !== false },
                     `page-${className || id}`
-                )}>
+                )}
+                >
                     {children}
                 </div>
                 <audio

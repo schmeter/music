@@ -7,7 +7,7 @@ export const requestUpdateAction = () => dispatch => {
             const searchTime = parseInt(window.location.search.substr(1), 10);
 
             if (searchTime !== data.time && app.time < data.time) {
-                if (window.confirm(i18n(`app_update_available`))) {
+                if (window.confirm(i18n('app_update_available'))) {
                     window.location.href = `/?${data.time}`;
                 }
             }
