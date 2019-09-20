@@ -11,6 +11,10 @@ class Screensaver extends React.Component {
     componentDidMount() {
         document.addEventListener('keydown', this.captureKeys);
 
+        document.addEventListener('mouseleave', () => {
+            this.startScreenSaver();
+        });
+
         document.addEventListener('mousemove', () => {
             this.timer = this.resetScreenSaver(this.timer);
         });
@@ -31,7 +35,7 @@ class Screensaver extends React.Component {
     screenSaverAllowed() {
         const { isPlaying } = this.props;
 
-        return !isTouch() && configApp.useScreensaver && isPlaying;
+        return !isTouch() && configApp.screensaver.active && isPlaying;
     }
 
     startScreenSaver() {
@@ -45,7 +49,7 @@ class Screensaver extends React.Component {
         clearTimeout(timer);
         return setTimeout(() => {
             this.startScreenSaver();
-        }, 3 * 10000);
+        }, configApp.screensaver.timeout * 1000);
     }
 
     render() {

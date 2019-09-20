@@ -18,7 +18,7 @@ class Analyser extends React.Component {
     isAnalyserAllowed() {
         const { audio } = this.props;
 
-        return audio && !isTouch() && configApp.useAnalyser;
+        return audio && !isTouch() && configApp.analyser.active;
     }
 
     analyse() {

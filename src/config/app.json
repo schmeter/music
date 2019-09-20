@@ -1,6 +1,11 @@
 {
     "baseUrl": "https://example.com",
     "fallbackImage": "/img/fallback.png",
-    "useScreensaver": true,
-    "useAnalyser": true
+    "screensaver": {
+        "active": true,
+        "timeout": 30
+    },
+    "analyser": {
+        "active": true
+    }
 }

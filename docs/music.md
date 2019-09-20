@@ -476,7 +476,7 @@ But: Some devices are simply too slow.
     isAnalyserAllowed() {
         const { audio } = this.props;
 
-        return audio && !isTouch() && configApp.useAnalyser;
+        return audio && !isTouch() && configApp.analyser.active;
     }
 ```
 
