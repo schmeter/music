@@ -116,7 +116,6 @@
     "lint": "npm run lint:sass && npm run lint:js",
     "lint:sass:fix": "sass-lint-auto-fix -c .sass-lint.yml",
     "lint:js:fix": "npm run lint:js -- --fix",
-    "pretest": "grunt scanConfig",
     "test": "jest",
     "test:watch": "npm test -- --watch",
     "test:cover": "npm test -- --coverage",
