@@ -85,15 +85,29 @@ exports[`renders correctly and uses setActiveIndex on click 1`] = `
               <Link
                 aria-current={null}
                 onClick={[Function]}
-                to="test2"
+                to={
+                  Object {
+                    "hash": "",
+                    "pathname": "/test2",
+                    "search": "",
+                    "state": null,
+                  }
+                }
               >
-                <a
+                <LinkAnchor
                   aria-current={null}
                   href="/test2"
+                  navigate={[Function]}
                   onClick={[Function]}
                 >
-                  test2
-                </a>
+                  <a
+                    aria-current={null}
+                    href="/test2"
+                    onClick={[Function]}
+                  >
+                    test2
+                  </a>
+                </LinkAnchor>
               </Link>
             </NavLink>
           </Link>
@@ -177,15 +191,29 @@ exports[`renders correctly and uses togglePlay on click 1`] = `
               <Link
                 aria-current={null}
                 onClick={[Function]}
-                to="test1"
+                to={
+                  Object {
+                    "hash": "",
+                    "pathname": "/test1",
+                    "search": "",
+                    "state": null,
+                  }
+                }
               >
-                <a
+                <LinkAnchor
                   aria-current={null}
                   href="/test1"
+                  navigate={[Function]}
                   onClick={[Function]}
                 >
-                  test1
-                </a>
+                  <a
+                    aria-current={null}
+                    href="/test1"
+                    onClick={[Function]}
+                  >
+                    test1
+                  </a>
+                </LinkAnchor>
               </Link>
             </NavLink>
           </Link>
