@@ -1,31 +1,35 @@
-$color-tangerine: rgba(255, 170, 0, 1);
-$color-tangerine-semi: rgba(255, 170, 0, .75);
-$color-desert: rgb(255, 244, 225);
-$color-desert-semi: rgba(255, 244, 225, .75);
-$color-bordeaux: rgba(92, 1, 32, 1);
-$color-aliceblue-light: rgba(240, 248, 255, .99);
-$color-grey-dark: rgba(80, 80, 80, 1);
-$color-black: rgba(0, 0, 0, 1);
-$color-white: rgba(255, 255, 255, 1);
-$color-transparent: transparent;
+$color-def-tangerine: rgba(255, 170, 0, 1);
+$color-def-tangerine-semi: rgba(255, 170, 0, .75);
+$color-def-desert: rgb(255, 244, 225);
+$color-def-desert-semi: rgba(255, 244, 225, .75);
+$color-def-bordeaux: rgba(92, 1, 32, 1);
+$color-def-aliceblue-light: rgba(240, 248, 255, .99);
+$color-def-light-blue: rgba(46, 234, 255, 1);
+$color-def-grey-dark: rgba(80, 80, 80, 1);
+$color-def-black: rgba(0, 0, 0, 1);
+$color-def-red: rgba(255, 0, 0, 1);
+$color-def-white: rgba(255, 255, 255, 1);
+$color-def-transparent: transparent;
 
-$color-background: $color-desert;
-$color-background-off: $color-bordeaux;
-$color-background-gradient-inner: $color-desert-semi;
-$color-background-gradient-outer: $color-white;
-$color-box-shadow: $color-bordeaux;
-$color-image-border: $color-bordeaux;
-$color-text: $color-bordeaux;
-$color-layer: $color-aliceblue-light;
-$color-input: $color-white;
-$color-input-border: $color-bordeaux;
-$color-record: $color-black;
-$color-record-background: $color-aliceblue-light;
-$color-curtains: $color-bordeaux;
-$color-curtains-border: $color-desert;
-$color-player-outer: $color-grey-dark;
-$color-player-inner: $color-desert;
-$color-secret: $color-tangerine-semi;
+$color-background: $color-def-desert;
+$color-background-off: $color-def-bordeaux;
+$color-background-gradient-inner: $color-def-desert-semi;
+$color-background-gradient-outer: $color-def-white;
+$color-screensaver: $color-def-transparent;
+$color-button-background: $color-def-transparent;
+$color-box-shadow: $color-def-bordeaux;
+$color-image-border: $color-def-bordeaux;
+$color-text: $color-def-bordeaux;
+$color-layer: $color-def-aliceblue-light;
+$color-input: $color-def-white;
+$color-input-border: $color-def-bordeaux;
+$color-record: $color-def-black;
+$color-record-background: $color-def-aliceblue-light;
+$color-curtains: $color-def-bordeaux;
+$color-curtains-border: $color-def-desert;
+$color-player-outer: $color-def-grey-dark;
+$color-player-inner: $color-def-desert;
+$color-secret: $color-def-tangerine-semi;
 
 $font-size-base: 18px;
 $line-height-base: 24px;
@@ -61,7 +65,7 @@ $screensaver-fade-out-time: 10s;
 
 %screensaver-background {
     transition: background-color $screensaver-fade-in-time;
-    background-color: $color-transparent;
+    background-color: $color-screensaver;
 
     &.screensaver {
         transition: background-color $screensaver-fade-out-time;
