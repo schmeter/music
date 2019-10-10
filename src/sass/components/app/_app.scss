@@ -1,6 +1,4 @@
 body {
-    @extend %screensaver-background;
-
     background: linear-gradient(
         to bottom,
         $color-background-gradient-outer 0%,
@@ -78,7 +76,6 @@ body {
     margin: 5px;
     padding: 10px;
     border: 1px solid $color-input-border;
-    border-radius: 4px;
     background: $color-input;
 }
 
@@ -103,7 +100,6 @@ body {
 a {
     .image {
         border: 1px solid $color-image-border;
-        border-radius: 4px;
     }
 }
 

@@ -13,8 +13,8 @@ class Page404 extends React.Component {
                 <h2 className="headline">{i18n('page_404_title')}</h2>
                 <div
                     className="album-cover"
-                    style={activeTrack && activeTrack.imgPath ? {
-                        backgroundImage: `url("${activeTrack.imgPath}")`,
+                    style={activeTrack && activeTrack.album.imgPath ? {
+                        backgroundImage: `url("${activeTrack.album.imgPath}")`,
                     } : null}
                 />
             </Page>

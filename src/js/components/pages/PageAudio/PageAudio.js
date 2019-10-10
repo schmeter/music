@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import Link from '../../Link';
-import Page from '../../Page';
 import { Page404 } from '../';
+import Page from '../../Page';
+import Link from '../../Link';
 import AlbumList from './AlbumList';
 import { getUrl } from '../../../services/navigation';
 import { joinTitleParts, setTitle } from '../../../services/meta';

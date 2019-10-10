@@ -1,11 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import autobind from 'autobind-decorator';
+import classNames from 'classnames';
 
 import { isTouch } from '../../../util/screen';
 import configApp from '../../../../config/app.json';
 
 class Screensaver extends React.Component {
+    state = {
+        active: false,
+    };
+
     timer = null;
 
     componentDidMount() {
@@ -40,12 +45,16 @@ class Screensaver extends React.Component {
 
     startScreenSaver() {
         if (this.screenSaverAllowed()) {
-            document.body.classList.add('screensaver');
+            this.setState({
+                active: true,
+            });
         }
     }
 
     resetScreenSaver(timer) {
-        document.body.classList.remove('screensaver');
+        this.setState({
+            active: false,
+        });
         clearTimeout(timer);
         return setTimeout(() => {
             this.startScreenSaver();
@@ -53,13 +62,24 @@ class Screensaver extends React.Component {
     }
 
     render() {
+        const { children } = this.props;
+        const { active } = this.state;
+
         return (
-            <div className="screensaver" />
+            <div
+                className={classNames(
+                    'screensaver',
+                    active && 'active'
+                )}
+            >
+                {children}
+            </div>
         );
     }
 }
 
 Screensaver.propTypes = {
+    children: PropTypes.node.isRequired,
     isPlaying: PropTypes.bool.isRequired,
 };
 

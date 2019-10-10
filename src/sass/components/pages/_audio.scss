@@ -16,7 +16,7 @@
     .album {
         display: inline-block;
         width: calc(100% / 2);
-        padding: 5px 5px 10px;
+        padding: 5px 10px 10px;
         vertical-align: top;
 
         @media (min-width: $max-width-phone + 1) {
@@ -128,7 +128,6 @@
             display: flex;
             width: 100%;
             max-width: 100%;
-            padding-top: 0;
 
             .album-cover {
                 max-width: 512px;

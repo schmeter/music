@@ -32,40 +32,40 @@ class Info extends React.Component {
                     />
                 ) : null}
                 <ul className="table">
-                    {infos.map(item => !activeTrack.tag[item.id] ? null : (
+                    {infos.map(info => !activeTrack.tag[info.id] ? null : (
                         <li
-                            key={item.id}
+                            key={info.id}
                             className="table-row"
                         >
                             <span className="table-cell text-left bold">
-                                {i18n(`layer_info_${item.id}`)}:
+                                {i18n(`layer_info_${info.id}`)}:
                             </span>
                             <span className="table-cell text-left">
-                                {item.link ? (
+                                {info.link ? (
                                     <Link
-                                        to={getUrl(item.link, {
+                                        to={getUrl(info.link, {
                                             artistId: activeTrack.artist.id,
                                             albumId: activeTrack.album.id,
                                         })}
                                         onClick={closeLayers}
                                     >
-                                        {activeTrack.tag[item.id]}
+                                        {activeTrack.tag[info.id]}
                                     </Link>
-                                ) : activeTrack.tag[item.id]}
+                                ) : activeTrack.tag[info.id]}
                             </span>
                         </li>
                     ))}
                 </ul>
                 <div className="cover">
                     <Link
-                        to={getUrl(infos.find(item => item.id === 'album').link, {
+                        to={getUrl(infos.find(info => info.id === 'album').link, {
                             artistId: activeTrack.artist.id,
                             albumId: activeTrack.album.id,
                         })}
                         onClick={closeLayers}
                     >
                         <Image
-                            src={activeTrack.imgPath}
+                            src={activeTrack.album.imgPath}
                             alt={activeTrack.album.title}
                         />
                     </Link>

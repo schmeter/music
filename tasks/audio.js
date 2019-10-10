@@ -47,18 +47,25 @@ module.exports = function(grunt) {
                         'year',
                         'track',
                     ], fileTag);
+
                     // set file lyrics
+                    let lyrics = '';
                     const mdFileName = fileName.replace(/\.mp3/g, '.md');
 
-                    let lyrics = '';
+                    // try filenames with leading numbers and without
+                    [
+                        mdFileName,
+                        mdFileName.replace(/[0-9]+ /g, ''),
+                    ]
+                        .filter(mdFileName => path([artist.id, album.id, mdFileName], mdData))
+                        .forEach(mdFileName => {
+                            const mdFilePath = `${mdFolder}/${artist.id}/${album.id}/${mdFileName}`;
+                            const mdSrcPath = `${grunt.config('srcFolder')}/${mdFilePath}`;
+                            const md = read(mdSrcPath, 'utf8');
 
-                    if (path([artist.id, album.id, mdFileName], mdData)) {
-                        const mdFilePath = `${mdFolder}/${artist.id}/${album.id}/${mdFileName}`;
-                        const mdSrcPath = `${grunt.config('srcFolder')}/${mdFilePath}`;
-                        const md = read(mdSrcPath, 'utf8');
+                            lyrics = markdown.parse(md);
+                        });
 
-                        lyrics = markdown.parse(md);
-                    }
                     // add data to track
                     album.tracks[fileName] = {
                         path: `/${mp3FilePath}`,

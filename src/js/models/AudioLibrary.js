@@ -24,7 +24,7 @@ const getAlbums = (artist, showAll) => {
             loop: (artist.loop || album.loop),
             skip: (artist.skip || album.skip),
             imgPath: album.imgPath || configApp.fallbackImage,
-            artist: pick(['id', 'title'], artist),
+            artist: pick(['id', 'title', 'imgPath'], artist),
         });
         album.tracks = getTracks(album, showAll);
         return album;
@@ -39,9 +39,8 @@ const getTracks = (album, showAll) => {
                 : album.hidden,
             loop: album.loop,
             skip: album.skip,
-            imgPath: album.imgPath,
             artist: album.artist,
-            album: pick(['id', 'title'], album),
+            album: pick(['id', 'title', 'imgPath'], album),
         });
         return track;
     });

@@ -12,7 +12,6 @@ const mockedEvent = {
 it('renders correctly', () => {
     const activeTrack = {
         path: 'test',
-        imgPath: 'test',
         tag: {
             title: 'test',
         },
@@ -22,6 +21,7 @@ it('renders correctly', () => {
         album: {
             id: 'test',
             title: 'test',
+            imgPath: 'test',
         },
     };
     const lyrics = 'test';

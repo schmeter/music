@@ -35,38 +35,39 @@ class App extends React.Component {
     render() {
         return (
             <>
-                <Header />
-                <Switch>
-                    <Route
-                        exact
-                        path={getUrl('index')}
-                        component={PageAudio}
-                    />
-                    <Route
-                        exact
-                        path={getUrl('audio:artistId')}
-                        component={PageAudio}
-                    />
-                    <Route
-                        exact
-                        path={getUrl('audio:artistId:albumId')}
-                        component={PageAudio}
-                    />
-                    <Route
-                        exact
-                        path={getUrl('settings')}
-                        component={PageSettings}
-                    />
-                    <Route
-                        path={getUrl('404')}
-                        component={Page404}
-                    />
-                </Switch>
-                <Layer id="info">
-                    <Info />
-                </Layer>
-                <Screensaver />
-                <Player />
+                <Screensaver>
+                    <Header />
+                    <Switch>
+                        <Route
+                            exact
+                            path={getUrl('index')}
+                            component={PageAudio}
+                        />
+                        <Route
+                            exact
+                            path={getUrl('audio:artistId')}
+                            component={PageAudio}
+                        />
+                        <Route
+                            exact
+                            path={getUrl('audio:artistId:albumId')}
+                            component={PageAudio}
+                        />
+                        <Route
+                            exact
+                            path={getUrl('settings')}
+                            component={PageSettings}
+                        />
+                        <Route
+                            path={getUrl('404')}
+                            component={Page404}
+                        />
+                    </Switch>
+                    <Layer id="info">
+                        <Info />
+                    </Layer>
+                    <Player />
+                </Screensaver>
                 <Curtains />
             </>
         );
