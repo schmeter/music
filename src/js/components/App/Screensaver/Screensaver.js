@@ -69,7 +69,7 @@ class Screensaver extends React.Component {
             <div
                 className={classNames(
                     'screensaver',
-                    active && 'active'
+                    active && 'active',
                 )}
             >
                 {children}

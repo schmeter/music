@@ -5,7 +5,6 @@ const historyApiFallback = require('connect-history-api-fallback');
 
 module.exports = function(grunt) {
     require('load-grunt-tasks')(grunt);
-    require('time-grunt')(grunt);
 
     // load tasks from "tasks"-folder
     grunt.loadTasks('tasks');
@@ -22,7 +21,7 @@ module.exports = function(grunt) {
         rev: shelljs.exec(
             'bash -c \'echo -n `git rev-parse --short HEAD || date +%s`\'', {
                 silent: true,
-            }
+            },
         ).stdout,
 
         time: new Date().getTime(),

@@ -58,7 +58,7 @@ class AlbumCover extends React.Component {
                     <Image
                         className={classNames(
                             'record',
-                            { show: showRecord }
+                            { show: showRecord },
                         )}
                         src={this.getImgPath()}
                         alt={album.title}

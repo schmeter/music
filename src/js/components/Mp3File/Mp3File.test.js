@@ -34,7 +34,7 @@ it('renders correctly and uses togglePlay on click', () => {
     const component = mount(
         <BrowserRouter>
             <Mp3File {...props} />
-        </BrowserRouter>
+        </BrowserRouter>,
     );
 
     expect(toJson(component)).toMatchSnapshot();
@@ -55,7 +55,7 @@ it('renders correctly and uses setActiveIndex on click', () => {
     const component = mount(
         <BrowserRouter>
             <Mp3File {...props} />
-        </BrowserRouter>
+        </BrowserRouter>,
     );
 
     expect(toJson(component)).toMatchSnapshot();

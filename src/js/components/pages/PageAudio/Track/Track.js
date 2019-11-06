@@ -15,7 +15,7 @@ class Track extends React.Component {
                 className={classNames(
                     className,
                     'track',
-                    { 'track-playing': playing }
+                    { 'track-playing': playing },
                 )}
             >
                 <span className="table-cell index">

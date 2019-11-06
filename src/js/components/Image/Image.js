@@ -42,7 +42,7 @@ class Image extends React.Component {
                 className={classNames(
                     'image',
                     className,
-                    { invisible: !loaded }
+                    { invisible: !loaded },
                 )}
                 src={src}
                 alt={alt}

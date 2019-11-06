@@ -14,5 +14,5 @@ export default createStore(
         auth,
         layer,
     },
-    composeWithDevTools(applyMiddleware(...middlewares()))
+    composeWithDevTools(applyMiddleware(...middlewares())),
 );

@@ -20,7 +20,7 @@ class Layer extends React.Component {
                 className={classNames(
                     'layer',
                     `layer-${className || id}`,
-                    { closed: activeId !== id }
+                    { closed: activeId !== id },
                 )}
             >
                 <header className="layer-header">

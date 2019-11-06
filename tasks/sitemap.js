@@ -22,8 +22,8 @@ module.exports = function(grunt) {
                             .filter(album => !album.hidden)
                             .map(album => `${configApp.baseUrl}${route
                                 .replace(artistId, artist.id)
-                                .replace(albumId, album.id)}`
-                            )
+                                .replace(albumId, album.id)}`,
+                            ),
                     );
             // routes with optional params
             } else if (/\/:.+\?/.test(route)) {

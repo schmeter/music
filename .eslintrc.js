@@ -1,32 +1,27 @@
 module.exports = {
     extends: [
         'semistandard',
-        'standard-react',
+        'plugin:react/recommended',
+        'plugin:import/recommended',
     ],
     plugins: [
-        'import',
         'jest',
     ],
+    settings: {
+        react: {
+            version: 'detect',
+        },
+    },
     env: {
         'jest/globals': true,
     },
     parser: 'babel-eslint',
     parserOptions: {
-        ecmaFeatures: {
-            jsx: true,
-            modules: true,
-        },
+        ecmaVersion: 2018,
     },
     rules: {
         'arrow-parens': ['warn', 'as-needed'],
         'comma-dangle': ['warn', 'always-multiline'],
-        'import/extensions': [
-            'warn',
-            {
-                js: 'never',
-                json: 'always',
-            },
-        ],
         indent: [
             'warn',
             4,
@@ -58,14 +53,6 @@ module.exports = {
         'jsx-quotes': [
             'warn',
             'prefer-double',
-        ],
-        'react/jsx-indent': [
-            'warn',
-            4,
-        ],
-        'react/jsx-indent-props': [
-            'warn',
-            4,
         ],
     },
     globals: {

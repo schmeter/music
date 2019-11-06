@@ -26,7 +26,7 @@ class Curtains extends React.Component {
                         className={classNames(
                             'curtains',
                             direction,
-                            { open: curtainsOpen }
+                            { open: curtainsOpen },
                         )}
                         onClick={this.handleClickCurtains}
                     />

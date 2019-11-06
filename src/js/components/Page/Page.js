@@ -32,7 +32,7 @@ class Page extends React.Component {
                 <div className={classNames(
                     'page',
                     { 'page-base': useBaseClass !== false },
-                    `page-${className || id}`
+                    `page-${className || id}`,
                 )}
                 >
                     {children}

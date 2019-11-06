@@ -20,7 +20,7 @@ class AlbumList extends React.Component {
         const albums = albumList.filter(album =>
             (!selectedAlbumId || selectedAlbumId === album.id)
             &&
-            (!selectedArtistId || selectedArtistId === album.artist.id)
+            (!selectedArtistId || selectedArtistId === album.artist.id),
         );
 
         return (
@@ -28,7 +28,7 @@ class AlbumList extends React.Component {
                 className={classNames(
                     'albums',
                     { 'album-selected': !!selectedAlbumId },
-                    { 'artist-selected': !!selectedArtistId }
+                    { 'artist-selected': !!selectedArtistId },
                 )}
             >
                 {albums.map(album => {
@@ -51,7 +51,7 @@ class AlbumList extends React.Component {
                             key={album.artist.id + album.id}
                             className={classNames(
                                 'album',
-                                { 'album-playing': playing }
+                                { 'album-playing': playing },
                             )}
                         >
                             <AlbumCover
