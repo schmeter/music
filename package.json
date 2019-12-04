@@ -24,6 +24,22 @@
       "envify"
     ]
   },
+  "scripts": {
+    "start": "grunt default",
+    "watch": "npm run start",
+    "lint:js": "eslint --ignore-path .gitignore .",
+    "lint:js:fix": "npm run lint:js -- --fix",
+    "lint:sass": "sass-lint -v -q",
+    "lint": "npm run lint:sass && npm run lint:js",
+    "test": "jest",
+    "test:watch": "npm test -- --watch",
+    "test:cover": "npm test -- --coverage",
+    "check": "npm run lint && npm test",
+    "build": "npm run check && grunt build:release",
+    "build:prod": "npm run check && grunt build:prod",
+    "preview": "npm run build:prod && grunt browserSync watch",
+    "update": "npm-update-all"
+  },
   "dependencies": {
     "@babel/core": "^7.7.4",
     "@babel/plugin-proposal-class-properties": "^7.7.4",
@@ -109,21 +125,5 @@
     "standard": "^14.3.1",
     "typescript": "^3.7.3",
     "whatwg-fetch": "^3.0.0"
-  },
-  "scripts": {
-    "start": "grunt default",
-    "watch": "npm run start",
-    "lint:js": "eslint --ignore-path .gitignore .",
-    "lint:js:fix": "npm run lint:js -- --fix",
-    "lint:sass": "sass-lint -v -q",
-    "lint": "npm run lint:sass && npm run lint:js",
-    "test": "jest",
-    "test:watch": "npm test -- --watch",
-    "test:cover": "npm test -- --coverage",
-    "check": "npm run lint && npm test",
-    "build": "npm run check && grunt build:release",
-    "build:prod": "npm run check && grunt build:prod",
-    "preview": "npm run build:prod && grunt browserSync watch",
-    "update": "npm-update-all"
   }
 }
