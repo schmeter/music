@@ -66,7 +66,7 @@ What else?
 Technologies to be used: React, Redux, Sass.  
 
 Create base configuration:  
-- .node-version  
+- .nvmrc  
 - .editorconfig  
 
 Prepare linting:  
@@ -136,9 +136,6 @@ I want continuous availability in mobile browsers in the same place at all times
     body {
         width: 100%;
         height: 100%;
-        margin: 0;
-        padding: 0;
-        border: 0;
         overflow: hidden;
     }
 ```
@@ -261,9 +258,14 @@ I use React.js components to display the data collected and provide links to aud
 
 ```
     audio: {
+        library: {
+            tracks: [],
+            albums: [],
+            artists: [],
+        },
         activeIndex: -1,
-        activeTrack: null,
-        isPlaying: false
+        isPlaying: false,
+        playToggle: false,
     }
 ```
 
@@ -271,8 +273,8 @@ I use React.js components to display the data collected and provide links to aud
 
 ```
     const mapDispatchToProps = (dispatch) => ({
-        setActiveIndex: (activeIndex) => dispatch(setActiveIndexAction(activeIndex)),
-        togglePlay: () => dispatch(togglePlayAction())
+        setActiveIndex: activeIndex => dispatch(setActiveIndexAction(activeIndex)),
+        togglePlay: () => dispatch(togglePlayAction()),
     });
 ```
 
@@ -280,7 +282,7 @@ I use React.js components to display the data collected and provide links to aud
 
 ```
     <Image
-        src={activeTrack.imgPath}
+        src={activeTrack.album.imgPath}
         alt={activeTrack.album.title}
     />
     <div
@@ -292,39 +294,34 @@ I use React.js components to display the data collected and provide links to aud
 - Connect audio events.  
 
 ```
-    @autobind
     handlePlay() {
         const { setIsPlaying } = this.props;
 
         setIsPlaying(true);
     }
 
-    @autobind
     handlePause() {
         const { setIsPlaying } = this.props;
 
         setIsPlaying(false);
     }
 
-    @autobind
     handleError() {
         const { setIsPlaying } = this.props;
 
         setIsPlaying(false);
     }
 
-    @autobind
     handleEnded() {
-        const { activeIndex, tracks, setActiveIndex } = this.props;
+        const { nextIndex, setActiveIndex } = this.props;
 
-        setActiveIndex(getNextIndex(activeIndex, tracks));
+        setActiveIndex(nextIndex);
     }
 ```
 
 - Add handling convenience with cursor navigation.  
 
 ```
-    @autobind
     captureKeys(e) {
         switch (e.keyCode) {
             case 32:
@@ -504,9 +501,9 @@ I want to have update cycles.
 
 ```
     <script>
-        var app = { 
-            rev: '45b3baa', 
-            time: '1554968510870' 
+        var app = {
+            rev: '45b3baa',
+            time: '1554968510870'
         };
     </script>
 ```
@@ -525,19 +522,17 @@ I want to have update cycles.
 
 
 ```
-    fetchJSON(`/version.json?${new Date().getTime()}`, true)
-        .then(data => {
-            const searchTime = window.location.search.substr(1);
+    fetchJSON(`/version.json?${new Date().getTime()}`, true).then(data => {
+        if (process.env.NODE_ENV === 'production') {
+            const searchTime = parseInt(window.location.search.substr(1), 10);
 
-            if (
-                searchTime !== String(data.time) 
-                && app.time < data.time
-            ) {
-                if (window.confirm(i18n(`app_update_available`))) {
+            if (searchTime !== data.time && app.time < data.time) {
+                if (window.confirm(i18n('app_update_available'))) {
                     window.location.href = `/?${data.time}`;
                 }
             }
-        });
+        }
+    });
 ```
 
 I want to persist user settings.  

@@ -2,7 +2,7 @@
 A full featured web audio player using HTML5 Audio and Web Audio API.  
 
 ## Dependencies
-node 10
+See .nvmrc file.
 
 ## Quickstart
 Clone the repo, run `npm install` inside of the cloned directory.  
