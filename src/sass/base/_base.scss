@@ -1,7 +1,7 @@
 * {
     box-sizing: border-box;
+    -webkit-text-size-adjust: 100%; /* stylelint-disable-line property-no-vendor-prefix */
     text-size-adjust: none;
-    -webkit-text-size-adjust: 100%; // sass-lint:disable-line no-vendor-prefixes
 }
 
 body,
@@ -14,7 +14,7 @@ a {
     color: inherit;
     text-decoration: underline;
 
-    &.active {
+    &.active { /* stylelint-disable-line selector-no-qualifying-type */
         text-decoration: none;
     }
 }

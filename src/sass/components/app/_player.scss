@@ -1,16 +1,14 @@
 .player {
     .audio {
         position: fixed;
+        z-index: $z-index-player;
         right: 0;
         bottom: 0;
         left: 0;
+        opacity: 0.95;
         // styles for all browsers to prevent round boxes
-        background: radial-gradient(
-            $color-player-inner,
-            $color-player-outer
-        );
-        opacity: .95;
-        z-index: $z-index-player;
+        background: radial-gradient($color-player-inner,
+        $color-player-outer);
 
         // sass-lint:disable no-vendor-prefixes
         &::-webkit-media-controls {

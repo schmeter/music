@@ -1,14 +1,14 @@
 .page-404 {
     .album-cover {
         position: fixed;
+        z-index: -1;
         top: 0;
         right: 0;
         bottom: 0;
         left: 0;
+        opacity: 0.075;
         background-repeat: no-repeat;
         background-position: top center;
         background-size: cover;
-        opacity: .075;
-        z-index: -1;
     }
 }
