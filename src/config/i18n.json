@@ -8,6 +8,10 @@
         "app_title": "Musik",
         "app_update_available": "Ein Update ist verfügbar!\nSoll es starten?",
         "app_error_occured": "Ein Fehler ist aufgetreten.",
+        "layer_info_headline": "Es läuft gerade",
+        "layer_info_title": "Titel",
+        "layer_info_artist": "Künstler",
+        "layer_info_album": "Album",
         "page_audio_title": "Willst du alles haben?",
         "page_settings_title": "Einstellungen",
         "page_settings_headline": "Willst du etwas ändern?",
@@ -15,11 +19,7 @@
         "page_settings_lang_headline": "Was sprichst du?",
         "page_settings_auth_headline": "Wohin willst du?",
         "page_settings_auth_button_login": "Rein",
-        "page_settings_auth_button_logout": "Raus",
-        "layer_info_headline": "Es läuft gerade",
-        "layer_info_title": "Titel",
-        "layer_info_artist": "Künstler",
-        "layer_info_album": "Album"
+        "page_settings_auth_button_logout": "Raus"
     },
     "en": {
         "lang_de": "German",
@@ -27,6 +27,10 @@
         "app_title": "Music",
         "app_update_available": "An update is available!\nOpen it?",
         "app_error_occured": "An error occured.",
+        "layer_info_headline": "Now playing",
+        "layer_info_title": "Title",
+        "layer_info_artist": "Artist",
+        "layer_info_album": "Album",
         "page_audio_title": "Do you want to have it all?",
         "page_settings_title": "Settings",
         "page_settings_headline": "Do you want to change something?",
@@ -34,10 +38,6 @@
         "page_settings_lang_headline": "What do you speak?",
         "page_settings_auth_headline": "Where do you want to go?",
         "page_settings_auth_button_login": "In",
-        "page_settings_auth_button_logout": "Out",
-        "layer_info_headline": "Now playing",
-        "layer_info_title": "Title",
-        "layer_info_artist": "Artist",
-        "layer_info_album": "Album"
+        "page_settings_auth_button_logout": "Out"
     }
 }

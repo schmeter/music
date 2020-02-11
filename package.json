@@ -13,13 +13,7 @@
   "browserify": {
     "transform": [
       [
-        "babelify",
-        {
-          "ignore": [
-            "**/*/node_modules/**/*",
-            "**/*/src/js/lib/*"
-          ]
-        }
+        "babelify"
       ],
       "envify"
     ]
