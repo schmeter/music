@@ -1,6 +1,6 @@
 module.exports = {
     extends: [
-        'semistandard',
+        'standard',
         'plugin:react/recommended',
         'plugin:import/recommended',
     ],
@@ -37,6 +37,7 @@ module.exports = {
         ],
         'newline-after-var': 1,
         'no-console': 2,
+        'no-extra-semi': 2,
         'no-multiple-empty-lines': [
             'warn',
             {
@@ -50,6 +51,7 @@ module.exports = {
             'always',
         ],
         'space-before-function-paren': ['warn', 'never'],
+        'semi': [2, 'always'],
         'jsx-quotes': [
             'warn',
             'prefer-double',
