@@ -4,36 +4,33 @@ import { NavLink } from 'react-router-dom';
 
 const isExternal = path => /^https?:\/\/.+/.test(path);
 
-class Link extends React.Component {
-    render() {
-        const { className, to, onClick, children } = this.props;
-        const props = {
-            className,
-            onClick,
-        };
-        const content = children || to;
+const Link = ({ className, to, onClick, children }) => {
+    const props = {
+        className,
+        onClick,
+    };
+    const content = children || to;
 
-        return isExternal(to) ? (
-            <a
-                target="_blank"
-                rel="noopener noreferrer"
-                href={to}
-                {...props}
-            >
-                {content}
-            </a>
-        ) : (
-            <NavLink
-                exact
-                activeClassName="active"
-                to={to}
-                {...props}
-            >
-                {content}
-            </NavLink>
-        );
-    }
-}
+    return isExternal(to) ? (
+        <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href={to}
+            {...props}
+        >
+            {content}
+        </a>
+    ) : (
+        <NavLink
+            exact
+            activeClassName="active"
+            to={to}
+            {...props}
+        >
+            {content}
+        </NavLink>
+    );
+};
 
 Link.propTypes = {
     to: PropTypes.string.isRequired,

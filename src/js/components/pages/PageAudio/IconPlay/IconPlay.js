@@ -3,13 +3,7 @@ import PropTypes from 'prop-types';
 
 import Icon from '../../../Icon';
 
-class IconPlay extends React.Component {
-    render() {
-        const { isPlaying } = this.props;
-
-        return <Icon id={isPlaying ? 'pause' : 'play'} />;
-    }
-}
+const IconPlay = ({ isPlaying }) => <Icon id={isPlaying ? 'pause' : 'play'} />;
 
 IconPlay.propTypes = {
     isPlaying: PropTypes.bool.isRequired,
