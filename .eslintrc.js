@@ -5,6 +5,7 @@ module.exports = {
         'plugin:import/recommended',
     ],
     plugins: [
+        'react-hooks',
         'jest',
     ],
     settings: {
@@ -50,6 +51,8 @@ module.exports = {
             'warn',
             'always',
         ],
+        'react-hooks/rules-of-hooks': 'error',
+        'react-hooks/exhaustive-deps': 'warn',
         'space-before-function-paren': ['warn', 'never'],
         'semi': [2, 'always'],
         'jsx-quotes': [

@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
+import { useParams } from 'react-router-dom';
 
 import { Page404 } from '../';
 import Page from '../../Page';
@@ -8,23 +9,13 @@ import AlbumList from './AlbumList';
 import { getUrl } from '../../../services/navigation';
 import { joinTitleParts, setTitle } from '../../../services/meta';
 
-class PageAudio extends React.Component {
-    componentDidMount() {
-        this.setTitle();
-    }
+const PageAudio = ({ albums, getArtist, getAlbum }) => {
+    const { artistId, albumId } = useParams();
+    const selectedArtist = getArtist(artistId);
+    const selectedAlbum = getAlbum(artistId, albumId);
 
-    componentDidUpdate() {
-        this.setTitle();
-    }
-
-    setTitle() {
+    useEffect(() => {
         const titleParts = [];
-        const { match, getArtist, getAlbum } = this.props;
-
-        const { artistId, albumId } = match.params;
-        const selectedArtist = getArtist(artistId);
-
-        const selectedAlbum = getAlbum(artistId, albumId);
 
         if (selectedArtist) {
             titleParts.push(selectedArtist.title);
@@ -33,39 +24,31 @@ class PageAudio extends React.Component {
             titleParts.push(selectedAlbum.title);
         }
 
-        return setTitle(joinTitleParts(titleParts));
-    }
+        setTitle(joinTitleParts(titleParts));
+    }, [selectedArtist, selectedAlbum]);
 
-    render() {
-        const { albums, match, getArtist, getAlbum } = this.props;
-
-        const { artistId, albumId } = match.params;
-        const selectedArtist = getArtist(artistId);
-        const selectedAlbum = getAlbum(artistId, albumId);
-        const validParams = (artistId ? selectedArtist : true)
+    const validParams = (artistId ? selectedArtist : true)
             && (albumId ? selectedAlbum : true);
 
-        return !validParams ? <Page404 /> : (
-            <Page
-                id="audio"
-                useBaseClass={false}
-            >
-                <AlbumList
-                    albumList={albums}
-                    selectedArtist={selectedArtist}
-                    selectedAlbum={selectedAlbum}
-                />
-                <div className="center secret">
-                    <Link to={getUrl('settings')}>.</Link>
-                </div>
-            </Page>
-        );
-    }
-}
+    return !validParams ? <Page404 /> : (
+        <Page
+            id="audio"
+            useBaseClass={false}
+        >
+            <AlbumList
+                albumList={albums}
+                selectedArtist={selectedArtist}
+                selectedAlbum={selectedAlbum}
+            />
+            <div className="center secret">
+                <Link to={getUrl('settings')}>.</Link>
+            </div>
+        </Page>
+    );
+};
 
 PageAudio.propTypes = {
     albums: PropTypes.array.isRequired,
-    match: PropTypes.object.isRequired,
     getArtist: PropTypes.func.isRequired,
     getAlbum: PropTypes.func.isRequired,
 };

@@ -41,27 +41,34 @@ class App extends React.Component {
                         <Route
                             exact
                             path={getUrl('index')}
-                            component={PageAudio}
-                        />
+                        >
+                            <PageAudio />
+                        </Route>
                         <Route
                             exact
                             path={getUrl('audio:artistId')}
-                            component={PageAudio}
-                        />
+                        >
+                            <PageAudio />
+                        </Route>
                         <Route
                             exact
                             path={getUrl('audio:artistId:albumId')}
-                            component={PageAudio}
-                        />
+                        >
+                            <PageAudio />
+                        </Route>
                         <Route
                             exact
                             path={getUrl('settings')}
                             component={PageSettings}
-                        />
+                        >
+                            <PageSettings />
+                        </Route>
                         <Route
                             path={getUrl('404')}
                             component={Page404}
-                        />
+                        >
+                            <Page404 />
+                        </Route>
                     </Switch>
                     <Layer id="info">
                         <Info />
