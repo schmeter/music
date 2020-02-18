@@ -4,18 +4,9 @@ import autobind from 'autobind-decorator';
 
 import Page from '../../Page';
 import i18n, { getAppLanguage, getLanguages, setAppLanguage } from '../../../services/i18n';
-import { getUrl } from '../../../services/navigation';
 
 class PageSettings extends React.Component {
     password = React.createRef();
-
-    componentDidUpdate(lastProps) {
-        const { isLoggedIn, history } = this.props;
-
-        if (lastProps.isLoggedIn !== isLoggedIn) {
-            history.push(getUrl('index'));
-        }
-    }
 
     @autobind
     handleSubmitFormAuth(e) {
@@ -103,7 +94,6 @@ class PageSettings extends React.Component {
 }
 
 PageSettings.propTypes = {
-    history: PropTypes.object.isRequired,
     isLoggedIn: PropTypes.bool.isRequired,
     login: PropTypes.func.isRequired,
     logout: PropTypes.func.isRequired,

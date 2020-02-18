@@ -59,13 +59,11 @@ class App extends React.Component {
                         <Route
                             exact
                             path={getUrl('settings')}
-                            component={PageSettings}
                         >
                             <PageSettings />
                         </Route>
                         <Route
                             path={getUrl('404')}
-                            component={Page404}
                         >
                             <Page404 />
                         </Route>
