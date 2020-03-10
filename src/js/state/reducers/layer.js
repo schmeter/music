@@ -2,7 +2,7 @@ export const initialState = {
     activeId: '',
 };
 
-export default (state = {}, action) => {
+export default (state = {}, action = {}) => {
     switch (action.type) {
         case 'LAYER_OPEN':
             return {

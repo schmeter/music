@@ -1,0 +1,82 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  className="layer-content"
+>
+  <ul>
+    <li
+      key="audio"
+    >
+      <div
+        className="link"
+      >
+        <Icon
+          id="hand-o-right"
+        />
+         
+        <Link
+          onClick={[MockFunction]}
+          to="/"
+        >
+          Musik
+        </Link>
+      </div>
+    </li>
+    <li
+      key="video"
+    >
+      <div
+        className="link"
+      >
+        <Icon
+          id="hand-o-right"
+        />
+         
+        <Link
+          onClick={[MockFunction]}
+          to="/video"
+        >
+          Video
+        </Link>
+      </div>
+    </li>
+    <li
+      key="event"
+    >
+      <div
+        className="link"
+      >
+        <Icon
+          id="hand-o-right"
+        />
+         
+        <Link
+          onClick={[MockFunction]}
+          to="/event"
+        >
+          Gigs
+        </Link>
+      </div>
+    </li>
+    <li
+      key="settings"
+    >
+      <div
+        className="link"
+      >
+        <Icon
+          id="hand-o-right"
+        />
+         
+        <Link
+          onClick={[MockFunction]}
+          to="/settings"
+        >
+          Einstellungen
+        </Link>
+      </div>
+    </li>
+  </ul>
+</div>
+`;

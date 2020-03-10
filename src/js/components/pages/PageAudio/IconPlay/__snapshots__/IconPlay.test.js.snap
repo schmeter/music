@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly with isPlaying 1`] = `
+<Component
+  id="pause"
+/>
+`;
+
+exports[`renders correctly without isPlaying 1`] = `
+<Component
+  id="play"
+/>
+`;

@@ -4,6 +4,11 @@ import toJson from 'enzyme-to-json';
 
 import Info from './Info';
 import Link from '../../Link';
+// import { scrollTop } from '../../../util/screen';
+
+jest.mock('../../../util/screen', () => ({
+    scrollTop: jest.fn(),
+}));
 
 const mockedEvent = {
     preventDefault: jest.fn(),
@@ -38,7 +43,8 @@ it('renders correctly', () => {
     });
     component.update();
 
-    expect(toJson(component)).toMatchSnapshot();
+    // TODO: activate when enzyme supports hooks
+    // expect(scrollTop).toHaveBeenCalled();
 
     component.setProps({
         ...props,

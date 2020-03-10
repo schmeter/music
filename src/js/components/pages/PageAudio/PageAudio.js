@@ -4,15 +4,15 @@ import { useParams } from 'react-router-dom';
 
 import { Page404 } from '../';
 import Page from '../../Page';
-import Link from '../../Link';
 import AlbumList from './AlbumList';
-import { getUrl } from '../../../services/navigation';
 import { joinTitleParts, setTitle } from '../../../services/meta';
 
-const PageAudio = ({ albums, getArtist, getAlbum }) => {
+const PageAudio = ({ getArtist, getAlbum }) => {
     const { artistId, albumId } = useParams();
     const selectedArtist = getArtist(artistId);
     const selectedAlbum = getAlbum(artistId, albumId);
+    const validParams = (artistId ? selectedArtist : true)
+            && (albumId ? selectedAlbum : true);
 
     useEffect(() => {
         const titleParts = [];
@@ -27,28 +27,20 @@ const PageAudio = ({ albums, getArtist, getAlbum }) => {
         setTitle(joinTitleParts(titleParts));
     }, [selectedArtist, selectedAlbum]);
 
-    const validParams = (artistId ? selectedArtist : true)
-            && (albumId ? selectedAlbum : true);
-
     return !validParams ? <Page404 /> : (
         <Page
             id="audio"
             useBaseClass={false}
         >
             <AlbumList
-                albumList={albums}
                 selectedArtist={selectedArtist}
                 selectedAlbum={selectedAlbum}
             />
-            <div className="center secret">
-                <Link to={getUrl('settings')}>.</Link>
-            </div>
         </Page>
     );
 };
 
 PageAudio.propTypes = {
-    albums: PropTypes.array.isRequired,
     getArtist: PropTypes.func.isRequired,
     getAlbum: PropTypes.func.isRequired,
 };

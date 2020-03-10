@@ -1,0 +1,22 @@
+{
+    "artists": [
+        {
+            "id": "demoartist",
+            "title": "The Artist",
+            "videos": [
+                {
+                    "id": "GOD4SX9cpXM"
+                },
+                {
+                    "id": "GOD4SX9cpXM"
+                },
+                {
+                    "id": "GOD4SX9cpXM"
+                },
+                {
+                    "id": "GOD4SX9cpXM"
+                }
+            ]
+        }
+    ]
+}

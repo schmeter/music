@@ -1,0 +1,19 @@
+.page-event {
+    text-align: center;
+
+    .event {
+        padding: 10px;
+        border-bottom: 1px solid $color-image-border;
+
+        .date {
+            font-weight: bold;
+        }
+
+        .image {
+            width: 100%;
+            max-width: 512px;
+            margin-top: 10px;
+            box-shadow: 0 0 5px 5px $color-image-border;
+        }
+    }
+}

@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  className="table tracks"
+>
+  <Component
+    className="table-row"
+    key="test"
+    track={
+      Object {
+        "path": "test",
+      }
+    }
+  />
+  <Component
+    className="table-row"
+    key="test2"
+    track={
+      Object {
+        "path": "test2",
+      }
+    }
+  />
+</div>
+`;

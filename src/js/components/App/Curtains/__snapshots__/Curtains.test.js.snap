@@ -3,12 +3,12 @@
 exports[`renders correctly 1`] = `
 <Fragment>
   <div
-    className="curtains left"
+    className="curtain left open"
     key="left"
     onClick={[Function]}
   />
   <div
-    className="curtains right"
+    className="curtain right open"
     key="right"
     onClick={[Function]}
   />
@@ -18,12 +18,12 @@ exports[`renders correctly 1`] = `
 exports[`renders correctly 2`] = `
 <Fragment>
   <div
-    className="curtains left"
+    className="curtain left"
     key="left"
     onClick={[Function]}
   />
   <div
-    className="curtains right"
+    className="curtain right"
     key="right"
     onClick={[Function]}
   />

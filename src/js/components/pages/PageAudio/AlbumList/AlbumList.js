@@ -8,14 +8,14 @@ import AlbumCover from '../AlbumCover';
 import { getUrl } from '../../../../services/navigation';
 
 const AlbumList = ({
-    albumList,
+    albums,
     selectedAlbum,
     selectedArtist,
     activeTrack,
 }) => {
     const selectedArtistId = selectedArtist && selectedArtist.id;
     const selectedAlbumId = selectedAlbum && selectedAlbum.id;
-    const albums = albumList.filter(album =>
+    const albumsFiltered = albums.filter(album =>
         (!selectedAlbumId || selectedAlbumId === album.id)
             &&
             (!selectedArtistId || selectedArtistId === album.artist.id),
@@ -25,11 +25,11 @@ const AlbumList = ({
         <div
             className={classNames(
                 'albums',
-                { 'album-selected': !!selectedAlbumId },
-                { 'artist-selected': !!selectedArtistId },
+                !!selectedAlbumId && 'album-selected',
+                !!selectedArtistId && 'artist-selected',
             )}
         >
-            {albums.map(album => {
+            {albumsFiltered.map(album => {
                 const playing = activeTrack
                     ? album.id === activeTrack.album.id
                     : false;
@@ -44,12 +44,12 @@ const AlbumList = ({
                     artistId: album.artist.id,
                 });
 
-                return !visible ? null : (
+                return visible && (
                     <div
                         key={album.artist.id + album.id}
                         className={classNames(
                             'album',
-                            { 'album-playing': playing },
+                            playing && 'album-playing',
                         )}
                     >
                         <AlbumCover
@@ -67,8 +67,8 @@ const AlbumList = ({
                                     {album.artist.title}
                                 </Link>
                             </h3>
-                            {!selectedAlbumId ? null : (
-                                <TrackList trackList={album.tracks} />
+                            {selectedAlbumId && (
+                                <TrackList tracks={album.tracks} />
                             )}
                         </div>
                     </div>
@@ -79,7 +79,7 @@ const AlbumList = ({
 };
 
 AlbumList.propTypes = {
-    albumList: PropTypes.array.isRequired,
+    albums: PropTypes.array.isRequired,
     selectedAlbum: PropTypes.object,
     selectedArtist: PropTypes.object,
     activeTrack: PropTypes.object,

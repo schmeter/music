@@ -15,11 +15,6 @@ class Screensaver extends React.Component {
 
     componentDidMount() {
         document.addEventListener('keydown', this.captureKeys);
-
-        document.addEventListener('mouseleave', () => {
-            this.startScreenSaver();
-        });
-
         document.addEventListener('mousemove', () => {
             this.timer = this.resetScreenSaver(this.timer);
         });

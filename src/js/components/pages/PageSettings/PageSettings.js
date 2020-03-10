@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { createRef } from 'react';
 import PropTypes from 'prop-types';
 import autobind from 'autobind-decorator';
 
@@ -6,7 +6,8 @@ import Page from '../../Page';
 import i18n, { getAppLanguage, getLanguages, setAppLanguage } from '../../../services/i18n';
 
 class PageSettings extends React.Component {
-    password = React.createRef();
+    password = createRef();
+    select = createRef();
 
     @autobind
     handleSubmitFormAuth(e) {
@@ -31,18 +32,21 @@ class PageSettings extends React.Component {
 
     @autobind
     handleChange(e) {
-        setAppLanguage(e.target.value);
+        const select = this.select.current;
+
+        setAppLanguage(select.value);
         window.location.reload();
     }
 
     render() {
         const { isLoggedIn } = this.props;
+        const languages = getLanguages();
 
         return (
             <Page id="settings">
                 <h2 className="headline">{i18n('page_settings_headline')}</h2>
                 <form
-                    className="form"
+                    className="form form-quit"
                     onSubmit={this.handleSubmitFormQuit}
                 >
                     <button
@@ -52,29 +56,34 @@ class PageSettings extends React.Component {
                         {i18n('page_settings_button_quit')}
                     </button>
                 </form>
-                <h2 className="headline">{i18n('page_settings_lang_headline')}</h2>
-                <form className="form">
-                    <select
-                        className="select form-select"
-                        defaultValue={getAppLanguage()}
-                        onChange={this.handleChange}
-                    >
-                        {getLanguages().map(language => (
-                            <option
-                                key={language}
-                                value={language}
+                {languages.length > 1 && (
+                    <>
+                        <h2 className="headline">{i18n('page_settings_lang_headline')}</h2>
+                        <form className="form form-lang">
+                            <select
+                                className="select form-select"
+                                defaultValue={getAppLanguage()}
+                                ref={this.select}
+                                onChange={this.handleChange}
                             >
-                                {i18n(`lang_${language}`)}
-                            </option>
-                        ))}
-                    </select>
-                </form>
+                                {languages.map(language => (
+                                    <option
+                                        key={language}
+                                        value={language}
+                                    >
+                                        {i18n(`lang_${language}`)}
+                                    </option>
+                                ))}
+                            </select>
+                        </form>
+                    </>
+                )}
                 <h2 className="headline">{i18n('page_settings_auth_headline')}</h2>
                 <form
-                    className="form"
+                    className="form form-auth"
                     onSubmit={this.handleSubmitFormAuth}
                 >
-                    {isLoggedIn ? null : (
+                    {!isLoggedIn && (
                         <input
                             className="input form-input"
                             type="password"

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
@@ -9,42 +9,42 @@ import { scrollTop } from '../../util/screen';
 
 const scrollClass = 'main';
 
-class Page extends React.Component {
-    componentDidUpdate(lastProps) {
-        const { location } = this.props;
-
-        if (lastProps.location.pathname !== location.pathname) {
-            scrollTop(`.${scrollClass}`);
-        }
-    }
-
-    componentDidMount() {
-        const { id, title } = this.props;
-
+const Page = ({
+    className,
+    id,
+    children,
+    useBaseClass,
+    title,
+    location,
+}) => {
+    useEffect(() => {
         setTitle(title || i18n(`page_${id}_title`));
-    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
 
-    render() {
-        const { className, id, children, useBaseClass } = this.props;
+    useEffect(() => {
+        scrollTop(`.${scrollClass}`);
+    }, [
+        location,
+    ]);
 
-        return (
-            <main className={scrollClass}>
-                <div className={classNames(
-                    'page',
-                    { 'page-base': useBaseClass !== false },
-                    `page-${className || id}`,
-                )}
-                >
-                    {children}
-                </div>
-                <audio
-                    className="spacer"
-                    controls
-                />
-            </main>
-        );
-    }
-}
+    return (
+        <main className={scrollClass}>
+            <div className={classNames(
+                'page',
+                useBaseClass !== false && 'page-base',
+                `page-${className || id}`,
+            )}
+            >
+                {children}
+            </div>
+            <audio
+                className="spacer"
+                controls
+            />
+        </main>
+    );
+};
 
 Page.propTypes = {
     id: PropTypes.string.isRequired,

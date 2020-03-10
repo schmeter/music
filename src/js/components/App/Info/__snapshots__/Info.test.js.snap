@@ -4,51 +4,7 @@ exports[`renders correctly 1`] = `""`;
 
 exports[`renders correctly 2`] = `
 <div
-  className="layer-content"
->
-  <ul
-    className="table"
-  >
-    <li
-      className="table-row"
-      key="title"
-    >
-      <span
-        className="table-cell text-left bold"
-      >
-        Titel
-        :
-      </span>
-      <span
-        className="table-cell text-left"
-      >
-        test
-      </span>
-    </li>
-  </ul>
-  <div
-    className="cover"
-  >
-    <Link
-      onClick={[MockFunction]}
-      to="/audio/test/test"
-    >
-      <Image
-        alt="test"
-        src="test"
-      />
-    </Link>
-  </div>
-  <audio
-    className="spacer"
-    controls={true}
-  />
-</div>
-`;
-
-exports[`renders correctly 3`] = `
-<div
-  className="layer-content"
+  className="layer-content layer-content-info"
 >
   <div
     className="lyrics"

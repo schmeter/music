@@ -2,7 +2,7 @@ export const initialState = {
     isLoggedIn: false,
 };
 
-export default (state = {}, action) => {
+export default (state = {}, action = {}) => {
     switch (action.type) {
         case 'AUTH_SET_LOGGED_IN':
             return {

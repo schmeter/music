@@ -11,31 +11,29 @@ const Layer = ({
     activeId,
     closeLayers,
     children,
-}) => {
-    return (
-        <div
-            className={classNames(
-                'layer',
-                `layer-${className || id}`,
-                { closed: activeId !== id },
-            )}
-        >
-            <header className="layer-header">
-                <h2 className="layer-headline">
-                    {i18n(`layer_${id}_headline`)}
-                </h2>
-                <button
-                    className="header-button close-button"
-                    onClick={closeLayers}
-                    tabIndex="-1"
-                >
-                    <Icon id="close" />
-                </button>
-            </header>
-            {children}
-        </div>
-    );
-};
+}) => (
+    <div
+        className={classNames(
+            'layer',
+            `layer-${className || id}`,
+            { closed: activeId !== id },
+        )}
+    >
+        <header className="layer-header">
+            <h2 className="layer-headline">
+                {i18n(`layer_${id}_headline`)}
+            </h2>
+            <button
+                className="header-button close-button"
+                onClick={closeLayers}
+                tabIndex="-1"
+            >
+                <Icon id="close" />
+            </button>
+        </header>
+        {children}
+    </div>
+);
 
 Layer.propTypes = {
     id: PropTypes.string.isRequired,

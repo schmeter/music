@@ -1,0 +1,20 @@
+{
+    "artists": [
+        {
+            "id": "demoartist",
+            "title": "The Artist",
+            "events": [
+                {
+                    "date": "2020-02-01",
+                    "title": "Demo",
+                    "address": "Demo"
+                },
+                {
+                    "date": "2020-02-02",
+                    "title": "Demo2",
+                    "address": "Demo2"
+                }
+            ]
+        }
+    ]
+}

@@ -1,33 +1,29 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import autobind from 'autobind-decorator';
 
 import Link from '../Link';
 
-class File extends React.Component {
-    @autobind
-    handleClickLink(e) {
-        const { onClickFile } = this.props;
-
+const File = ({
+    path,
+    children,
+    onClickFile,
+}) => {
+    const handleClickLink = e => {
         e.preventDefault();
         onClickFile();
-    }
+    };
 
-    render() {
-        const { path, children } = this.props;
-
-        return (
-            <span className="file">
-                <Link
-                    to={path}
-                    onClick={this.handleClickLink}
-                >
-                    {children}
-                </Link>
-            </span>
-        );
-    }
-}
+    return (
+        <span className="file">
+            <Link
+                to={path}
+                onClick={handleClickLink}
+            >
+                {children}
+            </Link>
+        </span>
+    );
+};
 
 File.propTypes = {
     path: PropTypes.string.isRequired,

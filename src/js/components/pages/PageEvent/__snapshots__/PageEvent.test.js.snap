@@ -1,0 +1,59 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<Component
+  id="event"
+>
+  <div
+    className="event"
+    key="2020-02-03test"
+  >
+    <h2
+      className="date"
+    >
+      03.02.2020
+       
+      test
+    </h2>
+    <h3>
+      test
+    </h3>
+  </div>
+  <div
+    className="event"
+    key="2020-02-02test"
+  >
+    <h2
+      className="date"
+    >
+      02.02.2020
+       
+      test
+    </h2>
+    <h3>
+      test
+    </h3>
+    <p>
+      <Image
+        alt="test"
+        src="test"
+      />
+    </p>
+  </div>
+  <div
+    className="event"
+    key="2020-02-01test"
+  >
+    <h2
+      className="date"
+    >
+      01.02.2020
+       
+      test
+    </h2>
+    <h3>
+      test
+    </h3>
+  </div>
+</Component>
+`;

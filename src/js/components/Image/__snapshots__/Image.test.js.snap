@@ -4,7 +4,7 @@ exports[`renders correctly 1`] = `
 <Image
   alt="test"
   className="test"
-  handleLoad={
+  onLoad={
     [MockFunction] {
       "calls": Array [
         Array [],

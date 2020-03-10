@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<Component
+  id="video"
+>
+  <div
+    className="videos"
+  >
+    <Component
+      key="test"
+      video={
+        Object {
+          "id": "test",
+        }
+      }
+    />
+  </div>
+</Component>
+`;

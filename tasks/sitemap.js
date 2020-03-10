@@ -14,7 +14,7 @@ module.exports = function(grunt) {
             if (!/:|\*/.test(route)) {
                 return `${configApp.baseUrl}${route}`;
             // audio routes
-            } else if (route.includes(artistId) || route.includes(albumId)) {
+            } else if (route.includes('audio') && (route.includes(artistId) || route.includes(albumId))) {
                 return configAudio.artists
                     .filter(artist => !artist.hidden)
                     .map(artist =>

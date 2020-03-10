@@ -3,20 +3,20 @@ import PropTypes from 'prop-types';
 
 import Track from '../Track';
 
-const TrackList = ({ trackList }) => (
+const TrackList = ({ tracks }) => (
     <div className="table tracks">
-        {trackList.map(track => (
+        {tracks.map(track => (
             <Track
                 key={track.path}
                 className="table-row"
-                file={track}
+                track={track}
             />
         ))}
     </div>
 );
 
 TrackList.propTypes = {
-    trackList: PropTypes.array.isRequired,
+    tracks: PropTypes.array.isRequired,
 };
 
 export default TrackList;

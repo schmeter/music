@@ -9,7 +9,7 @@ it('renders correctly', () => {
         src: 'test',
         alt: 'test',
         className: 'test',
-        handleLoad: jest.fn(),
+        onLoad: jest.fn(),
     };
     const component = mount(<Image {...props} />);
 
@@ -19,5 +19,5 @@ it('renders correctly', () => {
     component.simulate('load');
 
     expect(toJson(component)).toMatchSnapshot();
-    expect(props.handleLoad).toHaveBeenCalled();
+    expect(props.onLoad).toHaveBeenCalled();
 });

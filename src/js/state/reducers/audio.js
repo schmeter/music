@@ -9,7 +9,7 @@ export const initialState = {
     playToggle: false,
 };
 
-export default (state = {}, action) => {
+export default (state = {}, action = {}) => {
     switch (action.type) {
         case 'AUDIO_SET_LIBRARY':
             return {

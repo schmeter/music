@@ -9,14 +9,11 @@ const mockedEvent = {
 };
 
 it('renders correctly', () => {
-    const props = {
-        path: 'http://test',
-        onClickFile: jest.fn(),
-    };
-    const component = shallow(<Curtains {...props} />);
+    const component = shallow(<Curtains />);
+
+    expect(toJson(component)).toMatchSnapshot();
 
     component.find('div').first().simulate('click', mockedEvent);
 
-    expect(toJson(component)).toMatchSnapshot();
     expect(toJson(component)).toMatchSnapshot();
 });

@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  className="video"
+>
+  <Link
+    onClick={[Function]}
+    to="//www.youtube.com/watch?v=test"
+  >
+    <Image
+      alt="test"
+      onLoad={[Function]}
+      src="//img.youtube.com/vi/test/mqdefault.jpg"
+    />
+    <div
+      className="icon hidden"
+    >
+      <Icon
+        id="youtube-play"
+      />
+    </div>
+  </Link>
+</div>
+`;
+
+exports[`renders correctly 2`] = `
+<div
+  className="video"
+>
+  <Link
+    onClick={[Function]}
+    to="//www.youtube.com/watch?v=test"
+  >
+    <Image
+      alt="test"
+      onLoad={[Function]}
+      src="//img.youtube.com/vi/test/mqdefault.jpg"
+    />
+    <div
+      className="icon"
+    >
+      <Icon
+        id="youtube-play"
+      />
+    </div>
+  </Link>
+</div>
+`;

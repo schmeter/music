@@ -1,0 +1,38 @@
+.page-video {
+    .video {
+        display: inline-block;
+        position: relative;
+        width: 100%;
+        max-width: 768px;
+        padding: 5px 10px 10px;
+
+        .image {
+            width: 100%;
+        }
+
+        .icon {
+            position: absolute;
+            top: 50%;
+            right: 0;
+            left: 0;
+            width: 100%;
+            margin-top: -15px;
+            color: $color-image-border;
+            font-size: 30px;
+            line-height: 30px;
+            text-align: center;
+        }
+
+        @media (min-width: $max-width-phone + 1) {
+            width: calc(100% / 2);
+        }
+
+        @media (min-width: $max-width-tablet + 1) {
+            width: calc(100% / 3);
+        }
+
+        @media (min-width: $min-width-large-desktop + 1) {
+            width: calc(100% / 4);
+        }
+    }
+}

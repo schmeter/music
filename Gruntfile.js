@@ -176,6 +176,16 @@ module.exports = function(grunt) {
                     dest: '<%= tmpFolder %>/cover.json',
                 }],
             },
+            flyer: {
+                options: {
+                    prettify: true,
+                    type: ['jpg'],
+                },
+                files: [{
+                    src: ['<%= srcFolder %>/assets/img/flyer'],
+                    dest: '<%= tmpFolder %>/flyer.json',
+                }],
+            },
             md: {
                 options: {
                     prettify: true,
@@ -232,6 +242,7 @@ module.exports = function(grunt) {
     grunt.registerTask('scanConfig', [
         'tree',
         'audio',
+        'event',
         'sitemap',
         'version',
     ]);

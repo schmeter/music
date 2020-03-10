@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<IFrame
+  className="test"
+  onLoad={[MockFunction]}
+  src="test"
+>
+  <div
+    className="iframe-wrapper test"
+  >
+    <div
+      className="ratio-setter"
+    />
+    <div
+      className="spinner"
+    >
+      <Icon
+        id="cog"
+        spin={true}
+      >
+        <i
+          className="fa-cog fa fa-spin"
+        />
+      </Icon>
+    </div>
+    <iframe
+      className="iframe invisible"
+      onLoad={[Function]}
+      src="test"
+    />
+  </div>
+</IFrame>
+`;

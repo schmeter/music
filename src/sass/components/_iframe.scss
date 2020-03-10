@@ -1,0 +1,39 @@
+.iframe-wrapper {
+    position: relative;
+    width: 100%;
+    border: 1px solid $color-image-border;
+
+    .ratio-setter {
+        width: 100%;
+        // aspect ratio 16:9
+        padding-top: 9 / 16 * 100%;
+    }
+
+    .spinner,
+    .iframe {
+        position: absolute;
+        right: 0;
+        left: 0;
+        width: 100%;
+    }
+
+    .spinner {
+        top: 50%;
+        margin-top: -15px;
+        font-size: 30px;
+        line-height: 30px;
+        text-align: center;
+    }
+
+    .iframe {
+        top: 0;
+        height: 100%;
+        transition: opacity 300ms;
+        border: 0;
+        opacity: 1;
+
+        &.invisible {
+            opacity: 0;
+        }
+    }
+}

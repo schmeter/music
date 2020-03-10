@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<Component
+  id="404"
+>
+  <h2
+    className="headline"
+  >
+    404
+  </h2>
+  <div
+    className="album-cover"
+    style={
+      Object {
+        "backgroundImage": "url(\\"test\\")",
+      }
+    }
+  />
+</Component>
+`;

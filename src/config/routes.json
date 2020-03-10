@@ -1,7 +1,10 @@
 {
     "index": "/",
+    "audio": "/",
     "audio:artistId": "/audio/:artistId",
     "audio:artistId:albumId": "/audio/:artistId/:albumId",
+    "video": "/video",
+    "event": "/event",
     "settings": "/settings",
     "404": "*"
 }

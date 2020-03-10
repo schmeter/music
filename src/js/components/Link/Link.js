@@ -2,14 +2,19 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
 
-const isExternal = path => /^https?:\/\/.+/.test(path);
+const isExternal = path => /^https?:\/\/.+/.test(path) || /^\/\/.+/.test(path);
 
-const Link = ({ className, to, onClick, children }) => {
+const Link = ({
+    className,
+    to,
+    onClick,
+    children,
+}) => {
+    const content = children || to;
     const props = {
         className,
         onClick,
     };
-    const content = children || to;
 
     return isExternal(to) ? (
         <a

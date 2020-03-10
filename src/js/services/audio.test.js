@@ -10,7 +10,7 @@ jest.mock('../../../.tmp/audio.json', () => require('../../../jest/mockups/audio
 const library = loadLibrary();
 const libraryFull = loadLibrary(true);
 
-test('expects loadLibrary to return obect', () => {
+test('expects loadLibrary to return correct value', () => {
     expect(typeof library.artists).toBe('object');
     expect(typeof library.albums).toBe('object');
     expect(typeof library.tracks).toBe('object');

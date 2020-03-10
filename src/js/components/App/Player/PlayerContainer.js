@@ -6,7 +6,6 @@ import {
     setIsPlayingAction,
     saveActiveTrackAction,
 } from '../../../state/actions/audio';
-
 import {
     getTracks,
     getActiveIndex,

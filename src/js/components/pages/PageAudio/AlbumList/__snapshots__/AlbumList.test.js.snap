@@ -1,0 +1,131 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly with matching active track 1`] = `
+<div
+  className="albums"
+>
+  <div
+    className="album album-playing"
+    key="testtest"
+  >
+    <AlbumCover
+      album={
+        Object {
+          "artist": Object {
+            "id": "test",
+          },
+          "id": "test",
+        }
+      }
+      link="/audio/test/test"
+    />
+    <div
+      className="album-content"
+    >
+      <h3
+        className="album-title"
+      >
+        <Link
+          to="/audio/test/test"
+        />
+      </h3>
+      <h3
+        className="artist-title"
+      >
+        <Link
+          to="/audio/test"
+        />
+      </h3>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders correctly with selected album and artist 1`] = `
+<div
+  className="albums album-selected artist-selected"
+>
+  <div
+    className="album album-playing"
+    key="testtest"
+  >
+    <AlbumCover
+      album={
+        Object {
+          "artist": Object {
+            "id": "test",
+          },
+          "id": "test",
+        }
+      }
+      link=""
+    />
+    <div
+      className="album-content"
+    >
+      <h3
+        className="album-title"
+      >
+        <Link
+          to="/audio/test/test"
+        />
+      </h3>
+      <h3
+        className="artist-title"
+      >
+        <Link
+          to="/audio/test"
+        />
+      </h3>
+      <Component />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders correctly with selected artist 1`] = `
+<div
+  className="albums artist-selected"
+/>
+`;
+
+exports[`renders correctly without matching active track 1`] = `
+<div
+  className="albums"
+>
+  <div
+    className="album"
+    key="testtest"
+  >
+    <AlbumCover
+      album={
+        Object {
+          "artist": Object {
+            "id": "test",
+          },
+          "id": "test",
+        }
+      }
+      link="/audio/test/test"
+    />
+    <div
+      className="album-content"
+    >
+      <h3
+        className="album-title"
+      >
+        <Link
+          to="/audio/test/test"
+        />
+      </h3>
+      <h3
+        className="artist-title"
+      >
+        <Link
+          to="/audio/test"
+        />
+      </h3>
+    </div>
+  </div>
+</div>
+`;

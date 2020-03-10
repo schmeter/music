@@ -13,18 +13,17 @@ exports[`renders correctly 1`] = `
       Musik
     </Link>
   </h1>
-  <Link
-    className="button header-button home-button"
-    to="/"
+  <button
+    className="button header-button menu-button"
+    onClick={[Function]}
   >
     <Icon
-      id="chevron-circle-left"
+      id="bars"
     />
-  </Link>
+  </button>
   <button
     className="button header-button info-button"
     onClick={[Function]}
-    tabIndex="-1"
   >
     <Icon
       id="info-circle"

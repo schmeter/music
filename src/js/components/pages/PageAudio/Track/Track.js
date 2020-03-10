@@ -5,30 +5,34 @@ import classNames from 'classnames';
 import Mp3File from '../../../Mp3File';
 import IconPlay from '../IconPlay';
 
-const Track = ({ file, className, activeTrack }) => {
-    const playing = activeTrack ? file.path === activeTrack.path : false;
+const Track = ({
+    track,
+    className,
+    activeTrack,
+}) => {
+    const playing = activeTrack ? track.path === activeTrack.path : false;
 
     return (
         <div
             className={classNames(
                 className,
                 'track',
-                { 'track-playing': playing },
+                playing && 'track-playing',
             )}
         >
             <span className="table-cell index">
-                {playing ? <IconPlay /> : file.tag.track}
+                {playing ? <IconPlay /> : track.tag.track}
             </span>
             <span className="table-cell">
-                <Mp3File file={file} />
+                <Mp3File file={track} />
             </span>
         </div>
     );
 };
 
 Track.propTypes = {
+    track: PropTypes.object.isRequired,
     className: PropTypes.string,
-    file: PropTypes.object.isRequired,
     activeTrack: PropTypes.object,
 };
 

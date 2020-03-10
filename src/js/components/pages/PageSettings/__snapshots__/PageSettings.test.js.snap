@@ -1,0 +1,137 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly with logged in user 1`] = `
+<Component
+  id="settings"
+>
+  <h2
+    className="headline"
+  >
+    Willst du etwas ändern?
+  </h2>
+  <form
+    className="form form-quit"
+    onSubmit={[Function]}
+  >
+    <button
+      className="button form-button"
+      type="submit"
+    >
+      Niemals
+    </button>
+  </form>
+  <h2
+    className="headline"
+  >
+    Was sprichst du?
+  </h2>
+  <form
+    className="form form-lang"
+  >
+    <select
+      className="select form-select"
+      defaultValue="de"
+      onChange={[Function]}
+    >
+      <option
+        key="de"
+        value="de"
+      >
+        Deutsch
+      </option>
+      <option
+        key="en"
+        value="en"
+      >
+        Englisch
+      </option>
+    </select>
+  </form>
+  <h2
+    className="headline"
+  >
+    Wohin willst du?
+  </h2>
+  <form
+    className="form form-auth"
+    onSubmit={[Function]}
+  >
+    <button
+      className="button form-button"
+      type="submit"
+    >
+      Raus
+    </button>
+  </form>
+</Component>
+`;
+
+exports[`renders correctly with logged out user 1`] = `
+<Component
+  id="settings"
+>
+  <h2
+    className="headline"
+  >
+    Willst du etwas ändern?
+  </h2>
+  <form
+    className="form form-quit"
+    onSubmit={[Function]}
+  >
+    <button
+      className="button form-button"
+      type="submit"
+    >
+      Niemals
+    </button>
+  </form>
+  <h2
+    className="headline"
+  >
+    Was sprichst du?
+  </h2>
+  <form
+    className="form form-lang"
+  >
+    <select
+      className="select form-select"
+      defaultValue="de"
+      onChange={[Function]}
+    >
+      <option
+        key="de"
+        value="de"
+      >
+        Deutsch
+      </option>
+      <option
+        key="en"
+        value="en"
+      >
+        Englisch
+      </option>
+    </select>
+  </form>
+  <h2
+    className="headline"
+  >
+    Wohin willst du?
+  </h2>
+  <form
+    className="form form-auth"
+    onSubmit={[Function]}
+  >
+    <input
+      className="input form-input"
+      type="password"
+    />
+    <button
+      className="button form-button"
+      type="submit"
+    >
+      Rein
+    </button>
+  </form>
+</Component>
+`;

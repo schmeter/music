@@ -3,7 +3,9 @@ import PropTypes from 'prop-types';
 
 import Icon from '../../../Icon';
 
-const IconPlay = ({ isPlaying }) => <Icon id={isPlaying ? 'pause' : 'play'} />;
+const IconPlay = ({ isPlaying }) => (
+    <Icon id={isPlaying ? 'pause' : 'play'} />
+);
 
 IconPlay.propTypes = {
     isPlaying: PropTypes.bool.isRequired,

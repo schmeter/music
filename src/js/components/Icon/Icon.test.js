@@ -7,6 +7,7 @@ import Icon from './Icon';
 it('renders correctly', () => {
     const props = {
         id: 'test',
+        spin: true,
     };
     const component = shallow(<Icon {...props} />);
 

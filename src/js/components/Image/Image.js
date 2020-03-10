@@ -15,10 +15,10 @@ class Image extends React.Component {
 
     @autobind
     handleLoad() {
-        const { handleLoad } = this.props;
+        const { onLoad } = this.props;
 
         this.setState({ loaded: true });
-        handleLoad && handleLoad();
+        onLoad && onLoad();
     }
 
     @autobind
@@ -58,7 +58,7 @@ Image.propTypes = {
     src: PropTypes.string.isRequired,
     alt: PropTypes.string.isRequired,
     className: PropTypes.string,
-    handleLoad: PropTypes.func,
+    onLoad: PropTypes.func,
 };
 
 export default Image;

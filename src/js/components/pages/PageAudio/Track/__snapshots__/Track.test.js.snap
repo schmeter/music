@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly with active track 1`] = `
+<div
+  className="track track-playing"
+>
+  <span
+    className="table-cell index"
+  >
+    <Component />
+  </span>
+  <span
+    className="table-cell"
+  >
+    <Component
+      file={
+        Object {
+          "path": "test",
+          "tag": Object {
+            "track": 1,
+          },
+        }
+      }
+    />
+  </span>
+</div>
+`;
+
+exports[`renders correctly without active track 1`] = `
+<div
+  className="track"
+>
+  <span
+    className="table-cell index"
+  >
+    1
+  </span>
+  <span
+    className="table-cell"
+  >
+    <Component
+      file={
+        Object {
+          "path": "test",
+          "tag": Object {
+            "track": 1,
+          },
+        }
+      }
+    />
+  </span>
+</div>
+`;

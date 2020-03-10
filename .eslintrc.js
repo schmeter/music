@@ -21,8 +21,14 @@ module.exports = {
         ecmaVersion: 2018,
     },
     rules: {
-        'arrow-parens': ['warn', 'as-needed'],
-        'comma-dangle': ['warn', 'always-multiline'],
+        'arrow-parens': [
+            'warn',
+            'as-needed',
+        ],
+        'comma-dangle': [
+            'warn',
+            'always-multiline',
+        ],
         indent: [
             'warn',
             4,
@@ -30,7 +36,19 @@ module.exports = {
                 SwitchCase: 1,
             },
         ],
-        'max-len': [
+        'import/order': [
+            2,
+            {
+              groups: [
+                'builtin',
+                'external',
+                'internal',
+                ['parent', 'sibling', 'index'],
+              ],
+              'newlines-between': 'always',
+            },
+          ],
+          'max-len': [
             'warn',
             {
                 code: 120,
@@ -53,8 +71,14 @@ module.exports = {
         ],
         'react-hooks/rules-of-hooks': 'error',
         'react-hooks/exhaustive-deps': 'warn',
-        'space-before-function-paren': ['warn', 'never'],
-        'semi': [2, 'always'],
+        'space-before-function-paren': [
+            'warn',
+            'never',
+        ],
+        semi: [
+            2,
+            'always',
+        ],
         'jsx-quotes': [
             'warn',
             'prefer-double',

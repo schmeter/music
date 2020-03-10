@@ -1,39 +1,28 @@
-import React from 'react';
+import React, { useState } from 'react';
 import classNames from 'classnames';
-import autobind from 'autobind-decorator';
 
-class Curtains extends React.Component {
-    state = {
-        curtainsOpen: true,
+const Curtains = () => {
+    const [open, setOpen] = useState(true);
+
+    const handleClickCurtains = () => {
+        setOpen(!open);
     };
 
-    @autobind
-    handleClickCurtains(e) {
-        const { curtainsOpen } = this.state;
-
-        e.preventDefault();
-        this.setState({ curtainsOpen: !curtainsOpen });
-    }
-
-    render() {
-        const { curtainsOpen } = this.state;
-
-        return (
-            <>
-                {['left', 'right'].map(direction => (
-                    <div
-                        key={direction}
-                        className={classNames(
-                            'curtains',
-                            direction,
-                            { open: curtainsOpen },
-                        )}
-                        onClick={this.handleClickCurtains}
-                    />
-                ))}
-            </>
-        );
-    }
-}
+    return (
+        <>
+            {['left', 'right'].map(position => (
+                <div
+                    key={position}
+                    className={classNames(
+                        'curtain',
+                        position,
+                        open && 'open',
+                    )}
+                    onClick={handleClickCurtains}
+                />
+            ))}
+        </>
+    );
+};
 
 export default Curtains;

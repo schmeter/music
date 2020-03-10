@@ -1,13 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import autobind from 'autobind-decorator';
 
 import File from '../File';
 
-class Mp3File extends React.Component {
-    @autobind
-    handleClickFile() {
-        const { file, setActiveIndex, activeIndex, tracks, togglePlay } = this.props;
+const Mp3File = ({
+    file,
+    setActiveIndex,
+    activeIndex,
+    tracks,
+    togglePlay,
+}) => {
+    const handleClickFile = () => {
         const index = tracks.indexOf(file);
 
         if (index === activeIndex) {
@@ -15,21 +18,17 @@ class Mp3File extends React.Component {
         } else {
             setActiveIndex(index);
         }
-    }
+    };
 
-    render() {
-        const { file } = this.props;
-
-        return (
-            <File
-                path={file.path}
-                onClickFile={this.handleClickFile}
-            >
-                {file.tag.title}
-            </File>
-        );
-    }
-}
+    return (
+        <File
+            path={file.path}
+            onClickFile={handleClickFile}
+        >
+            {file.tag.title}
+        </File>
+    );
+};
 
 Mp3File.propTypes = {
     file: PropTypes.object.isRequired,

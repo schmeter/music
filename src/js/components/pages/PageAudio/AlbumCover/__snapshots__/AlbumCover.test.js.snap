@@ -1,0 +1,99 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly wit imgItems 1`] = `
+<Component
+  className="album-cover"
+  onClick={[Function]}
+  to=""
+>
+  <Component
+    className="record"
+    src="test/test"
+  />
+  <Component
+    className="cover"
+    src="test"
+  />
+</Component>
+`;
+
+exports[`renders correctly wit imgItems 2`] = `
+<Component
+  className="album-cover"
+  onClick={[Function]}
+  to=""
+>
+  <Component
+    className="record show"
+    src="test/test2"
+  />
+  <Component
+    className="cover"
+    src="test"
+  />
+</Component>
+`;
+
+exports[`renders correctly wit imgItems 3`] = `
+<Component
+  className="album-cover"
+  onClick={[Function]}
+  to=""
+>
+  <Component
+    className="record"
+    src="test/test2"
+  />
+  <Component
+    className="cover"
+    src="test"
+  />
+</Component>
+`;
+
+exports[`renders correctly wit imgItems 4`] = `
+<Component
+  className="album-cover"
+  onClick={[Function]}
+  to=""
+>
+  <Component
+    className="record show"
+    src="test/test"
+  />
+  <Component
+    className="cover"
+    src="test"
+  />
+</Component>
+`;
+
+exports[`renders correctly with link 1`] = `
+<Component
+  className="album-cover"
+  onClick={null}
+  to="test"
+>
+  <Component
+    className="cover"
+    src="test"
+  />
+</Component>
+`;
+
+exports[`renders correctly without link 1`] = `
+<Component
+  className="album-cover"
+  onClick={[Function]}
+  to=""
+>
+  <Component
+    className="record"
+    src="test"
+  />
+  <Component
+    className="cover"
+    src="test"
+  />
+</Component>
+`;

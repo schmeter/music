@@ -15,7 +15,8 @@ it('renders correctly', () => {
     const component = shallow(<Header {...props} />);
 
     component.find('.info-button').simulate('click', mockedEvent);
+    component.find('.menu-button').simulate('click', mockedEvent);
 
     expect(toJson(component)).toMatchSnapshot();
-    expect(props.openLayer).toHaveBeenCalled();
+    expect(props.openLayer).toHaveBeenCalledTimes(2);
 });

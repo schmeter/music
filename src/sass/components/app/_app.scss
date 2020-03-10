@@ -87,11 +87,11 @@ body {
 
 .image {
     max-width: 100%;
-    transform: scale3d(1, 1, 1);
-    transition: transform 100ms;
+    transition: opacity 300ms;
+    opacity: 1;
 
     &.invisible {
-        transform: scale3d(0.1, 0.1, 1);
+        opacity: 0;
     }
 }
 
@@ -124,12 +124,8 @@ hr {
     right: 0;
 }
 
-.home-button {
+.menu-button {
     left: 0;
-
-    &.active {
-        display: none;
-    }
 }
 
 .secret {

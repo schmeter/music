@@ -1,0 +1,17 @@
+{
+    "artists": [
+        {
+            "id": "demoartist",
+            "title": "The Artist",
+            "videos": [
+                {
+                    "id": "test"
+                },
+                {
+                    "hiddden": true,
+                    "id": "test2"
+                }
+            ]
+        }
+    ]
+}
