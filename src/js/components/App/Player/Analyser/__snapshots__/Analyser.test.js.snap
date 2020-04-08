@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders correctly 1`] = `
+exports[`Analyser renders correctly 1`] = `
 <Analyser
   audio={Object {}}
   isPlaying={false}
@@ -11,7 +11,7 @@ exports[`renders correctly 1`] = `
 </Analyser>
 `;
 
-exports[`renders correctly 2`] = `
+exports[`Analyser renders correctly 2`] = `
 <Analyser
   audio={Object {}}
   isPlaying={true}
@@ -22,7 +22,7 @@ exports[`renders correctly 2`] = `
 </Analyser>
 `;
 
-exports[`renders correctly 3`] = `
+exports[`Analyser renders correctly 3`] = `
 <Analyser
   audio={Object {}}
   isPlaying={false}
@@ -33,7 +33,7 @@ exports[`renders correctly 3`] = `
 </Analyser>
 `;
 
-exports[`renders correctly 4`] = `
+exports[`Analyser renders correctly 4`] = `
 <Analyser
   audio={Object {}}
   isPlaying={true}

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders correctly 1`] = `
+exports[`Curtains renders correctly 1`] = `
 <Fragment>
   <div
     className="curtain left open"
@@ -15,7 +15,7 @@ exports[`renders correctly 1`] = `
 </Fragment>
 `;
 
-exports[`renders correctly 2`] = `
+exports[`Curtains renders correctly 2`] = `
 <Fragment>
   <div
     className="curtain left"

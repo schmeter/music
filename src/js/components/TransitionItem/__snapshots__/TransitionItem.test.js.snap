@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders correctly 1`] = `
+exports[`TransitionItem renders correctly 1`] = `
 <TransitionGroup
   childFactory={[Function]}
   component="div"

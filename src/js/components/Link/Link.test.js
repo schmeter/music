@@ -4,38 +4,40 @@ import toJson from 'enzyme-to-json';
 
 import Link from './Link';
 
-window.open = jest.fn();
+describe('Link', () => {
+    window.open = jest.fn();
 
-const mockedEvent = {
-    defaultPrevented: false,
-    preventDefault: jest.fn(),
-};
-const onClick = jest.fn();
-
-it('renders correctly with external url', () => {
-    const props = {
-        to: 'http://test',
-        children: 'test',
-        className: 'test',
-        onClick,
+    const mockedEvent = {
+        defaultPrevented: false,
+        preventDefault: jest.fn(),
     };
-    const component = shallow(<Link {...props} />);
+    const onClick = jest.fn();
 
-    component.simulate('click', mockedEvent);
+    it('renders correctly with external url', () => {
+        const props = {
+            to: 'http://test',
+            children: 'test',
+            className: 'test',
+            onClick,
+        };
+        const component = shallow(<Link {...props} />);
 
-    expect(toJson(component)).toMatchSnapshot();
-    expect(props.onClick).toHaveBeenCalled();
-});
+        component.simulate('click', mockedEvent);
 
-it('renders correctly with internal url', () => {
-    const props = {
-        to: 'test',
-        onClick,
-    };
-    const component = shallow(<Link {...props} />);
+        expect(toJson(component)).toMatchSnapshot();
+        expect(props.onClick).toHaveBeenCalled();
+    });
 
-    component.simulate('click', mockedEvent);
+    it('renders correctly with internal url', () => {
+        const props = {
+            to: 'test',
+            onClick,
+        };
+        const component = shallow(<Link {...props} />);
 
-    expect(toJson(component)).toMatchSnapshot();
-    expect(props.onClick).toHaveBeenCalled();
+        component.simulate('click', mockedEvent);
+
+        expect(toJson(component)).toMatchSnapshot();
+        expect(props.onClick).toHaveBeenCalled();
+    });
 });

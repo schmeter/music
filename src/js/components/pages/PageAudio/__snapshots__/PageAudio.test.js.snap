@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders correctly with 1 url param 1`] = `
+exports[`PageAudio renders correctly with 1 url param 1`] = `
 <Component
   id="audio"
   useBaseClass={false}
@@ -12,9 +12,9 @@ exports[`renders correctly with 1 url param 1`] = `
 </Component>
 `;
 
-exports[`renders correctly with 1 wrong url param 1`] = `<Page404 />`;
+exports[`PageAudio renders correctly with 1 wrong url param 1`] = `<Page404 />`;
 
-exports[`renders correctly with 2 url params 1`] = `
+exports[`PageAudio renders correctly with 2 url params 1`] = `
 <Component
   id="audio"
   useBaseClass={false}
@@ -26,9 +26,9 @@ exports[`renders correctly with 2 url params 1`] = `
 </Component>
 `;
 
-exports[`renders correctly with 2 wrong url params 1`] = `<Page404 />`;
+exports[`PageAudio renders correctly with 2 wrong url params 1`] = `<Page404 />`;
 
-exports[`renders correctly without url params 1`] = `
+exports[`PageAudio renders correctly without url params 1`] = `
 <Component
   id="audio"
   useBaseClass={false}

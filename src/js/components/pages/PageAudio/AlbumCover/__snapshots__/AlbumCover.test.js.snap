@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders correctly wit imgItems 1`] = `
+exports[`AlbumCover renders correctly wit imgItems 1`] = `
 <Component
   className="album-cover"
   onClick={[Function]}
@@ -17,7 +17,7 @@ exports[`renders correctly wit imgItems 1`] = `
 </Component>
 `;
 
-exports[`renders correctly wit imgItems 2`] = `
+exports[`AlbumCover renders correctly wit imgItems 2`] = `
 <Component
   className="album-cover"
   onClick={[Function]}
@@ -34,7 +34,7 @@ exports[`renders correctly wit imgItems 2`] = `
 </Component>
 `;
 
-exports[`renders correctly wit imgItems 3`] = `
+exports[`AlbumCover renders correctly wit imgItems 3`] = `
 <Component
   className="album-cover"
   onClick={[Function]}
@@ -51,7 +51,7 @@ exports[`renders correctly wit imgItems 3`] = `
 </Component>
 `;
 
-exports[`renders correctly wit imgItems 4`] = `
+exports[`AlbumCover renders correctly wit imgItems 4`] = `
 <Component
   className="album-cover"
   onClick={[Function]}
@@ -68,7 +68,7 @@ exports[`renders correctly wit imgItems 4`] = `
 </Component>
 `;
 
-exports[`renders correctly with link 1`] = `
+exports[`AlbumCover renders correctly with link 1`] = `
 <Component
   className="album-cover"
   onClick={null}
@@ -81,7 +81,7 @@ exports[`renders correctly with link 1`] = `
 </Component>
 `;
 
-exports[`renders correctly without link 1`] = `
+exports[`AlbumCover renders correctly without link 1`] = `
 <Component
   className="album-cover"
   onClick={[Function]}

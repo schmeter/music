@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders correctly with all parameters 1`] = `
+exports[`Page renders correctly with all parameters 1`] = `
 <main
   className="main"
 >
@@ -16,7 +16,7 @@ exports[`renders correctly with all parameters 1`] = `
 </main>
 `;
 
-exports[`renders correctly with id only 1`] = `
+exports[`Page renders correctly with id only 1`] = `
 <main
   className="main"
 >

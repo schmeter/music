@@ -4,12 +4,14 @@ import toJson from 'enzyme-to-json';
 
 import Icon from './Icon';
 
-it('renders correctly', () => {
-    const props = {
-        id: 'test',
-        spin: true,
-    };
-    const component = shallow(<Icon {...props} />);
+describe('Icon', () => {
+    it('renders correctly', () => {
+        const props = {
+            id: 'test',
+            spin: true,
+        };
+        const component = shallow(<Icon {...props} />);
 
-    expect(toJson(component)).toMatchSnapshot();
+        expect(toJson(component)).toMatchSnapshot();
+    });
 });

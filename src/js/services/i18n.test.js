@@ -4,20 +4,22 @@ import i18n, {
     setAppLanguage,
 } from './i18n';
 
-test('expects i18n to return "{{de:}}"', () => {
-    expect(i18n('')).toBe('{{de:}}');
-});
+describe('i18n', () => {
+    it('expects i18n to return "{{de:}}"', () => {
+        expect(i18n('')).toBe('{{de:}}');
+    });
 
-test('expects getAppLanguage to return "de"', () => {
-    expect(getAppLanguage()).toBe('de');
-});
+    it('expects getAppLanguage to return "de"', () => {
+        expect(getAppLanguage()).toBe('de');
+    });
 
-test('expects getAppLanguage to return "en" after setAppLanguage', () => {
-    setAppLanguage('en');
+    it('expects getAppLanguage to return "en" after setAppLanguage', () => {
+        setAppLanguage('en');
 
-    expect(getAppLanguage()).toBe('en');
-});
+        expect(getAppLanguage()).toBe('en');
+    });
 
-test('expects getLanguages to return ["de", "en"]', () => {
-    expect(getLanguages()).toEqual(['de', 'en']);
+    it('expects getLanguages to return ["de", "en"]', () => {
+        expect(getLanguages()).toEqual(['de', 'en']);
+    });
 });

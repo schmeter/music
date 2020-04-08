@@ -14,14 +14,13 @@ const File = ({
     };
 
     return (
-        <span className="file">
-            <Link
-                to={path}
-                onClick={handleClickLink}
-            >
-                {children}
-            </Link>
-        </span>
+        <Link
+            className="file"
+            to={path}
+            onClick={handleClickLink}
+        >
+            {children}
+        </Link>
     );
 };
 

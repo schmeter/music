@@ -2,7 +2,7 @@ module.exports = function(grunt) {
     grunt.registerTask('event', function() {
         const { readJSON, write } = grunt.file;
 
-        const eventPath = `${grunt.config('cfgFolder')}/event.json`;
+        const eventPath = `${grunt.config('datFolder')}/event.json`;
         const imgPath = `${grunt.config('tmpFolder')}/flyer.json`;
         const resultPath = `${grunt.config('tmpFolder')}/event.json`;
 

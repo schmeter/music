@@ -1,82 +1,98 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders correctly 1`] = `
-<div
+exports[`Menu renders correctly 1`] = `
+<ul
   className="layer-content"
 >
-  <ul>
-    <li
-      key="audio"
+  <li
+    className="link"
+    key="audio"
+  >
+    <Icon
+      id="hand-o-right"
+    />
+     
+    <Link
+      onClick={[MockFunction]}
+      to="/"
     >
-      <div
-        className="link"
-      >
-        <Icon
-          id="hand-o-right"
-        />
-         
-        <Link
-          onClick={[MockFunction]}
-          to="/"
-        >
-          Musik
-        </Link>
-      </div>
-    </li>
-    <li
-      key="video"
+      Musik
+    </Link>
+  </li>
+  <li
+    className="link"
+    key="video"
+  >
+    <Icon
+      id="hand-o-right"
+    />
+     
+    <Link
+      onClick={[MockFunction]}
+      to="/video"
     >
-      <div
-        className="link"
-      >
-        <Icon
-          id="hand-o-right"
-        />
-         
-        <Link
-          onClick={[MockFunction]}
-          to="/video"
-        >
-          Video
-        </Link>
-      </div>
-    </li>
-    <li
-      key="event"
+      Video
+    </Link>
+  </li>
+  <li
+    className="link"
+    key="event"
+  >
+    <Icon
+      id="hand-o-right"
+    />
+     
+    <Link
+      onClick={[MockFunction]}
+      to="/event"
     >
-      <div
-        className="link"
-      >
-        <Icon
-          id="hand-o-right"
-        />
-         
-        <Link
-          onClick={[MockFunction]}
-          to="/event"
-        >
-          Gigs
-        </Link>
-      </div>
-    </li>
-    <li
-      key="settings"
+      Gigs
+    </Link>
+  </li>
+  <li
+    className="link"
+    key="tools"
+  >
+    <Icon
+      id="hand-o-right"
+    />
+     
+    <Link
+      onClick={[MockFunction]}
+      to="/tools"
     >
-      <div
-        className="link"
-      >
-        <Icon
-          id="hand-o-right"
-        />
-         
-        <Link
-          onClick={[MockFunction]}
-          to="/settings"
-        >
-          Einstellungen
-        </Link>
-      </div>
-    </li>
-  </ul>
-</div>
+      Hilfe
+    </Link>
+  </li>
+  <li
+    className="link"
+    key="animation"
+  >
+    <Icon
+      id="hand-o-right"
+    />
+     
+    <Link
+      onClick={[MockFunction]}
+      to="/animation"
+    >
+      Bewegung
+    </Link>
+  </li>
+  <li
+    className="link"
+    key="settings"
+  >
+    <Icon
+      id="hand-o-right"
+    />
+     
+    <Link
+      onClick={[MockFunction]}
+      to="/settings"
+    >
+      Einstellungen
+    </Link>
+  </li>
+</ul>
 `;

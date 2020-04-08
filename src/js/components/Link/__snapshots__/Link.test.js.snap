@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders correctly with external url 1`] = `
+exports[`Link renders correctly with external url 1`] = `
 <a
   className="test"
   href="http://test"
@@ -29,7 +29,7 @@ exports[`renders correctly with external url 1`] = `
 </a>
 `;
 
-exports[`renders correctly with internal url 1`] = `
+exports[`Link renders correctly with internal url 1`] = `
 <NavLink
   activeClassName="active"
   exact={true}

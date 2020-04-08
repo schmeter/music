@@ -14,24 +14,23 @@ const links = [
 ];
 
 const Menu = ({ closeLayers }) => (
-    <div className="layer-content">
-        <ul>
-            {links.map(link => (
-                <li key={link} >
-                    <div className="link">
-                        <Icon id="hand-o-right" />
-                                &nbsp;
-                        <Link
-                            to={getUrl(link)}
-                            onClick={closeLayers}
-                        >
-                            {i18n(`page_${link}_title`)}
-                        </Link>
-                    </div>
-                </li>
-            ))}
-        </ul>
-    </div>
+    <ul className="layer-content">
+        {links.map(link => (
+            <li
+                key={link}
+                className="link"
+            >
+                <Icon id="hand-o-right" />
+                &nbsp;
+                <Link
+                    to={getUrl(link)}
+                    onClick={closeLayers}
+                >
+                    {i18n(`page_${link}_title`)}
+                </Link>
+            </li>
+        ))}
+    </ul>
 );
 
 Menu.propTypes = {

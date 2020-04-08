@@ -6,30 +6,32 @@ import Link from '../../../Link';
 import Image from '../../../Image';
 import Video from './Video.js';
 
-const mockedEvent = {
-    preventDefault: jest.fn(),
-};
-
-it('renders correctly', () => {
-    const props = {
-        video: {
-            id: 'test',
-            artist: {
-                title: 'test',
-            },
-        },
-        isPlaying: true,
-        togglePlay: jest.fn(),
+describe('Video', () => {
+    const mockedEvent = {
+        preventDefault: jest.fn(),
     };
-    const component = shallow(<Video {...props} />);
 
-    expect(toJson(component)).toMatchSnapshot();
+    it('renders correctly', () => {
+        const props = {
+            video: {
+                id: 'test',
+                artist: {
+                    title: 'test',
+                },
+            },
+            isPlaying: true,
+            togglePlay: jest.fn(),
+        };
+        const component = shallow(<Video {...props} />);
 
-    component.find(Image).props().onLoad();
+        expect(toJson(component)).toMatchSnapshot();
 
-    expect(toJson(component)).toMatchSnapshot();
+        component.find(Image).props().onLoad();
 
-    component.find(Link).simulate('click', mockedEvent);
+        expect(toJson(component)).toMatchSnapshot();
 
-    expect(props.togglePlay).toHaveBeenCalled();
+        component.find(Link).simulate('click', mockedEvent);
+
+        expect(props.togglePlay).toHaveBeenCalled();
+    });
 });

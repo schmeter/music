@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders correctly with logged in user 1`] = `
+exports[`PageSettings renders correctly with logged in user 1`] = `
 <Component
   id="settings"
 >
@@ -66,7 +66,7 @@ exports[`renders correctly with logged in user 1`] = `
 </Component>
 `;
 
-exports[`renders correctly with logged out user 1`] = `
+exports[`PageSettings renders correctly with logged out user 1`] = `
 <Component
   id="settings"
 >

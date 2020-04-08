@@ -4,8 +4,10 @@ import toJson from 'enzyme-to-json';
 
 import TransitionItem from './TransitionItem';
 
-it('renders correctly', () => {
-    const component = shallow(<TransitionItem>test</TransitionItem>);
+describe('TransitionItem', () => {
+    it('renders correctly', () => {
+        const component = shallow(<TransitionItem>test</TransitionItem>);
 
-    expect(toJson(component)).toMatchSnapshot();
+        expect(toJson(component)).toMatchSnapshot();
+    });
 });

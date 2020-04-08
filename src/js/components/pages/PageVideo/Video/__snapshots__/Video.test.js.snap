@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders correctly 1`] = `
+exports[`Video renders correctly 1`] = `
 <div
   className="video"
 >
@@ -24,7 +24,7 @@ exports[`renders correctly 1`] = `
 </div>
 `;
 
-exports[`renders correctly 2`] = `
+exports[`Video renders correctly 2`] = `
 <div
   className="video"
 >

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders correctly with matching active track 1`] = `
+exports[`AlbumList renders correctly with matching active track 1`] = `
 <div
   className="albums"
 >
@@ -41,7 +41,7 @@ exports[`renders correctly with matching active track 1`] = `
 </div>
 `;
 
-exports[`renders correctly with selected album and artist 1`] = `
+exports[`AlbumList renders correctly with selected album and artist 1`] = `
 <div
   className="albums album-selected artist-selected"
 >
@@ -83,13 +83,13 @@ exports[`renders correctly with selected album and artist 1`] = `
 </div>
 `;
 
-exports[`renders correctly with selected artist 1`] = `
+exports[`AlbumList renders correctly with selected artist 1`] = `
 <div
   className="albums artist-selected"
 />
 `;
 
-exports[`renders correctly without matching active track 1`] = `
+exports[`AlbumList renders correctly without matching active track 1`] = `
 <div
   className="albums"
 >

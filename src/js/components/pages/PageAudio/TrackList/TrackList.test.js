@@ -6,16 +6,17 @@ import TrackList from './TrackList';
 
 jest.mock('../Track', () => () => <div />);
 
-it('renders correctly', () => {
-    const props = {
-        tracks: [{
-            path: 'test',
-        }, {
-            path: 'test2',
-        }],
-    };
-    const component = shallow(<TrackList {...props} />);
+describe('TrackList', () => {
+    it('renders correctly', () => {
+        const props = {
+            tracks: [{
+                path: 'test',
+            }, {
+                path: 'test2',
+            }],
+        };
+        const component = shallow(<TrackList {...props} />);
 
-    expect(toJson(component)).toMatchSnapshot();
+        expect(toJson(component)).toMatchSnapshot();
+    });
 });
-

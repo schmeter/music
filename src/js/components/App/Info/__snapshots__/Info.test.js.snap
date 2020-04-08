@@ -1,8 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders correctly 1`] = `""`;
+exports[`Info renders correctly 1`] = `""`;
 
-exports[`renders correctly 2`] = `
+exports[`Info renders correctly 2`] = `
 <div
   className="layer-content layer-content-info"
 >
@@ -108,35 +108,32 @@ exports[`renders correctly 2`] = `
       </span>
     </li>
   </ul>
-  <div
+  <Link
     className="cover"
-  >
-    <Link
-      onClick={
-        [MockFunction] {
-          "calls": Array [
-            Array [
-              Object {
-                "preventDefault": [MockFunction],
-              },
-            ],
-          ],
-          "results": Array [
+    onClick={
+      [MockFunction] {
+        "calls": Array [
+          Array [
             Object {
-              "type": "return",
-              "value": undefined,
+              "preventDefault": [MockFunction],
             },
           ],
-        }
+        ],
+        "results": Array [
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+        ],
       }
-      to="/audio/test/test"
-    >
-      <Image
-        alt="test"
-        src="test"
-      />
-    </Link>
-  </div>
+    }
+    to="/audio/test/test"
+  >
+    <Image
+      alt="test"
+      src="test"
+    />
+  </Link>
   <audio
     className="spacer"
     controls={true}

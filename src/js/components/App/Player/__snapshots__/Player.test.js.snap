@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders correctly 1`] = `
+exports[`Player renders correctly 1`] = `
 <Player
   activeIndex={0}
   isPlaying={false}
@@ -66,7 +66,7 @@ exports[`renders correctly 1`] = `
 </Player>
 `;
 
-exports[`renders correctly 2`] = `
+exports[`Player renders correctly 2`] = `
 <Player
   activeIndex={1}
   isPlaying={false}
@@ -157,7 +157,7 @@ exports[`renders correctly 2`] = `
 </Player>
 `;
 
-exports[`renders correctly 3`] = `
+exports[`Player renders correctly 3`] = `
 <Player
   activeIndex={1}
   isPlaying={false}
@@ -248,7 +248,7 @@ exports[`renders correctly 3`] = `
 </Player>
 `;
 
-exports[`renders correctly 4`] = `
+exports[`Player renders correctly 4`] = `
 <Player
   activeIndex={2}
   isPlaying={true}
@@ -324,7 +324,7 @@ exports[`renders correctly 4`] = `
 </Player>
 `;
 
-exports[`renders correctly 5`] = `
+exports[`Player renders correctly 5`] = `
 <Player
   activeIndex={0}
   isPlaying={false}

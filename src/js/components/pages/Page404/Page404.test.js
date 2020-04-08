@@ -6,15 +6,17 @@ import Page404 from './Page404';
 
 jest.mock('../../Page', () => () => <div />);
 
-it('renders correctly', () => {
-    const props = {
-        activeTrack: {
-            album: {
-                imgPath: 'test',
+describe('Page404', () => {
+    it('renders correctly', () => {
+        const props = {
+            activeTrack: {
+                album: {
+                    imgPath: 'test',
+                },
             },
-        },
-    };
-    const component = shallow(<Page404 {...props} />);
+        };
+        const component = shallow(<Page404 {...props} />);
 
-    expect(toJson(component)).toMatchSnapshot();
+        expect(toJson(component)).toMatchSnapshot();
+    });
 });

@@ -8,39 +8,41 @@ jest.mock('../../../util/screen', () => ({
     isTouch: () => false,
 }));
 
-window.setTimeout = (callback, value) => {
-    callback();
-    return value;
-};
-
-it('renders correctly', () => {
-    const props = {
-        isPlaying: false,
+describe('Screensaver', () => {
+    window.setTimeout = (callback, value) => {
+        callback();
+        return value;
     };
-    const component = shallow(<Screensaver {...props}><div /></Screensaver>);
 
-    expect(toJson(component)).toMatchSnapshot();
+    it('renders correctly', () => {
+        const props = {
+            isPlaying: false,
+        };
+        const component = shallow(<Screensaver {...props}><div /></Screensaver>);
 
-    component.setProps({
-        ...props,
-        isPlaying: true,
+        expect(toJson(component)).toMatchSnapshot();
+
+        component.setProps({
+            ...props,
+            isPlaying: true,
+        });
+        component.update();
+
+        expect(toJson(component)).toMatchSnapshot();
+
+        document.dispatchEvent(new window.KeyboardEvent('keydown', { keyCode: 0 }));
+        document.dispatchEvent(new window.KeyboardEvent('keydown', { keyCode: 37 }));
+        document.dispatchEvent(new window.KeyboardEvent('keydown', { keyCode: 39 }));
+        document.dispatchEvent(new window.KeyboardEvent('mousemove', {}));
+
+        component.setProps({
+            ...props,
+            isPlaying: false,
+        });
+        component.update();
+
+        expect(toJson(component)).toMatchSnapshot();
+
+        document.dispatchEvent(new window.KeyboardEvent('mousemove', {}));
     });
-    component.update();
-
-    expect(toJson(component)).toMatchSnapshot();
-
-    document.dispatchEvent(new window.KeyboardEvent('keydown', { keyCode: 0 }));
-    document.dispatchEvent(new window.KeyboardEvent('keydown', { keyCode: 37 }));
-    document.dispatchEvent(new window.KeyboardEvent('keydown', { keyCode: 39 }));
-    document.dispatchEvent(new window.KeyboardEvent('mousemove', {}));
-
-    component.setProps({
-        ...props,
-        isPlaying: false,
-    });
-    component.update();
-
-    expect(toJson(component)).toMatchSnapshot();
-
-    document.dispatchEvent(new window.KeyboardEvent('mousemove', {}));
 });

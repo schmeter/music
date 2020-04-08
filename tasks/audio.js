@@ -11,7 +11,7 @@ module.exports = function(grunt) {
         const coverFolder = 'folder';
         const mdFolder = 'md';
 
-        const configAudio = readJSON(`${grunt.config('cfgFolder')}/audio.json`);
+        const configAudio = readJSON(`${grunt.config('datFolder')}/audio.json`);
         const mp3Data = readJSON(`${grunt.config('tmpFolder')}/mp3.json`);
         const imgData = readJSON(`${grunt.config('tmpFolder')}/cover.json`);
         const mdData = readJSON(`${grunt.config('tmpFolder')}/md.json`);

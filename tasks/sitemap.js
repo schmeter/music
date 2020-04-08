@@ -5,7 +5,7 @@ module.exports = function(grunt) {
 
         const configApp = readJSON(`${grunt.config('cfgFolder')}/app.json`);
         const configRoutes = readJSON(`${grunt.config('cfgFolder')}/routes.json`);
-        const configAudio = readJSON(`${grunt.config('cfgFolder')}/audio.json`);
+        const configAudio = readJSON(`${grunt.config('datFolder')}/audio.json`);
         const artistId = ':artistId';
         const albumId = ':albumId';
 

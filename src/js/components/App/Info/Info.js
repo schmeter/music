@@ -63,20 +63,19 @@ const Info = ({
                     </li>
                 ))}
             </ul>
-            <div className="cover">
-                <Link
-                    to={getUrl(infos.find(info => info.id === 'album').link, {
-                        artistId: activeTrack.artist.id,
-                        albumId: activeTrack.album.id,
-                    })}
-                    onClick={closeLayers}
-                >
-                    <Image
-                        src={activeTrack.album.imgPath}
-                        alt={activeTrack.album.title}
-                    />
-                </Link>
-            </div>
+            <Link
+                className="cover"
+                to={getUrl(infos.find(info => info.id === 'album').link, {
+                    artistId: activeTrack.artist.id,
+                    albumId: activeTrack.album.id,
+                })}
+                onClick={closeLayers}
+            >
+                <Image
+                    src={activeTrack.album.imgPath}
+                    alt={activeTrack.album.title}
+                />
+            </Link>
             <audio
                 className="spacer"
                 controls

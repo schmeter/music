@@ -18,7 +18,7 @@ const getEvents = (artist, showAll) => {
             hidden: showAll
                 ? false
                 : (artist.hidden || event.hidden),
-            artist: pick(['id', 'title', 'imgPath'], artist),
+            artist: pick(['id', 'title'], artist),
         });
         return event;
     });

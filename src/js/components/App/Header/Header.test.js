@@ -4,19 +4,21 @@ import toJson from 'enzyme-to-json';
 
 import Header from './Header';
 
-const mockedEvent = {
-    preventDefault: jest.fn(),
-};
-
-it('renders correctly', () => {
-    const props = {
-        openLayer: jest.fn(),
+describe('Header', () => {
+    const mockedEvent = {
+        preventDefault: jest.fn(),
     };
-    const component = shallow(<Header {...props} />);
 
-    component.find('.info-button').simulate('click', mockedEvent);
-    component.find('.menu-button').simulate('click', mockedEvent);
+    it('renders correctly', () => {
+        const props = {
+            openLayer: jest.fn(),
+        };
+        const component = shallow(<Header {...props} />);
 
-    expect(toJson(component)).toMatchSnapshot();
-    expect(props.openLayer).toHaveBeenCalledTimes(2);
+        component.find('.info-button').simulate('click', mockedEvent);
+        component.find('.menu-button').simulate('click', mockedEvent);
+
+        expect(toJson(component)).toMatchSnapshot();
+        expect(props.openLayer).toHaveBeenCalledTimes(2);
+    });
 });

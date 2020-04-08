@@ -7,7 +7,6 @@
     height: 100%;
     transition-property: width, opacity;
     transition-duration: 2s, 300ms;
-    transition-timing-function: cubic-bezier(0.99, 0.05);
     transition-delay: 0s, 0s;
     opacity: 1;
     background-color: $color-curtains;

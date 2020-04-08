@@ -6,37 +6,39 @@ import PageEvent from './PageEvent';
 
 jest.mock('../../Page', () => () => <div />);
 
-it('renders correctly', () => {
-    const props = {
-        events: [{
-            title: 'test',
-            date: '2020-02-02',
-            artist: {
+describe('PageEvent', () => {
+    it('renders correctly', () => {
+        const props = {
+            events: [{
                 title: 'test',
-            },
-            imgPath: 'test',
-        }, {
-            title: 'test',
-            date: '2020-02-01',
-            artist: {
+                date: '2020-02-02',
+                artist: {
+                    title: 'test',
+                },
+                imgPath: 'test',
+            }, {
                 title: 'test',
-            },
-        }, {
-            hidden: true,
-            title: 'test',
-            date: '2020-02-03',
-            artist: {
+                date: '2020-02-01',
+                artist: {
+                    title: 'test',
+                },
+            }, {
+                hidden: true,
                 title: 'test',
-            },
-        }, {
-            title: 'test',
-            date: '2020-02-03',
-            artist: {
+                date: '2020-02-03',
+                artist: {
+                    title: 'test',
+                },
+            }, {
                 title: 'test',
-            },
-        }],
-    };
-    const component = shallow(<PageEvent {...props} />);
+                date: '2020-02-03',
+                artist: {
+                    title: 'test',
+                },
+            }],
+        };
+        const component = shallow(<PageEvent {...props} />);
 
-    expect(toJson(component)).toMatchSnapshot();
+        expect(toJson(component)).toMatchSnapshot();
+    });
 });

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders correctly 1`] = `
+exports[`PageEvent renders correctly 1`] = `
 <Component
   id="event"
 >
@@ -33,12 +33,10 @@ exports[`renders correctly 1`] = `
     <h3>
       test
     </h3>
-    <p>
-      <Image
-        alt="test"
-        src="test"
-      />
-    </p>
+    <Image
+      alt="test"
+      src="test"
+    />
   </div>
   <div
     className="event"

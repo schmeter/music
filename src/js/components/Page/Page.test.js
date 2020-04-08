@@ -16,51 +16,52 @@ jest.mock('../../services/meta', () => ({
     setTitle: jest.fn(),
 }));
 
-it('renders correctly with all parameters', () => {
-    const props = {
-        id: 'test',
-        title: 'test',
-        className: 'test',
-        children: 'test',
-        useBaseClass: false,
-        location: {
-            pathname: 'test',
-        },
-    };
-    const component = shallow(<Page {...props} />);
+describe('Page', () => {
+    it('renders correctly with all parameters', () => {
+        const props = {
+            id: 'test',
+            title: 'test',
+            className: 'test',
+            children: 'test',
+            useBaseClass: false,
+            location: {
+                pathname: 'test',
+            },
+        };
+        const component = shallow(<Page {...props} />);
 
-    expect(toJson(component)).toMatchSnapshot();
-});
-
-it('renders correctly with id only', () => {
-    const props = {
-        id: 'test',
-    };
-    const component = shallow(<Page {...props} />);
-
-    expect(toJson(component)).toMatchSnapshot();
-});
-
-it('uses setTitle helper on mount and scrollTop helper on location change', () => {
-    const props = {
-        id: 'test',
-        location: {
-            pathname: 'test',
-        },
-    };
-    const component = shallow(<Page {...props} />);
-
-    // TODO: activate when enzyme supports hooks
-    // expect(setTitle).toHaveBeenCalled();
-
-    component.setProps({
-        location: {
-            pathname: 'test2',
-        },
+        expect(toJson(component)).toMatchSnapshot();
     });
-    component.update();
 
-    // TODO: activate when enzyme supports hooks
-    // expect(scrollTop).toHaveBeenCalled();
+    it('renders correctly with id only', () => {
+        const props = {
+            id: 'test',
+        };
+        const component = shallow(<Page {...props} />);
+
+        expect(toJson(component)).toMatchSnapshot();
+    });
+
+    it('uses setTitle helper on mount and scrollTop helper on location change', () => {
+        const props = {
+            id: 'test',
+            location: {
+                pathname: 'test',
+            },
+        };
+        const component = shallow(<Page {...props} />);
+
+        // TODO: activate when enzyme supports hooks
+        // expect(setTitle).toHaveBeenCalled();
+
+        component.setProps({
+            location: {
+                pathname: 'test2',
+            },
+        });
+        component.update();
+
+        // TODO: activate when enzyme supports hooks
+        // expect(scrollTop).toHaveBeenCalled();
+    });
 });
-

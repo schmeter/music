@@ -6,14 +6,12 @@ import Video from './Video';
 
 const PageVideo = ({ videos }) => (
     <Page id="video">
-        <div className="videos">
-            {videos.map(video => !video.hidden && (
-                <Video
-                    key={video.id}
-                    video={video}
-                />
-            ))}
-        </div>
+        {videos.map(video => !video.hidden && (
+            <Video
+                key={video.id}
+                video={video}
+            />
+        ))}
     </Page>
 );
 

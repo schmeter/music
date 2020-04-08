@@ -5,20 +5,22 @@ import toJson from 'enzyme-to-json';
 import File from './File';
 import Link from '../Link';
 
-const mockedEvent = {
-    preventDefault: jest.fn(),
-};
-
-it('renders correctly', () => {
-    const props = {
-        path: 'http://test',
-        children: 'test',
-        onClickFile: jest.fn(),
+describe('File', () => {
+    const mockedEvent = {
+        preventDefault: jest.fn(),
     };
-    const component = shallow(<File {...props} />);
 
-    component.find(Link).simulate('click', mockedEvent);
+    it('renders correctly', () => {
+        const props = {
+            path: 'http://test',
+            children: 'test',
+            onClickFile: jest.fn(),
+        };
+        const component = shallow(<File {...props} />);
 
-    expect(toJson(component)).toMatchSnapshot();
-    expect(props.onClickFile).toHaveBeenCalled();
+        component.find(Link).simulate('click', mockedEvent);
+
+        expect(toJson(component)).toMatchSnapshot();
+        expect(props.onClickFile).toHaveBeenCalled();
+    });
 });

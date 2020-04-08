@@ -30,12 +30,10 @@ const PageEvent = ({ events }) => {
                     </h2>
                     <h3>{event.artist.title}</h3>
                     {event.imgPath && (
-                        <p>
-                            <Image
-                                src={event.imgPath}
-                                alt={event.title}
-                            />
-                        </p>
+                        <Image
+                            src={event.imgPath}
+                            alt={event.title}
+                        />
                     )}
                 </div>
             ))}

@@ -15,66 +15,68 @@ jest.mock('react', () => ({
     }),
 }));
 
-const mockedEvent = {
-    preventDefault: jest.fn(),
-};
-
-window.history.back = jest.fn();
-delete window.location;
-window.location = { reload: jest.fn() };
-
-it('renders correctly with logged in user', () => {
-    const props = {
-        isLoggedIn: true,
-        login: jest.fn(),
-        logout: jest.fn(),
+describe('PageSettings', () => {
+    const mockedEvent = {
+        preventDefault: jest.fn(),
     };
-    const component = shallow(<PageSettings {...props} />);
 
-    expect(toJson(component)).toMatchSnapshot();
+    window.history.back = jest.fn();
+    delete window.location;
+    window.location = { reload: jest.fn() };
 
-    component.find('.form-auth').simulate('submit', mockedEvent);
+    it('renders correctly with logged in user', () => {
+        const props = {
+            isLoggedIn: true,
+            login: jest.fn(),
+            logout: jest.fn(),
+        };
+        const component = shallow(<PageSettings {...props} />);
 
-    expect(props.logout).toHaveBeenCalled();
-});
+        expect(toJson(component)).toMatchSnapshot();
 
-it('renders correctly with logged out user', () => {
-    const props = {
-        isLoggedIn: false,
-        login: jest.fn(),
-        logout: jest.fn(),
-    };
-    const component = shallow(<PageSettings {...props} />);
+        component.find('.form-auth').simulate('submit', mockedEvent);
 
-    expect(toJson(component)).toMatchSnapshot();
+        expect(props.logout).toHaveBeenCalled();
+    });
 
-    component.find('.form-auth').simulate('submit', mockedEvent);
+    it('renders correctly with logged out user', () => {
+        const props = {
+            isLoggedIn: false,
+            login: jest.fn(),
+            logout: jest.fn(),
+        };
+        const component = shallow(<PageSettings {...props} />);
 
-    expect(props.login).toHaveBeenCalled();
-});
+        expect(toJson(component)).toMatchSnapshot();
 
-it('uses window.history.back on quit', () => {
-    const props = {
-        isLoggedIn: true,
-        login: jest.fn(),
-        logout: jest.fn(),
-    };
-    const component = shallow(<PageSettings {...props} />);
+        component.find('.form-auth').simulate('submit', mockedEvent);
 
-    component.find('.form-quit').simulate('submit', mockedEvent);
+        expect(props.login).toHaveBeenCalled();
+    });
 
-    expect(window.history.back).toHaveBeenCalled();
-});
+    it('uses window.history.back on quit', () => {
+        const props = {
+            isLoggedIn: true,
+            login: jest.fn(),
+            logout: jest.fn(),
+        };
+        const component = shallow(<PageSettings {...props} />);
 
-it('uses window.history.reload on quit', () => {
-    const props = {
-        isLoggedIn: true,
-        login: jest.fn(),
-        logout: jest.fn(),
-    };
-    const component = shallow(<PageSettings {...props} />);
+        component.find('.form-quit').simulate('submit', mockedEvent);
 
-    component.find('.form-select').simulate('change', mockedEvent);
+        expect(window.history.back).toHaveBeenCalled();
+    });
 
-    expect(window.location.reload).toHaveBeenCalled();
+    it('uses window.history.reload on quit', () => {
+        const props = {
+            isLoggedIn: true,
+            login: jest.fn(),
+            logout: jest.fn(),
+        };
+        const component = shallow(<PageSettings {...props} />);
+
+        component.find('.form-select').simulate('change', mockedEvent);
+
+        expect(window.location.reload).toHaveBeenCalled();
+    });
 });

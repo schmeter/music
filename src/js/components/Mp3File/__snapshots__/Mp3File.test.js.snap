@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders correctly and uses setActiveIndex on click 1`] = `
+exports[`Mp3File renders correctly and uses setActiveIndex on click 1`] = `
 <BrowserRouter>
   <Router
     history={
@@ -69,56 +69,57 @@ exports[`renders correctly and uses setActiveIndex on click 1`] = `
         onClickFile={[Function]}
         path="test2"
       >
-        <span
+        <Link
           className="file"
+          onClick={[Function]}
+          to="test2"
         >
-          <Link
+          <NavLink
+            activeClassName="active"
+            className="file"
+            exact={true}
             onClick={[Function]}
             to="test2"
           >
-            <NavLink
-              activeClassName="active"
-              exact={true}
+            <Link
+              aria-current={null}
+              className="file"
               onClick={[Function]}
-              to="test2"
-            >
-              <Link
-                aria-current={null}
-                onClick={[Function]}
-                to={
-                  Object {
-                    "hash": "",
-                    "pathname": "/test2",
-                    "search": "",
-                    "state": null,
-                  }
+              to={
+                Object {
+                  "hash": "",
+                  "pathname": "/test2",
+                  "search": "",
+                  "state": null,
                 }
+              }
+            >
+              <LinkAnchor
+                aria-current={null}
+                className="file"
+                href="/test2"
+                navigate={[Function]}
+                onClick={[Function]}
               >
-                <LinkAnchor
+                <a
                   aria-current={null}
+                  className="file"
                   href="/test2"
-                  navigate={[Function]}
                   onClick={[Function]}
                 >
-                  <a
-                    aria-current={null}
-                    href="/test2"
-                    onClick={[Function]}
-                  >
-                    test2
-                  </a>
-                </LinkAnchor>
-              </Link>
-            </NavLink>
-          </Link>
-        </span>
+                  test2
+                </a>
+              </LinkAnchor>
+            </Link>
+          </NavLink>
+        </Link>
       </File>
     </Mp3File>
   </Router>
 </BrowserRouter>
 `;
 
-exports[`renders correctly and uses togglePlay on click 1`] = `
+exports[`Mp3File renders correctly and uses togglePlay on click 1`] = `
 <BrowserRouter>
   <Router
     history={
@@ -175,49 +176,50 @@ exports[`renders correctly and uses togglePlay on click 1`] = `
         onClickFile={[Function]}
         path="test1"
       >
-        <span
+        <Link
           className="file"
+          onClick={[Function]}
+          to="test1"
         >
-          <Link
+          <NavLink
+            activeClassName="active"
+            className="file"
+            exact={true}
             onClick={[Function]}
             to="test1"
           >
-            <NavLink
-              activeClassName="active"
-              exact={true}
+            <Link
+              aria-current={null}
+              className="file"
               onClick={[Function]}
-              to="test1"
-            >
-              <Link
-                aria-current={null}
-                onClick={[Function]}
-                to={
-                  Object {
-                    "hash": "",
-                    "pathname": "/test1",
-                    "search": "",
-                    "state": null,
-                  }
+              to={
+                Object {
+                  "hash": "",
+                  "pathname": "/test1",
+                  "search": "",
+                  "state": null,
                 }
+              }
+            >
+              <LinkAnchor
+                aria-current={null}
+                className="file"
+                href="/test1"
+                navigate={[Function]}
+                onClick={[Function]}
               >
-                <LinkAnchor
+                <a
                   aria-current={null}
+                  className="file"
                   href="/test1"
-                  navigate={[Function]}
                   onClick={[Function]}
                 >
-                  <a
-                    aria-current={null}
-                    href="/test1"
-                    onClick={[Function]}
-                  >
-                    test1
-                  </a>
-                </LinkAnchor>
-              </Link>
-            </NavLink>
-          </Link>
-        </span>
+                  test1
+                </a>
+              </LinkAnchor>
+            </Link>
+          </NavLink>
+        </Link>
       </File>
     </Mp3File>
   </Router>

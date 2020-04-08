@@ -13,6 +13,7 @@ module.exports = function(grunt) {
         modFolder: 'node_modules',
         srcFolder: 'src',
         cfgFolder: 'src/config',
+        datFolder: 'src/data',
         outFolder: 'public',
         tmpFolder: '.tmp',
 
@@ -233,7 +234,10 @@ module.exports = function(grunt) {
                 tasks: ['copy:html'],
             },
             config: {
-                files: ['<%= cfgFolder %>/**/*.*'],
+                files: [
+                    '<%= cfgFolder %>/**/*.*',
+                    '<%= datFolder %>/**/*.*',
+                ],
                 tasks: ['scanConfig'],
             },
         },

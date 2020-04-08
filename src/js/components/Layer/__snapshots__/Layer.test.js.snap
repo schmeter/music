@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders correctly 1`] = `
+exports[`Layer renders correctly 1`] = `
 <div
   className="layer layer-test closed"
 >
@@ -42,7 +42,7 @@ exports[`renders correctly 1`] = `
 </div>
 `;
 
-exports[`renders correctly with id only 1`] = `
+exports[`Layer renders correctly with id only 1`] = `
 <div
   className="layer layer-test closed"
 >
