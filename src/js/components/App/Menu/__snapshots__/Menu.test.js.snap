@@ -51,21 +51,6 @@ exports[`Menu renders correctly 1`] = `
   </li>
   <li
     className="link"
-    key="tools"
-  >
-    <Icon
-      id="hand-o-right"
-    />
-     
-    <Link
-      onClick={[MockFunction]}
-      to="/tools"
-    >
-      Hilfe
-    </Link>
-  </li>
-  <li
-    className="link"
     key="settings"
   >
     <Icon
