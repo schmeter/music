@@ -1,0 +1,31 @@
+.page-features {
+    .featured-event {
+        display: block;
+    }
+
+    .feature {
+        margin-bottom: 10px;
+        padding: 10px;
+
+        .headline {
+            margin-bottom: 10px;
+            font-size: larger;
+            font-weight: bold;
+        }
+
+        .more {
+            margin-top: 10px;
+            font-size: smaller;
+        }
+    }
+
+    .image,
+    .iframe-wrapper {
+        width: 100%;
+        max-width: 512px;
+    }
+
+    .iframe-wrapper {
+        display: inline-block;
+    }
+}

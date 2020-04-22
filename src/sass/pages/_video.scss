@@ -1,0 +1,19 @@
+.page-video {
+    .video {
+        display: inline-block;
+        max-width: 768px;
+        padding: 5px 10px 10px;
+
+        @media (min-width: $max-width-phone + 1) {
+            width: calc(100% / 2);
+        }
+
+        @media (min-width: $max-width-tablet + 1) {
+            width: calc(100% / 3);
+        }
+
+        @media (min-width: $min-width-large-desktop + 1) {
+            width: calc(100% / 4);
+        }
+    }
+}

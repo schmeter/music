@@ -25,7 +25,9 @@ exports[`IFrame renders correctly 1`] = `
       </Icon>
     </div>
     <iframe
+      allowFullScreen={true}
       className="iframe invisible"
+      frameBorder="0"
       onLoad={[Function]}
       src="test"
     />

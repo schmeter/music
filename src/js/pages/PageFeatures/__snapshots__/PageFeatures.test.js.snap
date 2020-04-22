@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PageFeatures renders correctly 1`] = `
+<Component
+  id="features"
+/>
+`;

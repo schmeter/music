@@ -137,3 +137,27 @@ hr {
         cursor: default;
     }
 }
+
+.video {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+
+    .image {
+        width: 100%;
+    }
+
+    .icon {
+        position: absolute;
+        top: 50%;
+        right: 0;
+        left: 0;
+        width: 100%;
+        margin-top: -15px;
+        color: $color-image-border;
+        font-size: 30px;
+        line-height: 30px;
+        text-align: center;
+    }
+}
+

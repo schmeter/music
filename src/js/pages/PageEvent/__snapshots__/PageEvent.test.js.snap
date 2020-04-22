@@ -1,0 +1,73 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PageEvent renders correctly 1`] = `
+<Component
+  id="event"
+>
+  <div
+    className="event"
+    key="2020-02-03test"
+  >
+    <h2
+      className="date"
+    >
+      03.02.2020
+       
+      <Link
+        to="https://www.google.de/maps/dir//test"
+      >
+        test
+      </Link>
+    </h2>
+    <h3>
+      test
+    </h3>
+  </div>
+  <div
+    className="event"
+    key="2020-02-02test"
+  >
+    <h2
+      className="date"
+    >
+      02.02.2020
+       
+      <Link
+        to="https://www.google.de/maps/dir//test"
+      >
+        test
+      </Link>
+    </h2>
+    <h3>
+      test
+    </h3>
+    <Link
+      to="https://www.google.de/maps/dir//test"
+    >
+      <Image
+        alt="test"
+        src="test"
+      />
+    </Link>
+  </div>
+  <div
+    className="event"
+    key="2020-02-01test"
+  >
+    <h2
+      className="date"
+    >
+      01.02.2020
+       
+      <Link
+        to="https://www.google.de/maps/dir//test"
+      >
+        test
+      </Link>
+    </h2>
+    <h3>
+      test
+    </h3>
+  </div>
+</Component>
+`;

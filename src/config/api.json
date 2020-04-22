@@ -1,0 +1,8 @@
+{
+    "googleRoute": "https://www.google.de/maps/dir/:from/:to",
+    "youtubeLink": "//www.youtube.com/watch?v=:videoId",
+    "youtubeIFrame": "//www.youtube.com/embed/:videoId",
+    "youtubeImage": "//img.youtube.com/vi/:videoId/mqdefault.jpg",
+    "wikipediaPageExtract": "https://:language.wikipedia.org/w/api.php?format=json&action=query&prop=extracts&exintro&explaintext&redirects=1&pageids=:pageId&origin=*",
+    "wikipediaPage": "https://:language.wikipedia.org/?curid=:pageId"
+}

@@ -5,8 +5,8 @@ import PropTypes from 'prop-types';
 import Icon from '../Icon';
 
 const IFrame = ({
-    className,
     src,
+    className,
     onLoad,
 }) => {
     const [loaded, setLoaded] = useState(false);
@@ -31,8 +31,10 @@ const IFrame = ({
                     'iframe',
                     !loaded && 'invisible',
                 )}
-                src={src}
                 onLoad={handleLoad}
+                src={src}
+                frameBorder="0"
+                allowFullScreen
             ></iframe>
         </div>
     );
@@ -40,6 +42,8 @@ const IFrame = ({
 
 IFrame.propTypes = {
     src: PropTypes.string.isRequired,
+    allow: PropTypes.string,
+    allowFullScreen: PropTypes.bool,
     className: PropTypes.string,
     onLoad: PropTypes.func,
 };

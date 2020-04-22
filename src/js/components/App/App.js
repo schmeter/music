@@ -3,12 +3,13 @@ import PropTypes from 'prop-types';
 import { Switch, Route } from 'react-router-dom';
 
 import {
+    PageFeatures,
     PageAudio,
     PageVideo,
     PageEvent,
     PageSettings,
     Page404,
-} from '../pages';
+} from '../../pages';
 import Layer from '../Layer';
 import Screensaver from './Screensaver';
 import Header from './Header';
@@ -43,6 +44,9 @@ const App = ({
             <Screensaver>
                 <Header />
                 <Switch>
+                    <Route exact path={getUrl('index')}>
+                        <PageFeatures />
+                    </Route>
                     <Route exact path={getUrl('audio')}>
                         <PageAudio />
                     </Route>
