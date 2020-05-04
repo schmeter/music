@@ -1,5 +1,5 @@
 export const isPropTrueAtIndex = (prop, index, array) =>
-    array && array[index] && array[index][prop];
+    array?.[index]?.[prop];
 
 export const isSameAlbum = (track, nextTrack) =>
     (track && nextTrack) &&
