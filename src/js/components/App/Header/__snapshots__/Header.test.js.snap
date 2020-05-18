@@ -18,7 +18,7 @@ exports[`Header renders correctly 1`] = `
     onClick={[Function]}
   >
     <Icon
-      id="bars"
+      id="magic"
     />
   </button>
   <button
@@ -26,7 +26,7 @@ exports[`Header renders correctly 1`] = `
     onClick={[Function]}
   >
     <Icon
-      id="info-circle"
+      id="microphone"
     />
   </button>
 </header>

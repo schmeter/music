@@ -1,5 +1,5 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { mount } from 'enzyme';
 import toJson from 'enzyme-to-json';
 
 import PageFeatures from './PageFeatures';
@@ -14,7 +14,7 @@ describe('PageFeatures', () => {
             videos: [],
             events: [],
         };
-        const component = shallow(<PageFeatures {...props} />);
+        const component = mount(<PageFeatures {...props} />);
 
         expect(toJson(component)).toMatchSnapshot();
     });

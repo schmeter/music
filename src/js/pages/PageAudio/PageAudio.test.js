@@ -1,5 +1,5 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { mount } from 'enzyme';
 import toJson from 'enzyme-to-json';
 
 import PageAudio from './PageAudio';
@@ -23,7 +23,7 @@ describe('PageAudio', () => {
             getArtist: () => false,
             getAlbum: () => false,
         };
-        const component = shallow(<PageAudio {...props} />);
+        const component = mount(<PageAudio {...props} />);
 
         expect(toJson(component)).toMatchSnapshot();
     });
@@ -36,7 +36,7 @@ describe('PageAudio', () => {
             getArtist: () => true,
             getAlbum: () => false,
         };
-        const component = shallow(<PageAudio {...props} />);
+        const component = mount(<PageAudio {...props} />);
 
         expect(toJson(component)).toMatchSnapshot();
     });
@@ -50,7 +50,7 @@ describe('PageAudio', () => {
             getArtist: () => true,
             getAlbum: () => true,
         };
-        const component = shallow(<PageAudio {...props} />);
+        const component = mount(<PageAudio {...props} />);
 
         expect(toJson(component)).toMatchSnapshot();
     });
@@ -63,7 +63,7 @@ describe('PageAudio', () => {
             getArtist: () => false,
             getAlbum: () => false,
         };
-        const component = shallow(<PageAudio {...props} />);
+        const component = mount(<PageAudio {...props} />);
 
         expect(toJson(component)).toMatchSnapshot();
     });
@@ -77,7 +77,7 @@ describe('PageAudio', () => {
             getArtist: () => false,
             getAlbum: () => false,
         };
-        const component = shallow(<PageAudio {...props} />);
+        const component = mount(<PageAudio {...props} />);
 
         expect(toJson(component)).toMatchSnapshot();
     });

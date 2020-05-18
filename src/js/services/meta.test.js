@@ -8,11 +8,11 @@ describe('meta', () => {
         expect(joinTitleParts('test'.split(''))).toBe('t | e | s | t');
     });
 
-    it('expects setTitle to return undefined', () => {
+    it('expects setTitle with no params to return undefined', () => {
         expect(setTitle()).toBe(undefined);
     });
 
-    it('expects setTitle to return undefined', () => {
+    it('expects setTitle with params to return undefined', () => {
         expect(setTitle('test')).toBe(undefined);
     });
 });

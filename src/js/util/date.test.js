@@ -5,4 +5,3 @@ describe('date', () => {
         expect(typeof getTimestamp()).toBe('number');
     });
 });
-

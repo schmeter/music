@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { format } from 'date-fns';
 
@@ -10,6 +10,7 @@ import i18n from '../../services/i18n';
 import { getUrl } from '../../services/navigation';
 import { getApiUrl } from '../../services/api';
 import { getRandom } from '../../util/math';
+import { setTitle } from '../../services/meta';
 
 const Page404 = ({ albums, videos, events }) => {
     const renderEvent = () => {
@@ -125,6 +126,10 @@ const Page404 = ({ albums, videos, events }) => {
             </div>
         );
     };
+
+    useEffect(() => {
+        setTitle();
+    }, []);
 
     return (
         <Page id="features">

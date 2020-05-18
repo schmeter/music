@@ -6,7 +6,7 @@ import PageSettings from './PageSettings';
 
 jest.mock('../../components/Page', () => () => <div />);
 jest.mock('react', () => ({
-    ...require.requireActual('react'),
+    ...jest.requireActual('react'),
     createRef: () => ({
         current: {
             password: { value: 'test' },

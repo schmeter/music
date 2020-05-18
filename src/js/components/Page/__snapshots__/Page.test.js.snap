@@ -1,31 +1,47 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Page renders correctly with all parameters 1`] = `
-<main
-  className="main"
+<Page
+  className="test"
+  id="test"
+  location={
+    Object {
+      "pathname": "test",
+    }
+  }
+  title="test"
+  useBaseClass={false}
 >
-  <div
-    className="page page-test"
+  <main
+    className="main"
   >
-    test
-  </div>
-  <audio
-    className="spacer"
-    controls={true}
-  />
-</main>
+    <div
+      className="page page-test"
+    >
+      test
+    </div>
+    <audio
+      className="spacer"
+      controls={true}
+    />
+  </main>
+</Page>
 `;
 
 exports[`Page renders correctly with id only 1`] = `
-<main
-  className="main"
+<Page
+  id="test"
 >
-  <div
-    className="page page-base page-test"
-  />
-  <audio
-    className="spacer"
-    controls={true}
-  />
-</main>
+  <main
+    className="main"
+  >
+    <div
+      className="page page-base page-test"
+    />
+    <audio
+      className="spacer"
+      controls={true}
+    />
+  </main>
+</Page>
 `;

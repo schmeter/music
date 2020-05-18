@@ -1,36 +1,37 @@
 module.exports = {
-    extends: [
-        'standard',
-        'plugin:react/recommended',
-        'plugin:import/recommended',
-    ],
-    plugins: [
-        'react-hooks',
-        'jest',
-    ],
+    parser: 'babel-eslint',
+    parserOptions: {
+        ecmaVersion: 2020,
+    },
+    env: {
+        browser: true,
+        es6: true,
+        node: true,
+        jest: true,
+    },
     settings: {
         react: {
             version: 'detect',
         },
     },
-    env: {
-        'jest/globals': true,
-    },
-    parser: 'babel-eslint',
-    parserOptions: {
-        ecmaVersion: 2020,
-    },
+    extends: [
+        'standard',
+        'plugin:import/recommended',
+        'plugin:jest/recommended',
+        'plugin:react/recommended',
+        'plugin:react-hooks/recommended',
+    ],
     rules: {
         'arrow-parens': [
-            'warn',
+            1,
             'as-needed',
         ],
         'comma-dangle': [
-            'warn',
+            1,
             'always-multiline',
         ],
         indent: [
-            'warn',
+            1,
             4,
             {
                 SwitchCase: 1,
@@ -39,17 +40,17 @@ module.exports = {
         'import/order': [
             2,
             {
-              groups: [
-                'builtin',
-                'external',
-                'internal',
-                ['parent', 'sibling', 'index'],
-              ],
-              'newlines-between': 'always',
+                groups: [
+                    'builtin',
+                    'external',
+                    'internal',
+                    ['parent', 'sibling', 'index'],
+                ],
+                'newlines-between': 'always',
             },
-          ],
-          'max-len': [
-            'warn',
+        ],
+        'max-len': [
+            1,
             {
                 code: 120,
             },
@@ -58,7 +59,7 @@ module.exports = {
         'no-console': 2,
         'no-extra-semi': 2,
         'no-multiple-empty-lines': [
-            'warn',
+            1,
             {
                 max: 1,
                 maxEOF: 1,
@@ -66,13 +67,11 @@ module.exports = {
         ],
         'operator-linebreak': 'off',
         'object-curly-spacing': [
-            'warn',
+            1,
             'always',
         ],
-        'react-hooks/rules-of-hooks': 'error',
-        'react-hooks/exhaustive-deps': 'warn',
         'space-before-function-paren': [
-            'warn',
+            1,
             'never',
         ],
         semi: [
@@ -80,14 +79,11 @@ module.exports = {
             'always',
         ],
         'jsx-quotes': [
-            'warn',
+            1,
             'prefer-double',
         ],
     },
     globals: {
-        document: true,
-        window: true,
-        fetch: true,
         app: true,
     },
 };

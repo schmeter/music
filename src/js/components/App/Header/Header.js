@@ -26,13 +26,13 @@ const Header = ({ openLayer }) => {
                 className="button header-button menu-button"
                 onClick={handleClickMenu}
             >
-                <Icon id="bars" />
+                <Icon id="magic" />
             </button>
             <button
                 className="button header-button info-button"
                 onClick={handleClickInfo}
             >
-                <Icon id="info-circle" />
+                <Icon id="microphone" />
             </button>
         </header>
     );

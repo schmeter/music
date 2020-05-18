@@ -118,7 +118,7 @@ describe('audio', () => {
         },
     };
 
-    it('expects getNextIndex to return correct value', () => {
+    it('expects getNextIndex with stateWrong1 to return correct value', () => {
         expect(getNextIndex(stateWrong1)).toBe(0);
     });
 
@@ -140,7 +140,7 @@ describe('audio', () => {
         },
     };
 
-    it('expects getNextIndex to return correct value', () => {
+    it('expects getNextIndex with stateWrong2 to return correct value', () => {
         expect(getNextIndex(stateWrong2)).toBe(1);
     });
 
@@ -166,7 +166,7 @@ describe('audio', () => {
         },
     };
 
-    it('expects getNextIndex to return correct value', () => {
+    it('expects getNextIndex with stateWrong3 to return correct value', () => {
         expect(getNextIndex(stateWrong3)).toBe(2);
     });
 
@@ -190,7 +190,7 @@ describe('audio', () => {
         },
     };
 
-    it('expects getNextIndex to return correct value', () => {
+    it('expects getNextIndex with stateWrong4 to return correct value', () => {
         expect(getNextIndex(stateWrong4)).toBe(0);
     });
 
@@ -204,7 +204,7 @@ describe('audio', () => {
         },
     };
 
-    it('expects getArtistAlbums to return correct value', () => {
+    it('expects getArtistAlbums with stateWrong5 to return correct value', () => {
         expect(getArtistAlbums(stateWrong5, 'test')).toEqual([]);
     });
 });
