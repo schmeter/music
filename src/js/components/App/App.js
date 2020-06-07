@@ -18,6 +18,7 @@ import Menu from './Menu';
 import Player from './Player';
 import Curtains from './Curtains';
 import { getUrl } from '../../services/navigation';
+import configApp from '../../../config/app.json';
 
 const App = ({
     setLoggedIn,
@@ -45,7 +46,7 @@ const App = ({
                 <Header />
                 <Switch>
                     <Route exact path={getUrl('index')}>
-                        <PageFeatures />
+                        {configApp.indexRoute === 'audio' ? <PageAudio /> : <PageFeatures />}
                     </Route>
                     <Route exact path={getUrl('audio')}>
                         <PageAudio />

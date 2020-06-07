@@ -7,6 +7,7 @@ import Page from '../../components/Page';
 import AlbumList from './AlbumList';
 import { joinTitleParts, setTitle } from '../../services/meta';
 import i18n from '../../services/i18n';
+import configApp from '../../../config/app.json';
 
 const PageAudio = ({ getArtist, getAlbum }) => {
     const { artistId, albumId } = useParams();
@@ -16,9 +17,11 @@ const PageAudio = ({ getArtist, getAlbum }) => {
             && (albumId ? selectedAlbum : true);
 
     useEffect(() => {
-        const titleParts = [
-            i18n('page_audio_title'),
-        ];
+        const titleParts = configApp.indexRoute === 'audio'
+            ? []
+            : [
+                i18n('page_audio_title'),
+            ];
 
         if (selectedArtist) {
             titleParts.push(selectedArtist.title);

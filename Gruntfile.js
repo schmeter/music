@@ -276,13 +276,13 @@ module.exports = function(grunt) {
         'build:release',
     ]);
 
-    grunt.registerTask('server', [
+    grunt.registerTask('serve', [
         'browserSync',
         'watch',
     ]);
 
     grunt.registerTask('default', [
         'build:dev',
-        'server',
+        'serve',
     ]);
 };

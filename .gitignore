@@ -1,8 +1,8 @@
 .tmp
 .DS_Store
-public
-node_modules
 coverage
+node_modules
+public
 !src/assets/mp3
 src/assets/mp3/*
 !src/assets/mp3/demoartist
