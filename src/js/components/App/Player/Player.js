@@ -129,15 +129,17 @@ class Player extends React.Component {
     }
 
     render() {
-        const { isPlaying } = this.props;
+        const { config, isPlaying } = this.props;
         const audio = this.audio.current;
 
         return (
             <div className="player">
-                <Analyser
-                    audio={audio}
-                    isPlaying={isPlaying}
-                />
+                {!config.useAnalyser ? null : (
+                    <Analyser
+                        audio={audio}
+                        isPlaying={isPlaying}
+                    />
+                )}
                 <audio
                     className="audio"
                     preload="none"
@@ -155,6 +157,9 @@ class Player extends React.Component {
 }
 
 Player.propTypes = {
+    config: PropTypes.shape({
+        useAnalyser: PropTypes.bool.isRequired,
+    }).isRequired,
     setActiveIndex: PropTypes.func.isRequired,
     setIsPlaying: PropTypes.func.isRequired,
     saveActiveTrack: PropTypes.func.isRequired,

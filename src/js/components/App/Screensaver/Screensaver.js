@@ -4,7 +4,6 @@ import autobind from 'autobind-decorator';
 import classNames from 'classnames';
 
 import { isTouch } from '../../../util/screen';
-import configApp from '../../../../config/app.json';
 
 class Screensaver extends React.Component {
     state = {
@@ -33,9 +32,9 @@ class Screensaver extends React.Component {
     }
 
     screenSaverAllowed() {
-        const { isPlaying } = this.props;
+        const { config, isPlaying } = this.props;
 
-        return !isTouch() && configApp.screensaver.active && isPlaying;
+        return !isTouch() && config.active && isPlaying;
     }
 
     startScreenSaver() {
@@ -47,13 +46,15 @@ class Screensaver extends React.Component {
     }
 
     resetScreenSaver(timer) {
+        const { config } = this.props;
+
         this.setState({
             active: false,
         });
         clearTimeout(timer);
         return setTimeout(() => {
             this.startScreenSaver();
-        }, configApp.screensaver.timeout * 1000);
+        }, config.timeout * 1000);
     }
 
     render() {
@@ -74,6 +75,10 @@ class Screensaver extends React.Component {
 }
 
 Screensaver.propTypes = {
+    config: PropTypes.shape({
+        timeout: PropTypes.number.isRequired,
+        active: PropTypes.bool.isRequired,
+    }).isRequired,
     children: PropTypes.node.isRequired,
     isPlaying: PropTypes.bool.isRequired,
 };

@@ -1,8 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Player renders correctly 1`] = `
+exports[`Player renders correctly with analyser 1`] = `
 <Player
   activeIndex={0}
+  config={
+    Object {
+      "useAnalyser": true,
+    }
+  }
   isPlaying={false}
   nextIndex={1}
   playToggle={false}
@@ -66,9 +71,81 @@ exports[`Player renders correctly 1`] = `
 </Player>
 `;
 
-exports[`Player renders correctly 2`] = `
+exports[`Player renders correctly without analyser 1`] = `
+<Player
+  activeIndex={0}
+  config={
+    Object {
+      "useAnalyser": false,
+    }
+  }
+  isPlaying={false}
+  nextIndex={1}
+  playToggle={false}
+  saveActiveTrack={
+    [MockFunction] {
+      "calls": Array [
+        Array [
+          Object {
+            "path": "test1",
+            "tag": Object {
+              "title": "test1",
+            },
+          },
+        ],
+      ],
+      "results": Array [
+        Object {
+          "type": "return",
+          "value": undefined,
+        },
+      ],
+    }
+  }
+  setActiveIndex={[MockFunction]}
+  setIsPlaying={[MockFunction]}
+  tracks={
+    Array [
+      Object {
+        "path": "test1",
+        "tag": Object {
+          "title": "test1",
+        },
+      },
+      Object {
+        "path": "test2",
+        "tag": Object {
+          "title": "test2",
+        },
+      },
+    ]
+  }
+>
+  <div
+    className="player"
+  >
+    <audio
+      className="audio"
+      controls={true}
+      onEnded={[Function]}
+      onError={[Function]}
+      onPause={[Function]}
+      onPlay={[Function]}
+      preload="none"
+      tabIndex="-1"
+    />
+  </div>
+</Player>
+`;
+
+exports[`Player renders correctly without analyser 2`] = `
 <Player
   activeIndex={1}
+  config={
+    Object {
+      "useAnalyser": false,
+    }
+  }
   isPlaying={false}
   nextIndex={1}
   playToggle={false}
@@ -126,23 +203,6 @@ exports[`Player renders correctly 2`] = `
   <div
     className="player"
   >
-    <Analyser
-      audio={
-        <audio
-          class="audio"
-          controls=""
-          preload="none"
-          src="test2"
-          tabindex="-1"
-          title="undefined - test2"
-        />
-      }
-      isPlaying={false}
-    >
-      <canvas
-        className="canvas"
-      />
-    </Analyser>
     <audio
       className="audio"
       controls={true}
@@ -157,9 +217,14 @@ exports[`Player renders correctly 2`] = `
 </Player>
 `;
 
-exports[`Player renders correctly 3`] = `
+exports[`Player renders correctly without analyser 3`] = `
 <Player
   activeIndex={1}
+  config={
+    Object {
+      "useAnalyser": false,
+    }
+  }
   isPlaying={false}
   nextIndex={1}
   playToggle={true}
@@ -217,23 +282,6 @@ exports[`Player renders correctly 3`] = `
   <div
     className="player"
   >
-    <Analyser
-      audio={
-        <audio
-          class="audio"
-          controls=""
-          preload="none"
-          src="test2"
-          tabindex="-1"
-          title="undefined - test2"
-        />
-      }
-      isPlaying={false}
-    >
-      <canvas
-        className="canvas"
-      />
-    </Analyser>
     <audio
       className="audio"
       controls={true}
@@ -248,9 +296,14 @@ exports[`Player renders correctly 3`] = `
 </Player>
 `;
 
-exports[`Player renders correctly 4`] = `
+exports[`Player renders correctly without analyser 4`] = `
 <Player
   activeIndex={2}
+  config={
+    Object {
+      "useAnalyser": false,
+    }
+  }
   isPlaying={true}
   nextIndex={1}
   playToggle={false}
@@ -293,23 +346,6 @@ exports[`Player renders correctly 4`] = `
   <div
     className="player"
   >
-    <Analyser
-      audio={
-        <audio
-          class="audio"
-          controls=""
-          preload="none"
-          src="test2"
-          tabindex="-1"
-          title="undefined - test2"
-        />
-      }
-      isPlaying={true}
-    >
-      <canvas
-        className="canvas"
-      />
-    </Analyser>
     <audio
       className="audio"
       controls={true}
@@ -324,9 +360,14 @@ exports[`Player renders correctly 4`] = `
 </Player>
 `;
 
-exports[`Player renders correctly 5`] = `
+exports[`Player renders correctly without analyser 5`] = `
 <Player
   activeIndex={0}
+  config={
+    Object {
+      "useAnalyser": false,
+    }
+  }
   isPlaying={false}
   nextIndex={1}
   playToggle={false}
@@ -396,23 +437,6 @@ exports[`Player renders correctly 5`] = `
   <div
     className="player"
   >
-    <Analyser
-      audio={
-        <audio
-          class="audio"
-          controls=""
-          preload="none"
-          src="test1"
-          tabindex="-1"
-          title="undefined - test1"
-        />
-      }
-      isPlaying={false}
-    >
-      <canvas
-        className="canvas"
-      />
-    </Analyser>
     <audio
       className="audio"
       controls={true}

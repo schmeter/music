@@ -5,7 +5,7 @@
         "active": true,
         "timeout": 30
     },
-    "analyser": {
-        "active": true
+    "player": {
+        "useAnalyser": true
     }
 }

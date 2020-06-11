@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import { isTouch } from '../../../../util/screen';
-import configApp from '../../../../../config/app.json';
 
 class Analyser extends React.Component {
     canvas = React.createRef();
@@ -18,7 +17,7 @@ class Analyser extends React.Component {
     isAnalyserAllowed() {
         const { audio } = this.props;
 
-        return audio && !isTouch() && configApp.analyser.active;
+        return audio && !isTouch();
     }
 
     analyse() {

@@ -45,7 +45,7 @@ const App = ({
 
     return (
         <>
-            <Screensaver>
+            <Screensaver config={configApp.screensaver} >
                 <Header />
                 <Switch>
                     <Route exact path={getUrl('index')}>
@@ -79,7 +79,7 @@ const App = ({
                 <Layer id="info">
                     <Info />
                 </Layer>
-                <Player />
+                <Player config={configApp.player} />
             </Screensaver>
             <Curtains />
         </>

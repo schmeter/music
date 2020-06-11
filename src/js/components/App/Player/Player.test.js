@@ -9,7 +9,7 @@ describe('Player', () => {
     window.HTMLMediaElement.prototype.play = jest.fn();
     window.HTMLMediaElement.prototype.pause = jest.fn();
 
-    it('renders correctly', () => {
+    it('renders correctly without analyser', () => {
         const tracks = [{
             path: 'test1',
             tag: {
@@ -22,6 +22,9 @@ describe('Player', () => {
             },
         }];
         const props = {
+            config: {
+                useAnalyser: false,
+            },
             setActiveIndex: jest.fn(),
             setIsPlaying: jest.fn(),
             saveActiveTrack: jest.fn(),
@@ -81,5 +84,35 @@ describe('Player', () => {
         component.find('audio').simulate('error');
         document.dispatchEvent(new window.KeyboardEvent('keydown', { keyCode: 37 }));
         document.dispatchEvent(new window.KeyboardEvent('keydown', { keyCode: 39 }));
+    });
+
+    it('renders correctly with analyser', () => {
+        const tracks = [{
+            path: 'test1',
+            tag: {
+                title: 'test1',
+            },
+        }, {
+            path: 'test2',
+            tag: {
+                title: 'test2',
+            },
+        }];
+        const props = {
+            config: {
+                useAnalyser: true,
+            },
+            setActiveIndex: jest.fn(),
+            setIsPlaying: jest.fn(),
+            saveActiveTrack: jest.fn(),
+            tracks,
+            activeIndex: 0,
+            nextIndex: 1,
+            playToggle: false,
+            isPlaying: false,
+        };
+        const component = mount(<Player {...props} />);
+
+        expect(toJson(component)).toMatchSnapshot();
     });
 });

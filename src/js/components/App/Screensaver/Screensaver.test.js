@@ -16,6 +16,10 @@ describe('Screensaver', () => {
 
     it('renders correctly', () => {
         const props = {
+            config: {
+                active: true,
+                timeout: 0,
+            },
             isPlaying: false,
         };
         const component = shallow(<Screensaver {...props}><div /></Screensaver>);
