@@ -6,34 +6,40 @@ import Icon from '../../Icon';
 import i18n from '../../../services/i18n';
 import { getUrl } from '../../../services/navigation';
 
-const links = [
-    'audio',
-    'video',
-    'event',
-    'settings',
-];
+const Menu = ({
+    indexRoute,
+    closeLayers,
+}) => {
+    const routes = [
+        'audio',
+        'video',
+        'event',
+        'settings',
+    ];
 
-const Menu = ({ closeLayers }) => (
-    <ul className="layer-content">
-        {links.map(link => (
-            <li
-                key={link}
-                className="link"
-            >
-                <Icon id="hand-o-right" />
-                &nbsp;
-                <Link
-                    to={getUrl(link)}
-                    onClick={closeLayers}
+    return (
+        <ul className="layer-content">
+            {routes.map(route => (
+                <li
+                    key={route}
+                    className="link"
                 >
-                    {i18n(`page_${link}_title`)}
-                </Link>
-            </li>
-        ))}
-    </ul>
-);
+                    <Icon id="hand-o-right" />
+                &nbsp;
+                    <Link
+                        to={getUrl(indexRoute === route ? 'index' : route)}
+                        onClick={closeLayers}
+                    >
+                        {i18n(`page_${route}_title`)}
+                    </Link>
+                </li>
+            ))}
+        </ul>
+    );
+};
 
 Menu.propTypes = {
+    indexRoute: PropTypes.string,
     closeLayers: PropTypes.func.isRequired,
 };
 

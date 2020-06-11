@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 
@@ -11,10 +11,12 @@ const IFrame = ({
 }) => {
     const [loaded, setLoaded] = useState(false);
 
-    const handleLoad = () => {
+    const handleLoad = useCallback(() => {
         setLoaded(true);
         onLoad && onLoad();
-    };
+    }, [
+        onLoad,
+    ]);
 
     return (
         <div
@@ -42,8 +44,6 @@ const IFrame = ({
 
 IFrame.propTypes = {
     src: PropTypes.string.isRequired,
-    allow: PropTypes.string,
-    allowFullScreen: PropTypes.bool,
     className: PropTypes.string,
     onLoad: PropTypes.func,
 };

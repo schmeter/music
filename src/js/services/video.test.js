@@ -1,7 +1,5 @@
 import { loadLibrary } from './video';
 
-jest.mock('../../config/video.json', () => require('../../../jest/mockups/video.json'), { virtual: true });
-
 describe('video', () => {
     const library = loadLibrary();
     const libraryFull = loadLibrary(true);

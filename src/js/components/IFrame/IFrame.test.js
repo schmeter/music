@@ -1,6 +1,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import toJson from 'enzyme-to-json';
+import { act } from 'react-dom/test-utils';
 
 import IFrame from './IFrame';
 
@@ -13,9 +14,10 @@ describe('IFrame', () => {
         };
         const component = mount(<IFrame {...props} />);
 
-        component.simulate('load');
+        act(() => {
+            component.find('iframe').props().onLoad();
 
-        expect(toJson(component)).toMatchSnapshot();
-        // expect(props.onLoad).toHaveBeenCalled();
+            expect(toJson(component)).toMatchSnapshot();
+        });
     });
 });

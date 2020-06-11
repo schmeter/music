@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
@@ -12,7 +12,7 @@ const AlbumCover = ({
     const [showRecord, setShowRecord] = useState(false);
     const [imgIndex, setImgIndex] = useState(0);
 
-    const getImgIndex = () => {
+    const getImgIndex = useCallback(() => {
         let newImgIndex = imgIndex;
 
         newImgIndex++;
@@ -20,20 +20,32 @@ const AlbumCover = ({
             return 0;
         }
         return newImgIndex;
-    };
+    }, [
+        album.imgItems,
+        imgIndex,
+    ]);
 
-    const getImgPath = () => {
+    const getImgPath = useCallback(() => {
         return album.imgItems && album.imgFolder
             ? `${album.imgFolder}/${album.imgItems[imgIndex]}`
             : album.imgPath;
-    };
+    }, [
+        album.imgFolder,
+        album.imgItems,
+        album.imgPath,
+        imgIndex,
+    ]);
 
-    const handleClickCover = e => {
+    const handleClickCover = useCallback(e => {
         e.preventDefault();
 
         setShowRecord(!showRecord);
         setImgIndex(!showRecord ? getImgIndex() : imgIndex);
-    };
+    }, [
+        getImgIndex,
+        imgIndex,
+        showRecord,
+    ]);
 
     return (
         <Link
@@ -61,8 +73,8 @@ const AlbumCover = ({
 };
 
 AlbumCover.propTypes = {
-    link: PropTypes.string.isRequired,
     album: PropTypes.object.isRequired,
+    link: PropTypes.string.isRequired,
 };
 
 export default AlbumCover;

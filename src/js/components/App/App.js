@@ -21,23 +21,26 @@ import { getUrl } from '../../services/navigation';
 import configApp from '../../../config/app.json';
 
 const App = ({
+    isLoggedIn,
     setLoggedIn,
     requestMediaLibrary,
     requestUpdate,
-    isLoggedIn,
 }) => {
     useEffect(() => {
+        setLoggedIn();
         requestMediaLibrary();
         requestUpdate();
-        setLoggedIn();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, []);
+    }, [
+        setLoggedIn,
+        requestMediaLibrary,
+        requestUpdate,
+    ]);
 
     useEffect(() => {
         requestMediaLibrary();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [
         isLoggedIn,
+        requestMediaLibrary,
     ]);
 
     return (
@@ -46,7 +49,7 @@ const App = ({
                 <Header />
                 <Switch>
                     <Route exact path={getUrl('index')}>
-                        {configApp.indexRoute === 'audio' ? <PageAudio /> : <PageFeatures />}
+                        {configApp.indexRoute === 'audio' ? <PageAudio isIndexPage /> : <PageFeatures isIndexPage />}
                     </Route>
                     <Route exact path={getUrl('audio')}>
                         <PageAudio />
@@ -71,7 +74,7 @@ const App = ({
                     </Route>
                 </Switch>
                 <Layer id="menu">
-                    <Menu />
+                    <Menu indexRoute={configApp.indexRoute} />
                 </Layer>
                 <Layer id="info">
                     <Info />
@@ -84,10 +87,10 @@ const App = ({
 };
 
 App.propTypes = {
-    requestUpdate: PropTypes.func.isRequired,
-    requestMediaLibrary: PropTypes.func.isRequired,
-    setLoggedIn: PropTypes.func.isRequired,
     isLoggedIn: PropTypes.bool.isRequired,
+    setLoggedIn: PropTypes.func.isRequired,
+    requestMediaLibrary: PropTypes.func.isRequired,
+    requestUpdate: PropTypes.func.isRequired,
 };
 
 export default App;

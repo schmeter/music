@@ -5,10 +5,10 @@ import { NavLink } from 'react-router-dom';
 const isExternal = path => /^https?:\/\/.+/.test(path) || /^\/\/.+/.test(path);
 
 const Link = ({
-    className,
     to,
-    onClick,
     children,
+    className,
+    onClick,
 }) => {
     const content = children || to;
     const props = {
@@ -40,8 +40,8 @@ const Link = ({
 Link.propTypes = {
     to: PropTypes.string.isRequired,
     children: PropTypes.node,
-    onClick: PropTypes.func,
     className: PropTypes.string,
+    onClick: PropTypes.func,
 };
 
 export default Link;

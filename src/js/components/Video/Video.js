@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
@@ -13,12 +13,17 @@ const Video = ({
     togglePlay,
 }) => {
     const [loaded, setLoaded] = useState(false);
-    const handleClickLink = () => {
+
+    const handleClickLink = useCallback(() => {
         isPlaying && togglePlay();
-    };
-    const handleLoad = () => {
+    }, [
+        isPlaying,
+        togglePlay,
+    ]);
+
+    const handleLoad = useCallback(() => {
         setLoaded(true);
-    };
+    }, []);
 
     return (
         <div className="video">

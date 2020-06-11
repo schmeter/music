@@ -10,17 +10,19 @@ import { scrollTop } from '../../util/screen';
 const scrollClass = 'main';
 
 const Page = ({
-    className,
     id,
+    title,
+    className,
     children,
     useBaseClass,
-    title,
     location,
 }) => {
     useEffect(() => {
         setTitle(title || i18n(`page_${id}_title`));
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, []);
+    }, [
+        id,
+        title,
+    ]);
 
     useEffect(() => {
         scrollTop(`.${scrollClass}`);

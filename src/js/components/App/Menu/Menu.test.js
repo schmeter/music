@@ -12,6 +12,7 @@ describe('Menu', () => {
 
     it('renders correctly', () => {
         const props = {
+            indexRoute: 'audio',
             closeLayers: jest.fn(),
         };
         const component = shallow(<Menu {...props} />);

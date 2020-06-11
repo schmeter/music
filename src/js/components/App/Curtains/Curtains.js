@@ -1,12 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 import classNames from 'classnames';
 
 const Curtains = () => {
     const [open, setOpen] = useState(true);
 
-    const handleClickCurtains = () => {
+    const handleClickCurtains = useCallback(() => {
         setOpen(!open);
-    };
+    }, [
+        open,
+    ]);
 
     return (
         <>

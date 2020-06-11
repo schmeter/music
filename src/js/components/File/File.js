@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import PropTypes from 'prop-types';
 
 import Link from '../Link';
@@ -8,10 +8,12 @@ const File = ({
     children,
     onClickFile,
 }) => {
-    const handleClickLink = e => {
+    const handleClickLink = useCallback(e => {
         e.preventDefault();
         onClickFile();
-    };
+    }, [
+        onClickFile,
+    ]);
 
     return (
         <Link

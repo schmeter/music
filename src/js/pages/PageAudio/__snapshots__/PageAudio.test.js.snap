@@ -1,5 +1,20 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`PageAudio renders correctly as index page without url params 1`] = `
+<PageAudio
+  getAlbum={[Function]}
+  getArtist={[Function]}
+  isIndexPage={true}
+>
+  <Component
+    id="audio"
+    useBaseClass={false}
+  >
+    <div />
+  </Component>
+</PageAudio>
+`;
+
 exports[`PageAudio renders correctly with 1 url param 1`] = `
 <PageAudio
   getAlbum={[Function]}
@@ -47,19 +62,5 @@ exports[`PageAudio renders correctly with 2 wrong url params 1`] = `
   <Page404>
     <div />
   </Page404>
-</PageAudio>
-`;
-
-exports[`PageAudio renders correctly without url params 1`] = `
-<PageAudio
-  getAlbum={[Function]}
-  getArtist={[Function]}
->
-  <Component
-    id="audio"
-    useBaseClass={false}
-  >
-    <div />
-  </Component>
 </PageAudio>
 `;

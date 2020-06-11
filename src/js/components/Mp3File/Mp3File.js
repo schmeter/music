@@ -1,16 +1,16 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import PropTypes from 'prop-types';
 
 import File from '../File';
 
 const Mp3File = ({
     file,
-    setActiveIndex,
-    activeIndex,
     tracks,
+    activeIndex,
+    setActiveIndex,
     togglePlay,
 }) => {
-    const handleClickFile = () => {
+    const handleClickFile = useCallback(() => {
         const index = tracks.indexOf(file);
 
         if (index === activeIndex) {
@@ -18,7 +18,13 @@ const Mp3File = ({
         } else {
             setActiveIndex(index);
         }
-    };
+    }, [
+        file,
+        tracks,
+        activeIndex,
+        setActiveIndex,
+        togglePlay,
+    ]);
 
     return (
         <File

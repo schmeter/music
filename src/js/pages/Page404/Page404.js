@@ -4,7 +4,9 @@ import PropTypes from 'prop-types';
 import Page from '../../components/Page';
 import i18n from '../../services/i18n';
 
-const Page404 = ({ activeTrack }) => (
+const Page404 = ({
+    activeTrack,
+}) => (
     <Page id="404">
         <h2 className="headline">
             {i18n('page_404_title')}

@@ -3,7 +3,9 @@ import PropTypes from 'prop-types';
 
 import Track from '../Track';
 
-const TrackList = ({ tracks }) => (
+const TrackList = ({
+    tracks,
+}) => (
     <div className="table tracks">
         {tracks.map(track => (
             <Track

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import { format } from 'date-fns';
 
@@ -10,10 +10,23 @@ import i18n from '../../services/i18n';
 import { getUrl } from '../../services/navigation';
 import { getApiUrl } from '../../services/api';
 import { getRandom } from '../../util/math';
-import { setTitle } from '../../services/meta';
+import { setTitle, joinTitleParts } from '../../services/meta';
 
-const Page404 = ({ albums, videos, events }) => {
-    const renderEvent = () => {
+const Page404 = ({
+    isIndexPage,
+    albums,
+    videos,
+    events,
+}) => {
+    useEffect(() => {
+        const titleParts = isIndexPage
+            ? []
+            : [i18n('page_features_title')];
+
+        setTitle(joinTitleParts(titleParts));
+    });
+
+    const renderEvent = useCallback(() => {
         const visibleEvents = events.filter(event => !event.hidden);
         const event = visibleEvents[0];
 
@@ -58,9 +71,11 @@ const Page404 = ({ albums, videos, events }) => {
                 </p>
             </div>
         );
-    };
+    }, [
+        events,
+    ]);
 
-    const renderVideo = () => {
+    const renderVideo = useCallback(() => {
         const visibleVideos = videos.filter(video => !video.hidden);
         const video = visibleVideos[getRandom(0, visibleVideos.length - 1)];
 
@@ -86,9 +101,11 @@ const Page404 = ({ albums, videos, events }) => {
                 </p>
             </div>
         );
-    };
+    }, [
+        videos,
+    ]);
 
-    const renderAlbum = () => {
+    const renderAlbum = useCallback(() => {
         const visibleAlbums = albums.filter(album => !album.hidden);
         const album = visibleAlbums[getRandom(0, visibleAlbums.length - 1)];
 
@@ -125,7 +142,9 @@ const Page404 = ({ albums, videos, events }) => {
                 </p>
             </div>
         );
-    };
+    }, [
+        albums,
+    ]);
 
     useEffect(() => {
         setTitle();
@@ -141,6 +160,7 @@ const Page404 = ({ albums, videos, events }) => {
 };
 
 Page404.propTypes = {
+    isIndexPage: PropTypes.bool,
     albums: PropTypes.array.isRequired,
     videos: PropTypes.array.isRequired,
     events: PropTypes.array.isRequired,

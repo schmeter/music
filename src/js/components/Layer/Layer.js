@@ -6,11 +6,11 @@ import Icon from '../Icon';
 import i18n from '../../services/i18n';
 
 const Layer = ({
-    className,
     id,
+    children,
+    className,
     activeId,
     closeLayers,
-    children,
 }) => (
     <div
         className={classNames(
@@ -37,8 +37,8 @@ const Layer = ({
 
 Layer.propTypes = {
     id: PropTypes.string.isRequired,
-    className: PropTypes.string,
     children: PropTypes.node,
+    className: PropTypes.string,
     activeId: PropTypes.string.isRequired,
     closeLayers: PropTypes.func.isRequired,
 };

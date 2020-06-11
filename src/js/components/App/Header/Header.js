@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import PropTypes from 'prop-types';
 
 import Link from '../../Link';
@@ -7,13 +7,17 @@ import i18n from '../../../services/i18n';
 import { getUrl } from '../../../services/navigation';
 
 const Header = ({ openLayer }) => {
-    const handleClickInfo = () => {
+    const handleClickInfo = useCallback(() => {
         openLayer('info');
-    };
+    }, [
+        openLayer,
+    ]);
 
-    const handleClickMenu = () => {
+    const handleClickMenu = useCallback(() => {
         openLayer('menu');
-    };
+    }, [
+        openLayer,
+    ]);
 
     return (
         <header className="main-header">

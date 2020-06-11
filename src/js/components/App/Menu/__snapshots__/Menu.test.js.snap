@@ -14,7 +14,7 @@ exports[`Menu renders correctly 1`] = `
      
     <Link
       onClick={[MockFunction]}
-      to="/audio"
+      to="/"
     >
       Alben
     </Link>

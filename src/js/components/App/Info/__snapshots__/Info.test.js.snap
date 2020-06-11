@@ -46,7 +46,7 @@ exports[`Info renders correctly 2`] = `
       <span
         className="table-cell text-left"
       >
-        <Link
+        <Component
           onClick={
             [MockFunction] {
               "calls": Array [
@@ -67,7 +67,7 @@ exports[`Info renders correctly 2`] = `
           to="/audio/test/test"
         >
           test
-        </Link>
+        </Component>
       </span>
     </li>
     <li
@@ -83,7 +83,7 @@ exports[`Info renders correctly 2`] = `
       <span
         className="table-cell text-left"
       >
-        <Link
+        <Component
           onClick={
             [MockFunction] {
               "calls": Array [
@@ -104,11 +104,11 @@ exports[`Info renders correctly 2`] = `
           to="/audio/test"
         >
           test
-        </Link>
+        </Component>
       </span>
     </li>
   </ul>
-  <Link
+  <Component
     className="cover"
     onClick={
       [MockFunction] {
@@ -133,10 +133,74 @@ exports[`Info renders correctly 2`] = `
       alt="test"
       src="test"
     />
-  </Link>
+  </Component>
   <audio
     className="spacer"
     controls={true}
   />
 </div>
+`;
+
+exports[`Info renders correctly after update 1`] = `
+<Info
+  closeLayers={[MockFunction]}
+/>
+`;
+
+exports[`Info renders correctly after update 2`] = `
+<Info
+  activeTrack={
+    Object {
+      "album": Object {
+        "id": "test",
+        "imgPath": "test",
+        "title": "test",
+      },
+      "artist": Object {
+        "id": "test",
+      },
+      "path": "test",
+      "tag": Object {
+        "title": "test",
+      },
+    }
+  }
+  closeLayers={[MockFunction]}
+>
+  <div
+    className="layer-content layer-content-info"
+  >
+    <ul
+      className="table"
+    >
+      <li
+        className="table-row"
+        key="title"
+      >
+        <span
+          className="table-cell text-left bold"
+        >
+          Titel
+          :
+        </span>
+        <span
+          className="table-cell text-left"
+        >
+          test
+        </span>
+      </li>
+    </ul>
+    <Component
+      className="cover"
+      onClick={[MockFunction]}
+      to="/audio/test/test"
+    >
+      <div />
+    </Component>
+    <audio
+      className="spacer"
+      controls={true}
+    />
+  </div>
+</Info>
 `;

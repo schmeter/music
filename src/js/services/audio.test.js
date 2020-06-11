@@ -5,8 +5,6 @@ import {
     saveActiveTrackPath,
 } from './audio';
 
-jest.mock('../../../.tmp/audio.json', () => require('../../../jest/mockups/audio.json'), { virtual: true });
-
 describe('audio', () => {
     const library = loadLibrary();
     const libraryFull = loadLibrary(true);

@@ -7,7 +7,9 @@ import Image from '../../components/Image';
 import Link from '../../components/Link';
 import { getApiUrl } from '../../services/api';
 
-const PageEvent = ({ events }) => {
+const PageEvent = ({
+    events,
+}) => {
     const eventsSorted = events.sort((a, b) => {
         if (a.date < b.date) {
             return 1;

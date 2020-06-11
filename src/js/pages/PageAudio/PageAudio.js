@@ -7,9 +7,12 @@ import Page from '../../components/Page';
 import AlbumList from './AlbumList';
 import { joinTitleParts, setTitle } from '../../services/meta';
 import i18n from '../../services/i18n';
-import configApp from '../../../config/app.json';
 
-const PageAudio = ({ getArtist, getAlbum }) => {
+const PageAudio = ({
+    isIndexPage,
+    getArtist,
+    getAlbum,
+}) => {
     const { artistId, albumId } = useParams();
     const selectedArtist = getArtist(artistId);
     const selectedAlbum = getAlbum(artistId, albumId);
@@ -17,11 +20,9 @@ const PageAudio = ({ getArtist, getAlbum }) => {
             && (albumId ? selectedAlbum : true);
 
     useEffect(() => {
-        const titleParts = configApp.indexRoute === 'audio'
+        const titleParts = isIndexPage
             ? []
-            : [
-                i18n('page_audio_title'),
-            ];
+            : [i18n('page_audio_title')];
 
         if (selectedArtist) {
             titleParts.push(selectedArtist.title);
@@ -31,7 +32,11 @@ const PageAudio = ({ getArtist, getAlbum }) => {
         }
 
         setTitle(joinTitleParts(titleParts));
-    }, [selectedArtist, selectedAlbum]);
+    }, [
+        isIndexPage,
+        selectedArtist,
+        selectedAlbum,
+    ]);
 
     return !validParams ? <Page404 /> : (
         <Page
@@ -47,6 +52,7 @@ const PageAudio = ({ getArtist, getAlbum }) => {
 };
 
 PageAudio.propTypes = {
+    isIndexPage: PropTypes.bool,
     getArtist: PropTypes.func.isRequired,
     getAlbum: PropTypes.func.isRequired,
 };

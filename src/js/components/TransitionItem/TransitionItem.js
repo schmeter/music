@@ -2,7 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 
-const TransitionItem = ({ children }) => {
+const TransitionItem = ({
+    children,
+}) => {
     const timeout = 300;
     const items = React.Children.toArray(children).map((item, index) => (
         <CSSTransition

@@ -1,14 +1,14 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { shallow, mount } from 'enzyme';
 import toJson from 'enzyme-to-json';
 
 import Info from './Info';
 import Link from '../../Link';
-// import { scrollTop } from '../../../util/screen';
 
 jest.mock('../../../util/screen', () => ({
     scrollTop: jest.fn(),
 }));
+jest.mock('../../Link', () => () => <div />);
 
 describe('Info', () => {
     const mockedEvent = {
@@ -44,9 +44,6 @@ describe('Info', () => {
         });
         component.update();
 
-        // TODO: activate when enzyme supports hooks
-        // expect(scrollTop).toHaveBeenCalled();
-
         component.setProps({
             ...props,
             activeTrack: {
@@ -64,5 +61,36 @@ describe('Info', () => {
 
         expect(toJson(component)).toMatchSnapshot();
         expect(props.closeLayers).toHaveBeenCalled();
+    });
+
+    it('renders correctly after update', () => {
+        const activeTrack = {
+            path: 'test',
+            tag: {
+                title: 'test',
+            },
+            artist: {
+                id: 'test',
+            },
+            album: {
+                id: 'test',
+                title: 'test',
+                imgPath: 'test',
+            },
+        };
+        const props = {
+            closeLayers: jest.fn(),
+        };
+        const component = mount(<Info {...props} />);
+
+        expect(toJson(component)).toMatchSnapshot();
+
+        component.setProps({
+            ...props,
+            activeTrack,
+        });
+        component.update();
+
+        expect(toJson(component)).toMatchSnapshot();
     });
 });

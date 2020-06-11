@@ -4,7 +4,9 @@ import PropTypes from 'prop-types';
 import Page from '../../components/Page';
 import Video from '../../components/Video';
 
-const PageVideo = ({ videos }) => (
+const PageVideo = ({
+    videos,
+}) => (
     <Page id="video">
         {videos.map(video => !video.hidden && (
             <Video
