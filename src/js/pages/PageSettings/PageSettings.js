@@ -1,6 +1,5 @@
 import React, { createRef } from 'react';
 import PropTypes from 'prop-types';
-import autobind from 'autobind-decorator';
 
 import Page from '../../components/Page';
 import i18n, { getAppLanguage, getLanguages, setAppLanguage } from '../../services/i18n';
@@ -9,8 +8,7 @@ class PageSettings extends React.Component {
     password = createRef();
     select = createRef();
 
-    @autobind
-    handleSubmitFormAuth(e) {
+    handleSubmitFormAuth = e => {
         e.preventDefault();
         const { isLoggedIn, login, logout } = this.props;
         const password = this.password.current;
@@ -24,14 +22,12 @@ class PageSettings extends React.Component {
         }
     }
 
-    @autobind
-    handleSubmitFormQuit(e) {
+    handleSubmitFormQuit = e => {
         e.preventDefault();
         window.history.back();
     }
 
-    @autobind
-    handleChange(e) {
+    handleChange = e => {
         const select = this.select.current;
 
         setAppLanguage(select.value);

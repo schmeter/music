@@ -4,6 +4,7 @@ import toJson from 'enzyme-to-json';
 
 import IconPlay from './IconPlay';
 
+// eslint-disable-next-line react/display-name
 jest.mock('../../../components/Icon', () => () => <div />);
 
 describe('IconPlay', () => {

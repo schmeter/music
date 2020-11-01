@@ -5,7 +5,9 @@ import toJson from 'enzyme-to-json';
 import AlbumCover from './AlbumCover';
 import Link from '../../../components/Link';
 
+// eslint-disable-next-line react/display-name
 jest.mock('../../../components/Link', () => () => <div />);
+// eslint-disable-next-line react/display-name
 jest.mock('../../../components/Image', () => () => <div />);
 
 describe('AlbumCover', () => {

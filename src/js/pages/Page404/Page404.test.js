@@ -4,6 +4,7 @@ import toJson from 'enzyme-to-json';
 
 import Page404 from './Page404';
 
+// eslint-disable-next-line react/display-name
 jest.mock('../../components/Page', () => () => <div />);
 
 describe('Page404', () => {

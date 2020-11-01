@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import autobind from 'autobind-decorator';
 
 import Analyser from './Analyser';
 
@@ -24,8 +23,7 @@ class Player extends React.Component {
         }
     }
 
-    @autobind
-    captureKeys(e) {
+    captureKeys = e => {
         const audio = this.audio.current;
 
         switch (e.keyCode) {
@@ -100,29 +98,25 @@ class Player extends React.Component {
         audio.currentTime -= 5;
     }
 
-    @autobind
-    handlePlay() {
+    handlePlay = () => {
         const { setIsPlaying } = this.props;
 
         setIsPlaying(true);
     }
 
-    @autobind
-    handlePause() {
+    handlePause = () => {
         const { setIsPlaying } = this.props;
 
         setIsPlaying(false);
     }
 
-    @autobind
-    handleError() {
+    handleError = () => {
         const { setIsPlaying } = this.props;
 
         setIsPlaying(false);
     }
 
-    @autobind
-    handleEnded() {
+    handleEnded = () => {
         const { nextIndex, setActiveIndex } = this.props;
 
         setActiveIndex(nextIndex);

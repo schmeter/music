@@ -8,6 +8,7 @@ import Link from '../../Link';
 jest.mock('../../../util/screen', () => ({
     scrollTop: jest.fn(),
 }));
+// eslint-disable-next-line react/display-name
 jest.mock('../../Link', () => () => <div />);
 
 describe('Info', () => {

@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 import Icon from '../Icon';
 
-const IFrame = ({
+const Iframe = ({
     src,
     className,
     onLoad,
@@ -42,10 +42,10 @@ const IFrame = ({
     );
 };
 
-IFrame.propTypes = {
+Iframe.propTypes = {
     src: PropTypes.string.isRequired,
     className: PropTypes.string,
     onLoad: PropTypes.func,
 };
 
-export default IFrame;
+export default Iframe;

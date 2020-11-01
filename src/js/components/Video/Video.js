@@ -28,13 +28,13 @@ const Video = ({
     return (
         <div className="video">
             <Link
-                to={getApiUrl('youtubeLink', {
+                to={getApiUrl('youtubeVideo', {
                     videoId: video.id,
                 })}
                 onClick={handleClickLink}
             >
                 <Image
-                    src={getApiUrl('youtubeImage', {
+                    src={getApiUrl('youtubePreviewImage', {
                         videoId: video.id,
                     })}
                     alt={video.artist.title}

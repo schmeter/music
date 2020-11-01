@@ -4,7 +4,9 @@ import toJson from 'enzyme-to-json';
 
 import Track from './Track';
 
+// eslint-disable-next-line react/display-name
 jest.mock('../../../components/Mp3File', () => () => <div />);
+// eslint-disable-next-line react/display-name
 jest.mock('../IconPlay', () => () => <div />);
 
 describe('Track', () => {

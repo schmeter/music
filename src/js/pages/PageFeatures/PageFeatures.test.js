@@ -4,8 +4,10 @@ import toJson from 'enzyme-to-json';
 
 import PageFeatures from './PageFeatures';
 
+// eslint-disable-next-line react/display-name
 jest.mock('../../components/Page', () => () => <div />);
-jest.mock('../../components/IFrame', () => () => <div />);
+// eslint-disable-next-line react/display-name
+jest.mock('../../components/Iframe', () => () => <div />);
 
 describe('PageFeatures', () => {
     it('renders correctly as index page', () => {

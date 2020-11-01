@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import autobind from 'autobind-decorator';
 
 import configApp from '../../../config/app.json';
 
@@ -13,16 +12,14 @@ class Image extends React.Component {
         error: false,
     };
 
-    @autobind
-    handleLoad() {
+    handleLoad = () => {
         const { onLoad } = this.props;
 
         this.setState({ loaded: true });
         onLoad && onLoad();
     }
 
-    @autobind
-    handleError() {
+    handleError = () => {
         const { error } = this.state;
         const image = this.image.current;
 

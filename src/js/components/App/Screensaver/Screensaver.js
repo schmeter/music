@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import autobind from 'autobind-decorator';
 import classNames from 'classnames';
 
 import { isTouch } from '../../../util/screen';
@@ -19,8 +18,7 @@ class Screensaver extends React.Component {
         });
     }
 
-    @autobind
-    captureKeys(e) {
+    captureKeys = e => {
         switch (e.keyCode) {
             case 37:
                 break;

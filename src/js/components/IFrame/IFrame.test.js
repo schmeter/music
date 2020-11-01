@@ -3,16 +3,16 @@ import { mount } from 'enzyme';
 import toJson from 'enzyme-to-json';
 import { act } from 'react-dom/test-utils';
 
-import IFrame from './IFrame';
+import Iframe from './Iframe';
 
-describe('IFrame', () => {
+describe('Iframe', () => {
     it('renders correctly', () => {
         const props = {
             src: 'test',
             className: 'test',
             onLoad: jest.fn(),
         };
-        const component = mount(<IFrame {...props} />);
+        const component = mount(<Iframe {...props} />);
 
         act(() => {
             component.find('iframe').props().onLoad();

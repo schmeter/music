@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { format } from 'date-fns';
 
 import Page from '../../components/Page';
-import IFrame from '../../components/IFrame';
+import Iframe from '../../components/Iframe';
 import Link from '../../components/Link';
 import Image from '../../components/Image';
 import i18n from '../../services/i18n';
@@ -88,7 +88,7 @@ const Page404 = ({
                 <h3 className="headline">
                     {i18n('page_features_video')}:
                 </h3>
-                <IFrame src={getApiUrl('youtubeIFrame', {
+                <Iframe src={getApiUrl('youtubeIframe', {
                     videoId: video.id,
                 })} />
                 <p>

@@ -43,6 +43,7 @@ module.exports = {
         'max-len': [1, {
             code: 120,
         }],
+        'multiline-ternary': 'off',
         'newline-after-var': 1,
         'no-console': 2,
         'no-extra-semi': 2,

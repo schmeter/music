@@ -4,6 +4,7 @@ import toJson from 'enzyme-to-json';
 
 import AlbumList from './AlbumList';
 
+// eslint-disable-next-line react/display-name
 jest.mock('../TrackList', () => () => <div />);
 
 describe('AlbumList', () => {
