@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 
 import Page from '../../components/Page';
 import i18n, { getAppLanguage, getLanguages, setAppLanguage } from '../../services/i18n';
+import { redirectToIndex } from '../../services/navigation';
 
 class PageSettings extends React.Component {
     password = createRef();
@@ -20,6 +21,7 @@ class PageSettings extends React.Component {
                 password: password.value,
             }, 60 * 60 * 24 * 30);
         }
+        redirectToIndex();
     }
 
     handleSubmitFormQuit = e => {

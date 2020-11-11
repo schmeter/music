@@ -13,3 +13,13 @@ export const getUrl = (id, params = {}) => {
     }
     return url;
 };
+
+export const redirectToIndex = searchParam => {
+    let route = getUrl('index');
+
+    if (searchParam) {
+        route = `${route}?${searchParam}`;
+    }
+
+    window.location.assign(route);
+};

@@ -27,12 +27,10 @@ const App = ({
     requestUpdate,
 }) => {
     useEffect(() => {
-        setLoggedIn();
-        requestMediaLibrary();
         requestUpdate();
+        setLoggedIn();
     }, [
         setLoggedIn,
-        requestMediaLibrary,
         requestUpdate,
     ]);
 

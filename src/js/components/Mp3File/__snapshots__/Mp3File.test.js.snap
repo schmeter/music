@@ -11,7 +11,7 @@ exports[`Mp3File renders correctly and uses setActiveIndex on click 1`] = `
         "go": [Function],
         "goBack": [Function],
         "goForward": [Function],
-        "length": 1,
+        "length": undefined,
         "listen": [Function],
         "location": Object {
           "hash": "",
@@ -130,7 +130,7 @@ exports[`Mp3File renders correctly and uses togglePlay on click 1`] = `
         "go": [Function],
         "goBack": [Function],
         "goForward": [Function],
-        "length": 1,
+        "length": undefined,
         "listen": [Function],
         "location": Object {
           "hash": "",

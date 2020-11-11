@@ -21,10 +21,6 @@ describe('PageSettings', () => {
         preventDefault: jest.fn(),
     };
 
-    window.history.back = jest.fn();
-    delete window.location;
-    window.location = { reload: jest.fn() };
-
     it('renders correctly with logged in user', () => {
         const props = {
             isLoggedIn: true,

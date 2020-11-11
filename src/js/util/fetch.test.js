@@ -4,7 +4,13 @@ import {
 
 describe('fetch', () => {
     it('expects fetchJSON to return object', () => {
-        window.console.error = () => {};
+        const windowConsole = window.console;
+        const windowFetch = window.fetch;
+
+        delete window.console;
+        delete window.fetch;
+
+        window.console = { error: () => {} };
         window.fetch = url => {
             return new Promise((resolve, reject) => {
                 reject(new Error());
@@ -28,5 +34,8 @@ describe('fetch', () => {
         };
 
         expect(typeof fetchJSON('', true).then(data => data, e => e)).toBe('object');
+
+        window.console = windowConsole;
+        window.fetch = windowFetch;
     });
 });

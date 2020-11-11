@@ -5,8 +5,6 @@ import toJson from 'enzyme-to-json';
 import Link from './Link';
 
 describe('Link', () => {
-    window.open = jest.fn();
-
     const mockedEvent = {
         defaultPrevented: false,
         preventDefault: jest.fn(),
