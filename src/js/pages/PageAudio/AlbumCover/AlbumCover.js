@@ -30,9 +30,7 @@ const AlbumCover = ({
             ? `${album.imgFolder}/${album.imgItems[imgIndex]}`
             : album.imgPath;
     }, [
-        album.imgFolder,
-        album.imgItems,
-        album.imgPath,
+        album,
         imgIndex,
     ]);
 

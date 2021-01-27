@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { Switch, Route } from 'react-router-dom';
 
 import {
-    PageFeatures,
     PageAudio,
     PageVideo,
     PageEvent,
@@ -17,7 +16,7 @@ import Info from './Info';
 import Menu from './Menu';
 import Player from './Player';
 import Curtains from './Curtains';
-import { getUrl } from '../../services/navigation';
+import { getUrlRaw } from '../../services/navigation';
 import configApp from '../../../config/app.json';
 
 const App = ({
@@ -46,33 +45,27 @@ const App = ({
             <Screensaver config={configApp.screensaver} >
                 <Header />
                 <Switch>
-                    <Route exact path={getUrl('index')}>
-                        {configApp.indexRoute === 'audio' ? <PageAudio isIndexPage /> : <PageFeatures isIndexPage />}
-                    </Route>
-                    <Route exact path={getUrl('audio')}>
+                    <Route exact path={getUrlRaw('index')}>
                         <PageAudio />
                     </Route>
-                    <Route exact path={getUrl('audio:artistId')}>
+                    <Route exact path={getUrlRaw('audio')}>
                         <PageAudio />
                     </Route>
-                    <Route exact path={getUrl('audio:artistId:albumId')}>
-                        <PageAudio />
-                    </Route>
-                    <Route exact path={getUrl('video')}>
+                    <Route exact path={getUrlRaw('video')}>
                         <PageVideo />
                     </Route>
-                    <Route exact path={getUrl('event')}>
+                    <Route exact path={getUrlRaw('event')}>
                         <PageEvent />
                     </Route>
-                    <Route exact path={getUrl('settings')}>
+                    <Route exact path={getUrlRaw('settings')}>
                         <PageSettings />
                     </Route>
-                    <Route path={getUrl('404')}>
+                    <Route path={getUrlRaw('404')}>
                         <Page404 />
                     </Route>
                 </Switch>
                 <Layer id="menu">
-                    <Menu indexRoute={configApp.indexRoute} />
+                    <Menu />
                 </Layer>
                 <Layer id="info">
                     <Info />

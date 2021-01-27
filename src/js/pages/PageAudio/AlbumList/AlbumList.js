@@ -13,20 +13,17 @@ const AlbumList = ({
     selectedArtist,
     activeTrack,
 }) => {
-    const selectedArtistId = selectedArtist && selectedArtist.id;
-    const selectedAlbumId = selectedAlbum && selectedAlbum.id;
-    const albumsFiltered = albums.filter(album =>
-        (!selectedAlbumId || selectedAlbumId === album.id)
-            &&
-            (!selectedArtistId || selectedArtistId === album.artist.id),
-    );
+    const selectedArtistId = selectedArtist?.id;
+    const selectedAlbumId = selectedAlbum?.id;
+    const albumsFiltered = albums.filter(album => (!selectedAlbumId || selectedAlbumId === album.id)
+        && (!selectedArtistId || selectedArtistId === album.artist.id));
 
     return (
         <div
             className={classNames(
                 'albums',
-                !!selectedAlbumId && 'album-selected',
-                !!selectedArtistId && 'artist-selected',
+                selectedAlbumId && 'album-selected',
+                selectedArtistId && 'artist-selected',
             )}
         >
             {albumsFiltered.map(album => {
@@ -36,11 +33,11 @@ const AlbumList = ({
                 const visible = playing
                         || !album.hidden
                         || album.id === selectedAlbumId;
-                const albumLink = getUrl('audio:artistId:albumId', {
+                const albumLink = getUrl('audio', {
                     artistId: album.artist.id,
                     albumId: album.id,
                 });
-                const artistLink = getUrl('audio:artistId', {
+                const artistLink = getUrl('audio', {
                     artistId: album.artist.id,
                 });
 

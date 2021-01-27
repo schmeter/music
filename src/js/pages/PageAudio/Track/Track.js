@@ -10,7 +10,7 @@ const Track = ({
     className,
     activeTrack,
 }) => {
-    const playing = activeTrack ? track.path === activeTrack.path : false;
+    const playing = track.path === activeTrack?.path;
 
     return (
         <div

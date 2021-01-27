@@ -7,7 +7,6 @@ import i18n from '../../../services/i18n';
 import { getUrl } from '../../../services/navigation';
 
 const Menu = ({
-    indexRoute,
     closeLayers,
 }) => {
     const routes = [
@@ -19,7 +18,7 @@ const Menu = ({
 
     return (
         <ul className="layer-content">
-            {routes.map(route => (
+            {routes.map((route, index) => (
                 <li
                     key={route}
                     className="link"
@@ -27,7 +26,7 @@ const Menu = ({
                     <Icon id="hand-o-right" />
                 &nbsp;
                     <Link
-                        to={getUrl(indexRoute === route ? 'index' : route)}
+                        to={getUrl(index === 0 ? 'index' : route)}
                         onClick={closeLayers}
                     >
                         {i18n(`page_${route}_title`)}
@@ -39,7 +38,6 @@ const Menu = ({
 };
 
 Menu.propTypes = {
-    indexRoute: PropTypes.string,
     closeLayers: PropTypes.func.isRequired,
 };
 

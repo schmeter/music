@@ -4,7 +4,6 @@ exports[`PageAudio renders correctly as index page without url params 1`] = `
 <PageAudio
   getAlbum={[Function]}
   getArtist={[Function]}
-  isIndexPage={true}
 >
   <Component
     id="audio"

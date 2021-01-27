@@ -3,31 +3,32 @@ module.exports = function(grunt) {
         const { readJSON, write } = grunt.file;
         const { identity, flatten, uniq } = require('ramda');
 
-        const configApp = readJSON(`${grunt.config('cfgFolder')}/app.json`);
-        const configRoutes = readJSON(`${grunt.config('cfgFolder')}/routes.json`);
-        const configAudio = readJSON(`${grunt.config('datFolder')}/audio.json`);
-        const artistId = ':artistId';
-        const albumId = ':albumId';
+        const { baseUrl } = readJSON(`${grunt.config('cfgFolder')}/app.json`);
+        const routes = readJSON(`${grunt.config('cfgFolder')}/routes.json`);
+        const { artists } = readJSON(`${grunt.config('datFolder')}/audio.json`);
+        const artistParam = ':artistId';
+        const albumParam = ':albumId?';
 
-        const sitemap = uniq(flatten(Object.values(configRoutes).map(route => {
-            // required params or *
-            if (!/:|\*/.test(route)) {
-                return `${configApp.baseUrl}${route}`;
+        const sitemap = uniq(flatten(Object.values(routes).map(route => {
             // audio routes
-            } else if (route.includes('audio') && (route.includes(artistId) || route.includes(albumId))) {
-                return configAudio.artists
+            if (route.includes('audio') && (route.includes(artistParam) || route.includes(albumParam))) {
+                return artists
                     .filter(artist => !artist.hidden)
-                    .map(artist =>
-                        artist.albums
+                    .map(artist => [`${baseUrl}${route
+                        .replace(artistParam, artist.id)
+                        .replace(`/${albumParam}`, '')}`]
+                        .concat(artist.albums
                             .filter(album => !album.hidden)
-                            .map(album => `${configApp.baseUrl}${route
-                                .replace(artistId, artist.id)
-                                .replace(albumId, album.id)}`,
-                            ),
-                    );
+                            .map(album => `${baseUrl}${route
+                                .replace(artistParam, artist.id)
+                                .replace(albumParam, album.id)}`,
+                            )));
+            // routes with required params or *
+            } else if (!/:|\*/.test(route)) {
+                return `${baseUrl}${route}`;
             // routes with optional params
             } else if (/\/:.+\?/.test(route)) {
-                return `${configApp.baseUrl}${route.replace(/\/:.+\?/, '')}`;
+                return `${baseUrl}${route.replace(/\/:.+\?/, '')}`;
             } else {
                 return false;
             }

@@ -22,7 +22,6 @@ describe('PageAudio', () => {
     it('renders correctly as index page without url params', () => {
         mockUrlParams = {};
         const props = {
-            isIndexPage: true,
             getArtist: () => false,
             getAlbum: () => false,
         };

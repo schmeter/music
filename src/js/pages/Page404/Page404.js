@@ -13,7 +13,7 @@ const Page404 = ({
         </h2>
         <div
             className="album-cover"
-            style={activeTrack && activeTrack.album.imgPath && {
+            style={activeTrack?.album?.imgPath && {
                 backgroundImage: `url("${activeTrack.album.imgPath}")`,
             }}
         />

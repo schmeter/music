@@ -1,4 +1,3 @@
-export { default as PageFeatures } from './PageFeatures';
 export { default as PageAudio } from './PageAudio';
 export { default as PageVideo } from './PageVideo';
 export { default as PageEvent } from './PageEvent';

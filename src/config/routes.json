@@ -1,8 +1,6 @@
 {
     "index": "/",
-    "audio": "/audio",
-    "audio:artistId": "/audio/:artistId",
-    "audio:artistId:albumId": "/audio/:artistId/:albumId",
+    "audio": "/audio/:artistId/:albumId?",
     "video": "/video",
     "event": "/event",
     "settings": "/settings",

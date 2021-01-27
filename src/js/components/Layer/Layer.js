@@ -16,7 +16,7 @@ const Layer = ({
         className={classNames(
             'layer',
             `layer-${className || id}`,
-            { closed: activeId !== id },
+            activeId !== id && 'closed',
         )}
     >
         <header className="layer-header">

@@ -6,23 +6,18 @@ import { Page404 } from '../';
 import Page from '../../components/Page';
 import AlbumList from './AlbumList';
 import { joinTitleParts, setTitle } from '../../services/meta';
-import i18n from '../../services/i18n';
 
 const PageAudio = ({
-    isIndexPage,
     getArtist,
     getAlbum,
 }) => {
     const { artistId, albumId } = useParams();
     const selectedArtist = getArtist(artistId);
     const selectedAlbum = getAlbum(artistId, albumId);
-    const validParams = (artistId ? selectedArtist : true)
-            && (albumId ? selectedAlbum : true);
+    const validParams = (!artistId || selectedArtist) && (!albumId || selectedAlbum);
 
     useEffect(() => {
-        const titleParts = isIndexPage
-            ? []
-            : [i18n('page_audio_title')];
+        const titleParts = [];
 
         if (selectedArtist) {
             titleParts.push(selectedArtist.title);
@@ -33,7 +28,6 @@ const PageAudio = ({
 
         setTitle(joinTitleParts(titleParts));
     }, [
-        isIndexPage,
         selectedArtist,
         selectedAlbum,
     ]);
@@ -52,7 +46,6 @@ const PageAudio = ({
 };
 
 PageAudio.propTypes = {
-    isIndexPage: PropTypes.bool,
     getArtist: PropTypes.func.isRequired,
     getAlbum: PropTypes.func.isRequired,
 };

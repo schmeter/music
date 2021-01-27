@@ -16,7 +16,7 @@ class Image extends React.Component {
         const { onLoad } = this.props;
 
         this.setState({ loaded: true });
-        onLoad && onLoad();
+        onLoad?.();
     }
 
     handleError = () => {
@@ -39,7 +39,7 @@ class Image extends React.Component {
                 className={classNames(
                     'image',
                     className,
-                    { invisible: !loaded },
+                    !loaded && 'invisible',
                 )}
                 src={src}
                 alt={alt}

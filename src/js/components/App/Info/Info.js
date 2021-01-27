@@ -8,11 +8,6 @@ import i18n from '../../../services/i18n';
 import { getUrl } from '../../../services/navigation';
 import { scrollTop } from '../../../util/screen';
 
-const infos = [
-    { id: 'title' },
-    { id: 'album', link: 'audio:artistId:albumId' },
-    { id: 'artist', link: 'audio:artistId' },
-];
 const scrollClass = 'layer-content-info';
 
 const Info = ({
@@ -25,55 +20,65 @@ const Info = ({
         activeTrack,
     ]);
 
-    return !activeTrack ? null : (
+    if (!activeTrack) {
+        return null;
+    }
+
+    const { artist, album, lyrics, tag } = activeTrack;
+    const infos = ['title', 'album', 'artist'];
+    const links = {
+        album: getUrl('audio', {
+            artistId: artist.id,
+            albumId: album.id,
+        }),
+        artist: getUrl('audio', {
+            artistId: artist.id,
+        }),
+    };
+
+    return (
         <div
             className={classNames(
                 'layer-content',
                 scrollClass,
             )}
         >
-            {activeTrack.lyrics && (
+            {lyrics && (
                 <div
                     className="lyrics"
-                    dangerouslySetInnerHTML={{ __html: activeTrack.lyrics }}
+                    dangerouslySetInnerHTML={{ __html: lyrics }}
                 />
             )}
             <ul className="table">
-                {infos.map(info => activeTrack.tag[info.id] && (
+                {infos.map(info => tag[info] && (
                     <li
-                        key={info.id}
+                        key={info}
                         className="table-row"
                     >
                         <span className="table-cell text-left bold">
-                            {i18n(`layer_info_${info.id}`)}:
+                            {i18n(`layer_info_${info}`)}:
                         </span>
                         <span className="table-cell text-left">
-                            {info.link ? (
+                            {links[info] ? (
                                 <Link
-                                    to={getUrl(info.link, {
-                                        artistId: activeTrack.artist.id,
-                                        albumId: activeTrack.album.id,
-                                    })}
+                                    to={links[info]}
                                     onClick={closeLayers}
                                 >
-                                    {activeTrack.tag[info.id]}
+                                    {tag[info]}
                                 </Link>
-                            ) : activeTrack.tag[info.id]}
+                            ) : tag[info]}
                         </span>
                     </li>
                 ))}
             </ul>
             <Link
                 className="cover"
-                to={getUrl(infos.find(info => info.id === 'album').link, {
-                    artistId: activeTrack.artist.id,
-                    albumId: activeTrack.album.id,
-                })}
+                to={links.album}
                 onClick={closeLayers}
             >
                 <Image
-                    src={activeTrack.album.imgPath}
-                    alt={activeTrack.album.title}
+                    src={album.imgPath}
+                    alt={album.title}
                 />
             </Link>
             <audio

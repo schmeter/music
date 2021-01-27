@@ -13,7 +13,7 @@ const Iframe = ({
 
     const handleLoad = useCallback(() => {
         setLoaded(true);
-        onLoad && onLoad();
+        onLoad?.();
     }, [
         onLoad,
     ]);

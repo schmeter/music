@@ -8,11 +8,17 @@ import PageSettings from './PageSettings';
 jest.mock('../../components/Page', () => () => <div />);
 jest.mock('react', () => ({
     ...jest.requireActual('react'),
-    createRef: () => ({
+    useRef: () => ({
         current: {
             password: { value: 'test' },
             select: { value: 'test' },
         },
+    }),
+}));
+jest.mock('react-router-dom', () => ({
+    ...jest.requireActual('react-router-dom'),
+    useHistory: () => ({
+        push: () => {},
     }),
 }));
 
