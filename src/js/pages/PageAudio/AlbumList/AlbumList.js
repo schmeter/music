@@ -43,7 +43,7 @@ const AlbumList = ({
 
                 return visible && (
                     <div
-                        key={album.artist.id + album.id}
+                        key={`${album.artist.id} ${album.id}`}
                         className={classNames(
                             'album',
                             playing && 'album-playing',

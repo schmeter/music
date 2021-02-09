@@ -27,7 +27,7 @@ module.exports = function(grunt) {
             }
         };
 
-        addImgPath(eventData, imgData, 'img/flyer/');
+        addImgPath(eventData, imgData, '/img/flyer/');
 
         write(resultPath, JSON.stringify(eventData, null, 4));
     });

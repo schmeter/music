@@ -1,11 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { format } from 'date-fns';
 
+import Event from './Event';
 import Page from '../../components/Page';
-import Image from '../../components/Image';
-import Link from '../../components/Link';
-import { getApiUrl } from '../../services/api';
+import { getEventId } from '../../services/event';
 
 const PageEvent = ({
     events,
@@ -23,35 +21,11 @@ const PageEvent = ({
     return (
         <Page id="event">
             {eventsSorted.map(event => {
-                const link = getApiUrl('googleRoute', {
-                    from: '',
-                    to: event.address || event.title,
-                });
-
                 return !event.hidden && (
-                    <div
-                        key={`${event.date}${event.title}`}
-                        className="event"
-                    >
-                        <h2 className="date">
-                            {format(new Date(event.date), 'dd.MM.yyyy')}
-                            &nbsp;
-                            <Link to={link}>
-                                {event.title}
-                            </Link>
-                        </h2>
-                        <h3>
-                            {event.artist.title}
-                        </h3>
-                        {event.imgPath && (
-                            <Link to={link}>
-                                <Image
-                                    src={event.imgPath}
-                                    alt={event.title}
-                                />
-                            </Link>
-                        )}
-                    </div>
+                    <Event
+                        key={getEventId(event)}
+                        event={event}
+                    />
                 );
             })}
         </Page>

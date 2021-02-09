@@ -16,7 +16,7 @@ exports[`Menu renders correctly 1`] = `
       onClick={[MockFunction]}
       to="/"
     >
-      Alben
+      Audio
     </Link>
   </li>
   <li
@@ -31,7 +31,7 @@ exports[`Menu renders correctly 1`] = `
       onClick={[MockFunction]}
       to="/video"
     >
-      Videos
+      Video
     </Link>
   </li>
   <li
@@ -47,6 +47,21 @@ exports[`Menu renders correctly 1`] = `
       to="/event"
     >
       Gigs
+    </Link>
+  </li>
+  <li
+    className="link"
+    key="tools"
+  >
+    <Icon
+      id="hand-o-right"
+    />
+     
+    <Link
+      onClick={[MockFunction]}
+      to="/tools"
+    >
+      Hilfe
     </Link>
   </li>
   <li

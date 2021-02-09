@@ -1,0 +1,60 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PageTools renders correctly with correct url params 1`] = `
+<Component
+  id="tools"
+>
+  <h2
+    className="headline bold"
+  >
+    <Link
+      to="/tools"
+    >
+      Kann ich helfen?
+    </Link>
+  </h2>
+  <hr />
+  <Component />
+</Component>
+`;
+
+exports[`PageTools renders correctly with wrong url params 1`] = `<Page404 />`;
+
+exports[`PageTools renders correctly without url params 1`] = `
+<Component
+  id="tools"
+>
+  <h2
+    className="headline bold"
+  >
+    <Link
+      to="/tools"
+    >
+      Kann ich helfen?
+    </Link>
+  </h2>
+  <hr />
+  <div
+    className="center"
+  >
+    <p
+      key="clock"
+    >
+      <Link
+        to="/tools/clock"
+      >
+        Keine Zeit.
+      </Link>
+    </p>
+    <p
+      key="learn"
+    >
+      <Link
+        to="/tools/learn"
+      >
+        Ich weiß alles.
+      </Link>
+    </p>
+  </div>
+</Component>
+`;

@@ -36,13 +36,13 @@ body {
     @extend %scroll-container;
     @extend %screensaver-foreground;
 
-    position: absolute;
+    position: fixed;
     z-index: $z-index-main;
-    top: 0;
+    top: $header-height;
     right: 0;
     bottom: 0;
     left: 0;
-    padding: ($header-height + 20px) 10px 10px;
+    padding: 20px 10px 10px;
 }
 
 .input,

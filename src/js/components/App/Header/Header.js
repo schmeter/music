@@ -36,7 +36,7 @@ const Header = ({ openLayer }) => {
                 className="button header-button info-button"
                 onClick={handleClickInfo}
             >
-                <Icon id="microphone" />
+                <Icon id="music" />
             </button>
         </header>
     );

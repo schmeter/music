@@ -2,7 +2,8 @@
     "index": "/",
     "audio": "/audio/:artistId/:albumId?",
     "video": "/video",
-    "event": "/event",
+    "event": "/event/:eventId?",
+    "tools": "/tools/:toolId?/:itemId?",
     "settings": "/settings",
     "404": "*"
 }

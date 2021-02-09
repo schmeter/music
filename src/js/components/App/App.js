@@ -6,6 +6,7 @@ import {
     PageAudio,
     PageVideo,
     PageEvent,
+    PageTools,
     PageSettings,
     Page404,
 } from '../../pages';
@@ -15,7 +16,6 @@ import Header from './Header';
 import Info from './Info';
 import Menu from './Menu';
 import Player from './Player';
-import Curtains from './Curtains';
 import { getUrlRaw } from '../../services/navigation';
 import configApp from '../../../config/app.json';
 
@@ -41,39 +41,42 @@ const App = ({
     ]);
 
     return (
-        <>
-            <Screensaver config={configApp.screensaver} >
-                <Header />
-                <Switch>
-                    <Route exact path={getUrlRaw('index')}>
-                        <PageAudio />
-                    </Route>
-                    <Route exact path={getUrlRaw('audio')}>
-                        <PageAudio />
-                    </Route>
-                    <Route exact path={getUrlRaw('video')}>
-                        <PageVideo />
-                    </Route>
-                    <Route exact path={getUrlRaw('event')}>
-                        <PageEvent />
-                    </Route>
-                    <Route exact path={getUrlRaw('settings')}>
-                        <PageSettings />
-                    </Route>
-                    <Route path={getUrlRaw('404')}>
-                        <Page404 />
-                    </Route>
-                </Switch>
-                <Layer id="menu">
-                    <Menu />
-                </Layer>
-                <Layer id="info">
-                    <Info />
-                </Layer>
-                <Player config={configApp.player} />
-            </Screensaver>
-            <Curtains />
-        </>
+        <Screensaver config={{
+            ...configApp.screensaver,
+            active: configApp.screensaver.active && configApp.player.useAnalyser,
+        }} >
+            <Header />
+            <Switch>
+                <Route exact path={getUrlRaw('index')}>
+                    <PageAudio />
+                </Route>
+                <Route exact path={getUrlRaw('audio')}>
+                    <PageAudio />
+                </Route>
+                <Route exact path={getUrlRaw('video')}>
+                    <PageVideo />
+                </Route>
+                <Route exact path={getUrlRaw('event')}>
+                    <PageEvent />
+                </Route>
+                <Route exact path={getUrlRaw('tools', {})}>
+                    <PageTools />
+                </Route>
+                <Route exact path={getUrlRaw('settings')}>
+                    <PageSettings />
+                </Route>
+                <Route path={getUrlRaw('404')}>
+                    <Page404 />
+                </Route>
+            </Switch>
+            <Layer id="menu">
+                <Menu />
+            </Layer>
+            <Layer id="info">
+                <Info />
+            </Layer>
+            <Player config={configApp.player} />
+        </Screensaver>
     );
 };
 

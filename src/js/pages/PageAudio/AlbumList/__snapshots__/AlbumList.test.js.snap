@@ -6,7 +6,7 @@ exports[`AlbumList renders correctly with matching active track 1`] = `
 >
   <div
     className="album album-playing"
-    key="testtest"
+    key="test test"
   >
     <AlbumCover
       album={
@@ -47,7 +47,7 @@ exports[`AlbumList renders correctly with selected album and artist 1`] = `
 >
   <div
     className="album album-playing"
-    key="testtest"
+    key="test test"
   >
     <AlbumCover
       album={
@@ -95,7 +95,7 @@ exports[`AlbumList renders correctly without matching active track 1`] = `
 >
   <div
     className="album"
-    key="testtest"
+    key="test test"
   >
     <AlbumCover
       album={

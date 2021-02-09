@@ -37,7 +37,7 @@ const PageSettings = ({ isLoggedIn, login, logout }) => {
 
     return (
         <Page id="settings">
-            <h2 className="headline">{i18n('page_settings_headline')}</h2>
+            <h2 className="headline">{i18n('page_settings_change_headline')}</h2>
             <form
                 className="form form-quit"
                 onSubmit={handleSubmitFormQuit}
@@ -46,7 +46,7 @@ const PageSettings = ({ isLoggedIn, login, logout }) => {
                     className="button form-button"
                     type="submit"
                 >
-                    {i18n('page_settings_button_quit')}
+                    {i18n('page_settings_change_button_quit')}
                 </button>
             </form>
             {languages.length > 1 && (

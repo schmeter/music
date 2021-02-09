@@ -1,0 +1,187 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Event renders correctly with correct url params 1`] = `
+<Event
+  event={
+    Object {
+      "artist": Object {
+        "title": "test",
+      },
+      "date": "2020-02-02",
+      "imgPath": "test",
+      "title": "test",
+    }
+  }
+>
+  <div
+    className="event"
+  >
+    <h2
+      className="date"
+    >
+      02.02.2020
+       
+      <Link
+        to="https://www.google.de/maps/dir//test"
+      >
+        <a
+          href="https://www.google.de/maps/dir//test"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          test
+        </a>
+      </Link>
+    </h2>
+    <h3>
+      test
+    </h3>
+    <Link
+      to="https://www.google.de/maps/dir//test"
+    >
+      <a
+        href="https://www.google.de/maps/dir//test"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        <Image
+          alt="test"
+          src="test"
+        >
+          <img
+            alt="test"
+            className="image invisible"
+            onError={[Function]}
+            onLoad={[Function]}
+            src="test"
+          />
+        </Image>
+      </a>
+    </Link>
+  </div>
+</Event>
+`;
+
+exports[`Event renders correctly with wrong url params 1`] = `
+<Event
+  event={
+    Object {
+      "artist": Object {
+        "title": "test",
+      },
+      "date": "2020-02-02",
+      "imgPath": "test",
+      "title": "test",
+    }
+  }
+>
+  <div
+    className="event"
+  >
+    <h2
+      className="date"
+    >
+      02.02.2020
+       
+      <Link
+        to="https://www.google.de/maps/dir//test"
+      >
+        <a
+          href="https://www.google.de/maps/dir//test"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          test
+        </a>
+      </Link>
+    </h2>
+    <h3>
+      test
+    </h3>
+    <Link
+      to="https://www.google.de/maps/dir//test"
+    >
+      <a
+        href="https://www.google.de/maps/dir//test"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        <Image
+          alt="test"
+          src="test"
+        >
+          <img
+            alt="test"
+            className="image invisible"
+            onError={[Function]}
+            onLoad={[Function]}
+            src="test"
+          />
+        </Image>
+      </a>
+    </Link>
+  </div>
+</Event>
+`;
+
+exports[`Event renders correctly without url params 1`] = `
+<Event
+  event={
+    Object {
+      "artist": Object {
+        "title": "test",
+      },
+      "date": "2020-02-02",
+      "imgPath": "test",
+      "title": "test",
+    }
+  }
+>
+  <div
+    className="event"
+  >
+    <h2
+      className="date"
+    >
+      02.02.2020
+       
+      <Link
+        to="https://www.google.de/maps/dir//test"
+      >
+        <a
+          href="https://www.google.de/maps/dir//test"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          test
+        </a>
+      </Link>
+    </h2>
+    <h3>
+      test
+    </h3>
+    <Link
+      to="https://www.google.de/maps/dir//test"
+    >
+      <a
+        href="https://www.google.de/maps/dir//test"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        <Image
+          alt="test"
+          src="test"
+        >
+          <img
+            alt="test"
+            className="image invisible"
+            onError={[Function]}
+            onLoad={[Function]}
+            src="test"
+          />
+        </Image>
+      </a>
+    </Link>
+  </div>
+</Event>
+`;
