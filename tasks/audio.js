@@ -3,7 +3,7 @@ module.exports = function(grunt) {
         const { readJSON, read, write } = grunt.file;
         const { path, pathOr, pickAll } = require('ramda');
         const ID3 = require('id3-parser');
-        const markdown = require('markdown');
+        const marked = require('marked');
 
         const mp3Folder = 'mp3';
         const assetFolder = 'assets';
@@ -63,7 +63,7 @@ module.exports = function(grunt) {
                             const mdSrcPath = `${grunt.config('srcFolder')}/${mdFilePath}`;
                             const md = read(mdSrcPath, 'utf8');
 
-                            lyrics = markdown.parse(md);
+                            lyrics = marked(md);
                         });
 
                     // add data to track
