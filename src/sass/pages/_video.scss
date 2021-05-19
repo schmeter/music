@@ -1,6 +1,21 @@
 .page-video {
+    .artist-title,
+    .video-title {
+        margin: 0 4px;
+        overflow: hidden;
+        font-size: $font-size-base - 3px;
+        line-height: $line-height-base - 2px;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    .artist-title {
+        opacity: 0.75;
+    }
+
     .video {
         display: inline-block;
+        width: 100%;
         max-width: 768px;
         padding: 5px 10px 10px;
 

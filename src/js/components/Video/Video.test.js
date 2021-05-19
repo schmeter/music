@@ -15,6 +15,7 @@ describe('Video', () => {
         const props = {
             video: {
                 id: 'test',
+                title: 'The Video',
                 artist: {
                     title: 'test',
                 },

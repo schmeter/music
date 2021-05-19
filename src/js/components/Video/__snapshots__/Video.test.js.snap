@@ -8,17 +8,35 @@ exports[`Video renders correctly 1`] = `
     onClick={[Function]}
     to="//www.youtube.com/watch?v=test"
   >
-    <Image
-      alt="test"
-      onLoad={[Function]}
-      src="//img.youtube.com/vi/test/mqdefault.jpg"
-    />
     <div
-      className="icon hidden"
+      className="video-preview"
     >
-      <Icon
-        id="youtube-play"
+      <Image
+        alt="test"
+        onLoad={[Function]}
+        src="//img.youtube.com/vi/test/mqdefault.jpg"
       />
+      <div
+        className="icon hidden"
+      >
+        <Icon
+          id="youtube-play"
+        />
+      </div>
+    </div>
+    <div
+      className="video-details"
+    >
+      <h3
+        className="video-title"
+      >
+        The Video
+      </h3>
+      <h3
+        className="artist-title"
+      >
+        test
+      </h3>
     </div>
   </Link>
 </div>
@@ -32,17 +50,35 @@ exports[`Video renders correctly 2`] = `
     onClick={[Function]}
     to="//www.youtube.com/watch?v=test"
   >
-    <Image
-      alt="test"
-      onLoad={[Function]}
-      src="//img.youtube.com/vi/test/mqdefault.jpg"
-    />
     <div
-      className="icon"
+      className="video-preview"
     >
-      <Icon
-        id="youtube-play"
+      <Image
+        alt="test"
+        onLoad={[Function]}
+        src="//img.youtube.com/vi/test/mqdefault.jpg"
       />
+      <div
+        className="icon"
+      >
+        <Icon
+          id="youtube-play"
+        />
+      </div>
+    </div>
+    <div
+      className="video-details"
+    >
+      <h3
+        className="video-title"
+      >
+        The Video
+      </h3>
+      <h3
+        className="artist-title"
+      >
+        test
+      </h3>
     </div>
   </Link>
 </div>

@@ -5,11 +5,13 @@
             "title": "The Artist",
             "videos": [
                 {
-                    "id": "test"
+                    "id": "test",
+                    "title": "The Video"
                 },
                 {
                     "hiddden": true,
-                    "id": "test2"
+                    "id": "test2",
+                    "title": "The Video 2"
                 }
             ]
         }

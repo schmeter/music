@@ -53,7 +53,7 @@ const AlbumList = ({
                             link={selectedAlbumId ? '' : albumLink}
                             album={album}
                         />
-                        <div className="album-content">
+                        <div className="album-details">
                             <h3 className="album-title">
                                 <Link to={albumLink}>
                                     {album.title}
