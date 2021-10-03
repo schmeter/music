@@ -1,23 +1,104 @@
 .page-tools {
-    hr {
-        margin: 10px auto 20px;
+  margin-top: 5px;
+
+  hr {
+    margin: 20px auto;
+    border-image-slice: 1;
+    border-image-source: linear-gradient(to left, transparent 20%, $color-text 40%, transparent 80%);
+  }
+
+  p {
+    margin: 10px auto;
+  }
+
+  h2,
+  h3,
+  p {
+    margin-bottom: 20px;
+  }
+
+  .learn {
+    div {
+      margin-bottom: 20px;
     }
 
-    p {
-        margin: 10px auto;
+    pre {
+      display: inline-block;
+      text-align: justify;
+      white-space: pre-wrap;
+    }
+  }
+
+  .watch {
+    .form {
+      margin: 0 0 15px;
+
+      .form-select {
+        margin: 0;
+      }
     }
 
-    .learn {
-        pre {
-            text-align: justify;
-            white-space: pre-wrap;
-        }
+    .video {
+      display: inline-block;
+      width: 100%;
+      padding: 5px 10px 10px;
 
-        h2,
-        h3,
-        p {
-            margin-bottom: 20px;
-        }
+      @media (min-width: $max-width-phone + 1) {
+        width: calc(100% / 2);
+      }
+
+      @media (min-width: $max-width-tablet + 1) {
+        width: calc(100% / 4);
+      }
+
+      a {
+        text-decoration: none;
+      }
+
+      video {
+        display: block;
+        width: 100%;
+        background-color: $color-def-black;
+      }
+
+      .size-container {
+        position: relative;
+        width: 100%;
+        padding-top: 56.25%;
+      }
+
+      .description {
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        padding: 5px;
+        overflow: scroll;
+        border: 1px solid $color-image-border;
+        background-color: $color-def-close-to-white;
+        font-size: 14px;
+      }
     }
 
+    .video-details {
+      margin-top: 5px;
+      cursor: pointer;
+
+      .title,
+      .date {
+        margin: 0 4px;
+        overflow: hidden;
+        font-size: $font-size-base - 3px;
+        line-height: $line-height-base - 2px;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+
+      .date {
+        opacity: 0.75;
+      }
+    }
+  }
 }

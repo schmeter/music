@@ -8,78 +8,78 @@ import AlbumCover from '../AlbumCover';
 import { getUrl } from '../../../services/navigation';
 
 const AlbumList = ({
-    albums,
-    selectedAlbum,
-    selectedArtist,
-    activeTrack,
+  albums,
+  selectedAlbum,
+  selectedArtist,
+  activeTrack,
 }) => {
-    const selectedArtistId = selectedArtist?.id;
-    const selectedAlbumId = selectedAlbum?.id;
-    const albumsFiltered = albums.filter(album => (!selectedAlbumId || selectedAlbumId === album.id)
+  const selectedArtistId = selectedArtist?.id;
+  const selectedAlbumId = selectedAlbum?.id;
+  const albumsFiltered = albums.filter(album => (!selectedAlbumId || selectedAlbumId === album.id)
         && (!selectedArtistId || selectedArtistId === album.artist.id));
 
-    return (
-        <div
-            className={classNames(
-                'albums',
-                selectedAlbumId && 'album-selected',
-                selectedArtistId && 'artist-selected',
-            )}
-        >
-            {albumsFiltered.map(album => {
-                const playing = activeTrack
-                    ? album.id === activeTrack.album.id
-                    : false;
-                const visible = playing
+  return (
+    <div
+      className={classNames(
+        'albums',
+        selectedAlbumId && 'album-selected',
+        selectedArtistId && 'artist-selected',
+      )}
+    >
+      {albumsFiltered.map(album => {
+        const playing = activeTrack
+          ? album.id === activeTrack.album.id
+          : false;
+        const visible = playing
                         || !album.hidden
                         || album.id === selectedAlbumId;
-                const albumLink = getUrl('audio', {
-                    artistId: album.artist.id,
-                    albumId: album.id,
-                });
-                const artistLink = getUrl('audio', {
-                    artistId: album.artist.id,
-                });
+        const albumLink = getUrl('audio', {
+          artistId: album.artist.id,
+          albumId: album.id,
+        });
+        const artistLink = getUrl('audio', {
+          artistId: album.artist.id,
+        });
 
-                return visible && (
-                    <div
-                        key={`${album.artist.id} ${album.id}`}
-                        className={classNames(
-                            'album',
-                            playing && 'album-playing',
-                        )}
-                    >
-                        <AlbumCover
-                            link={selectedAlbumId ? '' : albumLink}
-                            album={album}
-                        />
-                        <div className="album-details">
-                            <h3 className="album-title">
-                                <Link to={albumLink}>
-                                    {album.title}
-                                </Link>
-                            </h3>
-                            <h3 className="artist-title">
-                                <Link to={artistLink}>
-                                    {album.artist.title}
-                                </Link>
-                            </h3>
-                            {selectedAlbumId && (
-                                <TrackList tracks={album.tracks} />
-                            )}
-                        </div>
-                    </div>
-                );
-            })}
-        </div>
-    );
+        return visible && (
+          <div
+            key={`${album.artist.id} ${album.id}`}
+            className={classNames(
+              'album',
+              playing && 'album-playing',
+            )}
+          >
+            <AlbumCover
+              link={selectedAlbumId ? '' : albumLink}
+              album={album}
+            />
+            <div className="album-details">
+              <h3 className="album-title">
+                <Link to={albumLink}>
+                  {album.title}
+                </Link>
+              </h3>
+              <h3 className="artist-title">
+                <Link to={artistLink}>
+                  {album.artist.title}
+                </Link>
+              </h3>
+              {selectedAlbumId && (
+                <TrackList tracks={album.tracks} />
+              )}
+            </div>
+          </div>
+        );
+      })}
+    </div>
+  );
 };
 
 AlbumList.propTypes = {
-    albums: PropTypes.array.isRequired,
-    selectedAlbum: PropTypes.object,
-    selectedArtist: PropTypes.object,
-    activeTrack: PropTypes.object,
+  albums: PropTypes.array.isRequired,
+  selectedAlbum: PropTypes.object,
+  selectedArtist: PropTypes.object,
+  activeTrack: PropTypes.object,
 };
 
 export default AlbumList;

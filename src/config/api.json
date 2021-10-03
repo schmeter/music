@@ -1,8 +1,9 @@
 {
-    "googleRoute": "https://www.google.de/maps/dir/:from/:to",
-    "youtubeVideo": "//www.youtube.com/watch?v=:videoId",
-    "youtubeIframe": "//www.youtube.com/embed/:videoId",
-    "youtubePreviewImage": "//img.youtube.com/vi/:videoId/mqdefault.jpg",
-    "wikipediaPageExtract": "https://:language.wikipedia.org/w/api.php?format=json&action=query&prop=extracts&exintro&explaintext&redirects=1&pageids=:pageId&origin=*",
-    "wikipediaPage": "https://:language.wikipedia.org/?curid=:pageId"
+  "googleRoute": "https://www.google.de/maps/dir/:from/:to",
+  "youtubeVideo": "//www.youtube.com/watch?v=:videoId",
+  "youtubeIframe": "//www.youtube.com/embed/:videoId",
+  "youtubePreviewImage": "//img.youtube.com/vi/:videoId/mqdefault.jpg",
+  "wikipediaPageExtract": "https://:language.wikipedia.org/w/api.php?format=json&action=query&prop=extracts&exintro&explaintext&redirects=1&pageids=:pageId&origin=*",
+  "wikipediaPage": "https://:language.wikipedia.org/?curid=:pageId",
+  "mediathekviewApi": "https://mediathekviewweb.de/api/query"
 }

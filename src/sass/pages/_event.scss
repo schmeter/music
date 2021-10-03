@@ -1,19 +1,25 @@
 .page-event {
-    text-align: center;
+  text-align: center;
 
-    .event {
-        display: block;
-        padding: 10px;
-        border-bottom: 1px solid $color-image-border;
+  .event {
+    display: block;
+    padding: 5px 10px 10px;
 
-        .date {
-            font-weight: bold;
-        }
-
-        .image {
-            width: 100%;
-            max-width: 512px;
-            margin-top: 10px;
-        }
+    &:not(:first-child) {
+      padding-top: 10px;
+      border-top: 1px solid;
+      border-image-slice: 1;
+      border-image-source: linear-gradient(to left, transparent 20%, $color-text 40%, transparent 80%);
     }
+
+    .date {
+      font-weight: bold;
+    }
+
+    .image {
+      width: 100%;
+      max-width: 512px;
+      margin-bottom: 5px;
+    }
+  }
 }

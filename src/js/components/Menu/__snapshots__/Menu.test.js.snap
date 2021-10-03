@@ -2,7 +2,7 @@
 
 exports[`Menu renders correctly 1`] = `
 <ul
-  className="layer-content"
+  className="menu"
 >
   <li
     className="link"
@@ -14,7 +14,7 @@ exports[`Menu renders correctly 1`] = `
      
     <Link
       onClick={[MockFunction]}
-      to="/"
+      to="/audio"
     >
       Audio
     </Link>

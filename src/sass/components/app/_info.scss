@@ -1,41 +1,35 @@
 .layer-info {
-    right: 0;
+  .lyrics {
+    margin: 0 4px 15px;
 
-    &.closed {
-        transform: translate3d(110%, 0, 0);
+    @media (max-width: $max-width-phone) {
+      font-size: $font-size-base - 4px;
     }
 
-    .lyrics {
-        margin: 0 4px 15px;
-
-        @media (max-width: $max-width-phone) {
-            font-size: $font-size-base - 4px;
-        }
-
-        h2 {
-            margin-bottom: 15px;
-            font-size: $font-size-base + 2px;
-            font-weight: bold;
-        }
-
-        p {
-            margin-top: 10px;
-            font-size: $font-size-base - 2px;
-        }
+    h2 {
+      margin-bottom: 15px;
+      font-size: $font-size-base + 2px;
+      font-weight: bold;
     }
 
-    .table {
-        margin-bottom: 15px;
-
-        .table-cell {
-            padding: 0 4px 8px;
-        }
+    p {
+      margin-top: 10px;
+      font-size: $font-size-base - 2px;
     }
+  }
 
-    .cover {
-        .image {
-            width: $max-width-phone;
-            max-width: 100%;
-        }
+  .table {
+    margin-bottom: 15px;
+
+    .table-cell {
+      padding: 0 4px 8px;
     }
+  }
+
+  .cover {
+    .image {
+      width: $max-width-phone;
+      max-width: 100%;
+    }
+  }
 }

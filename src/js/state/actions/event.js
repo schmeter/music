@@ -1,14 +1,14 @@
 import {
-    loadLibrary,
+  loadLibrary,
 } from '../../services/event';
 
 export const requestEventLibraryAction = () => dispatch => {
-    const library = loadLibrary();
+  const library = loadLibrary();
 
-    dispatch(setLibraryAction(library));
+  dispatch(setLibraryAction(library));
 };
 
 export const setLibraryAction = library => ({
-    type: 'EVENT_SET_LIBRARY',
-    payload: library,
+  type: 'EVENT_SET_LIBRARY',
+  payload: library,
 });

@@ -5,7 +5,7 @@ exports[`Page404 renders correctly 1`] = `
   id="404"
 >
   <h2
-    className="headline"
+    className="headline bold"
   >
     404
   </h2>

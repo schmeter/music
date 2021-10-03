@@ -5,20 +5,20 @@ import Page from '../../components/Page';
 import Video from '../../components/Video';
 
 const PageVideo = ({
-    videos,
+  videos,
 }) => (
-    <Page id="video">
-        {videos.map(video => !video.hidden && (
-            <Video
-                key={video.id}
-                video={video}
-            />
-        ))}
-    </Page>
+  <Page id="video">
+    {videos.map(video => !video.hidden && (
+      <Video
+        key={video.id}
+        video={video}
+      />
+    ))}
+  </Page>
 );
 
 PageVideo.propTypes = {
-    videos: PropTypes.array.isRequired,
+  videos: PropTypes.array.isRequired,
 };
 
 export default PageVideo;

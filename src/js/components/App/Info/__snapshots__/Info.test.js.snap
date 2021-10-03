@@ -3,9 +3,7 @@
 exports[`Info renders correctly 1`] = `""`;
 
 exports[`Info renders correctly 2`] = `
-<div
-  className="layer-content layer-content-info"
->
+<Fragment>
   <div
     className="lyrics"
     dangerouslySetInnerHTML={
@@ -138,7 +136,7 @@ exports[`Info renders correctly 2`] = `
     className="spacer"
     controls={true}
   />
-</div>
+</Fragment>
 `;
 
 exports[`Info renders correctly after update 1`] = `
@@ -167,40 +165,36 @@ exports[`Info renders correctly after update 2`] = `
   }
   closeLayers={[MockFunction]}
 >
-  <div
-    className="layer-content layer-content-info"
+  <ul
+    className="table"
   >
-    <ul
-      className="table"
+    <li
+      className="table-row"
+      key="title"
     >
-      <li
-        className="table-row"
-        key="title"
+      <span
+        className="table-cell text-left bold"
       >
-        <span
-          className="table-cell text-left bold"
-        >
-          Titel
-          :
-        </span>
-        <span
-          className="table-cell text-left"
-        >
-          test
-        </span>
-      </li>
-    </ul>
-    <Component
-      className="cover"
-      onClick={[MockFunction]}
-      to="/audio/test/test"
-    >
-      <div />
-    </Component>
-    <audio
-      className="spacer"
-      controls={true}
-    />
-  </div>
+        Titel
+        :
+      </span>
+      <span
+        className="table-cell text-left"
+      >
+        test
+      </span>
+    </li>
+  </ul>
+  <Component
+    className="cover"
+    onClick={[MockFunction]}
+    to="/audio/test/test"
+  >
+    <div />
+  </Component>
+  <audio
+    className="spacer"
+    controls={true}
+  />
 </Info>
 `;

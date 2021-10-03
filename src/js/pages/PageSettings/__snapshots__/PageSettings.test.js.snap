@@ -5,9 +5,9 @@ exports[`PageSettings renders correctly with logged in user 1`] = `
   id="settings"
 >
   <h2
-    className="headline"
+    className="headline bold"
   >
-    Willst du etwas ändern?
+    Was soll sich ändern?
   </h2>
   <form
     className="form form-quit"
@@ -17,13 +17,13 @@ exports[`PageSettings renders correctly with logged in user 1`] = `
       className="button form-button"
       type="submit"
     >
-      Niemals
+      Nichts
     </button>
   </form>
   <h2
     className="headline"
   >
-    Was sprichst du?
+    Die Sprache?
   </h2>
   <form
     className="form form-lang"
@@ -50,7 +50,7 @@ exports[`PageSettings renders correctly with logged in user 1`] = `
   <h2
     className="headline"
   >
-    Wohin willst du?
+    Der Ort?
   </h2>
   <form
     className="form form-auth"
@@ -71,9 +71,9 @@ exports[`PageSettings renders correctly with logged out user 1`] = `
   id="settings"
 >
   <h2
-    className="headline"
+    className="headline bold"
   >
-    Willst du etwas ändern?
+    Was soll sich ändern?
   </h2>
   <form
     className="form form-quit"
@@ -83,13 +83,13 @@ exports[`PageSettings renders correctly with logged out user 1`] = `
       className="button form-button"
       type="submit"
     >
-      Niemals
+      Nichts
     </button>
   </form>
   <h2
     className="headline"
   >
-    Was sprichst du?
+    Die Sprache?
   </h2>
   <form
     className="form form-lang"
@@ -116,7 +116,7 @@ exports[`PageSettings renders correctly with logged out user 1`] = `
   <h2
     className="headline"
   >
-    Wohin willst du?
+    Der Ort?
   </h2>
   <form
     className="form form-auth"

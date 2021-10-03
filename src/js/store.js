@@ -10,13 +10,13 @@ import rootReducer from './state/reducers';
 import middlewares from './state/middlewares';
 
 export default createStore(
-    rootReducer,
-    {
-        auth,
-        audio,
-        video,
-        event,
-        layer,
-    },
-    composeWithDevTools(applyMiddleware(...middlewares())),
+  rootReducer,
+  {
+    auth,
+    audio,
+    video,
+    event,
+    layer,
+  },
+  composeWithDevTools(applyMiddleware(...middlewares())),
 );

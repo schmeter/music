@@ -3,7 +3,7 @@ import { requestVideoLibraryAction } from './video';
 import { requestEventLibraryAction } from './event';
 
 export const requestMediaLibraryAction = () => dispatch => {
-    dispatch(requestAudioLibraryAction());
-    dispatch(requestVideoLibraryAction());
-    dispatch(requestEventLibraryAction());
+  dispatch(requestAudioLibraryAction());
+  dispatch(requestVideoLibraryAction());
+  dispatch(requestEventLibraryAction());
 };

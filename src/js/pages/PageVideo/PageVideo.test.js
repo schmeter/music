@@ -10,17 +10,17 @@ jest.mock('../../components/Page', () => () => <div />);
 jest.mock('../../components/Video', () => () => <div />);
 
 describe('PageVideo', () => {
-    it('renders correctly', () => {
-        const props = {
-            videos: [{
-                id: 'test',
-            }, {
-                hidden: true,
-                id: 'test2',
-            }],
-        };
-        const component = shallow(<PageVideo {...props} />);
+  it('renders correctly', () => {
+    const props = {
+      videos: [{
+        id: 'test',
+      }, {
+        hidden: true,
+        id: 'test2',
+      }],
+    };
+    const component = shallow(<PageVideo {...props} />);
 
-        expect(toJson(component)).toMatchSnapshot();
-    });
+    expect(toJson(component)).toMatchSnapshot();
+  });
 });

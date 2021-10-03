@@ -1,19 +1,19 @@
 {
-    "artists": [
+  "artists": [
+    {
+      "id": "demoartist",
+      "title": "The Artist",
+      "items": [
         {
-            "id": "demoartist",
-            "title": "The Artist",
-            "albums": [
-                {
-                    "id": "thealbum",
-                    "title": "The Album"
-                },
-                {
-                    "hidden": true,
-                    "id": "thesecretalbum",
-                    "title": "The Secret Album"
-                }
-            ]
+          "id": "thealbum",
+          "title": "The Album"
+        },
+        {
+          "hidden": true,
+          "id": "thesecretalbum",
+          "title": "The Secret Album"
         }
-    ]
+      ]
+    }
+  ]
 }

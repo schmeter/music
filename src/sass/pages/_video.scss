@@ -1,34 +1,34 @@
 .page-video {
-    .artist-title,
-    .video-title {
-        margin: 0 4px;
-        overflow: hidden;
-        font-size: $font-size-base - 3px;
-        line-height: $line-height-base - 2px;
-        text-overflow: ellipsis;
-        white-space: nowrap;
+  .artist-title,
+  .video-title {
+    margin: 0 4px;
+    overflow: hidden;
+    font-size: $font-size-base - 3px;
+    line-height: $line-height-base - 2px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .artist-title {
+    opacity: 0.75;
+  }
+
+  .video {
+    display: inline-block;
+    width: 100%;
+    max-width: 768px;
+    padding: 5px 10px 10px;
+
+    @media (min-width: $max-width-phone + 1) {
+      width: calc(100% / 2);
     }
 
-    .artist-title {
-        opacity: 0.75;
+    @media (min-width: $max-width-tablet + 1) {
+      width: calc(100% / 3);
     }
 
-    .video {
-        display: inline-block;
-        width: 100%;
-        max-width: 768px;
-        padding: 5px 10px 10px;
-
-        @media (min-width: $max-width-phone + 1) {
-            width: calc(100% / 2);
-        }
-
-        @media (min-width: $max-width-tablet + 1) {
-            width: calc(100% / 3);
-        }
-
-        @media (min-width: $min-width-large-desktop + 1) {
-            width: calc(100% / 4);
-        }
+    @media (min-width: $min-width-large-desktop + 1) {
+      width: calc(100% / 4);
     }
+  }
 }

@@ -2,9 +2,14 @@ import { connect } from 'react-redux';
 
 import Header from './Header';
 import { openLayerAction } from '../../../state/actions/layer';
+import { canPlayMusic } from '../../../state/selectors/audio';
 
 export const mapDispatchToProps = dispatch => ({
-    openLayer: id => dispatch(openLayerAction(id)),
+  openLayer: id => dispatch(openLayerAction(id)),
 });
 
-export default connect(null, mapDispatchToProps)(Header);
+export const mapStateToProps = state => ({
+  canPlayMusic: canPlayMusic(state),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Header);

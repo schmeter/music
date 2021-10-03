@@ -7,9 +7,9 @@ import event from './event';
 import layer from './layer';
 
 export default combineReducers({
-    auth,
-    audio,
-    video,
-    event,
-    layer,
+  auth,
+  audio,
+  video,
+  event,
+  layer,
 });

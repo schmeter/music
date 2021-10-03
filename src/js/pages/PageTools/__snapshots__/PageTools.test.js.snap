@@ -4,16 +4,6 @@ exports[`PageTools renders correctly with correct url params 1`] = `
 <Component
   id="tools"
 >
-  <h2
-    className="headline bold"
-  >
-    <Link
-      to="/tools"
-    >
-      Kann ich helfen?
-    </Link>
-  </h2>
-  <hr />
   <Component />
 </Component>
 `;
@@ -41,6 +31,7 @@ exports[`PageTools renders correctly without url params 1`] = `
       key="clock"
     >
       <Link
+        onClick={[MockFunction]}
         to="/tools/clock"
       >
         Keine Zeit.
@@ -50,9 +41,20 @@ exports[`PageTools renders correctly without url params 1`] = `
       key="learn"
     >
       <Link
+        onClick={[MockFunction]}
         to="/tools/learn"
       >
-        Ich weiß alles.
+        Ich weiß Bescheid.
+      </Link>
+    </p>
+    <p
+      key="watch"
+    >
+      <Link
+        onClick={[MockFunction]}
+        to="/tools/watch"
+      >
+        Gleich geht's ins Bettchen.
       </Link>
     </p>
   </div>

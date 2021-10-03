@@ -1,19 +1,19 @@
 {
-    "artists": [
+  "artists": [
+    {
+      "id": "demoartist",
+      "title": "The Artist",
+      "items": [
         {
-            "id": "demoartist",
-            "title": "The Artist",
-            "events": [
-                {
-                    "date": "2020-01-02",
-                    "title": "Test"
-                },
-                {
-                    "hidden": true,
-                    "date": "2020-02-02",
-                    "title": "Test2"
-                }
-            ]
+          "date": "2020-01-02",
+          "title": "Test"
+        },
+        {
+          "hidden": true,
+          "date": "2020-02-02",
+          "title": "Test2"
         }
-    ]
+      ]
+    }
+  ]
 }

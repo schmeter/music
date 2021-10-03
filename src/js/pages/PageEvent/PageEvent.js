@@ -6,34 +6,34 @@ import Page from '../../components/Page';
 import { getEventId } from '../../services/event';
 
 const PageEvent = ({
-    events,
+  events,
 }) => {
-    const eventsSorted = events.sort((a, b) => {
-        if (a.date < b.date) {
-            return 1;
-        } else if (a.date > b.date) {
-            return -1;
-        } else {
-            return 0;
-        }
-    });
+  const eventsSorted = events.sort((a, b) => {
+    if (a.date < b.date) {
+      return 1;
+    } else if (a.date > b.date) {
+      return -1;
+    } else {
+      return 0;
+    }
+  });
 
-    return (
-        <Page id="event">
-            {eventsSorted.map(event => {
-                return !event.hidden && (
-                    <Event
-                        key={getEventId(event)}
-                        event={event}
-                    />
-                );
-            })}
-        </Page>
-    );
+  return (
+    <Page id="event">
+      {eventsSorted.map(event => {
+        return !event.hidden && (
+          <Event
+            key={getEventId(event)}
+            event={event}
+          />
+        );
+      })}
+    </Page>
+  );
 };
 
 PageEvent.propTypes = {
-    events: PropTypes.array.isRequired,
+  events: PropTypes.array.isRequired,
 };
 
 export default PageEvent;

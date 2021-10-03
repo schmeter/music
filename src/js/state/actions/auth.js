@@ -1,20 +1,20 @@
 import {
-    authenticate,
-    unauthenticate,
-    isAuthenticated,
+  authenticate,
+  unauthenticate,
+  isAuthenticated,
 } from '../../services/auth';
 
 export const loginAction = (credentials, expiration) => dispatch => {
-    authenticate(credentials, expiration);
-    dispatch(setLoggedInAction());
+  authenticate(credentials, expiration);
+  dispatch(setLoggedInAction());
 };
 
 export const logoutAction = () => dispatch => {
-    unauthenticate();
-    dispatch(setLoggedInAction());
+  unauthenticate();
+  dispatch(setLoggedInAction());
 };
 
 export const setLoggedInAction = (isLoggedIn = isAuthenticated()) => ({
-    type: 'AUTH_SET_LOGGED_IN',
-    payload: isLoggedIn,
+  type: 'AUTH_SET_LOGGED_IN',
+  payload: isLoggedIn,
 });

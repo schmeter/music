@@ -1,11 +1,11 @@
 {
-    "baseUrl": "https://example.com",
-    "fallbackImage": "/img/fallback.png",
-    "screensaver": {
-        "active": true,
-        "timeout": 30
-    },
-    "player": {
-        "useAnalyser": true
-    }
+  "baseUrl": "https://example.com",
+  "fallbackImage": "/img/fallback.png",
+  "screensaver": {
+    "active": true,
+    "timeout": 30
+  },
+  "player": {
+    "useAnalyser": true
+  }
 }

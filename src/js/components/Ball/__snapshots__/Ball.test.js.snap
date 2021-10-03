@@ -1,0 +1,133 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Ball renders correctly 1`] = `
+<div
+  className="ball"
+>
+  <div
+    className="head"
+    style={
+      Object {
+        "left": "100%",
+        "opacity": 0,
+        "top": "100%",
+      }
+    }
+  >
+    <div
+      className="eye left"
+    >
+      <div
+        className="pupils"
+        style={
+          Object {
+            "left": "0%",
+            "top": "0%",
+          }
+        }
+      />
+    </div>
+    <div
+      className="eye right"
+    >
+      <div
+        className="pupils"
+        style={
+          Object {
+            "left": "0%",
+            "top": "0%",
+          }
+        }
+      />
+    </div>
+    <div
+      className="jaws"
+    >
+      <div
+        className="tooth"
+      />
+      <div
+        className="tooth"
+      />
+      <div
+        className="tooth"
+      />
+      <div
+        className="tooth"
+      />
+    </div>
+    <div
+      className="nostril left"
+    />
+    <div
+      className="nostril right"
+    />
+  </div>
+</div>
+`;
+
+exports[`Ball renders correctly with mouse position 1`] = `
+<div
+  className="ball"
+>
+  <div
+    className="head"
+    style={
+      Object {
+        "left": "95.1171875%",
+        "opacity": 1,
+        "top": "93.48958333333333%",
+      }
+    }
+  >
+    <div
+      className="eye left"
+    >
+      <div
+        className="pupils"
+        style={
+          Object {
+            "left": "4.8828125%",
+            "top": "6.510416666666667%",
+          }
+        }
+      />
+    </div>
+    <div
+      className="eye right"
+    >
+      <div
+        className="pupils"
+        style={
+          Object {
+            "left": "4.8828125%",
+            "top": "6.510416666666667%",
+          }
+        }
+      />
+    </div>
+    <div
+      className="jaws"
+    >
+      <div
+        className="tooth"
+      />
+      <div
+        className="tooth"
+      />
+      <div
+        className="tooth"
+      />
+      <div
+        className="tooth"
+      />
+    </div>
+    <div
+      className="nostril left"
+    />
+    <div
+      className="nostril right"
+    />
+  </div>
+</div>
+`;

@@ -6,18 +6,18 @@ import { act } from 'react-dom/test-utils';
 import Iframe from './Iframe';
 
 describe('Iframe', () => {
-    it('renders correctly', () => {
-        const props = {
-            src: 'test',
-            className: 'test',
-            onLoad: jest.fn(),
-        };
-        const component = mount(<Iframe {...props} />);
+  it('renders correctly', () => {
+    const props = {
+      src: 'test',
+      className: 'test',
+      onLoad: jest.fn(),
+    };
+    const component = mount(<Iframe {...props} />);
 
-        act(() => {
-            component.find('iframe').props().onLoad();
+    act(() => {
+      component.find('iframe').props().onLoad();
 
-            expect(toJson(component)).toMatchSnapshot();
-        });
+      expect(toJson(component)).toMatchSnapshot();
     });
+  });
 });

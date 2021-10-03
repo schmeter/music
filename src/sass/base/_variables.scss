@@ -1,6 +1,6 @@
 $color-def-tangerine: rgba(255, 170, 0, 1);
 $color-def-tangerine-semi: rgba(255, 170, 0, 0.75);
-$color-def-white: rgba(255, 255, 255, 1);
+$color-def-white: rgb(255, 255, 255);
 $color-def-close-to-white: rgba(245, 245, 245, 1);
 $color-def-close-to-white-semi: rgba(245, 245, 245, 0.75);
 $color-def-close-to-black: rgba(43, 42, 42, 1);
@@ -17,6 +17,8 @@ $color-background: $color-def-close-to-white;
 $color-background-off: $color-def-close-to-black;
 $color-background-gradient-inner: $color-def-close-to-white-semi;
 $color-background-gradient-outer: $color-def-white;
+$color-layer-gradient-inner: $color-def-close-to-white-semi;
+$color-layer-gradient-outer: $color-def-tangerine;
 $color-screensaver: $color-def-transparent;
 $color-button-background: $color-def-transparent;
 $color-box-shadow: $color-def-close-to-black;
@@ -60,18 +62,18 @@ $screensaver-fade-in-time: 1s;
 $screensaver-fade-out-time: 10s;
 
 %scroll-container {
-    overflow: auto;
-    -webkit-overflow-scrolling: touch; // sass-lint:disable-line no-vendor-prefixes
-    overflow-y: auto;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch; // sass-lint:disable-line no-vendor-prefixes
+  overflow-y: auto;
 }
 
 %screensaver-foreground {
-    transition: opacity $screensaver-fade-in-time;
-    opacity: 1;
+  transition: opacity $screensaver-fade-in-time;
+  opacity: 1;
 
-    .screensaver.active & {
-        transition: opacity $screensaver-fade-out-time;
-        opacity: 0;
-        pointer-events: none;
-    }
+  .screensaver.active & {
+    transition: opacity $screensaver-fade-out-time;
+    opacity: 0;
+    pointer-events: none;
+  }
 }

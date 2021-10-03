@@ -13,7 +13,7 @@ exports[`Layer renders correctly 1`] = `
       {{de:layer_test_headline}}
     </h2>
     <button
-      className="header-button close-button"
+      className="header-button close-button right"
       onClick={
         [MockFunction] {
           "calls": Array [
@@ -38,7 +38,11 @@ exports[`Layer renders correctly 1`] = `
       />
     </button>
   </header>
-  test
+  <div
+    className="layer-content"
+  >
+    test
+  </div>
 </div>
 `;
 
@@ -55,7 +59,7 @@ exports[`Layer renders correctly with id only 1`] = `
       {{de:layer_test_headline}}
     </h2>
     <button
-      className="header-button close-button"
+      className="header-button close-button right"
       onClick={[MockFunction]}
       tabIndex="-1"
     >
@@ -64,5 +68,8 @@ exports[`Layer renders correctly with id only 1`] = `
       />
     </button>
   </header>
+  <div
+    className="layer-content"
+  />
 </div>
 `;

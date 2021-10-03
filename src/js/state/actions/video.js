@@ -1,14 +1,14 @@
 import {
-    loadLibrary,
+  loadLibrary,
 } from '../../services/video';
 
 export const requestVideoLibraryAction = () => dispatch => {
-    const library = loadLibrary();
+  const library = loadLibrary();
 
-    dispatch(setLibraryAction(library));
+  dispatch(setLibraryAction(library));
 };
 
 export const setLibraryAction = library => ({
-    type: 'VIDEO_SET_LIBRARY',
-    payload: library,
+  type: 'VIDEO_SET_LIBRARY',
+  payload: library,
 });

@@ -14,19 +14,19 @@ exports[`Header renders correctly 1`] = `
     </Link>
   </h1>
   <button
-    className="button header-button menu-button"
+    className="button header-button menu-button left"
     onClick={[Function]}
   >
     <Icon
-      id="magic"
+      id="bars"
     />
   </button>
   <button
-    className="button header-button info-button"
+    className="button header-button info-button right"
     onClick={[Function]}
   >
     <Icon
-      id="music"
+      id="heartbeat"
     />
   </button>
 </header>

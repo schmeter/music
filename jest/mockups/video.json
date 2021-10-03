@@ -1,19 +1,19 @@
 {
-    "artists": [
+  "artists": [
+    {
+      "id": "demoartist",
+      "title": "The Artist",
+      "items": [
         {
-            "id": "demoartist",
-            "title": "The Artist",
-            "videos": [
-                {
-                    "id": "test",
-                    "title": "The Video"
-                },
-                {
-                    "hiddden": true,
-                    "id": "test2",
-                    "title": "The Video 2"
-                }
-            ]
+          "id": "test",
+          "title": "The Video"
+        },
+        {
+          "hiddden": true,
+          "id": "test2",
+          "title": "The Video 2"
         }
-    ]
+      ]
+    }
+  ]
 }

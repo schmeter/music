@@ -1,26 +1,26 @@
 {
-    "artists": [
+  "artists": [
+    {
+      "id": "demoartist",
+      "title": "The Artist",
+      "items": [
         {
-            "id": "demoartist",
-            "title": "The Artist",
-            "videos": [
-                {
-                    "id": "GOD4SX9cpXM",
-                    "title": "The Video"
-                },
-                {
-                    "id": "GOD4SX9cpXM",
-                    "title": "The Video"
-                },
-                {
-                    "id": "GOD4SX9cpXM",
-                    "title": "The Video"
-                },
-                {
-                    "id": "GOD4SX9cpXM",
-                    "title": "The Video"
-                }
-            ]
+          "id": "GOD4SX9cpXM",
+          "title": "The Video"
+        },
+        {
+          "id": "GOD4SX9cpXM",
+          "title": "The Video"
+        },
+        {
+          "id": "GOD4SX9cpXM",
+          "title": "The Video"
+        },
+        {
+          "id": "GOD4SX9cpXM",
+          "title": "The Video"
         }
-    ]
+      ]
+    }
+  ]
 }

@@ -7,7 +7,7 @@ import PageTools from './PageTools';
 let mockUrlParams;
 
 jest.mock('react-router-dom', () => ({
-    useParams: () => (mockUrlParams),
+  useParams: () => (mockUrlParams),
 }));
 // eslint-disable-next-line react/display-name
 jest.mock('../../components/Page', () => () => <div />);
@@ -15,37 +15,43 @@ jest.mock('../../components/Page', () => () => <div />);
 jest.mock('./Clock', () => () => <div />);
 // eslint-disable-next-line react/display-name
 jest.mock('./Learn', () => () => <div />);
+// eslint-disable-next-line react/display-name
+jest.mock('./Watch', () => () => <div />);
 jest.mock('../', () => ({
-    // eslint-disable-next-line react/display-name
-    Page404: () => <div />,
+  // eslint-disable-next-line react/display-name
+  Page404: () => <div />,
 }));
 
 describe('PageTools', () => {
-    it('renders correctly without url params', () => {
-        mockUrlParams = {};
+  const props = {
+    closeLayers: jest.fn(),
+  };
 
-        const component = shallow(<PageTools />);
+  it('renders correctly without url params', () => {
+    mockUrlParams = {};
 
-        expect(toJson(component)).toMatchSnapshot();
-    });
+    const component = shallow(<PageTools {...props} />);
 
-    it('renders correctly with correct url params', () => {
-        mockUrlParams = {
-            toolId: 'clock',
-        };
+    expect(toJson(component)).toMatchSnapshot();
+  });
 
-        const component = shallow(<PageTools />);
+  it('renders correctly with correct url params', () => {
+    mockUrlParams = {
+      toolId: 'clock',
+    };
 
-        expect(toJson(component)).toMatchSnapshot();
-    });
+    const component = shallow(<PageTools {...props} />);
 
-    it('renders correctly with wrong url params', () => {
-        mockUrlParams = {
-            toolId: 'test',
-        };
+    expect(toJson(component)).toMatchSnapshot();
+  });
 
-        const component = shallow(<PageTools />);
+  it('renders correctly with wrong url params', () => {
+    mockUrlParams = {
+      toolId: 'test',
+    };
 
-        expect(toJson(component)).toMatchSnapshot();
-    });
+    const component = shallow(<PageTools {...props} />);
+
+    expect(toJson(component)).toMatchSnapshot();
+  });
 });

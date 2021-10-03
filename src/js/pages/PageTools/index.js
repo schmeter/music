@@ -1,1 +1,1 @@
-export { default } from './PageTools';
+export { default } from './PageToolsContainer';

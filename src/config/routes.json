@@ -1,9 +1,9 @@
 {
-    "index": "/",
-    "audio": "/audio/:artistId/:albumId?",
-    "video": "/video",
-    "event": "/event/:eventId?",
-    "tools": "/tools/:toolId?/:itemId?",
-    "settings": "/settings",
-    "404": "*"
+  "index": "/",
+  "audio": "/audio/:artistId?/:albumId?",
+  "video": "/video",
+  "event": "/event/:eventId?",
+  "tools": "/tools/:toolId?/:itemId?",
+  "settings": "/settings",
+  "404": "*"
 }

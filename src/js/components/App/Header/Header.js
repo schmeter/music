@@ -6,44 +6,47 @@ import Icon from '../../Icon';
 import i18n from '../../../services/i18n';
 import { getUrl } from '../../../services/navigation';
 
-const Header = ({ openLayer }) => {
-    const handleClickInfo = useCallback(() => {
-        openLayer('info');
-    }, [
-        openLayer,
-    ]);
+const Header = ({ openLayer, canPlayMusic }) => {
+  const handleClickInfo = useCallback(() => {
+    openLayer('info');
+  }, [
+    openLayer,
+  ]);
 
-    const handleClickMenu = useCallback(() => {
-        openLayer('menu');
-    }, [
-        openLayer,
-    ]);
+  const handleClickMenu = useCallback(() => {
+    openLayer('menu');
+  }, [
+    openLayer,
+  ]);
 
-    return (
-        <header className="main-header">
-            <h1 className="main-headline">
-                <Link to={getUrl('index')}>
-                    {i18n('app_title')}
-                </Link>
-            </h1>
-            <button
-                className="button header-button menu-button"
-                onClick={handleClickMenu}
-            >
-                <Icon id="magic" />
-            </button>
-            <button
-                className="button header-button info-button"
-                onClick={handleClickInfo}
-            >
-                <Icon id="music" />
-            </button>
-        </header>
-    );
+  return (
+    <header className="main-header">
+      <h1 className="main-headline">
+        <Link to={getUrl('index')}>
+          {i18n('app_title')}
+        </Link>
+      </h1>
+      <button
+        className="button header-button menu-button left"
+        onClick={handleClickMenu}
+      >
+        <Icon id="bars" />
+      </button>
+      {canPlayMusic && (
+        <button
+          className="button header-button info-button right"
+          onClick={handleClickInfo}
+        >
+          <Icon id="heartbeat" />
+        </button>
+      )}
+    </header>
+  );
 };
 
 Header.propTypes = {
-    openLayer: PropTypes.func.isRequired,
+  openLayer: PropTypes.func.isRequired,
+  canPlayMusic: PropTypes.bool.isRequired,
 };
 
 export default Header;
