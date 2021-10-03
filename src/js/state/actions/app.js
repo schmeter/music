@@ -4,6 +4,8 @@ import { fetchJSON } from '../../util/fetch';
 
 export const requestUpdateAction = () => dispatch => {
   fetchJSON(`/version.json?${new Date().getTime()}`, true).then(data => {
+    console.log(process.env.NODE_ENV, process.env.NODE_ENV === 'production');
+
     if (process.env.NODE_ENV === 'production') {
       const searchTime = parseInt(window.location.search.substr(1), 10);
 
