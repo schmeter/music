@@ -6,15 +6,15 @@ import { Page404 } from '../';
 import Page from '../../components/Page';
 import Link from '../../components/Link';
 import i18n from '../../services/i18n';
-import Clock from './Clock';
+import Tv from './Tv';
 import Learn from './Learn';
-import Watch from './Watch';
-import { getUrl } from '../../services/navigation';
+import Clock from './Clock';
+import { getRouteWithParams } from '../../services/navigation';
 
 const tools = {
-  clock: <Clock />,
+  tv: <Tv />,
   learn: <Learn />,
-  watch: <Watch />,
+  clock: <Clock />,
 };
 
 const PageTools = ({ closeLayers }) => {
@@ -26,7 +26,7 @@ const PageTools = ({ closeLayers }) => {
       {toolId ? tools[toolId] : (
         <>
           <h2 className="headline bold">
-            <Link to={getUrl('tools')}>
+            <Link to={getRouteWithParams('tools')}>
               {i18n('page_tools_headline')}
             </Link>
           </h2>
@@ -35,7 +35,7 @@ const PageTools = ({ closeLayers }) => {
             {Object.keys(tools).map(key => (
               <p key={key}>
                 <Link
-                  to={getUrl('tools', {
+                  to={getRouteWithParams('tools', {
                     toolId: key,
                     itemId: '',
                   })}

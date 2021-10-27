@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import Image from '../../Image';
 import Link from '../../Link';
 import i18n from '../../../services/i18n';
-import { getUrl } from '../../../services/navigation';
+import { getRouteWithParams } from '../../../services/navigation';
 import { scrollTop } from '../../../util/screen';
 
 const Info = ({
@@ -24,11 +24,11 @@ const Info = ({
   const { artist, album, lyrics, tag } = activeTrack;
   const infos = ['title', 'album', 'artist'];
   const links = {
-    album: getUrl('audio', {
+    album: getRouteWithParams('audio', {
       artistId: artist.id,
       albumId: album.id,
     }),
-    artist: getUrl('audio', {
+    artist: getRouteWithParams('audio', {
       artistId: artist.id,
     }),
   };
@@ -73,10 +73,6 @@ const Info = ({
           alt={album.title}
         />
       </Link>
-      <audio
-        className="spacer"
-        controls
-      />
     </>
   );
 };

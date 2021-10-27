@@ -11,7 +11,7 @@
   background: linear-gradient(to bottom,
   $color-layer-gradient-outer 0%,
   $color-layer-gradient-inner 50px,
-  $color-def-tangerine 100%);
+  $color-layer-gradient-outer 100%);
   background-color: $color-layer;
   box-shadow: $app-shadow;
 
@@ -55,5 +55,5 @@
   @extend %scroll-container;
 
   height: calc(100% - #{$header-height});
-  padding: 20px 20px 30px;
+  padding: 20px 20px 50px;
 }

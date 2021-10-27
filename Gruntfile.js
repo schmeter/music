@@ -95,7 +95,16 @@ module.exports = function(grunt) {
           [
             'babelify',
           ],
-          'loose-envify',
+          [
+            'loose-envify', {
+              global: true,
+              ignore: [
+                // transform redux eplicitly
+                // https://github.com/babel/babelify#why-arent-files-in-node_modules-being-transformed
+                /\/node_modules\/(?!redux\/)/,
+              ],
+            },
+          ],
         ],
         watch: true,
         browserifyOptions: {

@@ -13,12 +13,6 @@ export const shows = [
     category: 'kids',
   },
   {
-    title: 'Maulwurf',
-    topic: 'Die Maus',
-    channel: 'wdr',
-    category: 'kids',
-  },
-  {
     topic: 'Shaun das Schaf',
     channel: 'kika',
     category: 'kids',
@@ -27,17 +21,39 @@ export const shows = [
     sortOrder: 'asc',
   },
   {
-    topic: 'Ich kenne ein Tier',
+    topic: 'Ein Fall für die Erdmännchen',
     channel: 'kika',
     category: 'kids',
-    duration: 11,
     sortBy: 'title',
     sortOrder: 'asc',
   },
   {
-    topic: 'Ein Fall für die Erdmännchen',
+    topic: 'Löwenzahn',
     channel: 'kika',
     category: 'kids',
+  },
+  {
+    topic: 'Die Sendung mit der Maus',
+    channel: 'ard',
+    category: 'kids',
+  },
+  {
+    topic: 'Die Sendung mit dem Elefanten',
+    channel: 'kika',
+    category: 'kids',
+    duration: 24,
+  },
+  {
+    title: 'Maulwurf',
+    topic: 'Die Maus',
+    channel: 'wdr',
+    category: 'kids',
+  },
+  {
+    topic: 'Ich kenne ein Tier',
+    channel: 'kika',
+    category: 'kids',
+    duration: 11,
     sortBy: 'title',
     sortOrder: 'asc',
   },
@@ -55,13 +71,8 @@ export const shows = [
     sortOrder: 'asc',
   },
   {
-    topic: 'Löwenzahn',
-    channel: 'kika',
-    category: 'kids',
-  },
-  {
-    topic: 'Die Sendung mit der Maus',
-    channel: 'ard',
+    topic: 'Planet Schule - Kultur',
+    channel: 'swr',
     category: 'kids',
   },
   {
@@ -114,6 +125,11 @@ export const shows = [
     category: 'hobby',
   },
   {
+    topic: 'Planet Wissen',
+    channel: 'br',
+    category: 'science',
+  },
+  {
     topic: 'Terra X',
     channel: 'zdf',
     category: 'science',
@@ -131,9 +147,9 @@ export const shows = [
 ];
 
 export const getConfig = topic => shows.find(show => show.topic === topic) || shows[0];
-export const getCategories = () => [...uniq(pluck('category', shows))];
+export const getCategories = () => uniq(pluck('category', shows));
 export const getCategoriesWithShows = () => getCategories().map(category => ({
   category,
   shows: shows.filter(show => show.category === category),
-})).filter(category => category.shows.length);
+}));
 

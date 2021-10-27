@@ -7,8 +7,8 @@ module.exports = function(grunt) {
 
     const mp3Folder = 'mp3';
     const assetFolder = 'assets';
-    const coverImage = 'folder.jpg';
-    const coverFolder = 'folder';
+    const coverImage = 'cover.jpg';
+    const coverFolder = 'covers';
     const mdFolder = 'md';
 
     const audioPath = `${grunt.config('datFolder')}/audio.json`;

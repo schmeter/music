@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import Link from '../../Link';
 import Icon from '../../Icon';
 import i18n from '../../../services/i18n';
-import { getUrl } from '../../../services/navigation';
+import { getRouteWithParams } from '../../../services/navigation';
 
 const Header = ({ openLayer, canPlayMusic }) => {
   const handleClickInfo = useCallback(() => {
@@ -22,7 +22,7 @@ const Header = ({ openLayer, canPlayMusic }) => {
   return (
     <header className="main-header">
       <h1 className="main-headline">
-        <Link to={getUrl('index')}>
+        <Link to={getRouteWithParams('index')}>
           {i18n('app_title')}
         </Link>
       </h1>

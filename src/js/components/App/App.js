@@ -17,7 +17,7 @@ import Header from './Header';
 import Info from './Info';
 import Menu from '../Menu';
 import Player from './Player';
-import { getUrlRaw } from '../../services/navigation';
+import { getRoute } from '../../services/navigation';
 import configApp from '../../../config/app.json';
 
 const App = ({
@@ -49,25 +49,25 @@ const App = ({
     }} >
       <Header />
       <Switch>
-        <Route exact path={getUrlRaw('index')}>
+        <Route exact path={getRoute('index')}>
           <PageMenu />
         </Route>
-        <Route exact path={getUrlRaw('audio')}>
+        <Route exact path={getRoute('audio')}>
           <PageAudio />
         </Route>
-        <Route exact path={getUrlRaw('video')}>
+        <Route exact path={getRoute('video')}>
           <PageVideo />
         </Route>
-        <Route exact path={getUrlRaw('event')}>
+        <Route exact path={getRoute('event')}>
           <PageEvent />
         </Route>
-        <Route exact path={getUrlRaw('tools', {})}>
+        <Route exact path={getRoute('tools', {})}>
           <PageTools />
         </Route>
-        <Route exact path={getUrlRaw('settings')}>
+        <Route exact path={getRoute('settings')}>
           <PageSettings />
         </Route>
-        <Route path={getUrlRaw('404')}>
+        <Route path={getRoute('404')}>
           <Page404 />
         </Route>
       </Switch>

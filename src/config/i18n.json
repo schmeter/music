@@ -29,14 +29,14 @@
     "page_tools_headline": "Kann ich helfen?",
     "page_tools_clock_title": "Keine Zeit.",
     "page_tools_learn_title": "Ich weiß Bescheid.",
-    "page_tools_watch_title": "Gleich geht's ins Bettchen.",
-    "page_tools_watch_category_kids": "Kinder",
-    "page_tools_watch_category_fun": "Unterhaltung",
-    "page_tools_watch_category_health": "Gesundheit",
-    "page_tools_watch_category_people": "Leute",
-    "page_tools_watch_category_hobby": "Hobby",
-    "page_tools_watch_category_science": "Wissenschaft",
-    "page_tools_watch_category_undefined": "Keine Kategorie"
+    "page_tools_tv_title": "Gleich geht's ins Bettchen.",
+    "page_tools_tv_category_kids": "Kinder",
+    "page_tools_tv_category_fun": "Unterhaltung",
+    "page_tools_tv_category_health": "Gesundheit",
+    "page_tools_tv_category_people": "Leute",
+    "page_tools_tv_category_hobby": "Hobby",
+    "page_tools_tv_category_science": "Wissenschaft",
+    "page_tools_tv_category_undefined": "Keine Kategorie"
   },
   "en": {
     "date_format": "MM/dd/yyyy",
@@ -65,13 +65,13 @@
     "page_tools_headline": "Can I help?",
     "page_tools_clock_title": "No time.",
     "page_tools_learn_title": "I know it all.",
-    "page_tools_watch_title": "Let's go to bed.",
-    "page_tools_watch_category_kids": "Kids",
-    "page_tools_watch_category_fun": "Fun",
-    "page_tools_watch_category_health": "Health",
-    "page_tools_watch_category_people": "People",
-    "page_tools_watch_category_hobby": "Hobby",
-    "page_tools_watch_category_science": "Science",
-    "page_tools_watch_category_undefined": "No category"
+    "page_tools_tv_title": "Let's go to bed.",
+    "page_tools_tv_category_kids": "Kids",
+    "page_tools_tv_category_fun": "Fun",
+    "page_tools_tv_category_health": "Health",
+    "page_tools_tv_category_people": "People",
+    "page_tools_tv_category_hobby": "Hobby",
+    "page_tools_tv_category_science": "Science",
+    "page_tools_tv_category_undefined": "No category"
   }
 }

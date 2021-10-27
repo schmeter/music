@@ -11,7 +11,7 @@ To have your own music collection available in the app, follow these steps:
 
 - Make sure to have neat ID3 tags with your mp3 files.  
 - Copy your mp3 files to `src/assets/mp3/[artist]/[album]/[mp3file].mp3`.  
-- Copy your cover images to `src/assets/mp3/[artist]/[album]/folder.jpg`.  
+- Copy your cover images to `src/assets/mp3/[artist]/[album]/cover.jpg`.  
 - Edit `src/config/audio.json` and fill in your artist and album structure.  
 
 To display your own lyrics belonging to your music collection, follow these steps:  

@@ -7,7 +7,7 @@ import { getCategoriesWithShows, getConfig } from './helper/config';
 import { sendRequest } from './helper/request';
 import i18n from '../../../services/i18n';
 
-const Watch = ({ setCanPlayMusic }) => {
+const Tv = ({ setCanPlayMusic }) => {
   const history = useHistory();
   const params = new URLSearchParams(useLocation().search);
   const selection = params.get('selection');
@@ -42,7 +42,7 @@ const Watch = ({ setCanPlayMusic }) => {
   };
 
   return (
-    <div className="watch">
+    <div className="tv">
       <form className="form">
         <select
           className="select form-select"
@@ -53,7 +53,7 @@ const Watch = ({ setCanPlayMusic }) => {
           {getCategoriesWithShows().map(category => (
             <optgroup
               key={category.category}
-              label={i18n(`page_tools_watch_category_${category.category}`)}
+              label={i18n(`page_tools_tv_category_${category.category}`)}
             >
               {category.shows.map(show => (
                 <option
@@ -82,7 +82,7 @@ const Watch = ({ setCanPlayMusic }) => {
   );
 };
 
-Watch.propTypes = {
+Tv.propTypes = {
   setCanPlayMusic: PropTypes.func.isRequired,
   title: PropTypes.string,
   topic: PropTypes.string,
@@ -90,4 +90,4 @@ Watch.propTypes = {
   limit: PropTypes.number,
 };
 
-export default Watch;
+export default Tv;

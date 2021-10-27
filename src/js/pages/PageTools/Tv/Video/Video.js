@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { format } from 'date-fns';
 
 import Link from '../../../../components/Link';
+import Icon from '../../../../components/Icon';
 import i18n from '../../../../services/i18n';
 import storage from '../../../../services/storage';
 
@@ -13,11 +14,30 @@ const getVideoCurrentTime = itemId => getVideoCurrentTimes()
   .find(item => item.id === itemId)?.currentTime || 0;
 const setVideoCurrentTimes = items => storage.set('video:currentTimes', items);
 
+const onFullscreenChange = e => {
+  // document.fullscreenElement will point to the element that
+  // is in fullscreen mode if there is one. If there isn't one,
+  // the value of the property is null.
+  if (document.fullscreenElement) {
+    // console.log(document.fullscreenElement);
+  } else {
+    e.target.pause();
+  }
+};
+
 const Video = ({
   video,
   videoRefs,
 }) => {
   const [showVideo, setShowVideo] = useState(video.preview);
+
+  useEffect(() => {
+    document.addEventListener('fullscreenchange', onFullscreenChange);
+
+    return () => {
+      document.removeEventListener('fullscreenchange', onFullscreenChange);
+    };
+  });
 
   const playVideoFullscreen = currentVideo => {
     videoRefs.current.forEach(item => {
@@ -28,12 +48,16 @@ const Video = ({
     currentVideo.requestFullscreen?.();
   };
 
+  const videoUrl = (video.url_video_hd || video.url_video_low)
+    // fix wrongly double encoded ß
+    .replace('%C3%83%C5%B8', '%c3%9f');
+
   return (
     <div className="video">
       {video.preview || showVideo ? (
         <video
           controls
-          src={video.url_video}
+          src={videoUrl}
           ref={element => {
             videoRefs.current[video.index] = element;
           }}
@@ -68,9 +92,12 @@ const Video = ({
         />
       ) : (
         <div className="size-container">
+          <div className="icon">
+            <Icon id="play-circle-o" />
+          </div>
           <Link
             className="description"
-            to={video.url_video}
+            to={videoUrl}
             onClick={e => {
               e.preventDefault();
               setShowVideo(true);
@@ -82,18 +109,12 @@ const Video = ({
       )}
       <div className="video-details">
         <h3 className="date">
-          <Link to={video.url_video}>
-            {format(new Date(video.timestamp * 1000), i18n('date_format'))}
-            &nbsp;
-            {video.topic}
-            &nbsp;
-            ({`${Math.floor(video.duration / 60) % 60} min`})
-          </Link>
+          {format(new Date(video.timestamp * 1000), i18n('date_format'))}
+          &nbsp;
+          ({`${Math.floor(video.duration / 60) % 60} min`})
         </h3>
         <h3 className="title">
-          <Link to={video.url_video}>
-            {video.title}
-          </Link>
+          {video.title}
         </h3>
       </div>
     </div>
@@ -107,7 +128,8 @@ Video.propTypes = {
     topic: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
     duration: PropTypes.number.isRequired,
-    url_video: PropTypes.string.isRequired,
+    url_video_hd: PropTypes.string.isRequired,
+    url_video_low: PropTypes.string.isRequired,
     timestamp: PropTypes.number.isRequired,
     index: PropTypes.number.isRequired,
     preview: PropTypes.bool,

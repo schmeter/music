@@ -1,10 +1,10 @@
 import { connect } from 'react-redux';
 
-import Watch from './Watch';
+import Tv from './Tv';
 import { setCanPlayMusicAction } from '../../../state/actions/audio';
 
 export const mapDispatchToProps = dispatch => ({
   setCanPlayMusic: hasPermission => dispatch(setCanPlayMusicAction(hasPermission)),
 });
 
-export default connect(null, mapDispatchToProps)(Watch);
+export default connect(null, mapDispatchToProps)(Tv);

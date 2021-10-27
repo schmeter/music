@@ -1,9 +1,9 @@
-import configRoutes from '../../config/routes.json';
+import routes from '../../config/routes.json';
 
-export const getUrlRaw = id => configRoutes[id];
+export const getRoute = id => routes[id];
 
-export const getUrl = (id, params = {}) => {
-  let url = getUrlRaw(id);
+export const getRouteWithParams = (id, params = {}) => {
+  let url = getRoute(id);
 
   if (url) {
     // filter falsy params to be able to unset params explicitly
@@ -19,12 +19,4 @@ export const getUrl = (id, params = {}) => {
   return url;
 };
 
-export const redirectToIndex = searchParam => {
-  let route = getUrl('index');
-
-  if (searchParam) {
-    route = `${route}?${searchParam}`;
-  }
-
-  window.location.assign(route);
-};
+export const redirect = route => window.location.assign(route);

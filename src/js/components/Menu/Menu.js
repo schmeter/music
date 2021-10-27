@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import Link from '../Link';
 import Icon from '../Icon';
 import i18n from '../../services/i18n';
-import { getUrl } from '../../services/navigation';
+import { getRouteWithParams } from '../../services/navigation';
 
 const Menu = ({
   full,
@@ -28,7 +28,7 @@ const Menu = ({
           <Icon id="hand-o-right" />
           &nbsp;
           <Link
-            to={getUrl(route)}
+            to={getRouteWithParams(route)}
             onClick={closeLayers}
           >
             {i18n(`page_${route}_title`)}

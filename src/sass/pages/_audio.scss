@@ -35,16 +35,16 @@
       width: calc(100% / 5);
     }
 
-    @media (min-width: $min-width-desktop + 1) {
+    @media (min-width: $min-width-desktop) {
       width: calc(100% / 7);
     }
 
-    @media (min-width: $min-width-large-desktop + 1) {
+    @media (min-width: $min-width-large-desktop) {
       width: calc(100% / 10);
     }
 
-    @media (min-width: $min-width-very-large-desktop + 1) {
-      max-width: 256px;
+    @media (min-width: $min-width-very-large-desktop) {
+      width: calc(100% / 16);
     }
   }
 

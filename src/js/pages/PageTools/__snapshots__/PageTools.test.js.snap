@@ -28,13 +28,13 @@ exports[`PageTools renders correctly without url params 1`] = `
     className="center"
   >
     <p
-      key="clock"
+      key="tv"
     >
       <Link
         onClick={[MockFunction]}
-        to="/tools/clock"
+        to="/tools/tv"
       >
-        Keine Zeit.
+        Gleich geht's ins Bettchen.
       </Link>
     </p>
     <p
@@ -48,13 +48,13 @@ exports[`PageTools renders correctly without url params 1`] = `
       </Link>
     </p>
     <p
-      key="watch"
+      key="clock"
     >
       <Link
         onClick={[MockFunction]}
-        to="/tools/watch"
+        to="/tools/clock"
       >
-        Gleich geht's ins Bettchen.
+        Keine Zeit.
       </Link>
     </p>
   </div>

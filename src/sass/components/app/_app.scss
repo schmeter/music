@@ -145,18 +145,19 @@ hr {
     .image {
       width: 100%;
     }
+  }
 
-    .icon {
-      position: absolute;
-      top: 50%;
-      right: 0;
-      left: 0;
-      width: 100%;
-      margin-top: -15px;
-      color: $color-image-border;
-      font-size: 30px;
-      line-height: 30px;
-      text-align: center;
-    }
+  .icon {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    left: 0;
+    width: 100%;
+    margin-top: -25px;
+    opacity: 0.75;
+    color: $color-image-border;
+    font-size: 50px;
+    line-height: 50px;
+    text-align: center;
   }
 }

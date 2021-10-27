@@ -132,10 +132,6 @@ exports[`Info renders correctly 2`] = `
       src="test"
     />
   </Component>
-  <audio
-    className="spacer"
-    controls={true}
-  />
 </Fragment>
 `;
 
@@ -192,9 +188,5 @@ exports[`Info renders correctly after update 2`] = `
   >
     <div />
   </Component>
-  <audio
-    className="spacer"
-    controls={true}
-  />
 </Info>
 `;

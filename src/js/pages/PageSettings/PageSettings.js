@@ -4,7 +4,7 @@ import { useHistory } from 'react-router-dom';
 
 import Page from '../../components/Page';
 import i18n, { getAppLanguage, getLanguages, setAppLanguage } from '../../services/i18n';
-import { getUrl } from '../../services/navigation';
+import { getRouteWithParams } from '../../services/navigation';
 
 const PageSettings = ({ isLoggedIn, login, logout }) => {
   const password = useRef();
@@ -30,7 +30,7 @@ const PageSettings = ({ isLoggedIn, login, logout }) => {
         password: password.current.value,
       }, 60 * 60 * 24 * 30);
     }
-    history.push(getUrl('index'));
+    history.push(getRouteWithParams('index'));
   };
 
   const languages = getLanguages();

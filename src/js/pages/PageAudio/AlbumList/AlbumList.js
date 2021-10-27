@@ -5,7 +5,7 @@ import classNames from 'classnames';
 import Link from '../../../components/Link';
 import TrackList from '../TrackList';
 import AlbumCover from '../AlbumCover';
-import { getUrl } from '../../../services/navigation';
+import { getRouteWithParams } from '../../../services/navigation';
 
 const AlbumList = ({
   albums,
@@ -33,11 +33,11 @@ const AlbumList = ({
         const visible = playing
                         || !album.hidden
                         || album.id === selectedAlbumId;
-        const albumLink = getUrl('audio', {
+        const albumLink = getRouteWithParams('audio', {
           artistId: album.artist.id,
           albumId: album.id,
         });
-        const artistLink = getUrl('audio', {
+        const artistLink = getRouteWithParams('audio', {
           artistId: album.artist.id,
         });
 

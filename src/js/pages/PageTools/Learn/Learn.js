@@ -5,7 +5,7 @@ import { withRouter } from 'react-router-dom';
 import Icon from '../../../components/Icon';
 import Link from '../../../components/Link';
 import i18n, { getAppLanguage } from '../../../services/i18n';
-import { getUrl } from '../../../services/navigation';
+import { getRouteWithParams } from '../../../services/navigation';
 import { getApiUrl } from '../../../services/api';
 import { getRandom } from '../../../util/math';
 import { fetchJSON } from '../../../util/fetch';
@@ -64,7 +64,7 @@ class Learn extends React.Component {
               fetching: false,
             }, () => {
               if (isContent(content)) {
-                history.replace(getUrl('tools', {
+                history.replace(getRouteWithParams('tools', {
                   toolId: 'learn',
                   itemId: pageId,
                 }));
