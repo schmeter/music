@@ -5,6 +5,7 @@ import { useParams } from 'react-router-dom';
 
 import Image from '../../../components/Image';
 import Link from '../../../components/Link';
+import Icon from '../../../components/Icon';
 import { getApiUrl } from '../../../services/api';
 import { getEventId } from '../../../services/event';
 import i18n from '../../../services/i18n';
@@ -24,29 +25,36 @@ const Event = ({
     if (eventId === id) {
       eventContainer?.current?.scrollIntoView?.();
     }
-  }, [eventId, id]);
+  }, [
+    eventId,
+    id,
+  ]);
 
   return (
     <div
       ref={eventContainer}
       className="event"
     >
-      {event.imgPath && (
-        <Link to={link}>
+      <Link to={link}>
+        {event.imgPath ? (
           <Image
             src={event.imgPath}
             alt={event.title}
           />
-        </Link>
-      )}
+        ) : (
+          <div className="no-image">
+            <Icon id="calendar icon" />
+          </div>
+        )}
+      </Link>
       <h2 className="date">
-        {format(new Date(event.date), i18n('date_format'))}
-                &nbsp;
         <Link to={link}>
           {event.title}
         </Link>
       </h2>
-      <h3>
+      <h3 className="artist">
+        {format(new Date(event.date), i18n('date_format'))}
+        &nbsp;
         {event.artist.title}
       </h3>
     </div>

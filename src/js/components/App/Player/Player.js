@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import Analyser from './Analyser';
+import configApp from '../../../../config/app.json';
 
 class Player extends React.Component {
     audio = React.createRef();
@@ -60,6 +61,24 @@ class Player extends React.Component {
         audio.loop = !!file.loop;
         audio.src = file.path;
         audio.title = `${file.tag.artist} - ${file.tag.title}`;
+
+        if ('mediaSession' in navigator) {
+          // eslint-disable-next-line no-undef
+          navigator.mediaSession.metadata = new MediaMetadata({
+            title: file.tag.title,
+            artist: file.tag.artist,
+            album: file.tag.album,
+            artwork: [
+              { src: file.imgPath || configApp.fallbackImage, sizes: '96x96', type: 'image/jpg' },
+              { src: file.imgPath || configApp.fallbackImage, sizes: '128x128', type: 'image/jpg' },
+              { src: file.imgPath || configApp.fallbackImage, sizes: '192x192', type: 'image/jpg' },
+              { src: file.imgPath || configApp.fallbackImage, sizes: '256x256', type: 'image/jpg' },
+              { src: file.imgPath || configApp.fallbackImage, sizes: '384x384', type: 'image/jpg' },
+              { src: file.imgPath || configApp.fallbackImage, sizes: '512x512', type: 'image/jpg' },
+            ],
+          });
+        }
+
         if (play) {
           this.play();
         } else {

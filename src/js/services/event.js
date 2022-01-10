@@ -1,5 +1,5 @@
 import EventLibraryModel from '../models/EventLibrary';
-import eventData from '../../../shared/event.json';
+import eventData from '../../../src/shared/event.json';
 import { isAuthenticated } from './auth';
 
 export const loadLibrary = (showAll = isAuthenticated()) => new EventLibraryModel(eventData, showAll);

@@ -15,8 +15,6 @@ jest.mock('../../components/Page', () => () => <div />);
 jest.mock('./Clock', () => () => <div />);
 // eslint-disable-next-line react/display-name
 jest.mock('./Learn', () => () => <div />);
-// eslint-disable-next-line react/display-name
-jest.mock('./Tv', () => () => <div />);
 jest.mock('../', () => ({
   // eslint-disable-next-line react/display-name
   Page404: () => <div />,

@@ -3,22 +3,21 @@ module.exports = function(grunt) {
     const { readJSON, write } = grunt.file;
 
     const eventPath = `${grunt.config('datFolder')}/event.json`;
-    const imgPath = `${grunt.config('tmpFolder')}/flyer.json`;
+    const imgTreePath = `${grunt.config('tmpFolder')}/flyer.json`;
     const resultPath = `${grunt.config('shdFolder')}/event.json`;
-
     const eventData = readJSON(eventPath);
-    const imgData = readJSON(imgPath);
+    const imgTree = readJSON(imgTreePath);
 
-    const addImgPath = (eventData, imgData, path) => {
+    const addImgPath = (eventData, imgTree, path) => {
       if (eventData.artists) {
         eventData.artists.forEach(artist => {
-          if (imgData[artist.id]) {
-            addImgPath(artist, imgData[artist.id], `${path}${artist.id}/`);
+          if (imgTree[artist.id]) {
+            addImgPath(artist, imgTree[artist.id], `${path}${artist.id}/`);
           }
         });
       } else if (eventData.items) {
         eventData.items.forEach((event, index) => {
-          if (imgData[event.date]) {
+          if (imgTree[event.date]) {
             eventData.items[index] = Object.assign({}, event, {
               imgPath: `${path}${event.date}/flyer.jpg`,
             });
@@ -27,7 +26,7 @@ module.exports = function(grunt) {
       }
     };
 
-    addImgPath(eventData, imgData, '/img/flyer/');
+    addImgPath(eventData, imgTree, '/img/flyer/');
 
     write(resultPath, JSON.stringify(eventData, null, 2));
   });

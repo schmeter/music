@@ -18,6 +18,7 @@
     width: 100%;
     max-width: 768px;
     padding: 5px 10px 10px;
+    vertical-align: top;
 
     @media (min-width: $max-width-phone + 1) {
       width: calc(100% / 2);

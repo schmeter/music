@@ -15,8 +15,6 @@ describe('Image', () => {
     const component = mount(<Image {...props} />);
 
     component.simulate('error');
-    component.setState({ error: true });
-    component.simulate('error');
     component.simulate('load');
 
     expect(toJson(component)).toMatchSnapshot();

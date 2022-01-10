@@ -2,22 +2,26 @@ import { flatten, pick, propOr } from 'ramda';
 
 import configApp from '../../config/app.json';
 
-const getArtists = (audioData, showAll) => {
-  return propOr([], 'artists', audioData).map(artist => {
-    artist = Object.assign({}, artist, {
+const getArtists = (audioData, showAll) => propOr([], 'artists', audioData).map(
+  artist => {
+    artist = {
+      ...artist,
       hidden: showAll
         ? false
         : artist.hidden,
       imgPath: artist.imgPath || configApp.fallbackImage,
-    });
-    artist.albums = getAlbums(artist, showAll);
-    return artist;
-  });
-};
+    };
+    return {
+      ...artist,
+      albums: getAlbums(artist, showAll),
+    };
+  },
+);
 
-const getAlbums = (artist, showAll) => {
-  return propOr([], 'items', artist).map(album => {
-    album = Object.assign({}, album, {
+const getAlbums = (artist, showAll) => propOr([], 'items', artist).map(
+  album => {
+    album = {
+      ...album,
       hidden: showAll
         ? false
         : (artist.hidden || album.hidden),
@@ -25,26 +29,26 @@ const getAlbums = (artist, showAll) => {
       skip: (artist.skip || album.skip),
       imgPath: album.imgPath || configApp.fallbackImage,
       artist: pick(['id', 'title', 'imgPath'], artist),
-    });
-    album.tracks = getTracks(album, showAll);
-    return album;
-  });
-};
+    };
+    return {
+      ...album,
+      tracks: getTracks(album, showAll),
+    };
+  },
+);
 
-const getTracks = (album, showAll) => {
-  return Object.values(propOr({}, 'tracks', album)).map(track => {
-    track = Object.assign({}, track, {
-      hidden: showAll
-        ? false
-        : album.hidden,
-      loop: album.loop,
-      skip: album.skip,
-      artist: album.artist,
-      album: pick(['id', 'title', 'imgPath'], album),
-    });
-    return track;
-  });
-};
+const getTracks = (album, showAll) => propOr([], 'tracks', album).map(
+  track => ({
+    ...track,
+    hidden: showAll
+      ? false
+      : album.hidden,
+    loop: album.loop,
+    skip: album.skip,
+    artist: album.artist,
+    album: pick(['id', 'title', 'imgPath'], album),
+  }),
+);
 
 export default class AudioLibraryModel {
   constructor(audioData, showAll) {

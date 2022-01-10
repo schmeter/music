@@ -6,13 +6,11 @@ import { Page404 } from '../';
 import Page from '../../components/Page';
 import Link from '../../components/Link';
 import i18n from '../../services/i18n';
-import Tv from './Tv';
 import Learn from './Learn';
 import Clock from './Clock';
 import { getRouteWithParams } from '../../services/navigation';
 
 const tools = {
-  tv: <Tv />,
   learn: <Learn />,
   clock: <Clock />,
 };

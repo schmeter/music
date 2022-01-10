@@ -29,7 +29,9 @@ const useMousePosition = () => {
       document.removeEventListener('mouseleave', setMouseInvisible);
       document.removeEventListener('mouseenter', setMouseVisible);
     };
-  }, [mouse]);
+  }, [
+    mouse,
+  ]);
 
   return mouse;
 };

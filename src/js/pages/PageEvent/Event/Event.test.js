@@ -31,9 +31,16 @@ describe('Event', () => {
       artist: {
         title: 'test',
       },
-      imgPath: 'test',
     },
   };
+
+  it('renders correctly with image', () => {
+    mockUrlParams = {};
+
+    const component = mount(<Event {...{ ...props, event: { ...props.event, imgPath: 'test' } } } />);
+
+    expect(toJson(component)).toMatchSnapshot();
+  });
 
   it('renders correctly without url params', () => {
     mockUrlParams = {};

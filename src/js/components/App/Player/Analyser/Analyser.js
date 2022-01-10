@@ -21,24 +21,29 @@ class Analyser extends React.Component {
     }
 
     analyse() {
-      const { audio, isPlaying } = this.props;
-      const canvas = this.canvas.current;
-      const AudioContext = window.AudioContext;
+      try {
+        const { audio, isPlaying } = this.props;
+        const canvas = this.canvas.current;
+        const AudioContext = window.AudioContext;// || window.webkitAudioContext;
 
-      if (
-        canvas
-            && audio
-            && AudioContext
-            && !this.audioContext
-            && isPlaying
-      ) {
-        this.audioContext = new AudioContext();
-        const analyser = this.audioContext.createAnalyser();
-        const source = this.audioContext.createMediaElementSource(audio);
+        if (
+          canvas
+              && audio
+              && AudioContext
+              && !this.audioContext
+              && isPlaying
+        ) {
+          this.audioContext = new AudioContext();
+          const analyser = this.audioContext.createAnalyser();
+          const source = this.audioContext.createMediaElementSource(audio);
 
-        source.connect(analyser);
-        analyser.connect(this.audioContext.destination);
-        this.drawAnalyser(canvas, analyser);
+          source.connect(analyser);
+          analyser.connect(this.audioContext.destination);
+          this.drawAnalyser(canvas, analyser);
+        }
+      } catch (error) {
+        // eslint-disable-next-line no-console
+        // console.log(error);
       }
     }
 

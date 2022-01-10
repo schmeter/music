@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { withRouter } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
@@ -15,8 +15,9 @@ const Page = ({
   className,
   children,
   useBaseClass,
-  location,
 }) => {
+  const location = useLocation();
+
   useEffect(() => {
     setTitle(title || i18n(`page_${id}_title`));
   }, [
@@ -59,4 +60,4 @@ Page.propTypes = {
   }),
 };
 
-export default withRouter(Page);
+export default Page;

@@ -1,6 +1,5 @@
 export const getRandom = (minValue, maxValue) => {
   const min = Math.min(minValue, maxValue);
-
   const max = Math.max(minValue, maxValue);
 
   if (min === max) {

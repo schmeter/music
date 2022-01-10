@@ -1,5 +1,5 @@
 import AudioLibraryModel from '../models/AudioLibrary';
-import audioData from '../../../shared/audio.json';
+import audioData from '../../../src/shared/audio.json';
 import { isAuthenticated } from './auth';
 import storage from './storage';
 import { getRandom } from '../util/math';

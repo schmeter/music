@@ -161,3 +161,28 @@ hr {
     text-align: center;
   }
 }
+
+.ellipsis {
+  &::after {
+    content: '';
+    animation: dotElasticAfter 1s infinite;
+  }
+}
+
+@keyframes dotElasticAfter {
+  0% {
+    content: '';
+  }
+
+  25% {
+    content: '.';
+  }
+
+  50% {
+    content: '..';
+  }
+
+  75% {
+    content: '...';
+  }
+}

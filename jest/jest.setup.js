@@ -8,14 +8,14 @@ jest.mock('../src/config/app.json', () => ({
   ...require('./mockups/app.json'),
 }), { virtual: true });
 
-jest.mock('../shared/audio.json', () => ({
+jest.mock('../src/shared/audio.json', () => ({
   ...require('./mockups/audio.json'),
 }), { virtual: true });
 
-jest.mock('../shared/event.json', () => ({
+jest.mock('../src/shared/event.json', () => ({
   ...require('./mockups/event.json'),
 }), { virtual: true });
 
-jest.mock('../shared/video.json', () => ({
+jest.mock('../src/shared/video.json', () => ({
   ...require('./mockups/video.json'),
 }), { virtual: true });

@@ -1,6 +1,5 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { withRouter } from 'react-router-dom';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
+import { useHistory, useParams } from 'react-router-dom';
 
 import Icon from '../../../components/Icon';
 import Link from '../../../components/Link';
@@ -15,133 +14,108 @@ const isContent = content => !!content
   && content.missing !== ''
   && !content.title.includes(':');
 
-class Learn extends React.Component {
-  state = {
-    content: null,
-    pageId: null,
-    fetching: false,
-    error: null,
-  };
+const Learn = () => {
+  const isMounted = useRef(false);
+  const history = useHistory();
+  const params = useParams();
+  const pageId = parseInt(params.itemId, 10);
+  const [content, setContent] = useState(null);
+  const [fetching, setFetching] = useState(false);
+  const [error, setError] = useState(null);
 
-  refreshContent() {
-    const { history, match } = this.props;
+  const updatePageId = useCallback((replace = false, id) => {
+    history[replace ? 'replace' : 'push'](getRouteWithParams('tools', {
+      toolId: 'learn',
+      itemId: id || getRandom(1, 20000000), // 18630637,
+    }));
+  }, [history]);
 
-    let content = this.state.content;
-    const pageIdFetched = this.state.pageId;
-    const pageIdRequested = parseInt(match.params.itemId, 10);
+  const handleRefresh = useCallback(e => {
+    e.preventDefault();
+    updatePageId();
+  }, [
+    updatePageId,
+  ]);
 
-    let pageId = pageIdRequested;
+  const handleError = useCallback(() => {
+    setError(i18n('app_error_occured'));
+    setFetching(false);
+  }, []);
 
-    if (
-      // initial state
-      (!pageIdRequested)
-            // fetch went wrong
-            || (pageIdFetched && !isContent(content))
-            // everything has been fetched and should be renewed
-            || ((pageIdRequested === pageIdFetched) && isContent(content))
-    ) {
-      pageId = getRandom(1, 20000000); // 18630637;
+  useEffect(() => {
+    isMounted.current = true;
+    if (!pageId) {
+      updatePageId(true);
     }
 
-    this.setState({
-      content: null,
-      pageId,
-      fetching: true,
-      error: null,
-    });
+    return () => {
+      isMounted.current = false;
+    };
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
-    // eslint-disable-next-line max-len
-    fetchJSON(getApiUrl('wikipediaPageExtract', {
-      language: getAppLanguage(),
-      pageId,
-    }))
-      .then(res => {
-        if (this.componentIsMounted) {
-          if (res.query && res.query.pages) {
-            content = res.query.pages[pageId];
-            this.setState({
-              content,
-              fetching: false,
-            }, () => {
-              if (isContent(content)) {
-                history.replace(getRouteWithParams('tools', {
-                  toolId: 'learn',
-                  itemId: pageId,
-                }));
-              } else {
-                this.refreshContent();
-              }
-            });
-          } else {
-            this.setError();
+  useEffect(() => {
+    if (!fetching) {
+      setError(null);
+      setContent(null);
+      setFetching(true);
+
+      fetchJSON(getApiUrl('wikipediaPageExtract', {
+        language: getAppLanguage(),
+        pageId,
+      }))
+        .then(res => {
+          if (isMounted.current) {
+            setFetching(false);
+            const response = res?.query?.pages[pageId];
+
+            if (isContent(response)) {
+              setContent(response);
+            } else {
+              updatePageId(true);
+            }
           }
-        }
-      }, this.setError);
-  }
-
-  componentDidMount() {
-    this.componentIsMounted = true;
-    this.refreshContent();
-  }
-
-  componentWillUnmount() {
-    this.componentIsMounted = false;
-  }
-
-    handleRefresh = e => {
-      e.preventDefault();
-      this.refreshContent();
+        }, handleError);
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [
+    pageId,
+  ]);
 
-    setError = () => {
-      this.setState({
-        fetching: false,
-        error: i18n('app_error_occured'),
-      });
-    }
+  return (
+    <div className="learn">
+      <p className="center">
+        {fetching ? (
+          <Icon id="cog fa-spin" />
+        ) : (
+          <Link to="" onClick={handleRefresh}>
+            <Icon id="refresh" />
+          </Link>
+        )}
+      </p>
+      {content && (
+        <>
+          <h3 className="headline">
+            <Link to={getApiUrl('wikipediaPage', {
+              language: getAppLanguage(),
+              pageId: content.pageid,
+            })}>
+              {content.title}
+            </Link>
+          </h3>
+          <div className="center">
+            <pre>{content.extract}</pre>
+          </div>
+        </>
+      )}
+      {error && (
+        <h3 className="headline">
+          {error}
+        </h3>
+      )}
 
-    render() {
-      const { content, error, fetching } = this.state;
-
-      return (
-        <div className="learn">
-          <p className="center">
-            {fetching ? (
-              <Icon id="cog fa-spin" />
-            ) : (
-              <Link to="" onClick={this.handleRefresh}>
-                <Icon id="refresh" />
-              </Link>
-            )}
-          </p>
-          {isContent(content) && (
-            <>
-              <h3 className="headline">
-                <Link to={getApiUrl('wikipediaPage', {
-                  language: getAppLanguage(),
-                  pageId: content.pageid,
-                })}>
-                  {content.title}
-                </Link>
-              </h3>
-              <div className="center">
-                <pre>{content.extract}</pre>
-              </div>
-            </>
-          )}
-          {error && (
-            <h3 className="headline">
-              {error}
-            </h3>
-          )}
-        </div>
-      );
-    }
-}
-
-Learn.propTypes = {
-  history: PropTypes.object,
-  match: PropTypes.object.isRequired,
+    </div>
+  );
 };
 
-export default withRouter(Learn);
+export default Learn;

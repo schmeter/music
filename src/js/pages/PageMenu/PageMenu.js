@@ -2,8 +2,8 @@ import React, { useEffect } from 'react';
 
 import Page from '../../components/Page';
 import Menu from '../../components/Menu';
-import { setTitle } from '../../services/meta';
 import Ball from '../../components/Ball';
+import { setTitle } from '../../services/meta';
 
 const PageMenu = () => {
   useEffect(() => {

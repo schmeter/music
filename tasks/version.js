@@ -5,6 +5,6 @@ module.exports = function(grunt) {
     write(`${grunt.config('outFolder')}/version.json`, JSON.stringify({
       rev: grunt.config.data.rev,
       time: grunt.config.data.time,
-    }, null, 4));
+    }, null, 2));
   });
 };

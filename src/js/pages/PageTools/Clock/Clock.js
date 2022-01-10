@@ -1,20 +1,18 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { format } from 'date-fns';
 
 const SECOND = 1000;
 
-let componentIsMounted = false;
-
-let timer = null;
-
 const Clock = () => {
+  const timer = useRef();
+  const isMounted = useRef(false);
   const [dateTime, setDateTime] = useState(new Date());
 
   // https://stackoverflow.com/questions/6951727/setinterval-not-working-properly-on-chrome
   const setTimer = useCallback((callback = () => {}) => {
-    clearTimeout(timer);
-    if (componentIsMounted) {
-      timer = setTimeout(callback, SECOND - (dateTime.getTime() % SECOND));
+    clearTimeout(timer.current);
+    if (isMounted.current) {
+      timer.current = setTimeout(callback, SECOND - (dateTime.getTime() % SECOND));
     }
   }, [
     dateTime,
@@ -28,11 +26,11 @@ const Clock = () => {
   ]);
 
   useEffect(() => {
-    componentIsMounted = true;
+    isMounted.current = true;
     setTimer(updateDateTime);
 
     return () => {
-      componentIsMounted = false;
+      isMounted.current = false;
       setTimer();
     };
   }, [

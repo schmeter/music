@@ -4,11 +4,6 @@ exports[`Page renders correctly with all parameters 1`] = `
 <Page
   className="test"
   id="test"
-  location={
-    Object {
-      "pathname": "test",
-    }
-  }
   title="test"
   useBaseClass={false}
 >

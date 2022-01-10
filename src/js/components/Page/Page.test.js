@@ -4,8 +4,10 @@ import toJson from 'enzyme-to-json';
 
 import Page from './Page';
 
-jest.mock('react-router', () => ({
-  withRouter: component => component,
+jest.mock('react-router-dom', () => ({
+  useLocation: () => ({
+    pathname: 'test',
+  }),
 }));
 
 describe('Page', () => {
@@ -16,9 +18,6 @@ describe('Page', () => {
       className: 'test',
       children: 'test',
       useBaseClass: false,
-      location: {
-        pathname: 'test',
-      },
     };
     const component = mount(<Page {...props} />);
 

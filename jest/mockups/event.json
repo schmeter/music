@@ -5,13 +5,17 @@
       "title": "The Artist",
       "items": [
         {
-          "date": "2020-01-02",
+          "date": "2020-01-01",
           "title": "Test"
         },
         {
           "hidden": true,
           "date": "2020-02-02",
           "title": "Test2"
+        },
+        {
+          "date": "2020-03-03",
+          "title": "Test3"
         }
       ]
     }

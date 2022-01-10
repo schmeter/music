@@ -3,7 +3,8 @@
 coverage
 node_modules
 public
-shared
+!src/shared
+src/shared/*
 !src/assets/mp3
 src/assets/mp3/*
 !src/assets/mp3/demoartist

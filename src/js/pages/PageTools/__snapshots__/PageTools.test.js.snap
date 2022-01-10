@@ -28,16 +28,6 @@ exports[`PageTools renders correctly without url params 1`] = `
     className="center"
   >
     <p
-      key="tv"
-    >
-      <Link
-        onClick={[MockFunction]}
-        to="/tools/tv"
-      >
-        Gleich geht's ins Bettchen.
-      </Link>
-    </p>
-    <p
       key="learn"
     >
       <Link

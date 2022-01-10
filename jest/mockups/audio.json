@@ -7,38 +7,34 @@
         {
           "id": "thealbum",
           "title": "The Album",
-          "tracks": {
-            "01 The Song.mp3": {
-              "path": "/mp3/demoartist/thealbum/01 The Song.mp3",
-              "tag": {
-                "title": "The Song",
-                "artist": "The Artist",
-                "album": "The Album",
-                "year": "",
-                "track": "1"
-              },
-              "lyrics": "<h2>The Song</h2>\n\n<p>Lyrics<br/>Lyrics<br/>Lyrics<br/>Lyrics<br/>Lyrics<br/>Lyrics<br/>Lyrics<br/>Lyrics<br/>Lyrics  </p>"
-            }
-          }
+          "tracks": [{
+            "path": "/mp3/demoartist/thealbum/01 The Song.mp3",
+            "tag": {
+              "title": "The Song",
+              "artist": "The Artist",
+              "album": "The Album",
+              "year": "",
+              "track": "1"
+            },
+            "lyrics": "<h2>The Song</h2>\n\n<p>Lyrics<br/>Lyrics<br/>Lyrics<br/>Lyrics<br/>Lyrics<br/>Lyrics<br/>Lyrics<br/>Lyrics<br/>Lyrics  </p>"
+          }]
         },
         {
           "hidden": true,
           "reverse": true,
           "id": "thesecretalbum",
           "title": "The Secret Album",
-          "tracks": {
-            "01 The Song.mp3": {
-              "path": "/mp3/demoartist/thesecretalbum/01 The Song.mp3",
-              "tag": {
-                "title": "The Song",
-                "artist": "The Artist",
-                "album": "The Album",
-                "year": "",
-                "track": "1"
-              },
-              "lyrics": ""
-            }
-          }
+          "tracks": [{
+            "path": "/mp3/demoartist/thesecretalbum/01 The Song.mp3",
+            "tag": {
+              "title": "The Song",
+              "artist": "The Artist",
+              "album": "The Album",
+              "year": "",
+              "track": "1"
+            },
+            "lyrics": ""
+          }]
         }
       ]
     }

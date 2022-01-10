@@ -14,8 +14,8 @@ module.exports = function(grunt) {
     srcFolder: 'src',
     cfgFolder: 'src/config',
     datFolder: 'src/data',
+    shdFolder: 'src/shared',
     outFolder: 'public',
-    shdFolder: 'shared',
     tmpFolder: '.tmp',
 
     pkg: grunt.file.readJSON('package.json'),
@@ -48,6 +48,7 @@ module.exports = function(grunt) {
         '<%= srcFolder %>/assets/fonts/**/*',
       ],
       out: ['<%= outFolder %>/**/*'],
+      shd: ['<%= shdFolder %>/**/*'],
       tmp: ['<%= tmpFolder %>/**/*'],
     },
 

@@ -1,55 +1,48 @@
-import React from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
 import configApp from '../../../config/app.json';
 
-class Image extends React.Component {
-    image = React.createRef();
+const Image = ({ className, src, alt, onLoad }) => {
+  const image = useRef();
+  const [loaded, setLoaded] = useState(false);
+  const [error, setError] = useState(false);
 
-    state = {
-      loaded: false,
-      error: false,
-    };
+  const handleLoad = useCallback(() => {
+    setLoaded(true);
+    onLoad?.();
+  }, [
+    onLoad,
+  ]);
 
-    handleLoad = () => {
-      const { onLoad } = this.props;
+  const handleError = useCallback(() => {
+    setError(true);
+  }, []);
 
-      this.setState({ loaded: true });
-      onLoad?.();
+  useEffect(() => {
+    if (error) {
+      image.current.src = configApp.fallbackImage;
     }
+  }, [
+    error,
+  ]);
 
-    handleError = () => {
-      const { error } = this.state;
-      const image = this.image.current;
-
-      this.setState({ error: true }, () => {
-        if (!error) {
-          image.src = configApp.fallbackImage;
-        }
-      });
-    }
-
-    render() {
-      const { loaded } = this.state;
-      const { className, src, alt } = this.props;
-
-      return (
-        <img
-          className={classNames(
-            'image',
-            className,
-            !loaded && 'invisible',
-          )}
-          src={src}
-          alt={alt}
-          ref={this.image}
-          onLoad={this.handleLoad}
-          onError={this.handleError}
-        />
-      );
-    }
-}
+  return (
+    <img
+      className={classNames(
+        'image',
+        className,
+        !loaded && 'invisible',
+      )}
+      src={src}
+      alt={alt}
+      ref={image}
+      onLoad={handleLoad}
+      onError={handleError}
+    />
+  );
+};
 
 Image.propTypes = {
   src: PropTypes.string.isRequired,
