@@ -68,7 +68,7 @@
     "jest": "^27.4.5",
     "load-grunt-tasks": "^5.1.0",
     "loose-envify": "^1.4.0",
-    "marked": "^4.0.8",
+    "marked": "^4.0.10",
     "md5": "^2.3.0",
     "node-sass": "^7.0.1",
     "node-sass-globbing": "0.0.23",
