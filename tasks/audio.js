@@ -5,46 +5,46 @@ module.exports = function(grunt) {
     const ID3 = require('id3-parser');
     const { marked } = require('marked');
 
-    const mp3Folder = 'mp3';
     const assetFolder = 'assets';
+    const musicFolder = 'mp3/music';
     const coverImage = 'cover.jpg';
     const coverFolder = 'covers';
     const mdFolder = 'md';
     const configAudioPath = `${grunt.config('datFolder')}/audio.json`;
-    const mp3TreePath = `${grunt.config('tmpFolder')}/mp3.json`;
-    const imgTreePath = `${grunt.config('tmpFolder')}/cover.json`;
-    const mdTreePath = `${grunt.config('tmpFolder')}/md.json`;
-    const resultPath = `${grunt.config('shdFolder')}/audio.json`;
+    const musicSourcePath = `${grunt.config('tmpFolder')}/mp3.json`;
+    const imgSourcePath = `${grunt.config('tmpFolder')}/cover.json`;
+    const mdSourcePath = `${grunt.config('tmpFolder')}/md.json`;
+    const audioResultPath = `${grunt.config('shdFolder')}/audio.json`;
     const configAudio = readJSON(configAudioPath);
-    const mp3Tree = readJSON(mp3TreePath);
-    const imgTree = readJSON(imgTreePath);
-    const mdTree = readJSON(mdTreePath);
+    const { music: musicTree } = readJSON(musicSourcePath);
+    const { music: coverTree } = readJSON(imgSourcePath);
+    const mdTree = readJSON(mdSourcePath);
 
-    write(resultPath, JSON.stringify({
+    write(audioResultPath, JSON.stringify({
       artists: pathOr([], ['artists'], configAudio).map(
         artist => ({
           ...artist,
           // add artist image
-          ...(path([artist.id, coverImage], imgTree) && {
-            imgPath: `/${mp3Folder}/${artist.id}/${coverImage}`,
+          ...(path([artist.id, coverImage], coverTree) && {
+            imgPath: `/${musicFolder}/${artist.id}/${coverImage}`,
           }),
           items: pathOr([], ['items'], artist).map(item => {
-            const itemImgPath = `/${mp3Folder}/${artist.id}/${item.id}/${coverImage}`;
+            const itemImgPath = `/${musicFolder}/${artist.id}/${item.id}/${coverImage}`;
 
             return {
               ...item,
               // add album image
-              ...(path([artist.id, item.id, coverImage], imgTree)) && {
+              ...(path([artist.id, item.id, coverImage], coverTree)) && {
                 imgPath: itemImgPath,
               },
               // add album image folder
-              ...(path([artist.id, item.id, coverFolder], imgTree)) && {
-                imgFolder: `/${mp3Folder}/${artist.id}/${item.id}/${coverFolder}`,
-                imgItems: Object.keys(imgTree[artist.id][item.id][coverFolder]),
+              ...(path([artist.id, item.id, coverFolder], coverTree)) && {
+                imgFolder: `/${musicFolder}/${artist.id}/${item.id}/${coverFolder}`,
+                imgItems: Object.keys(coverTree[artist.id][item.id][coverFolder]),
               },
-              tracks: Object.keys(pathOr({}, [artist.id, item.id], mp3Tree)).map(fileName => {
+              tracks: Object.keys(pathOr({}, [artist.id, item.id], musicTree)).map(fileName => {
                 // read file id3
-                const mp3FilePath = `${mp3Folder}/${artist.id}/${item.id}/${fileName}`;
+                const mp3FilePath = `${musicFolder}/${artist.id}/${item.id}/${fileName}`;
                 const mp3SrcPath = `${grunt.config('srcFolder')}/${assetFolder}/${mp3FilePath}`;
                 const fileBuffer = read(mp3SrcPath, { encoding: null });
                 const fileTag = ID3.parse(fileBuffer);

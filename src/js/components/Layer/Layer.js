@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
 import Icon from '../Icon';
-import i18n from '../../services/i18n';
+import i18n from '../../helpers/i18n';
 
 const Layer = ({
   id,

@@ -3,12 +3,12 @@ import PropTypes from 'prop-types';
 import { useParams } from 'react-router-dom';
 
 import { Page404 } from '../';
-import Page from '../../components/Page';
+import Page from '../Page';
 import Link from '../../components/Link';
-import i18n from '../../services/i18n';
+import i18n from '../../helpers/i18n';
 import Learn from './Learn';
 import Clock from './Clock';
-import { getRouteWithParams } from '../../services/navigation';
+import { getRouteWithParams } from '../../helpers/navigation';
 
 const tools = {
   learn: <Learn />,

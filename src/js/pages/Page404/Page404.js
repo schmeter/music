@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import Page from '../../components/Page';
-import i18n from '../../services/i18n';
+import Page from '../Page';
+import i18n from '../../helpers/i18n';
 
 const Page404 = ({
   activeTrack,

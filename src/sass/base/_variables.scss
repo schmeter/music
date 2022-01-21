@@ -33,7 +33,6 @@ $color-curtains: $color-def-close-to-black;
 $color-curtains-border: $color-def-close-to-white;
 $color-player-outer: $color-def-grey-dark;
 $color-player-inner: $color-def-close-to-white;
-$color-secret: $color-def-tangerine-semi;
 
 $font-size-base: 18px;
 $line-height-base: 24px;
@@ -73,7 +72,7 @@ $screensaver-fade-out-time: 10s;
 
   .screensaver.active & {
     transition: opacity $screensaver-fade-out-time;
-    opacity: 0;
+    opacity: 0.1;
     pointer-events: none;
   }
 }

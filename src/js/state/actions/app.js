@@ -1,6 +1,6 @@
-import i18n from '../../services/i18n';
-import { redirect } from '../../services/navigation';
-import { fetchJSON } from '../../util/fetch';
+import i18n from '../../helpers/i18n';
+import { redirect } from '../../helpers/navigation';
+import { fetchJSON } from '../../helpers/fetch';
 
 export const requestUpdateAction = () => dispatch => {
   fetchJSON(`/version.json?${new Date().getTime()}`, true).then(data => {

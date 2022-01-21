@@ -1,0 +1,153 @@
+body {
+  overflow: hidden;
+  background: linear-gradient(to bottom,
+  $color-background-gradient-outer 0%,
+  $color-background-gradient-inner 50px,
+  $color-background-gradient-outer 100%);
+  color: $color-text;
+  font-family: Helvetica Neue, Arial, sans-serif;
+  font-size: $font-size-base;
+  line-height: $line-height-base;
+  background-blend-mode: multiply;
+}
+
+.main-header {
+  @extend %screensaver-foreground;
+
+  position: fixed;
+  z-index: $z-index-header;
+  top: 0;
+  right: 0;
+  left: 0;
+  opacity: 0.95;
+  background-color: $color-background;
+  box-shadow: $app-shadow;
+}
+
+.main-headline {
+  padding: 0 $header-icon-width;
+  font-size: $header-font-size;
+  font-weight: bold;
+  line-height: $header-height;
+  text-align: center;
+}
+
+.main {
+  @extend %scroll-container;
+  @extend %screensaver-foreground;
+
+  position: fixed;
+  z-index: $z-index-main;
+  top: $header-height;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 20px 10px 10px;
+}
+
+.input,
+.button,
+.select {
+  display: inline-block;
+  border: 0;
+  border-radius: 0;
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  text-align: center;
+  white-space: normal;
+  -webkit-appearance: none; /* stylelint-disable-line property-no-vendor-prefix */
+  appearance: none;
+}
+
+.form {
+  display: block;
+  margin: 10px;
+  text-align: center;
+}
+
+.form-input,
+.form-button,
+.form-select {
+  height: 50px;
+  margin: 5px;
+  padding: 10px;
+  border: 1px solid $color-input-border;
+  background: $color-input;
+}
+
+.form-input {
+  width: 150px;
+}
+
+.form-button {
+  width: 100px;
+}
+
+.image {
+  max-width: 100%;
+  transition: opacity 300ms;
+  opacity: 1;
+
+  &.invisible {
+    opacity: 0;
+  }
+}
+
+a {
+  .image {
+    border: 1px solid $color-image-border;
+  }
+}
+
+hr {
+  border-top: 0;
+  border-right: 0;
+  border-left: 0;
+  border-color: $color-box-shadow;
+}
+
+.header-button {
+  position: absolute;
+  top: 0;
+  width: $header-icon-width;
+  height: $header-height;
+  padding: 0 10px;
+  font-size: $header-font-size;
+  line-height: $header-height;
+  cursor: pointer;
+
+  &.left {
+    left: 0;
+  }
+
+  &.right {
+    right: 0;
+  }
+}
+
+.video {
+  .video-preview {
+    position: relative;
+    width: 100%;
+
+    .image {
+      width: 100%;
+    }
+  }
+
+  .icon {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    left: 0;
+    width: 100%;
+    margin-top: -25px;
+    opacity: 0.75;
+    color: $color-image-border;
+    font-size: 50px;
+    line-height: 50px;
+    text-align: center;
+  }
+}

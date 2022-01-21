@@ -5,9 +5,9 @@ import toJson from 'enzyme-to-json';
 import PageVideo from './PageVideo';
 
 // eslint-disable-next-line react/display-name
-jest.mock('../../components/Page', () => () => <div />);
+jest.mock('../Page', () => () => <div />);
 // eslint-disable-next-line react/display-name
-jest.mock('../../components/Video', () => () => <div />);
+jest.mock('./Video', () => () => <div />);
 
 describe('PageVideo', () => {
   it('renders correctly', () => {

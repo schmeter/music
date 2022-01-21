@@ -1,4 +1,4 @@
-import i18n from './i18n';
+import i18n from '../helpers/i18n';
 
 export const joinTitleParts = parts => parts.join(' | ');
 

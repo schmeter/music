@@ -47,6 +47,21 @@ exports[`Event renders correctly with correct url params 1`] = `
           rel="noopener noreferrer"
           target="_blank"
         >
+          02.02.2020
+        </a>
+      </Link>
+    </h2>
+    <h2
+      className="title"
+    >
+      <Link
+        to="https://www.google.de/maps/dir//test"
+      >
+        <a
+          href="https://www.google.de/maps/dir//test"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
           test
         </a>
       </Link>
@@ -54,9 +69,17 @@ exports[`Event renders correctly with correct url params 1`] = `
     <h3
       className="artist"
     >
-      02.02.2020
-       
-      test
+      <Link
+        to="https://www.google.de/maps/dir//test"
+      >
+        <a
+          href="https://www.google.de/maps/dir//test"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          test
+        </a>
+      </Link>
     </h3>
   </div>
 </Event>
@@ -111,6 +134,21 @@ exports[`Event renders correctly with image 1`] = `
           rel="noopener noreferrer"
           target="_blank"
         >
+          02.02.2020
+        </a>
+      </Link>
+    </h2>
+    <h2
+      className="title"
+    >
+      <Link
+        to="https://www.google.de/maps/dir//test"
+      >
+        <a
+          href="https://www.google.de/maps/dir//test"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
           test
         </a>
       </Link>
@@ -118,9 +156,17 @@ exports[`Event renders correctly with image 1`] = `
     <h3
       className="artist"
     >
-      02.02.2020
-       
-      test
+      <Link
+        to="https://www.google.de/maps/dir//test"
+      >
+        <a
+          href="https://www.google.de/maps/dir//test"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          test
+        </a>
+      </Link>
     </h3>
   </div>
 </Event>
@@ -173,6 +219,21 @@ exports[`Event renders correctly with wrong url params 1`] = `
           rel="noopener noreferrer"
           target="_blank"
         >
+          02.02.2020
+        </a>
+      </Link>
+    </h2>
+    <h2
+      className="title"
+    >
+      <Link
+        to="https://www.google.de/maps/dir//test"
+      >
+        <a
+          href="https://www.google.de/maps/dir//test"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
           test
         </a>
       </Link>
@@ -180,9 +241,17 @@ exports[`Event renders correctly with wrong url params 1`] = `
     <h3
       className="artist"
     >
-      02.02.2020
-       
-      test
+      <Link
+        to="https://www.google.de/maps/dir//test"
+      >
+        <a
+          href="https://www.google.de/maps/dir//test"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          test
+        </a>
+      </Link>
     </h3>
   </div>
 </Event>
@@ -235,6 +304,21 @@ exports[`Event renders correctly without url params 1`] = `
           rel="noopener noreferrer"
           target="_blank"
         >
+          02.02.2020
+        </a>
+      </Link>
+    </h2>
+    <h2
+      className="title"
+    >
+      <Link
+        to="https://www.google.de/maps/dir//test"
+      >
+        <a
+          href="https://www.google.de/maps/dir//test"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
           test
         </a>
       </Link>
@@ -242,9 +326,17 @@ exports[`Event renders correctly without url params 1`] = `
     <h3
       className="artist"
     >
-      02.02.2020
-       
-      test
+      <Link
+        to="https://www.google.de/maps/dir//test"
+      >
+        <a
+          href="https://www.google.de/maps/dir//test"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          test
+        </a>
+      </Link>
     </h3>
   </div>
 </Event>

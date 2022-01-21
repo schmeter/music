@@ -13,7 +13,6 @@ import {
   getTracks,
   getPlayToggle,
   isPlaying,
-  canPlayMusic,
 } from './audio';
 
 describe('audio', () => {
@@ -41,7 +40,6 @@ describe('audio', () => {
       },
       activeIndex: 1,
       isPlaying: false,
-      canPlayMusic: true,
       playToggle: false,
     },
   };
@@ -100,10 +98,6 @@ describe('audio', () => {
 
   it('expects isPlaying to return correct value', () => {
     expect(isPlaying(state)).toBe(state.audio.isPlaying);
-  });
-
-  it('expects canPlayMusic to return correct value', () => {
-    expect(canPlayMusic(state)).toBe(state.audio.canPlayMusic);
   });
 
   const stateWrong1 = {

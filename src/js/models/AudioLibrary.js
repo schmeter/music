@@ -1,6 +1,6 @@
 import { flatten, pick, propOr } from 'ramda';
 
-import configApp from '../../config/app.json';
+import { config } from '../helpers/aggregate';
 
 const getArtists = (audioData, showAll) => propOr([], 'artists', audioData).map(
   artist => {
@@ -9,7 +9,7 @@ const getArtists = (audioData, showAll) => propOr([], 'artists', audioData).map(
       hidden: showAll
         ? false
         : artist.hidden,
-      imgPath: artist.imgPath || configApp.fallbackImage,
+      imgPath: artist.imgPath || config.app.fallbackImage,
     };
     return {
       ...artist,
@@ -27,7 +27,7 @@ const getAlbums = (artist, showAll) => propOr([], 'items', artist).map(
         : (artist.hidden || album.hidden),
       loop: (artist.loop || album.loop),
       skip: (artist.skip || album.skip),
-      imgPath: album.imgPath || configApp.fallbackImage,
+      imgPath: album.imgPath || config.app.fallbackImage,
       artist: pick(['id', 'title', 'imgPath'], artist),
     };
     return {

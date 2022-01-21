@@ -33,7 +33,7 @@ exports[`AlbumList renders correctly with matching active track 1`] = `
         className="artist-title"
       >
         <Link
-          to="/audio/test"
+          to="/audio/test/test"
         />
       </h3>
     </div>
@@ -74,7 +74,7 @@ exports[`AlbumList renders correctly with selected album and artist 1`] = `
         className="artist-title"
       >
         <Link
-          to="/audio/test"
+          to="/audio/test/test"
         />
       </h3>
       <Component />
@@ -122,7 +122,7 @@ exports[`AlbumList renders correctly without matching active track 1`] = `
         className="artist-title"
       >
         <Link
-          to="/audio/test"
+          to="/audio/test/test"
         />
       </h3>
     </div>

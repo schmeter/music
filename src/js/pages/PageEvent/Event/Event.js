@@ -6,9 +6,9 @@ import { useParams } from 'react-router-dom';
 import Image from '../../../components/Image';
 import Link from '../../../components/Link';
 import Icon from '../../../components/Icon';
-import { getApiUrl } from '../../../services/api';
+import { getApiUrl } from '../../../helpers/api';
 import { getEventId } from '../../../services/event';
-import i18n from '../../../services/i18n';
+import i18n from '../../../helpers/i18n';
 
 const Event = ({
   event,
@@ -49,13 +49,18 @@ const Event = ({
       </Link>
       <h2 className="date">
         <Link to={link}>
+          {format(new Date(event.date), i18n('date_format'))}
+        </Link>
+      </h2>
+      <h2 className="title">
+        <Link to={link}>
           {event.title}
         </Link>
       </h2>
       <h3 className="artist">
-        {format(new Date(event.date), i18n('date_format'))}
-        &nbsp;
-        {event.artist.title}
+        <Link to={link}>
+          {event.artist.title}
+        </Link>
       </h3>
     </div>
   );

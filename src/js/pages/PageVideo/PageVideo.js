@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import Page from '../../components/Page';
-import Video from '../../components/Video';
+import Page from '../Page';
+import Video from './Video';
 
 const PageVideo = ({
   videos,

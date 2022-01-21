@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import Event from './Event';
-import Page from '../../components/Page';
+import Page from '../Page';
 import { getEventId } from '../../services/event';
 
 const PageEvent = ({

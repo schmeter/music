@@ -5,7 +5,7 @@ import classNames from 'classnames';
 import Link from '../../../components/Link';
 import TrackList from '../TrackList';
 import AlbumCover from '../AlbumCover';
-import { getRouteWithParams } from '../../../services/navigation';
+import { getRouteWithParams } from '../../../helpers/navigation';
 
 const AlbumList = ({
   albums,
@@ -31,14 +31,11 @@ const AlbumList = ({
           ? album.id === activeTrack.album.id
           : false;
         const visible = playing
-                        || !album.hidden
-                        || album.id === selectedAlbumId;
-        const albumLink = getRouteWithParams('audio', {
+          || !album.hidden
+          || album.id === selectedAlbumId;
+        const link = getRouteWithParams('audio', {
           artistId: album.artist.id,
           albumId: album.id,
-        });
-        const artistLink = getRouteWithParams('audio', {
-          artistId: album.artist.id,
         });
 
         return visible && (
@@ -50,17 +47,17 @@ const AlbumList = ({
             )}
           >
             <AlbumCover
-              link={selectedAlbumId ? '' : albumLink}
+              link={selectedAlbumId ? '' : link}
               album={album}
             />
             <div className="album-details">
               <h3 className="album-title">
-                <Link to={albumLink}>
+                <Link to={link}>
                   {album.title}
                 </Link>
               </h3>
               <h3 className="artist-title">
-                <Link to={artistLink}>
+                <Link to={link}>
                   {album.artist.title}
                 </Link>
               </h3>

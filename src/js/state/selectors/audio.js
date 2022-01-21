@@ -73,5 +73,3 @@ export const getTracks = state =>
 export const getPlayToggle = state => state.audio.playToggle;
 
 export const isPlaying = state => state.audio.isPlaying;
-
-export const canPlayMusic = state => state.audio.canPlayMusic;

@@ -5,7 +5,7 @@ import toJson from 'enzyme-to-json';
 import PageEvent from './PageEvent';
 
 // eslint-disable-next-line react/display-name
-jest.mock('../../components/Page', () => () => <div />);
+jest.mock('../Page', () => () => <div />);
 
 describe('PageEvent', () => {
   it('renders correctly', () => {

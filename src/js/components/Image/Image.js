@@ -2,7 +2,7 @@ import React, { useCallback, useEffect, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
-import configApp from '../../../config/app.json';
+import { config } from '../../helpers/aggregate';
 
 const Image = ({ className, src, alt, onLoad }) => {
   const image = useRef();
@@ -22,7 +22,7 @@ const Image = ({ className, src, alt, onLoad }) => {
 
   useEffect(() => {
     if (error) {
-      image.current.src = configApp.fallbackImage;
+      image.current.src = config.app.fallbackImage;
     }
   }, [
     error,

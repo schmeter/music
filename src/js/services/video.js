@@ -1,5 +1,5 @@
 import VideoLibraryModel from '../models/VideoLibrary';
-import videoData from '../../../src/shared/video.json';
-import { isAuthenticated } from './auth';
+import { data } from '../helpers/aggregate';
+import { isAuthenticated } from '../helpers/auth';
 
-export const loadLibrary = (showAll = isAuthenticated()) => new VideoLibraryModel(videoData, showAll);
+export const loadLibrary = (showAll = isAuthenticated()) => new VideoLibraryModel(data.video, showAll);

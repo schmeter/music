@@ -3,10 +3,10 @@ import PropTypes from 'prop-types';
 import { useParams } from 'react-router-dom';
 
 import { Page404 } from '../';
-import Page from '../../components/Page';
+import Page from '../Page';
 import AlbumList from './AlbumList';
 import { joinTitleParts, setTitle } from '../../services/meta';
-import i18n from '../../services/i18n';
+import i18n from '../../helpers/i18n';
 
 const PageAudio = ({
   getArtist,

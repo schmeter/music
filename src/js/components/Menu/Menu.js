@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 
 import Link from '../Link';
 import Icon from '../Icon';
-import i18n from '../../services/i18n';
-import { getRouteWithParams } from '../../services/navigation';
+import i18n from '../../helpers/i18n';
+import { getRouteWithParams } from '../../helpers/navigation';
 
 const Menu = ({
   full,

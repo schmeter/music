@@ -10,7 +10,7 @@ jest.mock('react-router-dom', () => ({
   useParams: () => (mockUrlParams),
 }));
 // eslint-disable-next-line react/display-name
-jest.mock('../../components/Page', () => () => <div />);
+jest.mock('../Page', () => () => <div />);
 // eslint-disable-next-line react/display-name
 jest.mock('./Clock', () => () => <div />);
 // eslint-disable-next-line react/display-name

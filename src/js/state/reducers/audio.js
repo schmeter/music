@@ -6,7 +6,6 @@ export const initialState = {
   },
   activeIndex: -1,
   isPlaying: false,
-  canPlayMusic: true,
   playToggle: false,
 };
 
@@ -31,12 +30,6 @@ export default (state = {}, action = {}) => {
       return {
         ...state,
         playToggle: !state.playToggle,
-      };
-    case 'AUDIO_SET_CAN_PLAY_MUSIC':
-      return {
-        ...state,
-        canPlayMusic: action.payload,
-        isPlaying: action.payload === false ? false : state.isPlaying,
       };
     default:
       return state;

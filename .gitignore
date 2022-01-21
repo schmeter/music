@@ -7,10 +7,9 @@ public
 src/shared/*
 !src/assets/mp3
 src/assets/mp3/*
-!src/assets/mp3/demoartist
+!src/assets/mp3/music/demoartist
 !src/assets/img
 src/assets/img/*
 !src/assets/img/fallback.png
 src/assets/fonts
-src/assets/js
 src/sass/lib

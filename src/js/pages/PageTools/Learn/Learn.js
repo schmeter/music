@@ -3,11 +3,11 @@ import { useHistory, useParams } from 'react-router-dom';
 
 import Icon from '../../../components/Icon';
 import Link from '../../../components/Link';
-import i18n, { getAppLanguage } from '../../../services/i18n';
-import { getRouteWithParams } from '../../../services/navigation';
-import { getApiUrl } from '../../../services/api';
-import { getRandom } from '../../../util/math';
-import { fetchJSON } from '../../../util/fetch';
+import i18n, { getAppLanguage } from '../../../helpers/i18n';
+import { getRouteWithParams } from '../../../helpers/navigation';
+import { getApiUrl } from '../../../helpers/api';
+import { getRandom } from '../../../helpers/math';
+import { fetchJSON } from '../../../helpers/fetch';
 
 const isContent = content => !!content
   && !!content.extract

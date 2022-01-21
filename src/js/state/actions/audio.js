@@ -32,11 +32,6 @@ export const togglePlayAction = () => ({
   type: 'AUDIO_TOGGLE_PLAY',
 });
 
-export const setCanPlayMusicAction = hasPermission => ({
-  type: 'AUDIO_SET_CAN_PLAY_MUSIC',
-  payload: hasPermission,
-});
-
 export const saveActiveTrackAction = track => () => {
   saveActiveTrackPath(track.path);
 };

@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
 
-import Page from '../../components/Page';
+import Page from '../Page';
 import Menu from '../../components/Menu';
-import Ball from '../../components/Ball';
+import Ball from './Ball';
 import { setTitle } from '../../services/meta';
 
 const PageMenu = () => {

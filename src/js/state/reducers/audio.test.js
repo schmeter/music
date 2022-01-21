@@ -46,28 +46,6 @@ describe('audio', () => {
       playToggle: action.payload,
     });
 
-    action = {
-      type: 'AUDIO_SET_CAN_PLAY_MUSIC',
-      payload: false,
-    };
-
-    expect(reducer(initialState, action)).toEqual({
-      ...initialState,
-      canPlayMusic: action.payload,
-      isPlaying: action.payload === false ? false : initialState.isPlaying,
-    });
-
-    action = {
-      type: 'AUDIO_SET_CAN_PLAY_MUSIC',
-      payload: true,
-    };
-
-    expect(reducer(initialState, action)).toEqual({
-      ...initialState,
-      canPlayMusic: action.payload,
-      isPlaying: action.payload === false ? false : initialState.isPlaying,
-    });
-
     expect(reducer()).toEqual({});
   });
 });

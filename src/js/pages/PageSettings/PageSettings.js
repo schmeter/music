@@ -2,9 +2,9 @@ import React, { useRef } from 'react';
 import PropTypes from 'prop-types';
 import { useHistory } from 'react-router-dom';
 
-import Page from '../../components/Page';
-import i18n, { getAppLanguage, getLanguages, setAppLanguage } from '../../services/i18n';
-import { getRouteWithParams } from '../../services/navigation';
+import Page from '../Page';
+import i18n, { getAppLanguage, getLanguages, setAppLanguage } from '../../helpers/i18n';
+import { getRouteWithParams } from '../../helpers/navigation';
 
 const PageSettings = ({ isLoggedIn, login, logout }) => {
   const password = useRef();
